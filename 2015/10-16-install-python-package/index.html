@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>安装 Python 库文件</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="安装 Python 库文件"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        安装 Python 库文件
+    </h1>
+  
+
+
+  </header>
+  <p>我用的<code>pythonbrew</code>来管理我的两个 <code>python</code>版本<br>但是在使用第三方<code>package</code>的时候，<code>pip</code>总是不好用<br><code>pip install</code>的全部都在原来的地方，而非<code>pythonbrew</code>的文件夹下面<br>搞了好久才找到正确使用的姿势<br><a id="more"></a></p>
+<hr>
+<h1 id="取消rootless"><a href="#取消rootless" class="headerlink" title="取消rootless"></a>取消<code>rootless</code></h1><p><code>OSX</code>有个<code>rootless</code>机制，不要你碰<code>usr/bin</code>里面的东西<br>就算你加上了<code>sudo</code>都不行，用这个来关闭:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram <span class="keyword">boot</span>-<span class="keyword">args</span>=<span class="string">"rootless=0"</span></span><br></pre></td></tr></table></figure></p>
+<p>完了要重启<br>至于怎么重新<code>enable</code>。。。  我也不知道  </p>
+<hr>
+<h1 id="关闭-pythonbrew"><a href="#关闭-pythonbrew" class="headerlink" title="关闭 pythonbrew"></a>关闭 <code>pythonbrew</code></h1><p>本来在<a href="http://stackoverflow.com/" target="_blank" rel="external">Stack Overflow</a>上面查到了的<br>也有人是这样的，在 <code>pythonbrew</code>下面不能使用<code>pip</code>  </p>
+<blockquote>
+<p>I found a solution. I uninstalled my Python 3.3.0 by issuing <code>pythonbrew uninstall 3.3.0</code>. Then I installed it again with <code>pythonbrew install --configure=&quot;--with-zlib&quot; 3.3.0</code>. This allowed pip to install and thus now I can use it to install to this Python version.</p>
+</blockquote>
+<p>就是先卸载，然后用<code>--configure=&quot;--with-zlib&quot;</code>这个选项重新安装<br>我尝试的时候是出错跳过了<code>option</code>又安装了一次，跟原来的一样<br>所以我还是把它关了，既然<code>pip install</code>在我自带的 python 下<br>我就好好用这个自带的版本:<code>pythonbrew off</code></p>
+<hr>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install pip</span><br><span class="line">pip <span class="keyword">install</span> XXX</span><br></pre></td></tr></table></figure>
+<p>我的还是有问题的<br>于是使用这个来安装:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> easy_install XXX</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以使用刚刚安装的<code>package</code>了</p>
+<hr>
+<h1 id="更新问题"><a href="#更新问题" class="headerlink" title="更新问题"></a>更新问题</h1><p><code>python package</code>具体的路径为<code>/Library/Python/2.7/site-packages</code><br>然后这里面的文件夹名字要和你<code>import</code>后面的名字一样才行<br><code>SOF</code>上面有个人文件夹叫做<code>pil</code>，改成<code>PIL</code>就能用了<br>对了，我遇见的问题是这个:<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">ImportError:</span> No <span class="class"><span class="keyword">module</span> <span class="title">named</span> <span class="title">PIL</span></span></span><br><span class="line"><span class="symbol">IOError:</span> decoder jpeg <span class="keyword">not</span> available</span><br></pre></td></tr></table></figure></p>
+<p>注意我这里用的是<code>python2</code>，使用 <code>python3</code>的话，最后库名字是带有引号的</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>手动把<code>/Library/Python/2.7/site-packages</code>里面的<code>PIL</code>、<code>pillow</code>、<code>Image</code>都给删除了，这里需要输入密码<br>然后使用这一个就全部OK了:<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install <span class="built_in">image</span></span><br></pre></td></tr></table></figure></p>
+<p>就连之前<code>jpeg</code>文件无法解析的问题都一并解决了哟</p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-10-16T05:28:04.000Z" class="chip">2015-10-16</time>
+
+
+    
+    / <a href="/categories/硬悟学蛇/" class="chip">硬悟学蛇</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

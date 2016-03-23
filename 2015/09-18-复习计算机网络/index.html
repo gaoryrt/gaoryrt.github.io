@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>计算机网络复习资料</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="计算机网络复习资料"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        计算机网络复习资料
+    </h1>
+  
+
+
+  </header>
+  <p>复习计算机网络就是看书，把五层结构看完就差不多了<br>用mindnode做了个脑图，png在下面，附上百度网盘下载链接<br><a id="more"></a></p>
+<h1 id="脑图以及下载"><a href="#脑图以及下载" class="headerlink" title="脑图以及下载"></a>脑图以及下载</h1><p><img src="http://ww4.sinaimg.cn/large/a243ad6cjw1ew6yidywq2j219q6noqv6.jpg" alt="脑图"><br><a href="http://pan.baidu.com/s/1o6zPGLW" target="_blank" rel="external">图片.png下载 密码: cr7p</a><br><a href="http://pan.baidu.com/s/1gdpoDur" target="_blank" rel="external">脑图.mindnode 密码: 6xr6 这个直接解压就可以用mindnode打开</a><br>所有协议都明白什么意思后就轻松做选填了  </p>
+<hr>
+<h1 id="大题"><a href="#大题" class="headerlink" title="大题"></a>大题</h1><p>我院的计算题就只有以下几个类型，要是有其他类型的大题，绝壁是大的简答题  </p>
+<p><strong>已知某有噪信道的信噪比为30DB，带宽为3KHZ，求该信道的最大数据传输速率</strong></p>
+<blockquote>
+<p>这个与香农定理有关.即,信道容量(速率)与噪声和带宽有关<br>设信噪比为S/N,信道最大速率为C,带宽为B<br>则有公式:C=Blog2(1+S/N)[以2为底,1+S/N的对数]<br>带如你的 数值可得<br>C=3000log2(1+1000)=29900比特每秒<br>30DB对应的数值就是1000  </p>
+</blockquote>
+<p><strong>一网络采用距离向量路由由算法进行路由选择,假如路由选择C在启动时，测得与相邻路由器A、B的时延分别是7、14。此后，路由器C分别收到来自相邻路由B和A发出的路由向量 B（15，0，4，6）、A（0，3，12，16）。上述向量表示发送该向量的路由器分别与网络中路由器A、B、C、D之间的时延。计算路由器C在收到相邻路由器发出的向量后，更新后的路由表</strong><br>（图略，自己画脑补）  </p>
+<blockquote>
+<p>收到路由向量A（0，3，12，16）B（15，0，4，6）<br>C更新后的路由表（分别到A,B,C,D的路由向量）<br>（7，A），（10，A），（0,-），（20，B）  </p>
+</blockquote>
+<p><strong>一个大公司有一个总部和三个下属部门。公司分配到的网络前缀是192.77.33/24.公司的网络布局如图4-56示。总部共有五个局域网，其中的LAN1-LAN4都连接到路由器R1上，R1再通过LAN5与路由器R5相连。R5和远地的三个部门的局域网LAN6～LAN8通过广域网相连。每一个局域网旁边标明的数字是局域网上的主机数。试给每一个局域网分配一个合适的网络前缀</strong><br>这道题是第六版计算机网络上P185的原题4-30  </p>
+<blockquote>
+<p>解答直接看书后面的解答P424  </p>
+</blockquote>
+<p><strong>有一个电缆长度为1Km的CSMA/CD局域网，数据传输速率为1Gbps，信号传播速度为2×105Km/s。试求出最小帧长度</strong>  </p>
+<blockquote>
+<p>帧长度L=S*2D/V<br>(1/2X10^5)X2  </p>
+</blockquote>
+<p><strong>一个IP分组，数据部分长度为8192字节，欲通过MTU=1500的局域网，如何分片？给出每个分片长度及片偏移。</strong></p>
+<blockquote>
+<p>标准IP头部20字节，MTU=1500，数据长度最多1480字节<br>第1个包：IP头20，数据1480，偏移量0 MF=1<br>第2个包，IP头20，数据1480，偏移185 MF=1<br>第3个包，IP头20，数据1480，偏移370 MF=1<br>第4个包，IP头20，数据1480，偏移555 MF=1<br>第5个包，IP头20，数据1480，偏移740 MF=1<br>第6个包，IP头20，数据792， 偏移839  MF=0  </p>
+</blockquote>
+<hr>
+<h1 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h1><p>一定要看完书再看他妈的题啊，协议太多了，精髓就全在各种简写的英文字母里面了<br>看完书再做题，看不懂选填也是正常的，过了那个坎自然就看懂了，跟他妈快恢复一样的<br>求你至少看完老师勾的五层结构重点，大题就那么几种，全是送分的，难就难在前面选填和简答题上面</p>
+<p><strong>2015年9月18日</strong>今天考完了，成绩还不晓得，劳资要是没有过我就去抄书，反正也是必备知识  </p>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-09-18T08:17:45.000Z" class="chip">2015-09-18</time>
+
+
+    
+    / <a href="/categories/Discovery/" class="chip">Discovery</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-复习计算机网络" data-title="计算机网络复习资料" data-url="http://gaoryrt.com/2015/09-18-复习计算机网络/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

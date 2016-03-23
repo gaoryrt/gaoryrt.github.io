@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开始Python</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="开始Python"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        开始Python
+    </h1>
+  
+
+
+  </header>
+  <p> 开始学习python<br> <a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014316090478912dab2a3a9e8f4ed49d28854b292f85bb000" target="_blank" rel="external">廖雪峰的官方网站</a>上面有python3的详细教程<br> 按照这个一步一步来吧<br> <a id="more"></a></p>
+<hr>
+<h1 id="在MAC上安装Python"><a href="#在MAC上安装Python" class="headerlink" title="在MAC上安装Python"></a>在MAC上安装Python</h1><blockquote>
+<p>MacOS 10.2 (Jaguar), 10.3 (Panther), 10.4 (Tiger) and 10.5 (Leopard) already include various versions of Python.<br>  这几个版本都是自带了的，虽然是2.7版本的<br>  2.X和3.X不兼容  </p>
+</blockquote>
+<p>  最新版的python是3.5.0的<br>  1.如果有<code>homebrew</code>的话可以用命令: <code>brew install python3</code><br>  但是不晓得是网络问题还是系统版本问题，反正电脑烫了好一会儿没有安装好。<br>  2.还可以在<a href="https://www.python.org/downloads/mac-osx/" target="_blank" rel="external">python官网下载地址</a>下载安装包，我搬百度云算了。  </p>
+<blockquote>
+<p>链接: <a href="http://pan.baidu.com/s/1dD6UojJ" target="_blank" rel="external">http://pan.baidu.com/s/1dD6UojJ</a> 密码: kjjk  </p>
+</blockquote>
+<p>  我用的这个.pkg安装的，安装完了之后还送我两个app:<br>  IDLE.app  和 PythonLauncher.app<br>  IDLE是命令行交互环境，PythonLauncher是Python的解释器  </p>
+<h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1><p>安装好了可能要重启一下<br>打开IDLE就可以开始了！！！  </p>
+<blockquote>
+<p>交互式环境的提示符是 <code>&gt;&gt;&gt;</code>  </p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'hello world'</span>) </span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+<p>使用这个来退出 -&gt; <code>quit()</code>  </p>
+<hr>
+<h1 id="用文件编辑器编辑保存并在终端中运行"><a href="#用文件编辑器编辑保存并在终端中运行" class="headerlink" title="用文件编辑器编辑保存并在终端中运行"></a>用文件编辑器编辑保存并在终端中运行</h1><p><strong>python文件都是以<code>.py</code>结尾的</strong></p>
+<h2 id="用文件编辑器编辑"><a href="#用文件编辑器编辑" class="headerlink" title="用文件编辑器编辑"></a>用文件编辑器编辑</h2><p>这几天下载了atom<br>比起sublime text，<code>cmd + z</code>的时候不会把我拼音算进去。<del>方便多了哟</del><br>新建文件<code>python.py</code>用atom打开<br>编辑<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">python</span><span class="params">(<span class="string">'hello world'</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>保存  </p>
+<h2 id="在终端中运行"><a href="#在终端中运行" class="headerlink" title="在终端中运行"></a>在终端中运行</h2><p>先要cd到<code>.py</code>所在的文件夹然后再使用<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">python</span> <span class="keyword">python</span>.<span class="keyword">py</span></span><br></pre></td></tr></table></figure></p>
+<p>输出为<code>hello world</code></p>
+<h3 id="直接运行-py文件"><a href="#直接运行-py文件" class="headerlink" title="直接运行.py文件"></a>直接运行<code>.py</code>文件</h3><p>在<code>.py</code>文件首行加上这一句<br><figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env python3</span></span><br></pre></td></tr></table></figure></p>
+<p>然后使用<code>chmod a+x</code>来给文件运行权限  </p>
+<blockquote>
+<p>简单说一下<br>chmod是添加更改权限命令<br>a是指所有的用户组，包括root用户组，文件拥有者的用户组，还有其他用户组:<br>u 表示该文件的拥有者[user]，<br>g 表示与该文件的拥有者属于组(group)，<br>o 表示其他用户[other]，<br>a 表示这三者皆是[all]。<br>+x是指添加执行权限。<br>+x是执行权限，+r是阅读权限，+w是写入权限<br>- 表示取消权限。<br>= 表示唯一设定权限。<br>r 表示有可读取的权限，<br>w 表示有可写入的权限，<br>x 表示有可执行的权限  </p>
+</blockquote>
+<h3 id="在终端中直接使用命令行交互环境"><a href="#在终端中直接使用命令行交互环境" class="headerlink" title="在终端中直接使用命令行交互环境"></a>在终端中直接使用命令行交互环境</h3><p>在终端里面直接<code>$ python</code>就行了<br>你看到最后是<code>&gt;&gt;&gt;</code>而不是常见的<code>$</code>，那么你就在python命令行交互环境中了<br>注意  在命令行中要用<code>print()</code>才有输出，然而在命令行交互环境中只能一行一行，立即执行<br>那么，在命令行交互环境中运行<code>.py</code>文件的话。。。<br>是的，每一行结果都会打印出来。而需要输入才能执行的语句会报错。</p>
+<hr>
+<h3 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h3><p>直接上程序<br><code>InputNOutput.py</code><br><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env python3 </span></span><br><span class="line">name = <span class="keyword">input</span>(<span class="string">'please enter your name: '</span>)</span><br><span class="line"><span class="keyword">print</span>(<span class="string">'hello,'</span>, name)</span><br></pre></td></tr></table></figure></p>
+<h1 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h1><p>跟java、c的差不多，我就写写我看到的不同点、新知识  </p>
+<ul>
+<li><code>print(&#39;空&#39;,&#39;格&#39;)</code> 出来是 <code>空 格</code>，中间的逗号变成了空格 </li>
+<li>关于中文乱码，尝试在首行加上<br><code># -*- coding: utf-8 -*-</code> 或者<br><code># -*- coding: unicode -*-</code> </li>
+<li>可以直接在<code>print()</code>里面加函数例如   <figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span>(<span class="string">'x'</span>,<span class="string">'*'</span>,<span class="string">'y'</span>,<span class="string">'='</span>,<span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">'请输入第一个数'</span>))*<span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">'请输入第二个数'</span>)))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>执行的话会输入两次再输出  </p>
+<ul>
+<li>但是<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span>(x,<span class="string">'*'</span>,y,<span class="string">'='</span>,<span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">'请输入第一个数'</span>,x))*<span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">'请输入第二个数'</span>,y)))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>并不能编译成功，因为x和y在定义之前就调用了  </p>
+<ul>
+<li><code>x=input()</code>然后<code>type(x)</code>出来会是<code>&lt;class &#39;str&#39;&gt;</code> 也可能是<code>&lt;class &#39;int&#39;&gt;</code>，swift也是这样自动预测的optional。</li>
+<li>每一行都是一条命令，缩进使用<code>:</code>符号，之后的句子用四个空格开头，表示缩进 </li>
+<li><code>if(1&gt;0):</code>然后<code>ctrl+↩︎</code>可以实现在命令行交互环境中换行，后面随便写一句<code>print(&#39;yeah&#39;)</code>可以正常输出</li>
+<li>python是大小写敏感的</li>
+</ul>
+
+  
+  <footer class="meta">
+    <time datetime="2015-09-27T07:02:04.000Z" class="chip">2015-09-27</time>
+
+
+    
+    / <a href="/categories/硬悟学蛇/" class="chip">硬悟学蛇</a>
+
+
+
+
+    
+    / <a href="/tags/python/" class="chip">python</a> <a href="/tags/abc/" class="chip">abc</a> <a href="/tags/howto/" class="chip">howto</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-StartingPython" data-title="开始Python" data-url="http://gaoryrt.com/2015/09-27-StartingPython/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

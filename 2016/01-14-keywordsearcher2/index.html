@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>关键词搜索修正之二</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="关键词搜索修正之二"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        关键词搜索修正之二
+    </h1>
+  
+
+
+  </header>
+  <p>以前写的东西就是想到哪里做哪里<br>没有从头开始仔细规划好<br>到后面连自己写的东西都忘了该怎么接手了<br>真是麻烦，决定重新开始  </p>
+<hr>
+<p>以前的那一篇做成了短语分词了，现在是这个样子的：  </p>
+<pre><code>word = &quot;信息工程&quot;
+信息 : thread created
+息工 : thread created
+工程 : thread created
+息工 : 752000
+信息 : 53800000
+工程 : 80400000
+信息 | 工程
+</code></pre><p>功能就是把短语分成两个单词<br>因为现在的评分机制是根据得分最低的两字来划分的<br>所以只能做到两个单词组成的短语的两段式分词<br>感觉好鸡肋  </p>
+<hr>
+<p>目标是把一句话分成几个单词的组合<br>并且把不关键的单词给屏蔽掉<br>“关键词搜索修正之二”就变成了<br>“关键词 搜索 修正 二”<br>在这里我做了哪些事情呢  </p>
+<ol>
+<li>分辨出哪几个字该为一组  </li>
+<li>屏蔽掉不重要的字<br>我在分辨的过程中是怎样思考的呢？<br>我会先看几个字，在这几个字中确定属于上一个单词的和不属于上一个单词的部分<br>一句话中会从前到后遍历，遍历的过程不是单字，而是一个小的短语<br>分辨出属于一个单词的，将它放到 list 里面<br>这时候遍历的短语就可以继续往后移动了<br>但是这还是默认句子语法正确的方式<br>如果句子没有完整，最后就一个不相关的字<br>还要继续加以识别，这个『不相关』的字是不是不相关<br>先做句子完整的吧<br>在分组完成之后所有单词都会放到 list 里面<br>然后我在 list 里面会发现几个完全对我识别没有帮助的词语<br>比如 『的』、『是』、还是上面例子中的『之』<br>把这些单字或者非单字的词汇删除之后得到的就是我想要的答案  </li>
+</ol>
+<hr>
+<p>由于我在上面的过程当中有很多东西都是靠经验判断的<br>并且我也想使用GA 试试看<br>所以要把例如『几个字』『不相关』『没有帮助』的判断机制交给 GA<br>我会用不同的变量代替判断的过程，然后将不同变量的组合分配到程序当中<br>然后另外用一个程序来运行着所有组合的评分操作<br>所有的结果简单明了的存储到文本文件中<br>每一次所有组合都跑完了之后我会打开这个文本文件，选择我心仪的组合，让它留下来繁衍<br>然后重新编写不同变量的组合，再执行一遍所有组合的评分<br>就这样实现 GA 的操作  </p>
+<hr>
+<p>评分又是怎样实现的呢？<br>因为没有合适的字典<br>我现在只想到一个，也就是搜索引擎的结果量<br>或许搜索量也可以作为评分的关键变量之一  </p>
+<hr>
+<p>可以用 argv0 这样的方式来把同一个程序和变量组合组合起来<br>也可以用一个程序来把同一个程序复制修改为另一个变量组合的程序<br>当然选择前者  </p>
+
+  
+  <footer class="meta">
+    <time datetime="2016-01-14T12:18:08.000Z" class="chip">2016-01-14</time>
+
+
+    
+    / <a href="/categories/硬悟学蛇/" class="chip">硬悟学蛇</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

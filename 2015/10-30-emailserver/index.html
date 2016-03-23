@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Ubuntu Email Server</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="Ubuntu Email Server"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        Ubuntu Email Server
+    </h1>
+  
+
+
+  </header>
+  <p>配置sendmail+dovecot 的服务器并用 email 客户端进行邮件收发  </p>
+<ol>
+<li>sendmail 只为192.168.x.0/24 提供转发</li>
+<li>允许用户teacher 有多个邮件地址（teacher@linuxstudy.com qz@linuxstudy.com）</li>
+<li>设置 sendmail 可以转发来自126.com 的邮件  <a id="more"></a>
+<strong>下面的语句使用时出错的话，请大胆尝试<code>sudo</code>，<code>touch</code>等操作</strong></li>
+</ol>
+<hr>
+<h1 id="安装-sendmail，mailutils-和-dovecot"><a href="#安装-sendmail，mailutils-和-dovecot" class="headerlink" title="安装 sendmail，mailutils 和 dovecot"></a>安装 sendmail，mailutils 和 dovecot</h1><h2 id="sendmail"><a href="#sendmail" class="headerlink" title="sendmail"></a>sendmail</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install sendmail</span><br></pre></td></tr></table></figure>
+<h2 id="dovecot"><a href="#dovecot" class="headerlink" title="dovecot"></a>dovecot</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install dovecot-pop3d</span><br></pre></td></tr></table></figure>
+<h2 id="查看状态、开启服务，关闭服务，重启服务："><a href="#查看状态、开启服务，关闭服务，重启服务：" class="headerlink" title="查看状态、开启服务，关闭服务，重启服务："></a>查看状态、开启服务，关闭服务，重启服务：</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service sendmail/dovecot status/<span class="literal">start</span>/<span class="literal">stop</span>/restart</span><br></pre></td></tr></table></figure>
+<h2 id="mailutils"><a href="#mailutils" class="headerlink" title="mailutils"></a>mailutils</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install mailutils</span><br></pre></td></tr></table></figure>
+<h2 id="测试发送"><a href="#测试发送" class="headerlink" title="测试发送"></a>测试发送</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> “邮件正文” | mail <span class="_">-s</span> 邮件主题 对方 email</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="sendmail-控制邮件中转"><a href="#sendmail-控制邮件中转" class="headerlink" title="sendmail 控制邮件中转"></a>sendmail 控制邮件中转</h1><h2 id="备份配置文件，这是个好习惯："><a href="#备份配置文件，这是个好习惯：" class="headerlink" title="备份配置文件，这是个好习惯："></a>备份配置文件，这是个好习惯：</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/mail/sendmail<span class="selector-class">.cf</span> /etc/mail/sendmail<span class="selector-class">.cf</span><span class="selector-class">.old</span></span><br></pre></td></tr></table></figure>
+<h2 id="编辑配置文件（-etc-mail-sendmail-mc"><a href="#编辑配置文件（-etc-mail-sendmail-mc" class="headerlink" title="编辑配置文件（/etc/mail/sendmail.mc)"></a>编辑配置文件（<code>/etc/mail/sendmail.mc</code>)</h2><p><strong>AKA激活<code>access.db</code></strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">找到这个：</span><br><span class="line"><span class="function"><span class="title">FEATURE</span><span class="params">(`access_db<span class="string">', , `skip'</span>)</span><span class="title">dnl</span></span></span><br><span class="line">改成下面这个</span><br><span class="line"><span class="function"><span class="title">FEATURE</span><span class="params">(`access_db<span class="string">')dnl</span></span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="编译-mc文件成为-cf文件："><a href="#编译-mc文件成为-cf文件：" class="headerlink" title="编译.mc文件成为.cf文件："></a>编译<code>.mc</code>文件成为<code>.cf</code>文件：</h2><p><strong>注意我这里的<code>m4</code>没有权限往这个文件夹里面写文件，所以我先生成到了<code>/home</code>里面然后再<code>mv</code>进去</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo m4 /etc/mail/sendmail<span class="selector-class">.mc</span> &gt; /home/sendmail<span class="selector-class">.cf</span></span><br><span class="line">sudo mv /home/sendmail<span class="selector-class">.cf</span> /etc/mail/sendmail.cf</span><br></pre></td></tr></table></figure></p>
+<h2 id="编辑access文件："><a href="#编辑access文件：" class="headerlink" title="编辑access文件："></a>编辑<code>access</code>文件：</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">192.168</span>.<span class="number">1.0</span>/<span class="number">24</span> RELAY</span><br><span class="line"><span class="number">126</span><span class="selector-class">.com</span> RELAY</span><br></pre></td></tr></table></figure>
+<h2 id="编译access到access-db文件"><a href="#编译access到access-db文件" class="headerlink" title="编译access到access.db文件"></a>编译<code>access</code>到<code>access.db</code>文件</h2><p><strong>不知道为什么使用 <code>sudo</code> 也没有用，我使用了<code>sudo su</code></strong><br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">makemap hash <span class="keyword">access</span>.db &lt; <span class="keyword">access</span></span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure></p>
+<p>然后使用 <code>sudo</code> 编辑器查看 access.db 文件就可以看到编译成功了。</p>
+<h2 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service sendmail <span class="built_in">restart</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="单个用户多个邮件地址"><a href="#单个用户多个邮件地址" class="headerlink" title="单个用户多个邮件地址"></a>单个用户多个邮件地址</h1><h2 id="编辑配置文件（-etc-mail-sendmail-mc-："><a href="#编辑配置文件（-etc-mail-sendmail-mc-：" class="headerlink" title="编辑配置文件（/etc/mail/sendmail.mc)："></a>编辑配置文件（<code>/etc/mail/sendmail.mc</code>)：</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">添加下面这一行</span><br><span class="line"><span class="function"><span class="title">define</span><span class="params">(<span class="string">'ALIAS_FILE'</span>，<span class="string">'/etc/aliases'</span>)</span><span class="title">dnl</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="编辑-etc-aliases"><a href="#编辑-etc-aliases" class="headerlink" title="编辑/etc/aliases:"></a>编辑<code>/etc/aliases</code>:</h2><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">admin:</span><span class="string">":include:/etc/manage.user"</span></span><br></pre></td></tr></table></figure>
+<h2 id="新建文件-etc-manage-user"><a href="#新建文件-etc-manage-user" class="headerlink" title="新建文件/etc/manage.user:"></a>新建文件<code>/etc/manage.user</code>:</h2><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root,teacher,teacher<span class="meta">@linuxstudy</span>.com,qz<span class="meta">@linuxstudy</span>.com</span><br></pre></td></tr></table></figure>
+<h2 id="编译-mc文件成为-cf文件：-1"><a href="#编译-mc文件成为-cf文件：-1" class="headerlink" title="编译.mc文件成为.cf文件："></a>编译<code>.mc</code>文件成为<code>.cf</code>文件：</h2><p><strong>注意我这里的<code>m4</code>没有权限往这个文件夹里面写文件，这次使用<code>sudo su</code></strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">m4 /etc/mail/sendmail<span class="selector-class">.mc</span> &gt; /etc/mail/sendmail<span class="selector-class">.cf</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure></p>
+<h2 id="使别名生效："><a href="#使别名生效：" class="headerlink" title="使别名生效："></a>使别名生效：</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">su</span></span><br><span class="line">/usr/bin/newaliases</span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+<h2 id="重启服务-1"><a href="#重启服务-1" class="headerlink" title="重启服务"></a>重启服务</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service sendmail <span class="built_in">restart</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-10-30T11:43:38.000Z" class="chip">2015-10-30</time>
+
+
+    
+    / <a href="/categories/Geek-Talks-·-奇客怪谈/" class="chip">Geek Talks · 奇客怪谈</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>下载Dive Into Python3</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="下载Dive Into Python3"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        下载Dive Into Python3
+    </h1>
+  
+
+
+  </header>
+  <p>还是没有看廖雪峰的教程，就算我把它爬下来了。。。<br>在<a href="/2015/10/04/开始python3抓取数据/">上一篇</a>中，本来的目标是通过构造<code>get</code>和<code>post</code>来自动获取热门微博然后刷微博，但是写到最后变成了通过网站目录下载网站<br>然后刚好有一个网站想下载下来，就来试试看<br><a id="more"></a>  </p>
+<h1 id="dive-into-python3"><a href="#dive-into-python3" class="headerlink" title="dive into python3"></a>dive into python3</h1><p>感觉这个才写的好嘛，精炼，适合有一点编程基础的人看。<br>他一共就十几个程序，每个程序里面都包含了很多要点<br>编者肯定很花了点心思来写<br>本来他的主页上有下载 pdf 和 html 的链接，只可惜都是404<br>那么就用昨天的脚本来试试看<br><img src="http://ww4.sinaimg.cn/large/a243ad6cjw1ewsmq37cnzj20h80jwq62.jpg" alt=""></p>
+<hr>
+<h1 id="修改源程序"><a href="#修改源程序" class="headerlink" title="修改源程序"></a>修改源程序</h1><p>利用的 <code>python</code>脚本文件就是上一篇的<br>改了不少地方：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> storethepage</span><br><span class="line"></span><br><span class="line">dic = &#123;&#125;</span><br><span class="line"><span class="comment">#初始化储存名称-url 对的字典</span></span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://woodpecker.org.cn/diveintopython3/index.html"</span></span><br><span class="line"><span class="comment">#抓取的链接</span></span><br><span class="line"></span><br><span class="line">data = urllib.request.urlopen(url).read().decode(<span class="string">"UTF-8"</span>)</span><br><span class="line"><span class="comment">#格式化后的整个文本</span></span><br><span class="line"></span><br><span class="line">urllib.request.urlopen(url).close()</span><br><span class="line"></span><br><span class="line">links = re.compile(<span class="string">'html&gt;(.+?)&lt;/a&gt;'</span>)</span><br><span class="line"><span class="comment">#定位1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> names <span class="keyword">in</span> links.findall(data):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        nPos = names.index(<span class="string">'/'</span>)</span><br><span class="line">        names = names[<span class="number">0</span>:<span class="number">1</span>]</span><br><span class="line">        nPos = <span class="number">-1</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        nPos = <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> nPos == <span class="number">-1</span>:</span><br><span class="line">        dic[<span class="string">'%s'</span>%names] = <span class="string">'-'</span></span><br><span class="line">        print(names)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> names <span class="keyword">in</span> dic.keys():</span><br><span class="line">    temp = <span class="string">'href=(.+?)&gt;'</span>+names</span><br><span class="line">    <span class="comment">#定位2</span></span><br><span class="line">    urlses = re.compile(temp)</span><br><span class="line">    urlname = <span class="string">'http://woodpecker.org.cn/diveintopython3/'</span>+urlses.findall(data)[<span class="number">0</span>]</span><br><span class="line">    dic[names] = urlname</span><br><span class="line"></span><br><span class="line"><span class="comment">#储存</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"diveintopython3.pickle"</span>,<span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(dic,f)</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> dic[<span class="string">'随时欢迎反馈意见'</span>]</span><br><span class="line"><span class="keyword">del</span> dic[<span class="string">'展开'</span>]</span><br><span class="line"></span><br><span class="line">storethepage.store_the_page(dic)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="遇到的麻烦"><a href="#遇到的麻烦" class="headerlink" title="遇到的麻烦"></a>遇到的麻烦</h1><ol>
+<li>names 一下就找到了，url 死活找不到</li>
+<li>url 会读取到不想要的内容</li>
+<li>names 中包含<code>/</code>的都写入不了</li>
+</ol>
+<p>解决方法：  </p>
+<ol>
+<li>浏览器的检查器看到的 url 格式和程序当中看的不一样，检查器中的 url 带引号略坑爹  <img src="http://ww2.sinaimg.cn/large/a243ad6cjw1ewsmq10s47j20uw0l60ym.jpg" alt=""></li>
+<li>在最后把这两条不想要的直接删除了</li>
+<li>一共四条内容包含<code>/</code>，直接截取第一个字，恰好还可以供后面的用</li>
+</ol>
+<hr>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>看图<br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1ewskgw65knj209u0ahtay.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1ewskgyhjf9j207p0bpgn4.jpg" alt=""></p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-10-06T13:16:33.000Z" class="chip">2015-10-06</time>
+
+
+    
+    / <a href="/categories/硬悟学蛇/" class="chip">硬悟学蛇</a>
+
+
+
+
+    
+    / <a href="/tags/python/" class="chip">python</a> <a href="/tags/abc/" class="chip">abc</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-downloadDiveintopython3" data-title="下载Dive Into Python3" data-url="http://gaoryrt.com/2015/10-06-downloadDiveintopython3/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

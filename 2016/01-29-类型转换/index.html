@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>「翻译」 Swift 类型转换</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="「翻译」 Swift 类型转换"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        「翻译」 Swift 类型转换
+    </h1>
+  
+
+
+  </header>
+  <p>这是对 swift 2.2 中 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" target="_blank" rel="external">类型转换</a> 一节的翻译<br>第一次翻译这么长的。。。好麻烦</p>
+<h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><p><em>类型转换</em>可以判断实例的类型，也可以将该实例在其所在的类层次中视为其父类或子类的实例。</p>
+<p>Swift 中的类型转换使用 <code>is</code> 和 <code>as</code> 作为操作符。这两个操作符使用了一种简单传神的方式来检查一个值的类型或将某个值转换为另一种类型。</p>
+<p>你还可以使用类型转换来检查类型是否符合一个协议，参考<a href="">协议实现的检查</a>。</p>
+<h1 id="为类型转换定义类层次"><a href="#为类型转换定义类层次" class="headerlink" title="为类型转换定义类层次"></a>为类型转换定义类层次</h1><p>你可以在类及其子类层次中使用类型转换判断特定类实例的类型，或在同一类层次中将该实例类型转换为另一类型。下面的三段代码定义了一个类层次以及一个包含了这些类实例的数组，作为类型转换的例子。</p>
+<p>第一个代码片段定义了一个叫做 <code>MediaItem</code> 的新类。这个类为出现在数字媒体库中的所有成员提供了基本的功能。它申明了一个 <code>String</code> 类型的 <code>name</code> 和一个叫做 <code>init</code> 的 <code>name</code> 生成化器（这里假设所有的媒体项目，包括所有电影和音乐，都有一个名字）。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MediaItem</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下一个片段定义了两个 <code>MediaItem</code> 的子类。第一个子类 <code>Movie</code> 封装了电影的信息。他在 <code>MediaItem</code> 的基础上添加了名为 <code>director</code> 的属性及其生成化器。第二个子类 <code>Song</code> 增加了名为 <code>artist</code> 的属性及其生成化器。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Movie</span>: <span class="title">MediaItem</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> director: <span class="type">String</span></span><br><span class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>, director: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.director = director</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(name: name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Song</span>: <span class="title">MediaItem</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> artist: <span class="type">String</span></span><br><span class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>, artist: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.artist = artist</span><br><span class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(name: name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后一个代码段创建了名为 <code>library</code> 的数组常量，其中包含了两个 <code>Movie</code> 和三个 <code>Song</code> 实例。<code>library</code> 数组的类型是在初始化时根据其中内容推断出来的。 Swift 的类型检查器能够推断 <code>Movie</code> 和 <code>Song</code> 有一个共同的父类 <code>MediaItem</code>， 因此 <code>library</code> 的类型推断为 <code>[MediaItem]</code>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> library = [</span><br><span class="line">    <span class="type">Movie</span>(name: <span class="string">"Casablanca"</span>, director: <span class="string">"Michael Curtiz"</span>),</span><br><span class="line">    <span class="type">Song</span>(name: <span class="string">"Blue Suede Shoes"</span>, artist: <span class="string">"Elvis Presley"</span>),</span><br><span class="line">    <span class="type">Movie</span>(name: <span class="string">"Citizen Kane"</span>, director: <span class="string">"Orson Welles"</span>),</span><br><span class="line">    <span class="type">Song</span>(name: <span class="string">"The One And Only"</span>, artist: <span class="string">"Chesney Hawkes"</span>),</span><br><span class="line">    <span class="type">Song</span>(name: <span class="string">"Never Gonna Give You Up"</span>, artist: <span class="string">"Rick Astley"</span>)</span><br><span class="line">]</span><br><span class="line"><span class="comment">// the type of "library" is inferred to be [MediaItem]</span></span><br></pre></td></tr></table></figure>
+<p>事实上 <code>library</code> 储存的项目依旧是 <code>Movie</code> 和 <code>Song</code> 实例。然而，如果你遍历这个数组的内容，你取出的项目将会是 <code>MediaItem</code> 类型而非 <code>Movie</code> 或 <code>Song</code> 类型。为了使用他们原生的类型，你需要<em>检查</em>他们的类型或将他们<em>向下转换</em>为不同的类型，如下所述。</p>
+<h1 id="检查类型"><a href="#检查类型" class="headerlink" title="检查类型"></a>检查类型</h1><p>使用<em>类型检查操作符</em> <code>is</code> 来检查一个实例是否属于一个特定的子类。如果实例属于该子类，类型检查操作符返回 <code>true</code>，否则返回 <code>false</code>。</p>
+<p>下面的例子定义了两个变量，<code>movieCount</code> 和 <code>songCount</code>，用来计算数组 <code>library</code> 中 <code>Movie</code> 和 <code>Song</code> 实例的个数：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> movieCount = <span class="number">0</span></span><br><span class="line"><span class="keyword">var</span> songCount = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> library &#123;</span><br><span class="line">    <span class="keyword">if</span> item <span class="keyword">is</span> <span class="type">Movie</span> &#123;</span><br><span class="line">        movieCount += <span class="number">1</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> item <span class="keyword">is</span> <span class="type">Song</span> &#123;</span><br><span class="line">        songCount += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Media library contains <span class="subst">\(movieCount)</span> movies and <span class="subst">\(songCount)</span> songs"</span>)</span><br><span class="line"><span class="comment">// Prints "Media library contains 2 movies and 3 songs</span></span><br></pre></td></tr></table></figure>
+<p>这个例子遍历了整个 <code>library</code> 数组。每一轮中，<code>for-in</code> 的循环都将 <code>item</code> 设置为数组中的当前 <code>MediaItem</code>。</p>
+<p>如果当前 <code>MediaItem</code> 是 <code>Movie</code> 类型的实例，<code>item is Movie</code> 返回 <code>true</code>，反之返回 <code>false</code>。同样的，<code>item is Song</code> 检查了该对象是否为 <code>Song</code> 类型的实例。在 <code>for-in</code> 循环的最后，<code>movieCount</code> 和 <code>songCount</code> 的值就是数组中对应类型实例的数量。</p>
+<h1 id="向下类型转换"><a href="#向下类型转换" class="headerlink" title="向下类型转换"></a>向下类型转换</h1><p>某个类型的常量或变量可能引用自一个子类的实例。当你遇到这种情况时你可以尝试使用<em>类型转换操作符</em>（<code>as?</code> 或 <code>as!</code>）将它<em>向下转换类型</em>至其子类型。</p>
+<p>由于向下类型转换有可能失败，类型转换操作符有两个不同形式。条件形式 <code>as?</code> 返回了一个包含你将要向下转换类型的可选类型。强制形式 <code>as!</code> 则将向下转换和强制解包结合为一个步骤。</p>
+<p>如果你不确定你向下转换类型是否成功，请使用条件形式的类型转换操作符 <code>as?</code>。使用条件形式的类型转换操作符总是返回一个可选类型，如果向下转换失败，可选值为 <code>nil</code>。可以使用这种方法检查向下类型转换是否成功。</p>
+<p>当你确信向下转换类型会成功时，请使用强制形式的类型转换操作符 <code>as!</code>。当你向下转换至一个错误的类型时，强制形式的类型转换操作符会触发一个运行错误。</p>
+<p>下面的例子遍历了 <code>library</code> 中所有的 <code>MediaItem</code>，并打印出相应的描述信息。要这样做的话，每个项目均需要被当做 <code>Movie</code> 或 <code>Song</code> 类型来访问，而不仅仅是 <code>MediaItem</code> 类型。为了在描述信息中使用 <code>Movie</code> 或 <code>Song</code> 的 <code>director</code> 和 <code>artist</code> 属性，这样做是必要的。</p>
+<p>在这个例子中，数组中每一个项目的类型都是 <code>Movie</code> 或 <code>Song</code>。你不知道遍历时项目的确切类型是什么，所以这时使用条件形式的类型转换符（<code>as?</code>）来检查遍历中每次向下类型转换：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> library &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> movie = item <span class="keyword">as</span>? <span class="type">Movie</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Movie: '<span class="subst">\(movie.name)</span>', dir. <span class="subst">\(movie.director)</span>"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">let</span> song = item <span class="keyword">as</span>? <span class="type">Song</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Song: '<span class="subst">\(song.name)</span>', by <span class="subst">\(song.artist)</span>"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Movie: 'Casablanca', dir. Michael Curtiz</span></span><br><span class="line"><span class="comment">// Song: 'Blue Suede Shoes', by Elvis Presley</span></span><br><span class="line"><span class="comment">// Movie: 'Citizen Kane', dir. Orson Welles</span></span><br><span class="line"><span class="comment">// Song: 'The One And Only', by Chesney Hawkes</span></span><br><span class="line"><span class="comment">// Song: 'Never Gonna Give You Up', by Rick Astley</span></span><br></pre></td></tr></table></figure>
+<p>例子开头尝试将当前 <code>item</code> 当做 <code>Movie</code> 向下转换类型。由于 <code>item</code> 是一个 <code>MediaItem</code> 的实例，它<em>有可能</em>属于 <code>Movie</code> 类型；同样的，也有可能属于 <code>Song</code> 或者仅仅属于 <code>MediaItem</code> 基类。介于这种不确定性，类型转换符 <code>as?</code> 在向下转换类型时返回了一个可选项。<code>item as? Movie</code> 的结果是 <code>Movie?</code> 类型，也就是『可选 <code>Movie</code> 类型』。</p>
+<p>当数组中的 <code>Song</code> 实例使用向下转换至 <code>Movie</code> 类型时会失败。为了处理这种情况，上面的例子使用了可选绑定来检查可选 <code>Movie</code> 类型是否包含了一个值（或者说检查向下类型转换是否成功）。这个可选绑定写作『<code>if let movie = item as? Movie</code>』，读作『尝试将 <code>item</code> 转换至 <code>Movie</code> 类型。如果成功，设置一个新的临时常量 <code>movie</code> 储存返回的可选 <code>Movie</code> 类型 』。</p>
+<p>如果向下转换类型成功，<code>movie</code> 的属性将用于输出 <code>Movie</code> 实例的描述信息，包括<code>director</code> 的名字。同理，无论是否在数组中找到 <code>Song</code> ，均可以检查 <code>Song</code> 实例然后输出合适的描述（包括 <code>artist</code> 的名字）。</p>
+<blockquote>
+<p><code>注意</code><br>类型转换不会改变实例及其值。基本的实例不会改变；只是将它当做其转换的类型来访问。</p>
+</blockquote>
+<h1 id="Any-和-AnyObject-的类型转换"><a href="#Any-和-AnyObject-的类型转换" class="headerlink" title="Any 和 AnyObject 的类型转换"></a>Any 和 AnyObject 的类型转换</h1><p>Swift 为不确定的类型提供了两种特殊的类型别名：</p>
+<ul>
+<li><code>AnyObject</code> 可以表示任何类类型的实例。</li>
+<li><code>Any</code> 可以表示任何类型，包括函数类型。</li>
+</ul>
+<blockquote>
+<p><code>注意</code><br>当你确切需要使用一个功能时再使用 <code>Any</code> 和 <code>AnyObject</code>。在写代码时使用更加明确的类型表达总要好一些。</p>
+</blockquote>
+<h1 id="AnyObject-类型"><a href="#AnyObject-类型" class="headerlink" title="AnyObject 类型"></a>AnyObject 类型</h1><p>使用 Cocoa APIs 时，你有时会接收到 <code>[AnyObject]</code> 类型的数组，也就是『由任意类型对象构成的数组』。目前 Objective-C 支持显式类型的数组，但是旧版本的语言没有这个功能。然而你仍可以确信这种提供 API 信息的数组中包含的对象的类型。</p>
+<p>在这种情况中，你可以使用强制类型转换符（<code>as!</code>）将数组中的项目向下转换至比 <code>AnyObject</code> 更明确的类型，而无需将可选类型解包。</p>
+<p>下面的例子定义了一个 [AnyObject] 类型的数组，并实例化了三个 <code>Movie</code> 类：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> someObjects: [<span class="type">AnyObject</span>] = [</span><br><span class="line">    <span class="type">Movie</span>(name: <span class="string">"2001: A Space Odyssey"</span>, director: <span class="string">"Stanley Kubrick"</span>),</span><br><span class="line">    <span class="type">Movie</span>(name: <span class="string">"Moon"</span>, director: <span class="string">"Duncan Jones"</span>),</span><br><span class="line">    <span class="type">Movie</span>(name: <span class="string">"Alien"</span>, director: <span class="string">"Ridley Scott"</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>由于我们已知这个数组只包含了 <code>Movie</code> 实例，你可以直接使用强制类型的类型转换符（<code>as!</code>）将其向下转换至非可选的 <code>Movie</code> 类型：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> object <span class="keyword">in</span> someObjects &#123;</span><br><span class="line">    <span class="keyword">let</span> movie = object <span class="keyword">as</span>! <span class="type">Movie</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Movie: '<span class="subst">\(movie.name)</span>', dir. <span class="subst">\(movie.director)</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Movie: '2001: A Space Odyssey', dir. Stanley Kubrick</span></span><br><span class="line"><span class="comment">// Movie: 'Moon', dir. Duncan Jones</span></span><br><span class="line"><span class="comment">// Movie: 'Alien', dir. Ridley Scott</span></span><br></pre></td></tr></table></figure>
+<p>在这个循环中，直接将 <code>someObject</code> 向下转换为 <code>[Movie]</code> 类型而非挨个向下转换，可以使代码更短：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> movie <span class="keyword">in</span> someObjects <span class="keyword">as</span>! [<span class="type">Movie</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Movie: '<span class="subst">\(movie.name)</span>', dir. <span class="subst">\(movie.director)</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Movie: '2001: A Space Odyssey', dir. Stanley Kubrick</span></span><br><span class="line"><span class="comment">// Movie: 'Moon', dir. Duncan Jones</span></span><br><span class="line"><span class="comment">// Movie: 'Alien', dir. Ridley Scott</span></span><br></pre></td></tr></table></figure>
+<h1 id="Any-类型"><a href="#Any-类型" class="headerlink" title="Any 类型"></a>Any 类型</h1><p>这里有一个使用 <code>Any</code> 类型来对不同类型进行操作的例子，包含了函数类型以及非类类型。这个例子定义了一个名为 <code>things</code> 的数组用于储存 <code>Any</code> 类型的值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> things = [<span class="type">Any</span>]()</span><br><span class="line"> </span><br><span class="line">things.append(<span class="number">0</span>)</span><br><span class="line">things.append(<span class="number">0.0</span>)</span><br><span class="line">things.append(<span class="number">42</span>)</span><br><span class="line">things.append(<span class="number">3.14159</span>)</span><br><span class="line">things.append(<span class="string">"hello"</span>)</span><br><span class="line">things.append((<span class="number">3.0</span>, <span class="number">5.0</span>))</span><br><span class="line">things.append(<span class="type">Movie</span>(name: <span class="string">"Ghostbusters"</span>, director: <span class="string">"Ivan Reitman"</span>))</span><br><span class="line">things.append(&#123; (name: <span class="type">String</span>) -&gt; <span class="type">String</span> <span class="keyword">in</span> <span class="string">"Hello, <span class="subst">\(name)</span>"</span> &#125;)</span><br></pre></td></tr></table></figure>
+<p>这个 <code>things</code> 数组包含了两个 <code>Int</code> 值、两个 <code>Double</code> 值、一个 <code>String</code> 值、一个 <code>(Double, Double)</code> 的元组、<code>Movie</code> 实例『Ghostbusters』、以及一个接收 <code>String</code> 值并返回 <code>String</code> 值得闭包表达式。</p>
+<p>你可以在 <code>switch</code> 结构的 case 中使用 <code>is</code> 和 <code>as</code> 操作符找出已知 Any 或 AnyObject 类型的常量或变量的具体类型。下面的例子使用 <code>switch</code> 语句遍历了 <code>things</code> 数组并查询每一项的类型。其中几个 <code>switch</code> 的 cases 将确定的值和确定类型的常量绑定在一起，使其值可以被输出：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> thing <span class="keyword">in</span> things &#123;</span><br><span class="line">    <span class="keyword">switch</span> thing &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span> <span class="keyword">as</span> <span class="type">Int</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"zero as an Int"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span> <span class="keyword">as</span> <span class="type">Double</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"zero as a Double"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> someInt <span class="keyword">as</span> <span class="type">Int</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"an integer value of <span class="subst">\(someInt)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> someDouble <span class="keyword">as</span> <span class="type">Double</span> <span class="keyword">where</span> someDouble &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"a positive double value of <span class="subst">\(someDouble)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">is</span> <span class="type">Double</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"some other double value that I don't want to print"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> someString <span class="keyword">as</span> <span class="type">String</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"a string value of \"<span class="subst">\(someString)</span>\""</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">as</span> (<span class="type">Double</span>, <span class="type">Double</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"an (x, y) point at <span class="subst">\(x)</span>, <span class="subst">\(y)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> movie <span class="keyword">as</span> <span class="type">Movie</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"a movie called '<span class="subst">\(movie.name)</span>', dir. <span class="subst">\(movie.director)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> stringConverter <span class="keyword">as</span> <span class="type">String</span> -&gt; <span class="type">String</span>:</span><br><span class="line">        <span class="built_in">print</span>(stringConverter(<span class="string">"Michael"</span>))</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"something else"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// zero as an Int</span></span><br><span class="line"><span class="comment">// zero as a Double</span></span><br><span class="line"><span class="comment">// an integer value of 42</span></span><br><span class="line"><span class="comment">// a positive double value of 3.14159</span></span><br><span class="line"><span class="comment">// a string value of "hello"</span></span><br><span class="line"><span class="comment">// an (x, y) point at 3.0, 5.0</span></span><br><span class="line"><span class="comment">// a movie called 'Ghostbusters', dir. Ivan Reitman</span></span><br><span class="line"><span class="comment">// Hello, Michael</span></span><br></pre></td></tr></table></figure>
+
+  
+  <footer class="meta">
+    <time datetime="2016-01-28T16:07:28.000Z" class="chip">2016-01-29</time>
+
+
+    
+    / <a href="/categories/疑似机器人/" class="chip">疑似机器人</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-类型转换" data-title="「翻译」 Swift 类型转换" data-url="http://gaoryrt.com/2016/01-29-类型转换/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

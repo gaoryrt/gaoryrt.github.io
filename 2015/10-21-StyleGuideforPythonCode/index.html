@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>「转」PEP8中文翻译</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="「转」PEP8中文翻译"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        「转」PEP8中文翻译
+    </h1>
+  
+
+
+  </header>
+  <p>自己翻译了一些发现了一个更好的版本<br>转过来<a href="http://wiki.hiaero.net/doku.php?id=python:pep8&amp;do=edit&amp;rev=0" target="_blank" rel="external">PEP8中文翻译</a><br>侵权删<br><a id="more"></a></p>
+<hr>
+<p>====== PEP8中文翻译 ======</p>
+<p>本文仅代表个人认知、观点、经验，May be Stupid!</p>
+<p>===== 什么是PEP =====</p>
+<p>PEP是 //Python Enhancement Proposal// 的缩写，翻译过来就是 //Python增强建议书// 。</p>
+<p>===== PEP8 =====</p>
+<p>译者：本文基于 2013-08-02 最后修改的 PEP8 版本翻译，若要查看英文原文，请参考[[<a href="http://www.python.org/dev/peps/pep-0008/|PEP8" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0008/|PEP8</a>]]</p>
+<p>==== 简介 ====</p>
+<p>本文档给出的编码约定，来源于 Python 主发行版标准库中的代码。Python 的 C 语言实现所使用的 C 语言风格指南，请参考[[<a href="http://www.python.org/dev/peps/pep-0007/|PEP7]]。" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0007/|PEP7]]。</a></p>
+<p>本文档与 PEP 257（文档字符串规范）都来自于 Guido((Python 之父 Guido Van Rossum)) 的 //Python Style Guido// 论文原文，另外有来自 //[[<a href="http://barry.warsaw.us/software/STYLEGUIDE.txt|Barry&#39;s" target="_blank" rel="external">http://barry.warsaw.us/software/STYLEGUIDE.txt|Barry&#39;s</a> style guide]]// 的补充。</p>
+<p>随着 Python 语言自身的改变，本指南也在持续演进，新的编码约定被认同，而旧的矣被废弃。</p>
+<p>许多项目都有一套专有的编码风格指南，当冲突发生时，应以项目编码规范为优先。</p>
+<p>==== 愚蠢的一致性就像没有脑子的妖怪 ====</p>
+<p>Guido 的一个核心观点认为，相比于被编写，代码更多的是被阅读。这篇指南意在提高代码的可读性并使之在广袤的 Python 编码中保持风格一致。就像 PEP 20 所表述的，”可读性当被重视((Readability counts，参见[[<a href="http://www.python.org/dev/peps/pep-0020/|PEP" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0020/|PEP</a> 20]]))”.</p>
+<p>风格指南即一致性指南。本文档中描述的一致性是重要的，一个项目内代码的一致性则更重要一些，而一个模块或方法中代码的一致性则是最重要的。</p>
+<p>但最终要的是：知道什么时候去打破一致性 — 风格指南并不总是适用。当存在不确定性时，做出你最好的抉择。你可以看看别人的代码是怎么写的，选择一种看起来最好的，并及时发问！</p>
+<p>特别注意：不要为了遵守本 PEP 而破坏代码的向后兼容性!</p>
+<p>当以下情况发生时，也是忽略某个风格指南的好理由：</p>
+<ul>
+<li>当遵守指南会降低代码可读性，甚至对于那些依循 PEP 去阅读代码的人也是这样时。</li>
+<li>当遵守指南会与其他部分的代码风格背离时 — 当然也许这是一个修正某些混乱代码的机会。</li>
+<li>当那些并没有遵循指南的旧代码已无法修改时。</li>
+<li>当你的代码需要与旧版本的 Python 保持兼容，而旧版本的 Python 不支持指南中提到的特性时。</li>
+</ul>
+<p>==== 代码布局 ====</p>
+<p>=== 缩进 ===</p>
+<p>每次缩进使用 4 个空格。</p>
+<p>续行((译者注：将一个逻辑行分为多个物理行时除第一行之外的行))应该与被圆括号、方括号、花括号包裹起来的其他元素对齐，或者使用悬挂式缩进。当使用悬挂式缩进时，应该遵循这些注意事项：第一行不能有参数，应该使用进一步的缩进来将续行与其他行区分开。</p>
+<p>符合本约定的代码：<br><code python=""></code></p>
+<h1 id="Aligned-with-opening-delimiter"><a href="#Aligned-with-opening-delimiter" class="headerlink" title="Aligned with opening delimiter"></a>Aligned with opening delimiter</h1><p>foo = long_function_name(var_one, var_two,<br>                         var_three, var_four)</p>
+<h1 id="More-indentation-included-to-distinguish-this-from-the-rest"><a href="#More-indentation-included-to-distinguish-this-from-the-rest" class="headerlink" title="More indentation included to distinguish this from the rest."></a>More indentation included to distinguish this from the rest.</h1><p>def long_function_name(<br>        var_one, var_two, var_three,<br>        var_four):<br>    print(var_one)<br></p>
+<p>不符合本约定的代码：<br><code python=""></code></p>
+<h1 id="Arguments-on-first-line-forbidden-when-not-using-vertical-alignment"><a href="#Arguments-on-first-line-forbidden-when-not-using-vertical-alignment" class="headerlink" title="Arguments on first line forbidden when not using vertical alignment"></a>Arguments on first line forbidden when not using vertical alignment</h1><p>foo = long_function_name(var_one, var_two,<br>    var_three, var_four)</p>
+<h1 id="Further-indentation-required-as-indentation-is-not-distinguishable"><a href="#Further-indentation-required-as-indentation-is-not-distinguishable" class="headerlink" title="Further indentation required as indentation is not distinguishable"></a>Further indentation required as indentation is not distinguishable</h1><p>def long_function_name(<br>    var_one, var_two, var_three,<br>    var_four):<br>    print(var_one)<br></p>
+<p>可选的符合约定的代码：<br><code python=""></code></p>
+<h1 id="Extra-indentation-is-not-necessary"><a href="#Extra-indentation-is-not-necessary" class="headerlink" title="Extra indentation is not necessary."></a>Extra indentation is not necessary.</h1><p>foo = long_function_name(<br>  var_one, var_two,<br>  var_three, var_four)<br></p>
+<p>结尾的方括号/圆括号/花括号应该被放置在多行内容的最后一行的第一个非空字符的正下方((译者注：例如下例中’]’被放到’4’的正下方))，如下所示：</p>
+<p><code python=""><br>my_list = [<br>    1, 2, 3,<br>    4, 5, 6,<br>    ]<br>result = some_function_that_takes_arguments(<br>    ‘a’, ‘b’, ‘c’,<br>    ‘d’, ‘e’, ‘f’,<br>    )<br></code></p>
+<p>或者被放置在多行内容的起始行的第一个字符的正下方((译者注：例如下例中’)’被放到’r’的正下方))，如下所示：</p>
+<p><code python=""><br>my_list = [<br>    1, 2, 3,<br>    4, 5, 6,<br>]<br>result = some_function_that_takes_arguments(<br>    ‘a’, ‘b’, ‘c’,<br>    ‘d’, ‘e’, ‘f’,<br>)<br></code></p>
+<p>=== 制表符还是空格 ===</p>
+<p>空格是首选的缩进方式。</p>
+<p>为了保持一致性，在使用了制表符作为缩进的代码中，应该保持使用制表符。</p>
+<p>Python 3 不支持空格缩进与制表符缩进混用。</p>
+<p>Python 2 中的混用缩进代码也应该被转换为统一使用空格。</p>
+<p>当使用 -t 选项来调用 Python 2 命令行工具时，运行混用缩进的代码会报出警告，当使用 -tt 选项时，运行混用缩进的代码会报出错误。强力建议使用这两个选项。</p>
+<p>=== 单行最大长度 ===</p>
+<p>将所有的行限制在79个字符以内。</p>
+<p>对于那些具有很少的结构约束（例如文档字符串、注释）的代码段来说，最大行长度应该在在72个字符以内。</p>
+<p>限制代码编辑窗口的宽度使并排编辑多个文件成为可能，并且在使用代码审核工具时，可以很好的在两个相邻列中显示不同的代码版本。</p>
+<p>很多工具中的默认换行设置破坏了代码的可视结构，使其更难被理解。某些编辑器在换行时会在行尾放置标记字符，若限制代码的最大的长度，可以在这些最大宽度只有80个字符的编辑器中避免换行。而一些基于Web的工具也许根本不会提供动态自动换行功能。</p>
+<p>一些团队更喜欢较长的单行代码。如果某个团队对单行代码长度的问题达成了共识，并且由该团队专门维护其代码的话，在将文档字符串与注释保持在72个字符以内的前提下，将名义上的单行代码的最大长度从80个字符提升到100个也是可以的（有效的将实际字符最大长度提高到了99个）。</p>
+<p>Python 标准库是保守的，选择了将单行代码长度限制在79个字符以内（文档字符串/注释72个字符以内）。</p>
+<p>最为推荐的长行换行方式是在圆括号、方括号、花括号内的 Python 隐式行续((译者注：即无需转义，在括号内直接换行))。相比于使用反斜杠来转义续行，应该优先使用将长行放置于圆括号内来隐式续行的方式。</p>
+<p>而某些时候反斜杠也是适于使用的。例如，较长的with语句不能使用隐式行续，就需要使用反斜杠了:</p>
+<p><code python=""><br>with open(‘/path/to/some/file/you/want/to/read’) as file_1, \<br>        open(‘/path/to/some/file/being/written’, ‘w’) as file_2:<br>    file_2.write(file_1.read())<br></code></p>
+<p>另一个案例是，assert语句中也需要反斜杠。</p>
+<p>确保使用适当的行续缩进。在二元操作符两端，换行的推荐位置是在操作符之后，而不是操作符之前。以下是一些例子：</p>
+<p><code python=""><br>class Rectangle(Blob):</code></p>
+<pre><code>def __init__(self, width, height,
+             color=&apos;black&apos;, emphasis=None, highlight=0):
+    if (width == 0 and height == 0 and
+            color == &apos;red&apos; and emphasis == &apos;strong&apos; or
+            highlight &gt; 100):
+        raise ValueError(&quot;sorry, you lose&quot;)
+    if width == 0 and height == 0 and (color == &apos;red&apos; or
+                                       emphasis is None):
+        raise ValueError(&quot;I don&apos;t think so -- values are %s, %s&quot; %
+                         (width, height))
+    Blob.__init__(self, width, height,
+                  color, emphasis, highlight)
+</code></pre><p></p>
+<p>=== 空白行 ===</p>
+<p>使用两个空白行来分隔顶级函数定义、类定义。</p>
+<p>使用单个空白行来分隔类内的方法定义。</p>
+<p>额外的空白行可以被（尽量少的）用来分隔几组相关的函数。在一堆相关的单行代码之间，空白行应该被省略。</p>
+<p>在函数中（尽量少的）使用空白行来区分逻辑代码块。</p>
+<p>Python 将 control-L (也就是, ^L) 换行符认作空白符。在许多工具中都将 control-L 识别做分页符，可以使用其来分页。但是注意，在某些编辑器或基于Web的代码浏览器中，control-L 是不会识别作换行符的，会被做为其他字符显示。</p>
+<p>=== 源文件编码 ===</p>
+<p>在 Python 的核心发布版中，应该主要使用 UTF-8 编码（或者在 Python 2 中使用 ASCII）。</p>
+<p>在 Python 2 中使用 ASCII ，在 Python 3 中使用 UTF-8 时不应该在文件中进行编码声明。</p>
+<p>在标准库中，往往只有以测试为目的的代码或包含非 ASCII 编码字符的作者名的注释中，才会使用非默认编码。否则，则推荐使用 \x, \u, \U, \N 等转义字符来在字符串文本中表示非 ASCII 字符。</p>
+<p>在 Python 3.0 与更高级的 Python 版本中，对 Python 标准库的源文件编码作出了如下规定((参见 [[<a href="http://www.python.org/dev/peps/pep-3131/|PEP" target="_blank" rel="external">http://www.python.org/dev/peps/pep-3131/|PEP</a> 3131]]))：Python 标准库中的所有标示符必须仅使用 ACSII 编码的字符，在任何可能的时候都使用英文书写（在许多情况下，缩写名词和技术术语使用的是非英文）。另外，字符串文本与注释也必须使用 ASCII 编码。唯一的例外，是测试非 ASCII 编码特性的测试案例，与作者名的书写。对于非拉丁字符的作者名，应该将其翻译为拉丁字母书写。</p>
+<p>推荐那些面向全球范围内开发者、用户的开源项目也遵循上述规定。</p>
+<p>=== 导入 ===</p>
+<p>  *import语句通常应该独立成行，例如：\ \ <code python=""></code></p>
+<p>#符合约定的代码：<br>import os<br>import sys</p>
+<p>#不符合本约定的代码：<br>import os,sys<br> 但这样的import也是的合理的：<code python=""><br>from subprocess import Popen, PIPE<br></code></p>
+<p>  *Import 语句总应该被放到放到源码文件的最前端，即在模块注释与文档字符串之后，全局变量与常量定义之前。\ \ 多条 Import 语句总应该遵循这样的顺序书写：\ \ 1.  标准库的导入 \ 2.  相关第三方库导入 \ 3.  本地应用/库的相关导入 \ \ 在每组 import 语句应该使用空白行分隔。\ \ Put any relevant <nowiki><strong>all</strong></nowiki> specification after the imports.((译者注：这句没有翻出来))</p>
+<p>  *建议使用绝对导入形式的 import 语句，它不仅更易读，并且在配置错误（例如某个包中的目录以 sys.path 结尾时)时有更良好的导入行为（至少有更好的报错）：\ \ <code python=""><br>import mypkg.sibling<br>from mypkg import sibling<br>from mypkg.sibling import example<br></code> 相比于绝对导入，清晰的相对导入其实也是可以接受的，特别是当使用绝对导入需要处理不必要的复杂包布局时。<code python=""><br>from . import sibling<br>from .sibling import example<br></code> Python 标准库代码应该避免复杂的包布局，并且总是使用绝对导入。\ Python 3 中不应该使用相对导入，并且 Python 3 中该功能已被移除。</p>
+<p>  *当在某个包含类的模块中导入类时，这样的书写方式是合理的：\ \ <code python=""><br>from myclass import MyClass<br>from foo.bar.yourclass import YourClass<br></code> 但如果这样的书写方式引起类名冲突，则请这样书写：\ <code python=""><br>import myclass<br>import foo.bar.yourclass<br></code> 并使用 “myclass.MyClass” 和 “foo.bar.yourclass.YourClass” 来对其进行引用。</p>
+<p>  <em>通配符导入（from <module> import </module></em>）应该被禁止，因为这样做会导致在被导入的命名空间中存在哪些命名对象变得不清晰，迷惑读者与其他自动化工具。不过要使用通配符导入，也有站得住脚的理由：需要将内部 API 重新发布为公共 API（例如，使用纯 Python 重写一个可选加速模块的借口，而事先你并不知道这个接口将被重写）。 \  \ 当以这样的方式重发布命名时，下述的编码指南依然适用。</p>
+<p>==== 表达式与语句中的空白符 ====</p>
+<p>=== 小问题 ===</p>
+<p>在以下情况中避免使用额外的空格：</p>
+<p>  *在圆括号、方括号、花括号内 \ \ <code python=""></code></p>
+<p>#符合约定的代码<br>spam(ham[1], {eggs: 2})</p>
+<p>#不符合约定的代码<br>spam( ham[ 1 ], { eggs: 2 } )<br></p>
+<p>  *在逗号、分号、冒号之前： \ \ <code python=""></code></p>
+<p>#符合约定的代码<br>if x == 4: print x, y; x, y = y, x</p>
+<p>#不符合约定的代码<br>if x == 4 : print x , y ; x , y = y , x<br></p>
+<p>  *在函数调用的参数列表的左括号前 \ \ <code python=""></code></p>
+<p>#符合约定代码<br>spam(1)</p>
+<p>#不符合约定的代码<br>spam (1)<br></p>
+<p>  *在切片或索引的左方括号前 \ \ <code python=""></code></p>
+<p>#符合约定的代码<br>dict[‘key’] = list[index]</p>
+<p>#不符合约定的代码<br>dict [‘key’] = list [index]<br></p>
+<p>  *在赋值（或其他）操作符两侧的多余一个的空格 \ \ <code python=""></code></p>
+<p>#符合约定的代码<br>x = 1<br>y = 2<br>long_variable = 3</p>
+<p>#不符合约定的代码<br>x             = 1<br>y             = 2<br>long_variable = 3<br></p>
+<p>=== 其他建议 ===</p>
+<p>  *总是在下列二元操作符的两端使用单个空格：赋值操作符<nowiki>(=)</nowiki>，参数赋值(+=, -= 等)，比较操作符(==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=, in, not in, is, is not)，布尔操作符(and, or, not)。</p>
+<p>  *加入使用了多个具有不同优先级的操作符，考虑在低优先级的操作符两侧使用空格。请自行判断，无论怎样，不要使用多余一个空格，并且保持二元操作符两端的空格数量一致。\ \ <code python=""></code></p>
+<p>#符合约定的代码<br>i = i + 1<br>submitted += 1<br>x = x<em>2 - 1<br>hypot2 = x</em>x + y<em>y<br>c = (a+b) </em> (a-b)</p>
+<p>#不符合约定的代码<br>i=i+1<br>submitted +=1<br>x = x <em> 2 - 1<br>hypot2 = x </em> x + y <em> y<br>c = (a + b) </em> (a - b)<br></p>
+<p>  *不要在指示关键字参数或参数默认值的 = 符号两端使用空格。 \ \ <code python=""></code></p>
+<p>#符合约定的代码<br>def complex(real, imag=0.0):<br>    return magic(r=real, i=imag)</p>
+<p>#不符合约定的代码<br>def complex(real, imag = 0.0):<br>    return magic(r = real, i = imag)<br></p>
+<p>  *不建议使用符合语句（在一个物理行中存在多条语句）。 \ \ <code python=""></code></p>
+<p>#符合建议的代码<br>if foo == ‘blah’:<br>    do_blah_thing()<br>do_one()<br>do_two()<br>do_three()</p>
+<p>#不符合建议的代码<br>if foo == ‘blah’: do_blah_thing()<br>do_one(); do_two(); do_three()<br></p>
+<p>  *虽然有时把较短小的 if/for/while 语句放在同一物理行内也是可以的，但千万不要对多子句的语句也这样做，同时也是为了避免折叠长行。 \ \ <code python=""></code></p>
+<p>#不符合约定的代码<br>if foo == ‘blah’: do_blah_thing()<br>for x in lst: total += x<br>while t &lt; 10: t = delay()</p>
+<p>#绝对不要这样写<br>if foo == ‘blah’: do_blah_thing()<br>else: do_non_blah_thing()</p>
+<p>try: something()<br>finally: cleanup()</p>
+<p>do_one(); do_two(); do_three(long, argument,<br>                             list, like, this)</p>
+<p>if foo == ‘blah’: one(); two(); three()<br></p>
+<p>==== 注释 ====</p>
+<p>与代码相矛盾的注释不如没有，请时刻保持注释随代码更新。</p>
+<p>注释应该是完整的句子。短语注释或整句注释都应当以大写字母开头，除非该注释以首字母小写的标示符开头。</p>
+<p>段小注释后的句号可以省略，而在注释块中，每个完整的句子都应该以句号结尾。</p>
+<p>在句尾句号之后，应该跟上两个空白符。</p>
+<p>当撰写英文注释时，参考《英文写作指南((译者注：作者是小威廉·斯特伦克（William Strunk, Jr.）和E.B.怀特（Elwyn Brooks White），因此此书也被称 //Strunk &amp; White// ))》</p>
+<p>非英语程序员也请使用英文书写注释，除非你120%的保证，不会有不使用你的语言的人阅读你的代码。</p>
+<p>=== 块注释 ===</p>
+<p>通常快注释用来阐述跟在其后的代码，并且与代码一样重要。块注释中的每一行都应该以一个 # 符号加一个空白符开头（除非是注释块内的缩进行）。</p>
+<p>块注释内的自然段以 # 开头的空行分割。</p>
+<p>=== 行内注释 ===</p>
+<p>尽量少的使用行内注释。</p>
+<p>行内注释应该与语句在同一行内，与语句之间以至少两个空白符分割，并且以一个 # 符号加一个空白符开头</p>
+<p>行内注释不是非常必要，并且当注释语义显而易见时会分散阅读者的注意力。例如，不要撰写这样的注释：<br><code python=""><br>x = x + 1                 # Increment x<br></code></p>
+<p>但某些时候，行内注释也是很有用的<br><code python=""><br>x = x + 1                 # Compensate for border<br></code></p>
+<p>=== 文档字符串 ===</p>
+<p>关于编写好文档字符串的约定，请参考 [[<a href="http://www.python.org/dev/peps/pep-0257/|PEP" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0257/|PEP</a> 257]] 。</p>
+<p>请为所有的公开模块、类和方法编写文档字符串。对于非公开的方法，文档字符串不是必须的，但是仍应该为其撰写注释，表明其用途。方法注释应写在方法定义行之下。</p>
+<p>PEP 257 描述了良好文档字符串的编写规范。注意，以 “”” 结尾的文档字符串应该以该符号单独成行，最好前面还有一行空白行。 例如：<br><code python=""><br>“””Return a foobang</code></p>
+<p>Optional plotz says to frobnicate the bizbaz first.</p>
+<p>“””<br></p>
+<p>对于单行的文档字符串来说，将 “”” 放在该行的末尾也是可以的。</p>
+<p>==== 版本注记 ====</p>
+<p>如果你的代码中需要有版本变更标记，请像这样书写。<br><code python=""><br><strong>version</strong> = “$Revision: 70b79ccd671a $”</code></p>
+<h1 id="Source"><a href="#Source" class="headerlink" title="$Source$"></a>$Source$</h1><p></p>
+<p>以上内容请</p>
+<p>These lines should be included after the module’s docstring, before any other code, separated by a blank line above and below.</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-10-21T14:57:43.000Z" class="chip">2015-10-21</time>
+
+
+    
+    / <a href="/categories/疑似机器人/" class="chip">疑似机器人</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

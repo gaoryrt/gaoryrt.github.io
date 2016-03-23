@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>复习汇编</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="复习汇编"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        复习汇编
+    </h1>
+  
+
+
+  </header>
+  <p>汇编考试终于完了<br>然后把复习资料传一下<br><a id="more"></a></p>
+<hr>
+<h1 id="复习纲要"><a href="#复习纲要" class="headerlink" title="复习纲要"></a>复习纲要</h1><p>老师给的复习纲要，考完了我回来给你说，因为每一个编译器不一样，命令多种多样，考的也简单。<br>填空题都是分散的一个一个的知识点，冷知识一样。<br>大题的话基本上都是给你一段代码，让你说明某一行完了之后寄存器内容，这段代码什么作用。<br>ASCII 里面大写在前面，小写在后面，中间差32，我就记反了。  </p>
+<hr>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念:"></a>基本概念:</h2><p>  ☐ <strong>理解汇编语言与机器语言的区别与联系</strong></p>
+<ul>
+<li>最为接近</li>
+<li>采用助记符指令</li>
+<li>一一对应</li>
+</ul>
+<p>  ☐ <strong>掌握进制转换、与或非运算：该节内容应在大一的时候就已经掌握</strong></p>
+<ul>
+<li>-3.625D=1100.1011B</li>
+<li>八进制O/Q</li>
+<li>十六进制H</li>
+<li>补码取反加一</li>
+</ul>
+<p>  ☐ <strong>了解其它内容</strong></p>
+<h2 id="IA-32处理器体系结构"><a href="#IA-32处理器体系结构" class="headerlink" title="IA-32处理器体系结构:"></a>IA-32处理器体系结构:</h2><p>  ☐ <strong>了解微机的结构</strong></p>
+<ul>
+<li>central processing unit + 内催储存单元 + 输入输出设备 + 数据控制地址总线</li>
+<li>cmos 内存存放微机系统配置</li>
+<li>pcl 声卡显卡现在集成了</li>
+<li>EPROM，一种可擦写的只读存储器</li>
+<li>DRAM，动态随机访问存储器，可读可写，一般容量大，便宜，要求有刷新电路。</li>
+<li>SRAM，静态随机访问存储器，不需刷新电路，常用作缓存</li>
+<li>VRAM,显存，是一种双端口的存储器，CPU可以访问，视频卡也可以访问。</li>
+<li>CMOS RAM，低功耗存储器，用于存储机器配置信息，时钟信息等，通过电池供电。</li>
+</ul>
+<p>  ☐ <strong>掌握IA32处理器的基本执行环境，掌握各寄存器的作用</strong></p>
+<ul>
+<li>ia-32 最大4G-32位地址线 20跟地址线-最大访问量1M</li>
+<li>EAX 扩展累加寄存器 在乘法和除法指令中被自动使用</li>
+<li>EBX 基址寄存器 地址索引</li>
+<li>ECX 循环计数器</li>
+<li>EDX 数据寄存器</li>
+<li>ESI 扩展源指针寄存器 （配合 DS 全局变量）传送指令使用</li>
+<li>EDI 扩展目的指针寄存器 （配合 ES ）传送指令使用</li>
+<li>ESP 扩展堆栈指针寄存器 （配合 SS 指向堆栈）</li>
+<li>EBP 扩展帧指针寄存器  栈低</li>
+<li>CS 指向代码</li>
+<li>EIP 下一条指令 不能使用转移，算数指令修改</li>
+</ul>
+<p>  ☐ <strong>EFLAGS 控制 cpu 操作</strong></p>
+<ul>
+<li>CF 进位 CF 最高位进位借位为 1</li>
+<li>AC 辅助进位 AC 低四位进位借位为 1</li>
+<li>PF 奇偶 PF 1个数为偶数时为 1</li>
+<li>ZF 零 ZF 结果为0时为 1</li>
+<li>SF 符号标志 SF 0正1负</li>
+<li>OF 溢出标志 OF 超出为 1</li>
+<li>DF 串操作 DF 1减0增</li>
+<li>IF 中断屏蔽 IF 0断1不断</li>
+<li>TF 单步执行 TF 1单步执行</li>
+</ul>
+<p>  ☐ <strong>理解指令的运行过程</strong></p>
+<ul>
+<li>查找文件</li>
+<li>获取磁盘位置</li>
+<li>分配内存，文件转入内存</li>
+<li>执行一条跳转指令</li>
+<li>跳转程序的第一条指令</li>
+</ul>
+<p>  ☐ <strong>掌握IA-32处理器有3种基本的操作模式，特别是保护模式与实模式（包括地址计算等）</strong><br>  保护模式-基本</p>
+<ul>
+<li>286开始</li>
+<li>应用分级别，不能访问内存</li>
+<li>32位地址线，4G 寻址0FFFFFFFFH</li>
+<li>段寄存器放段描述符索引</li>
+<li>平坦 - 一段 vs 多段</li>
+</ul>
+<p>  实模式-8086</p>
+<ul>
+<li>20根地址线</li>
+<li>段寄存器放段的基地址</li>
+</ul>
+<p>  ☐ <strong>了解其它内容</strong><br>  分页机制实现线性地址到物理地址的映射，便于实现虚拟内存</p>
+<h2 id="汇编语言基础"><a href="#汇编语言基础" class="headerlink" title="汇编语言基础:"></a>汇编语言基础:</h2><p>  ☐ <strong>理解汇编语言的基本要素，能写出完整的汇编程序</strong></p>
+<ul>
+<li>字符串存得时 ascii</li>
+<li>支持()+-*/ mod</li>
+<li>变量第一位不能为数字，1~247个字符</li>
+<li>DB 单字节 8bit</li>
+<li>DW 双字节 16bit</li>
+<li>DD 四字节 32bit</li>
+<li>DQ 八字节 64bit</li>
+<li>Sword 带符号字</li>
+<li>Sdword 带符号四字</li>
+</ul>
+<p>  ☐ <strong>理解汇编程序转换为可执行程序的全过程</strong><br>  ☐ <strong>掌握配置VC6的方法</strong><br>  ☐ <strong>掌握汇编数据定义方法、符号常量的定义方法</strong><br>  ☐ <strong>理解Intel处理器所使用的小端顺序，并能灵活运用。</strong></p>
+<ul>
+<li>0 78h 01111000</li>
+<li>1 56h 01010110</li>
+<li>2 34h 00110100</li>
+<li>3 12h 00010010</li>
+</ul>
+<h2 id="数据传送寻址和算术运算"><a href="#数据传送寻址和算术运算" class="headerlink" title="数据传送寻址和算术运算:"></a>数据传送寻址和算术运算:</h2><p>  ☐ 掌握数据传送指令MOV、XCHG的使用，了解MOVZX、MOVSX、LAHF、SAHF的使用<br>  ☐ 掌握加减运算INC、DEC、ADD、SUB、NEG指令<br>  ☐ 掌握有符号数与无符号数溢出的判断方法<br>  ☐ 掌握OFFSET、PTR、TYPE、LENGTHOF操作符的使用，了解ALIGN、SIZEOF、LABEL的使用<br>  ☐ 掌握寻址方式：间接寻址、变址寻址，了解变址操作数中的比例因子<br>                 括号    括号+数<br>  ☐ 掌握JMP指令和LOOP指令的使用</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程:"></a>过程:</h2><p>  ☐ 掌握push、pop指令，并能理解这些指令对ESP寄存器的影响，了解PUSHFD,POPFD,PUSHAD,POPAD<br>  ☐ 掌握过程(procedure)的定义和调用<br>  ☐ 理解CALL和RET指令对栈的影响，以及其对EIP的影响<br>  ☐ 了解USES的使用</p>
+<h2 id="条件处理"><a href="#条件处理" class="headerlink" title="条件处理:"></a>条件处理:</h2><p>  ☐ 掌握布尔运算指令（AND、OR、XOR、NOT）和比较指令CMP，以及TEST指令<br>  ☐ 了解CLC、STC指令的功能<br>  ☐ 理解数字符号与数字的关系，如数字1与数字符号1，对于后者存在计算机中使用的是它的ASCII代码31h。要求能应用在编程中。<br>  ☐ 掌握条件跳转指令的使用，并能根据数的符号的有无选择正确的条件跳转指令。<br>  ☐ 掌握LOOPZ/LOOPE/LOOPNZ/LOOPNE的使用</p>
+<h2 id="整数算术指令"><a href="#整数算术指令" class="headerlink" title="整数算术指令:"></a>整数算术指令:</h2><p>  ☐ 掌握移位和循环移位指令SHL、SHR、SAL、SAR、ROL、ROR、RCL、RCR的使用，了解指令SHLD、SHRD<br>  ☐ 掌握乘法和除法运算指令MUL、DIV、IMUL、IDIV的使用<br>  ☐ 掌握扩展加减法<br>  （无需了解调整指令）</p>
+<h2 id="高级过程"><a href="#高级过程" class="headerlink" title="高级过程:"></a>高级过程:</h2><p>  ☐ 掌握堆栈框架(Stack Frame)的使用：栈框架的建立，栈的清理，要求能画出栈在调用一个过程中的变化情况；<br>  ☐ 理解通过栈传递参数的原理，能结合EBP来计算参数的位置<br>  ☐ 理解C调用约写与stdcall调用约定的不同点与相同点<br>  ☐ 理解如何在过程中使用局量变量<br>  ☐ 掌握LEA、ENTER、LEAVE指令的<br>  ☐ 了解Local伪指令<br>  ☐ 掌握.stack, .model的使用<br>  ☐ 掌握invoke伪指令的使用，理解它是如何转换为call指令的。<br>  ☐ 了解protod伪指令。</p>
+<h2 id="串操作"><a href="#串操作" class="headerlink" title="串操作:"></a>串操作:</h2><p>  ☐ 掌握串操作指令MOVS、CMPS、SCAS、STOS、LODS的使用<br>  ☐ 理解基址变址寻址，相对基址变址寻址，了解比例因子</p>
+<hr>
+<h1 id="各种操作"><a href="#各种操作" class="headerlink" title="各种操作"></a>各种操作</h1><p>字写得丑，见谅<br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1eyfs763xu0j21j42ao7w5.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1eyfs7csv78j21kw1j7kdy.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/large/a243ad6cjw1eyfs7n0tzaj21kw2cghdt.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/large/a243ad6cjw1eyfs7wzg5fj21kw23l7wh.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1eyfs876it4j21kw295e81.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1eyfs8e7w17j21kw1awtv5.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/large/a243ad6cjw1eyfs8lxi0bj21kw1w3quf.jpg" alt=""></p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-11-26T19:16:41.000Z" class="chip">2015-11-27</time>
+
+
+    
+    / <a href="/categories/Discovery/" class="chip">Discovery</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

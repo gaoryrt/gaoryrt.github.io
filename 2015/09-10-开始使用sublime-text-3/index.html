@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开始使用Sublime Text 3</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="开始使用Sublime Text 3"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        开始使用Sublime Text 3
+    </h1>
+  
+
+
+  </header>
+  <p>windows上面基本上是个文件都可以用notepad++打开<br>在我遇见sublime text之前我都是使用<code>文本编辑.app</code> 来打开的<br>但是好像并不能打开Hexo的配置文件<code>_config.yml</code><br>然后就开始使用sublime text了<br><a id="more"></a>  </p>
+<hr>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>很容易就可以在网络上找到sublime text 2/sublime text 3的安装包<br>好像还有破解版，但是看人家说的貌似这个可以无限免费试用<br>也就是说正式版就只是向作者donate而已<br>那就用着试用版吧<br>下载链接👉 <a href="http://www.sublimetext.com" target="_blank" rel="external">sublime text</a>  </p>
+<hr>
+<h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="Package-Control"><a href="#Package-Control" class="headerlink" title="Package Control"></a>Package Control</h2><p>同众多的编辑器一样，sublime text一样有一大批插件可供使用<br>安装插件最方便的方法就是使用Package Control了<br>右边链接介绍了安装方法–&gt;<a href="https://packagecontrol.io/installation#Simple" target="_blank" rel="external">Installation - Package Control</a>   </p>
+<blockquote>
+<p>简单来说就是<br>点开<code>View &gt; Show Console</code>或者快捷键<code>ctrl+` </code>进入console<br>sublime text 3 输入以下命令然后回车  </p>
+<pre><code>import urllib.request,os,hashlib; h = &apos;eb2297e1a458f27d836c04bb0cbaf282&apos; + &apos;d0e7a3098092775ccb37ca9d6b2e4b7d&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)
+</code></pre><p>sublime text 2 输入以下命令然后回车  </p>
+<pre><code>import urllib2,os,hashlib; h = &apos;eb2297e1a458f27d836c04bb0cbaf282&apos; + &apos;d0e7a3098092775ccb37ca9d6b2e4b7d&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), &apos;wb&apos; ).write(by) if dh == h else None; print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h) if dh != h else &apos;Please restart Sublime Text to finish installation&apos;)
+</code></pre></blockquote>
+<p>安装成功后点击Preference就可以看到Package Setting和Package Control</p>
+<hr>
+<h2 id="安装各种插件"><a href="#安装各种插件" class="headerlink" title="安装各种插件"></a>安装各种插件</h2><p>例如Theme - Spacegray<br>这是一个好看的主题 Github主页👉<a href="https://github.com/kkga/spacegray" target="_blank" rel="external">Theme - Spacegray</a><br>安装好了Package Control之后可以在Command Palette中找到Theme - Spacegray  </p>
+<ol>
+<li>打开Command Palette:<code>Tools -&gt; Command Palette</code>或者使用快捷键<code>shift+cmd+P</code>  </li>
+<li>输入<code>PCIP</code>就可以定位到<code>Package Control: Install Package</code>然后回车  </li>
+<li>搜索<code>Theme - Spacegray</code>然后回车  </li>
+<li>在<code>Sublime Text -&gt; Preferences -&gt; Setting - User</code>(快捷键<code>cmd + ,</code>)中输入<pre><code>{
+&quot;theme&quot;: &quot;Spacegray Eighties.sublime-theme&quot;,
+&quot;color_scheme&quot;: &quot;Packages/Theme - Spacegray/base16-eighties.dark.tmTheme&quot;
+}
+</code></pre></li>
+<li>重启sublime就可以看到效果了  </li>
+</ol>
+<hr>
+<h1 id="sublime-text-也是个大坑"><a href="#sublime-text-也是个大坑" class="headerlink" title="sublime text 也是个大坑"></a>sublime text 也是个大坑</h1><p>何止是文档打开工具呢？简直就是生产力工具<br>就把网页链接放这里吧，懒得<code>cmd + d</code>了  </p>
+<blockquote>
+<p><a href="http://www.sheyilin.cn/2015/05/sublime_text_3_tiao_jiao_ni_de_si_ren_li_qi_1/" target="_blank" rel="external"> Sublime Text 3 调教你的私人利器（上）</a>👈插件介绍，推荐设置，快捷键修改，默认html补全，插件调教<br><a href="http://www.sheyilin.cn/2015/05/sublime_text_3_tiao_jiao_ni_de_si_ren_li_qi_2/" target="_blank" rel="external"> Sublime Text 3 调教你的私人利器（下）</a>👈（接上条）插件调教，推荐设置<br><a href="https://github.com/jikeytang/sublime-text" target="_blank" rel="external">jikeytang/sublime-text</a>插件介绍,推荐设置,快捷键,<strong>网页推荐</strong><br><a href="https://packagecontrol.io" target="_blank" rel="external">Package Control</a>Package Control官网，插件介绍<br><a href="http://zh.lucida.me/blog/sublime-text-complete-guide/" target="_blank" rel="external">Sublime Text 全程指南</a>什么都有<br><a href="http://www.jianshu.com/p/25cdc7d608bb" target="_blank" rel="external">Mac下Sublime Text 2使用心得</a>写的比我好多了就是了</p>
+</blockquote>
+<p>另知乎提问  </p>
+<blockquote>
+<p><a href="http://www.zhihu.com/question/24896283" target="_blank" rel="external">Sublime Text 有哪些使用技巧？</a><br><a href="http://www.zhihu.com/question/24736400" target="_blank" rel="external">sublime text 3 插件推荐？</a>  </p>
+</blockquote>
+<hr>
+<h1 id="这总不算烂尾了吧？"><a href="#这总不算烂尾了吧？" class="headerlink" title="这总不算烂尾了吧？"></a>这总不算烂尾了吧？</h1><p>终于把打开的那么多页面关差不多了好舒心。</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-09-10T09:34:12.000Z" class="chip">2015-09-10</time>
+
+
+    
+    / <a href="/categories/Geek-Talks-·-奇客怪谈/" class="chip">Geek Talks · 奇客怪谈</a>
+
+
+
+
+    
+    / <a href="/tags/howto/" class="chip">howto</a> <a href="/tags/sublime/" class="chip">sublime</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-开始使用sublime-text-3" data-title="开始使用Sublime Text 3" data-url="http://gaoryrt.com/2015/09-10-开始使用sublime-text-3/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>升级Mac的python</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="升级Mac的python"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        升级Mac的python
+    </h1>
+  
+
+
+  </header>
+  <p>在前一篇 <a href="http://gaoryrt.github.io/2015/09/27/StartingPython/" target="_blank" rel="external">开始Python</a> 当中提到了安装新版本Python的方法<br>但是在shell当中使用<code>python</code>命令的时候还是依旧使用的老版本Python。<br>今天下午解决这个问题花了好长时间。<br><a id="more"></a> </p>
+<hr>
+<h1 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h1><ol>
+<li>找的Python教程都是基于3.X版本的，跟2.X并不兼容  </li>
+<li>shell当中使用<code>python</code>命令显示的Python版本依旧是2.7.10  </li>
+<li>准备的编辑器是<code>Atom</code>或者<code>Sublime Text</code>，编译就交给shell了</li>
+</ol>
+<p>看了其他人的Python建议之后还是决定先把Vim当作普通编辑器，不要深入把它变成Python IDE了  </p>
+<hr>
+<h1 id="尝试解决"><a href="#尝试解决" class="headerlink" title="尝试解决"></a>尝试解决</h1><p>直接安装的话尝试了brew安装和<a href="https://www.python.org/downloads/" target="_blank" rel="external">直接下载</a>安装 </p>
+<pre><code>brew install python //brew安装Python
+</code></pre><p>两种都是直接安装在<code>/Library/Frameworks/Python.framework/Versions/3.5</code>中<br>并没有<a href="http://jingyan.baidu.com/article/27fa7326e4809646f8271fc7.html" target="_blank" rel="external">帮助</a>我建立link，建立可执行文件<br>好像直接覆盖的话会有很多遗留问题，Sublime和Xcode都要用到Python2.7脚本<br>在Stack Overflow上面找了很久，试过的都不管用，主要是因为Mac OSX 10.11 El Captain的rootless这个新特性<br>初衷是为了用户的安全呗  不把root权限交给用户  搞得我现在sudo出来都报错告诉我<br><code>Operation not permitted</code><br>这下我连复制Python版本目录到一起都不行了，更别说更改路径了<br>我就尝试着在shell配置中添加alias直接调用IDLE中新版Python<br>这个应该是能够成功的，但是需要调用的<code>python3.5</code>是一个隐藏文件，我在shell当中也只是<code>tab</code>自动补全的时候才添加的<br>之后的尝试也以找不到目标文件告终  </p>
+<hr>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>然后居然是万能的知乎上找到了答案<br>是一个叫做<code>pythonbrew</code>的shell插件<br>能够下载切换全局局部的特定Python版本，简单操作易切换<br>安装配置参照👉<a href="https://github.com/utahta/pythonbrew" target="_blank" rel="external">pythonbrew</a>👈<br>安装配置成功后下载了3.4和2.7两个版本的Python并切换了过去<br>太方便了好么！！！</p>
+<hr>
+<h1 id="看图"><a href="#看图" class="headerlink" title="看图"></a>看图</h1><p><img src="http://ww2.sinaimg.cn/large/a243ad6cjw1ewktr4gy20j20jd0fswfv.jpg" alt="image"><br><strong>👆没有改的时候，原版Python👆</strong><br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1ewktr2tvj3j20jd0fs41a.jpg" alt="image"><br><strong>👆使用pythonbrew转换之后👆</strong><br><img src="http://ww4.sinaimg.cn/large/a243ad6cjw1ewktr0wym7j20jd0fs411.jpg" alt="image"><br><strong>👆可用的版本，我只下载了两个👆</strong><br><img src="http://ww4.sinaimg.cn/large/a243ad6cjw1ewktqy8cjjj20jd0fs401.jpg" alt="image"><br><strong>👆换回来之后👆</strong>  </p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-09-30T13:17:31.000Z" class="chip">2015-09-30</time>
+
+
+    
+    / <a href="/categories/Geek-Talks-·-奇客怪谈/" class="chip">Geek Talks · 奇客怪谈</a>
+
+
+
+
+    
+    / <a href="/tags/abc/" class="chip">abc</a> <a href="/tags/howto/" class="chip">howto</a> <a href="/tags/mac/" class="chip">mac</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-upgrade-pyhton-on-mac" data-title="升级Mac的python" data-url="http://gaoryrt.com/2015/09-30-upgrade-pyhton-on-mac/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux网络编程复习</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="Linux网络编程复习"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        Linux网络编程复习
+    </h1>
+  
+
+
+  </header>
+  <p>甘刚老师教的很不错的，对我们也很负责，真的是很好的一个老师。<br>但是江山易改本性难移，我们还是没有好好的听老师讲课，还是等着最后几天来复习。<br>这一篇就是在考试之后把复习的资料整理一下。<br><a id="more"></a>  </p>
+<h1 id="套接字类型"><a href="#套接字类型" class="headerlink" title="套接字类型"></a>套接字类型</h1><h2 id="流式套接字-sock-stream"><a href="#流式套接字-sock-stream" class="headerlink" title="流式套接字  sock_stream"></a>流式套接字  sock_stream</h2><p> 使用了 TCP 协议，保证了数据传输是正确，顺序的<br> 提供可靠的，面向连接的通讯流<br> Telnet 就是流式连接，到达顺序和输入顺序一样  </p>
+<h2 id="数据报套接字-sock-dgram"><a href="#数据报套接字-sock-dgram" class="headerlink" title="数据报套接字  sock-dgram"></a>数据报套接字  sock-dgram</h2><p> 使用了 UDP 协议，不保证可靠无差错，是无序的<br> 无连接的服务，不需要维护一个打开的连接，只用打包加上 IP 然后发送<br> 使用 udp 的程序收到后需要返回 ack （确认）信号<br> tftp，bootp 就是数据报套接字  </p>
+<h2 id="原始套接字"><a href="#原始套接字" class="headerlink" title="原始套接字"></a>原始套接字</h2><p> 原始套接字主要用于一些协议的开发,可以进行比较底层的操作<br> 它功能强大,但是没有上面介绍的两种套接字使用方便<br> 一般的程序也涉及不到原始套接字  </p>
+<h1 id="socket套接字包含的元素"><a href="#socket套接字包含的元素" class="headerlink" title="socket套接字包含的元素"></a>socket套接字包含的元素</h1><p>  一个完整的 Socket 则用一个相关描述<br> {协议,本地地址,本地端口,远程地址,远程端口}<br>  每一个 Socket 有一个本地的唯一 Socket 号,由操作系统分配<br>  针对不同的C/S程序提供不同的 Socket 系统调用<br> Socket 利用C/S模式巧妙的解决了进程之间建立通信连接的问题<br>  服务器拥有全局公认的 Socket,任何客户都可以向它发出连接请求和信息请求<br>  两个完全随机的用户进程之间,因为没有任何一方的 Socket ,要通话是不可能的  </p>
+<h1 id="监听套接字和连接套接字的作用"><a href="#监听套接字和连接套接字的作用" class="headerlink" title="监听套接字和连接套接字的作用"></a>监听套接字和连接套接字的作用</h1><p>  listen()一直监听，accept()用于连接。<br>  listen(sockfd套接字描述符,backlog最大连接数)<br>  accept(listenfd套接字描述符,client对方地址,addrlen地质结构长度)   </p>
+<h1 id="IP地址复用的作用和设置"><a href="#IP地址复用的作用和设置" class="headerlink" title="IP地址复用的作用和设置"></a>IP地址复用的作用和设置</h1><p>  setsockopt()函数 和 SO_REUSEADDR 参数  </p>
+<h1 id="多进程和多线程对连接和监听套接字处理的区别"><a href="#多进程和多线程对连接和监听套接字处理的区别" class="headerlink" title="多进程和多线程对连接和监听套接字处理的区别"></a>多进程和多线程对连接和监听套接字处理的区别</h1><h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h2><p>1.connect 请求到达服务器时建立 connfd<br>2.fork()出一个子进程共享 listenfd，connfd<br>3.父进程关闭 connfd，子进程关闭 listenfd  </p>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><p>1.子线程处理 listenfd：connect 请求，把 sockid 保存下来<br>2.主线程处理 connfd：遍历保存的 sockid，执行read/write,send/recv  </p>
+<h1 id="TSD的作用和使用方法"><a href="#TSD的作用和使用方法" class="headerlink" title="TSD的作用和使用方法"></a>TSD的作用和使用方法</h1><p> TSD线程特定数据来取代静态变量，类似全局变量，但是是每个线程私有的<br> tsd 是定义线程私有数据的唯一方法。<br> 在同进程中的同一数据都用一个唯一的 Key 来标志。<br>  创建一个类型为 pthread_key_t 类型的变量。  </p>
+<p>调用 pthread_key_create() 来创建该变量。该函数有两个参数，第一个参数就是上面声明的 pthread_key_t 变量，第二个参数是一个清理函数，用来在线程释放该线程存储的时候被调用。该函数指针可以设成 NULL ，这样系统将调用默认的清理函数。  </p>
+<p>当线程中需要存储特殊值的时候，可以调用 pthread_setspcific() 。该函数有两个参数，第一个为前面声明的 pthread_key_t 变量，第二个为 void* 变量，这样你可以存储任何类型的值。  </p>
+<p>如果需要取出所存储的值，调用 pthread_getspecific() 。该函数的参数为前面提到的 pthread_key_t 变量，该函数返回 void * 类型的值。  </p>
+<h1 id="I-O复用5种模型的区别"><a href="#I-O复用5种模型的区别" class="headerlink" title="I/O复用5种模型的区别"></a>I/O复用5种模型的区别</h1><p>阻塞，非阻塞，复用，信号驱动，异步<br>这个自己看书，书上有图。  </p>
+<h1 id="IGMP协议在原始套接字中的应用"><a href="#IGMP协议在原始套接字中的应用" class="headerlink" title="IGMP协议在原始套接字中的应用"></a>IGMP协议在原始套接字中的应用</h1><p>我不知道，但是也没有考。sorry。  </p>
+<h1 id="TCP-UDP套接字编程流程模版"><a href="#TCP-UDP套接字编程流程模版" class="headerlink" title="TCP/UDP套接字编程流程模版"></a>TCP/UDP套接字编程流程模版</h1><p>最基础的东西，书上2、3章，自己看图。  </p>
+<h1 id="创建IPV4原始套接字"><a href="#创建IPV4原始套接字" class="headerlink" title="创建IPV4原始套接字"></a>创建IPV4原始套接字</h1><p>1.socket第二个参数设置为sock_raw<br>int ipfd<br>ipfd = socket(AF_INFT,SOCK_RAW,IPPROTO_ICMP)<br>socket函数第三个参数用于指定套接口所使用的协议,如 icmp，igmp，egp<br>2.设置 IP_HDRINCL 套接口选项<br>const int on = 1<br>if(setsockopt (sockfd,IPPROTO_IP,IP_HDRINCL,&amp;on,szeof(on))&lt; 0)<br>下面异常处理<br>3.调用 bind，connect  </p>
+<h1 id="父进程ID和子进程ID的关系"><a href="#父进程ID和子进程ID的关系" class="headerlink" title="父进程ID和子进程ID的关系"></a>父进程ID和子进程ID的关系</h1><p>没有考到，了解一下。<br>在 fork 之后，创建子进程成功<br>子进程中，fork 返回 0<br>父进程中，fork 返回子进程的 pid<br>父进程的 fpid 指向子进程的 pid，子进程没有子进程，于是 fpid 为 0  </p>
+<h1 id="僵尸进程"><a href="#僵尸进程" class="headerlink" title="僵尸进程"></a>僵尸进程</h1><p>子进程结束了，父进程尚未等待（wait/waitpid）的时候是僵尸进程<br>所以要 waitpid 函数或者 wait 函数来关闭。<br>waitpid 是另一种 wait 函数，多了 pid 和 option 选项。<br>其中 pid 为子进程 id，-1时等待任何一个，这时和 wait 一样；大于1时，为等待该 pid 的进程<br>option 为 WNOHANG，没有子进程也会立即返回，不会一直等，一般 option 为 0  </p>
+<h1 id="套接字地址结构类型"><a href="#套接字地址结构类型" class="headerlink" title="套接字地址结构类型"></a>套接字地址结构类型</h1><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> sockaddr_in</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">short</span> sin_len;          <span class="comment">//ipv4地址长度</span></span><br><span class="line">  <span class="keyword">short</span> <span class="keyword">int</span>      sin_family;       <span class="comment">//指代协议簇，在 tcp 中只会是AF_INET</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">short</span> sin_port;         <span class="comment">//储存端口号</span></span><br><span class="line">  <span class="keyword">struct</span>         in_addr sin_addr; <span class="comment">//储存 IP地址</span></span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">char</span>  sin_zero[<span class="number">8</span>];      <span class="comment">//保留位，用于保持长度相同</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> in_addr</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> <span class="keyword">long</span> s_addr;           <span class="comment">//网络字节序？？？？？？？的 IP地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个是 ipv4 的，ipv6 不用记。  </p>
+<h1 id="线程安全性中once函数的使用"><a href="#线程安全性中once函数的使用" class="headerlink" title="线程安全性中once函数的使用"></a>线程安全性中once函数的使用</h1><p>没有考到，了解一下<br>在多线程环境中，有些事仅需要执行一次。通常当初始化应用程序时，可以比较容易地将其放在main函数中。<br>但当你写一个库时，就不能在main里面初始化了，你可以用静态初始化，但使用一次初始化（pthread_once）会比较容易些。<br>int pthread_once(pthread_once_t <em>once_control, void (</em>init_routine) (void))；<br>功能：本函数使用初值为PTHREAD_ONCE_INIT的once_control变量保证init_routine()函数在本进程执行序列中仅执行一次。<br>在多线程编程环境下，尽管pthread_once()调用会出现在多个线程中，init_routine()函数仅执行一次，究竟在哪个线程中执行是不定的，是由内核调度来决定。<br>Linux Threads使用互斥锁和条件变量保证由pthread_once()指定的函数执行且仅执行一次，而once_control表示是否执行过。<br>如果once_control的初值不是PTHREAD_ONCE_INIT（Linux Threads定义为0），pthread_once() 的行为就会不正常。<br>在LinuxThreads中，实际”一次性函数”的执行状态有三种：NEVER（0）、IN_PROGRESS（1）、DONE （2）<br>如果once初值设为1，则由于所有pthread_once()都必须等待其中一个激发”已执行一次”信号，因此所有pthread_once ()都会陷入永久的等待中；如果设为2，则表示该函数已执行过一次，从而所有pthread_once()都会立即返回0。   </p>
+<h1 id="域名和IP、协议和协议号、服务和端口的处理函数"><a href="#域名和IP、协议和协议号、服务和端口的处理函数" class="headerlink" title="域名和IP、协议和协议号、服务和端口的处理函数"></a>域名和IP、协议和协议号、服务和端口的处理函数</h1><p>太多了这个自己看书。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">gethostbyname</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">gethostbyaddr</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">uname</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">gethostname</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">getservbyname</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">getservbyport</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">inet_addr</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">inet_aton</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">inet_ntoa</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<h1 id="创建守护进程"><a href="#创建守护进程" class="headerlink" title="创建守护进程"></a>创建守护进程</h1><h2 id="1-创建后台进程"><a href="#1-创建后台进程" class="headerlink" title="1 创建后台进程"></a>1 创建后台进程</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span><span class="comment">((pid = fork()</span>)&gt;<span class="number">0</span>)</span><br><span class="line">   exit<span class="comment">(0)</span>;</span><br><span class="line">else <span class="keyword">if</span><span class="comment">(pid&lt;0)</span></span><br><span class="line">&#123;</span><br><span class="line">    perror<span class="comment">("fail to fork")</span>;</span><br><span class="line">    exit<span class="comment">(-1)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建新会话"><a href="#2-创建新会话" class="headerlink" title="2 创建新会话"></a>2 创建新会话</h2><p>脱离控制终端，登录会话和进程组<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsid()<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="3-禁止进程重新打开控制终端"><a href="#3-禁止进程重新打开控制终端" class="headerlink" title="3 禁止进程重新打开控制终端"></a>3 禁止进程重新打开控制终端</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span><span class="comment">(pid=fork()</span>) </span><br><span class="line">      exit<span class="comment">(0)</span>;<span class="comment">//结束第一子进程，第二子进程继续（第二子进程不再是会话组长）</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-关闭所有文件描述符"><a href="#4-关闭所有文件描述符" class="headerlink" title="4 关闭所有文件描述符"></a>4 关闭所有文件描述符</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for<span class="comment">(i=0;i&lt;=getdtablesize()</span>;i++)</span><br><span class="line"> close<span class="comment">(i)</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="5-改变当前工作目录"><a href="#5-改变当前工作目录" class="headerlink" title="5 改变当前工作目录"></a>5 改变当前工作目录</h2><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">chdir</span>(<span class="string">"/tmp"</span>) <span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-重设权限掩码"><a href="#6-重设权限掩码" class="headerlink" title="6 重设权限掩码"></a>6 重设权限掩码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">umask</span>(0);</span><br></pre></td></tr></table></figure>
+<h2 id="7-处理SIGCHLD信号"><a href="#7-处理SIGCHLD信号" class="headerlink" title="7 处理SIGCHLD信号"></a>7 处理SIGCHLD信号</h2><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">signal</span><span class="string"></span>(SIGCHLD,SIG_IGN);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-12-13T15:22:17.000Z" class="chip">2015-12-13</time>
+
+
+    
+    / <a href="/categories/Discovery/" class="chip">Discovery</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

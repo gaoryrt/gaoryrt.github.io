@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>这个博客建立的流程</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="这个博客建立的流程"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        这个博客建立的流程
+    </h1>
+  
+
+
+  </header>
+  <p>关于本篇博文<br>简述了安装Hexo的简单流程，遇见问题的话，善用Google可以帮助你<br>命令行出错的话请尝试在命令之前加上sudo  </p>
+<a id="more"></a>
+<hr>
+<h1 id="安装Hexo之前"><a href="#安装Hexo之前" class="headerlink" title="安装Hexo之前"></a>安装Hexo之前</h1><blockquote>
+<p><strong> Mac用户 </strong><br>在编译的时候可能会遇到问题，请先安装Xcode<br>然后进入Preferences-&gt;Download-&gt;Command Line Tools-&gt;Install 安装命令行工具  </p>
+</blockquote>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>在<a href="http://nodejs.org" target="_blank" rel="external">Node.js官网</a>可以下载到安装包<br><strong>或者</strong>使用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>进行安装<br>cURL:  </p>
+<pre><code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+</code></pre><p>或者 Wget:  </p>
+<pre><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
+</code></pre><p>以上任一方式安装，重启终端后执行以下命令即可安装Node.js  </p>
+<pre><code>$ nvm install 0.10
+</code></pre><p>安装成功后即可使用npm命令  </p>
+<pre><code class="bash">$ npm -v
+</code></pre>
+<p>如果安装成功返回的是npm的版本信息  </p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>在<a href="http://git-scm.com" target="_blank" rel="external">Git官网</a>可以下载到安装包<br><strong>或者</strong>使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>，<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a>进行安装<br>安装成功后可使用git命令  </p>
+<pre><code class="bash">$ git --version
+</code></pre>
+<p>如果安装成功返回的是git的版本信息  </p>
+<hr>
+<h1 id="开始安装Hexo"><a href="#开始安装Hexo" class="headerlink" title="开始安装Hexo"></a>开始安装Hexo</h1><p>在<strong>确保</strong>自己安装了Node.js以及Git之后<br>使用以下命令   </p>
+<pre><code class="bash">$ npm install -g hexo-cli
+</code></pre>
+<p>安装成功后可使用hexo命令  </p>
+<pre><code>$ hexo -v
+</code></pre><p>如果安装成功返回的是Hexo的版本信息  </p>
+<hr>
+<h1 id="开始使用Hexo"><a href="#开始使用Hexo" class="headerlink" title="开始使用Hexo"></a>开始使用Hexo</h1><p>请<strong>在你想安装的位置</strong>使用以下命令</p>
+<pre><code>$ hexo init 
+$ npm install
+</code></pre><p>安装成功后可在指定文件夹下看到文件目录  </p>
+<pre><code>.  
+├── _config.yml  
+├── package.json  
+├── scaffolds  
+├── scripts  
+├── source  
+|   ├── _drafts  
+|   └── _posts  
+└── themes
+</code></pre><p>如果跟上面一样就说明建站成功了<br>各个文件的说明请参照 <a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">建站｜Hexo</a>  </p>
+<hr>
+<h1 id="添加一篇文章"><a href="#添加一篇文章" class="headerlink" title="添加一篇文章"></a>添加一篇文章</h1><p>使用以下命令(用你想要的名字代替<code>yourblogname</code>字段)  </p>
+<pre><code>$ hexo new &quot;yourblogname&quot;
+</code></pre><p><em>比如你想创建一篇叫做“abc”的新文章，那么使用以下命令</em>    </p>
+<pre><code>$ hexo new &quot;abc&quot;
+</code></pre><p>然后你可以在<code>你的hexo位置</code>/source/_posts 文件夹中找到你的新文章<br><em>以刚才的<code>abc</code>文章为例，在这个文件夹中新文章为<code>abc.md</code></em><br>用支持的软件编辑该文件开始编辑（至少我是这么做的，好像有点麻烦）  </p>
+<blockquote>
+<p>以<code>.md</code>结尾的是markdown文件<br>如果你想了解更多关于markdown的信息请看这篇文章  <a href="/2015/09/10/关于markdown/">关于markdown</a>  </p>
+</blockquote>
+<p>在你更新、删除之后都不用再使用<code>hexo g</code>或者<code>hexo s</code>命令来重新启动服务<br>你要做的所用工作只是简单的<strong>在浏览器中刷新 <a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></strong><br>简单的刷新就可以让你看到你对博客的更改</p>
+<hr>
+<h1 id="在Hexo中加载NexT主题"><a href="#在Hexo中加载NexT主题" class="headerlink" title="在Hexo中加载NexT主题"></a>在Hexo中加载NexT主题</h1><p>参见右边链接  <a href="http://theme-next.iissnan.com" target="_blank" rel="external">NexT - an elegant theme for Hexo</a>  </p>
+<hr>
+<h1 id="将网站部署到Github"><a href="#将网站部署到Github" class="headerlink" title="将网站部署到Github"></a>将网站部署到Github</h1><p>参见右边链接  <a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客|不如</a><br>不说了都是泪  </p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-09-09T04:12:12.000Z" class="chip">2015-09-09</time>
+
+
+    
+    / <a href="/categories/Geek-Talks-·-奇客怪谈/" class="chip">Geek Talks · 奇客怪谈</a>
+
+
+
+
+    
+    / <a href="/tags/abc/" class="chip">abc</a> <a href="/tags/howto/" class="chip">howto</a> <a href="/tags/hexo/" class="chip">hexo</a> <a href="/tags/markdown/" class="chip">markdown</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-howto" data-title="这个博客建立的流程" data-url="http://gaoryrt.com/2015/09-09-howto/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

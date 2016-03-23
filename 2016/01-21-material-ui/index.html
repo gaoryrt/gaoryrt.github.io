@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>「翻译」开始使用 Material-Ui</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="「翻译」开始使用 Material-Ui"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        「翻译」开始使用 Material-Ui
+    </h1>
+  
+
+
+  </header>
+  <p>翻译自<a href="http://www.material-ui.com/#/get-started/prerequisites" target="_blank" rel="external">这一篇文章</a>，这个是 material-ui 的官方文档。  </p>
+<h1 id="开始的前提"><a href="#开始的前提" class="headerlink" title="开始的前提"></a>开始的前提</h1><p>我们建议你在开始使用 Material UI 之前先了解一下 <a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a>。Material-UI 基于 React，所以了解 React 是怎样工作的尤其重要。<br>如果你已经熟知单页面程序（SPAs）和 Node，觉得可以跳过这个前提段落的话，请到直接到<a href="http://www.material-ui.com/#/get-started/installation" target="_blank" rel="external">安装</a>部分。<br>那么，下面简单讲一下 SPAs 和 Node。这个对你这种前端新手（或者只了解过『传统的』使用 HTML 和 CSS 以及 JavaScript 的人）来说特别有帮助。  </p>
+<h1 id="SPAs-单页面程序"><a href="#SPAs-单页面程序" class="headerlink" title="SPAs 单页面程序"></a>SPAs 单页面程序</h1><p>很久之前，静态网页都是由 HTML 搭建的，我们使用 CSS 来做样式，用 JavaScript 来做互动和动画。大多数，尤其是相应数据的客户端都包含了一整套往返流程：客户端的数据发送到服务器，结果又返回到客户端。加之大多数回话都被『屏蔽』了。那么在这些往返的流程当中，客户端都在忙着做一些无用功。<br>在异步服务器（AJAX）诞生之后，客户端可以在发送和等待数据的同时做一些其他事情。然而大多数的客户端还是在等待服务器的往返流程结束，这时的网页的流畅程度还是无法和普通的桌面应用相比。这就是 SPAs 产生的原因。<br>一个 SPA 本质上就是一个单页面的站点。这就是说，服务器只需要一次性将网页（一般来说是一个 JavaScript 文件）发送给客户端。所有客户端相应所需的逻辑都储存于这个文件当中。因此，保证流畅性可靠性和高速网络体验的所有必备条件都提前发送到了浏览器的储存空间当中。这种 web 编程体系在过去十年内促使了众多流行的面向 SPAs 的 JavaScript 框架的诞生：  </p>
+<ul>
+<li><a href="https://angularjs.org/" target="_blank" rel="external">Angular</a></li>
+<li><a href="http://emberjs.com/" target="_blank" rel="external">Ember</a></li>
+<li><a href="http://backbonejs.org/" target="_blank" rel="external">Backbone</a></li>
+<li><a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a></li>
+</ul>
+<p>把所有重要的代码放在一个文件当中的确是一个重大的挑战。谢天谢地，还有众多工具供我们将我们的代码分装为小型的模块（类似于面向对象程序中不同的类和接口）以供以后重新组装。这就是 Node 诞生的原因。  </p>
+<h1 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h1><p><a href="https://nodejs.org/" target="_blank" rel="external">Node</a> 的核心是一个由 C 语言编写的程序，它使用了 chrome 的 v8 JavaScript 引擎以让我们在 shell （是的，就是你的终端而非浏览器）当中运行 JavaScript。因此，Node 本质上是一个运行环境。<br>Node 刚被发明出来的时候主要是针对 JavaScript 开发 Web 服务器的。这对 JavaScript 限制于客户端这一传统来说有点激进。然而时间发展，web 开发者发现了使用 Node 开发依赖关系管理的优点，进而创造了这些项目：  </p>
+<ul>
+<li><a href="http://gruntjs.com/" target="_blank" rel="external">Grunt</a></li>
+<li><a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a></li>
+<li><a href="http://browserify.org/" target="_blank" rel="external">Browserify</a></li>
+<li><a href="http://webpack.github.io/" target="_blank" rel="external">Webpack</a></li>
+</ul>
+<p>在 Node 流行起来的同时，独立开发者和团队将几乎将所有（使用 Node 的）代码都 web 程序化了。当然，整个社区都会受益于这些“自定义 Node 脚本”，这就要求任何人都可以上传他们的 Node 脚本，其他开发人员可以在自己的项目中使用这些脚本。<br><a href="https://www.npmjs.com/" target="_blank" rel="external">Node Package Manager</a>，也就是大家熟知的『npm』就是用来干这个事情的。npm是一个命令行工具，主要用来将外部JavaScript引入自己的项目。例如 Material UI 就可以作为 npm 的一个包。也就是说，你可以使用<code>npm install material-ui</code>将 Material UI 引入你的项目，然后在你想要用的地方使用 Material UI。  </p>
+<p>以上。</p>
+
+  
+  <footer class="meta">
+    <time datetime="2016-01-21T06:16:06.000Z" class="chip">2016-01-21</time>
+
+
+    
+    / <a href="/categories/疑似机器人/" class="chip">疑似机器人</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

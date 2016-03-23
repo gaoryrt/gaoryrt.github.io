@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>一个Calcu App的实现</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="一个Calcu App的实现"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        一个Calcu App的实现
+    </h1>
+  
+
+
+  </header>
+  <p>突然又想写代码了，于是今天<strong>心血来潮</strong>想做一个类似于win7上面计算器（程序员版）的app<br>我果手机的科学计算器并没有这个功能，在我专业某些时候使用还是挺无力的，不如自己写一个，也花不了几天<br><a href="https://github.com/gaoryrt/calcu" target="_blank" rel="external">calcu的github</a><br><a id="more"></a><br>主界面差不多就这样：<img src="http://ww4.sinaimg.cn/large/a243ad6cjw1ewahgtk8v5j20g3099aaa.jpg" alt="主界面"></p>
+<h1 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h1><p>功能看图，写得很明白了<br>Hex Dec Oct Bin就是十六进制，十进制，八进制，二进制<br>然后是循环左移循环右移，或运算异或运算，左移右移，非运算和运算<br>然后是0～F数字<br>再往右是加减乘除<br>然后是clean，backspace，求余数，等于  </p>
+<hr>
+<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>上面写道的功能都有<br>然后就是在1024上面留64个二进制位，跟windows上面程序员的用途一样<br>并没有往里添加小数点，这个是因为windows的那个版本没有小数点  </p>
+<blockquote>
+<p>windows版本有左右括号，我暂时没有思路就没有做<br>另外就是＋－符号没有添加，这个的话，手动也不难  </p>
+</blockquote>
+<hr>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>暂时把写了一半的代码放下面<br>我实在是有点晕了，现在（2015年9月21日下午11:30）的思路跟上午开始时的思路不一样了<br>说明做事情要善始善终，不然就白费好多功夫   </p>
+<hr>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ol>
+<li>输入一个数，按了加减乘除之后存成数据到temp（num1）里面，还要用一个字符串存这时候的运算符ope   </li>
+<li>再输入一个数，再按加减乘除的话，通过temp、这个数、ope计算出值，放在resul位置，然后把刚才resul的位置上的数覆盖在temp上面，这样点击等号的话可以继续计算  </li>
+<li>还有不知道怎么实现在二进制的时候其他数字按钮不可选中，选中二进制的时候该按钮高亮</li>
+<li>十六进制的ABCDEF怎么转化为10进制这个问题暂时没有开始想  </li>
+<li>左移右移这个也是问题</li>
+</ol>
+<hr>
+<h1 id="不要说我鸽"><a href="#不要说我鸽" class="headerlink" title="//不要说我鸽"></a>//不要说我鸽</h1><p>这个肯定写得完，只可惜明天从天亮上课上到天黑～<br>那么就把思路要点先放在这里，等明儿晚上继续</p>
+<hr>
+<h1 id="2015年9月23日上午12-02-继续"><a href="#2015年9月23日上午12-02-继续" class="headerlink" title="2015年9月23日上午12:02 继续"></a>2015年9月23日上午12:02 继续</h1><p>今天重新开始了 把思路缕了一缕<br>从算法设计开始重新来</p>
+<hr>
+<h1 id="2015年9月23日上午1-59-update"><a href="#2015年9月23日上午1-59-update" class="headerlink" title="2015年9月23日上午1:59 update"></a>2015年9月23日上午1:59 update</h1><p> 十进制功能完成了</p>
+<hr>
+<h2 id="进制转换功能完成"><a href="#进制转换功能完成" class="headerlink" title="进制转换功能完成"></a>进制转换功能完成</h2><p>本来想放代码的，想想算了，把以前的都给删除了  </p>
+<blockquote>
+<p>//方法1: 定义一个变量表示原进制，另一个Int表示目的进制，原进制2，8，10，16进制用数字0，1，2，3表示；目的进制用1，5，9，13表示<br>    //      进行进制转换调用一转换函数，函数通过原进制和目的进制变量的和得知（4*4-4）中的一种转换   需要写12种转换方式<br>    //方法2: swift里面吧所有的0x 0o 0b全部以十进制存储<br>    //      在输入的时候，实时将String转换为Int  专为十进制的时候只用一个方法，转出方法（短除法）也只有一中<br>    //      需要一个temp放十进制的数，每次进制转换都从temp来转<br>    //      可以用resultLabel0直接接短除法的输出的，但是resultLabel0会在用户面前变化，为了避免这种情况发生，需要一个String来记录输出<br>    //      用一个变量告诉转入十进制方法原进制，告诉转出方法目的进制</p>
+</blockquote>
+<p>然后采用了第二种方式，不同进制的运算都转换到十进制，突然感觉第一种转换还有点困难啊。。。</p>
+<h2 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>在非十进制的情况下点击opeButton/eqaButton的时候会闪退  </li>
+<li>backspace没有设置  </li>
+<li>Or Xor Not And 没有设置  </li>
+<li>输入太多了就退出了，重要的是我也不知道为何<br>不祥的预感   是不是要重写计算按钮  </li>
+</ol>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>非十进制下不能进行其他操作 ＝。＝别怪我</li>
+</ol>
+<hr>
+<h1 id="2015年9月24日-睡前更新"><a href="#2015年9月24日-睡前更新" class="headerlink" title="2015年9月24日 睡前更新"></a>2015年9月24日 睡前更新</h1><p>遇见个特傻逼的问题还debug了半天<br>结果就是我为了调用一个含参的Action(sender: AnyObject)<br>把中间的sender: AnyObject给删除了<br>于是AppDelegate: UIResponder, UIApplicationDelegate就爆炸了<br>找了半天，把github上昨晚版本都clone下来了。。。  </p>
+<h2 id="更新内容有："><a href="#更新内容有：" class="headerlink" title="更新内容有："></a>更新内容有：</h2><ol>
+<li>向十进制和二进制分别制定了可操作按钮，完全不给特殊情况机会。。。主要是懒难得debug了  </li>
+<li>backspace键完成了  </li>
+<li>在现实区域上面添加了位数的指示，就是在storyboard上加了几个label而已。。</li>
+</ol>
+<h2 id="还需要完成："><a href="#还需要完成：" class="headerlink" title="还需要完成："></a>还需要完成：</h2><ol>
+<li>最上面还要一行／多行    用于or xor not and操作的可视化，毕竟自己都不知道怎么做  </li>
+<li>ui改进  这个等最后来吧  </li>
+<li>左右挺进／循环挺进  </li>
+<li>位数限制，避免内存太大。。<br><strong><em>结尾打卡</em></strong>2015年9月24日下午11:32</li>
+</ol>
+<hr>
+<h1 id="2015年9月25日下午3-36"><a href="#2015年9月25日下午3-36" class="headerlink" title="2015年9月25日下午3:36"></a>2015年9月25日下午3:36</h1><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ol>
+<li>左右挺进／循环挺进</li>
+</ol>
+<h2 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>二进制超过12位，瞬间爆炸</li>
+<li>其他进制同理，等着最后debug或添加约束  </li>
+<li>代码的简化，多个action可以用if精简到一起</li>
+<li>10（123）＋ bin 直接出来。。</li>
+</ol>
+<hr>
+<h1 id="2015年9月26日上午2-13-停止更新"><a href="#2015年9月26日上午2-13-停止更新" class="headerlink" title="2015年9月26日上午2:13 停止更新"></a>2015年9月26日上午2:13 <del>停止更新</del></h1><p>有其他更重要的事情做，停止更新<br>四个逻辑按钮功能已经写出来，可以在git上看到主代码<br>没有debug，其他功能可用  </p>
+<p>可能是兴趣到此为止了<br>开始的时候着急了 规划出了问题<br>应该想清楚功能分区的<br>现在好几个地方都混在一起了 改都不好改 莫名其妙跳到Hex上面<br>不写了 宁愿重写个逻辑运算器都不在这上面改了  </p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-09-21T15:15:59.000Z" class="chip">2015-09-21</time>
+
+
+    
+    / <a href="/categories/麦客爱苹果/" class="chip">麦客爱苹果</a>
+
+
+
+
+    
+    / <a href="/tags/swift/" class="chip">swift</a> <a href="/tags/app/" class="chip">app</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-一个calcu-app的实现" data-title="一个Calcu App的实现" data-url="http://gaoryrt.com/2015/09-21-一个calcu-app的实现/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>开始使用Github</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="开始使用Github"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        开始使用Github
+    </h1>
+  
+
+
+  </header>
+  <p>我自己也是刚开始使用github没几天，写得不好<br>我就写自己常用的吧  </p>
+<blockquote>
+<p>2015年9月20日下午3:19更新<br>知乎上这个答案写得好多了👉<a href="http://www.zhihu.com/question/20070065" target="_blank" rel="external">天猪(刘勇)的答案</a><br>请跪着看  </p>
+</blockquote>
+<a id="more"></a>  
+<hr>
+<h1 id="什么是Github／Git-？"><a href="#什么是Github／Git-？" class="headerlink" title="什么是Github／Git ？"></a>什么是Github／Git ？</h1><h2 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h2><p>一个分布式版本控制<strong>系统</strong><br>主要功能感觉跟Time Machine差不多，可以保存同一个文件在不同时间的不同修改版本，可以简单的还原到某一时间点<br>然后，如果有人愿意跟你一起开发同一个文档，也可以共享过去同时编辑<br>或者开启另一个分支，从某一个版本开始制作另外一个文件<br>分布式感觉跟peer to peer的感念差不多，每一个编辑文档的设备都可以当作另一个设备的服务器，这种东西在没有互联网或者是某一台设备坏掉的时候就显示出优点来了<br>每一次修改都可以记录修改的注释，然后可以自动准确的找出不同点<br><strong>这个Git的创造者Linus同时也是Linux的创造者</strong>  </p>
+<h2 id="什么是Github-？"><a href="#什么是Github-？" class="headerlink" title="什么是Github ？"></a>什么是Github ？</h2><blockquote>
+<p>Github是全球最大的同性交友平台。 (大雾)</p>
+</blockquote>
+<p>Github是一个使用Git作为版本控制系统的<strong>托管平台</strong><br>Github（托管，集中）＋Git（对等，分布）就同时互补具有了很多优点<br>Git（貌似）没有图形化客户端，在Github在web端就可以图形化管理</p>
+<hr>
+<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><p>在我的这一篇文章👉<a href="http://gaoryrt.github.io/2015/09/09/howto/" target="_blank" rel="external">这个博客建立的流程</a>提到过了  </p>
+<blockquote>
+<p>在<a href="http://git-scm.com" target="_blank" rel="external">Git官网</a>可以下载到安装包<br><strong>或者</strong>使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>，<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a>进行安装<br>安装成功后可使用git命令<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">```  </span><br><span class="line">如果安装成功返回的是git的版本信息  </span><br><span class="line"></span><br><span class="line">要是使用的是Mac，貌似Xcode就自带Git  </span><br><span class="line">找找Xcode-&gt;Preference-&gt;Download里面的`Command Line Tools`安装／更新好了就可以在`terminal.app`里面使用git命令了  </span><br><span class="line"></span><br><span class="line">使用terminal，定位到你想安装git的文件夹下，使用这个命令：</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>$ git init<br><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后就安装好了，这个文件夹就是你的git仓库  </span><br><span class="line">以后需要使用git管理的文件都要放在这个文件夹（或者子文件夹）里面  </span><br><span class="line"></span><br><span class="line">***  </span><br><span class="line"># 使用Git  </span><br><span class="line">*这里指的git使用仅限于本地*  </span><br><span class="line">添加文件使用`add`命令，提交则是`commit`命令  </span><br><span class="line">比如我要把一个`HelloWorld.c`提交到git 仓库</span><br><span class="line">先把这个文件放在git的主文件夹中，然后定位到这个文件所在的文件夹使用</span><br></pre></td></tr></table></figure></p>
+<p>$ git add HelloWorld.c<br>$ git commit</p>
+<pre><code>
+就行了  
+Git的使用和Github使用有重复的，请继续往下看Github的使用
+常用命令看这里👉[知乎问题 git？](http://www.zhihu.com/question/31246445)  
+***  
+# 使用Github  
+&gt;就是一网站哎呀自己看说明我要玩MC去了  
+&gt;坑挖在这里等着填 2015年9月14日 下午9:14  
+
+2015年9月20日下午3:30 填坑  
+
+
+看了一些网页发现github起步实在是太困难了  
+在这里只能给大家，（主要是给自己）指一些方向  
+等看完了才能总结，总结完了才能写  
+不知不觉坑就挖好了  
+&lt;!--more--&gt;  
+***  
+##  在[Github](https://github.com)上注册和登录    
+
+*下面部分来自[官网help文档](https://help.github.com/articles/set-up-git/)的翻译*  
+1.[下载并安装git](http://git-scm.com/downloads)  
+2.打开 ``Terminal.app``  
+3.告诉git你的名字，Type everything after the ``$`` here:
+</code></pre><p>  $ git config –global user.name “YOUR NAME”</p>
+<pre><code>4.告诉git你的email地址，这里输入的地址必须和你在注册Github时使用的相同， 如果你想隐藏你的email地址，请参考[&quot;Keeping your email address private&quot;](https://help.github.com/articles/keeping-your-email-address-private)。
+</code></pre><p>$ git config –global user.email “YOUR EMAIL ADDRESS”  </p>
+<pre><code>***
+## 下一步：在Git上关联Github  
+当你在Git上连接了一个Github知识库，你需要使用HTTPS或者SSH与Github关联  
+### 使用HTTPS关联(推荐)  
+
+&gt;克隆HTTPS链接对每一个知识库都有效，你可以得到一个只读或者读写的地址，取决于它公开与否，以及你的允许。
+
+&gt;链接在哪里都有效，即使你在墙后或者使用了代理，在某些情况下，如果你选择SSH，你只能[使用SSH的部分](https://help.github.com/articles/using-ssh-over-the-https-port)。
+
+&gt;当你通过HTTPS在git上使用`git fetch`、`git pull`、`git push`、`git remote`命令时，你会被要求输入Github的用户名以及密码。
+
+&gt;如果你使用了[两个身份的验证](https://help.github.com/articles/about-two-factor-authentication)，你必须[创建一个身份地址令牌](https://help.github.com/articles/creating-an-access-token-for-command-line-use)来使用Github，而非你的Github密码。
+你可以使用[验证助手](https://help.github.com/articles/caching-your-github-password-in-git)，这样你就不用每次登陆都输入密码了。
+
+### 在git上缓存你的Github密码  
+你需要确定你的Git是1.7.10版本及以上  
+如果你是通过[homebrew](http://brew.sh/)安装的git，那么你已经装好了OSXkeychain helper  
+下面是安装方法  
+&gt;1.确定你的计算机上是否已经安装了OSXkeychain helper，尝试以下命令：
+</code></pre><p>$ git credential-osxkeychain  </p>
+<h1 id="如果已经安装的话返回如下"><a href="#如果已经安装的话返回如下" class="headerlink" title="如果已经安装的话返回如下"></a>如果已经安装的话返回如下</h1><h1 id="Usage-git-credential-osxkeychain"><a href="#Usage-git-credential-osxkeychain" class="headerlink" title="Usage: git credential-osxkeychain "></a>Usage: git credential-osxkeychain <get|store|erase></get|store|erase></h1><pre><code>2.如果OSXkeychain helper尚未安装，使用以下命令通过curl安装：
+</code></pre><p>$ git credential-osxkeychain</p>
+<h1 id="如果没有安装的话返回如下"><a href="#如果没有安装的话返回如下" class="headerlink" title="如果没有安装的话返回如下"></a>如果没有安装的话返回如下</h1><h1 id="git-‘credential-osxkeychain’-is-not-a-git-command-See-‘git-–help’"><a href="#git-‘credential-osxkeychain’-is-not-a-git-command-See-‘git-–help’" class="headerlink" title="git: ‘credential-osxkeychain’ is not a git command. See ‘git –help’."></a>git: ‘credential-osxkeychain’ is not a git command. See ‘git –help’.</h1><pre><code>继续
+</code></pre><p>$ curl -s -O \<br><a href="https://github-media-downloads.s3.amazonaws.com/osx/git-credential-osxkeychain" target="_blank" rel="external">https://github-media-downloads.s3.amazonaws.com/osx/git-credential-osxkeychain</a></p>
+<h1 id="这就开始下载了"><a href="#这就开始下载了" class="headerlink" title="这就开始下载了"></a>这就开始下载了</h1><pre><code>然后
+</code></pre><p>$ chmod u+x git-credential-osxkeychain</p>
+<h1 id="Fix-the-permissions-on-the-file-so-it-can-be-run"><a href="#Fix-the-permissions-on-the-file-so-it-can-be-run" class="headerlink" title="Fix the permissions on the file so it can be run"></a>Fix the permissions on the file so it can be run</h1><pre><code>3.将OSXkeychain helper和git安装到同一个文件夹：
+</code></pre><p>$ sudo mv git-credential-osxkeychain \<br>“$(dirname $(which git))/git-credential-osxkeychain”</p>
+<h1 id="Move-the-helper-to-the-path-where-git-is-installed"><a href="#Move-the-helper-to-the-path-where-git-is-installed" class="headerlink" title="Move the helper to the path where git is installed"></a>Move the helper to the path where git is installed</h1><h1 id="Password-enter-your-password"><a href="#Password-enter-your-password" class="headerlink" title="Password: [enter your password]"></a>Password: [enter your password]</h1><pre><code>4.告诉git使用`credential.helper`来进行全局配置：
+</code></pre><p>$ git config –global credential.helper osxkeychain</p>
+<h1 id="Set-git-to-use-the-osxkeychain-credential-helper"><a href="#Set-git-to-use-the-osxkeychain-credential-helper" class="headerlink" title="Set git to use the osxkeychain credential helper"></a>Set git to use the osxkeychain credential helper</h1><pre><code>
+下一次你使用HTTPS url进行克隆的时候就会开启OSXkeychain helper缓存了，然后你再使用的时候就不会再要求你输入用户名及密码了。
+***  
+*以下来自于网站 [git简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)*
+# 获得一个知识库(repository)  
+使用以下命令以获得一个远端服务器上的知识库版本：
+</code></pre><p>$ git clone username@host:/path/to/repository  </p>
+<pre><code># 工作流  
+你的本地仓库由 git 维护的三棵“树”组成。第一个是你的 **工作目录**，它持有实际文件；第二个是 **暂存区（Index）**，它像个缓存区域，临时保存你的改动；最后是 **HEAD**，它指向你最后一次提交的结果。  
+## 添加和提交  
+你可以提出更改（把它们添加到**暂存区(index)**），使用如下命令：
+</code></pre><p>git add <filename><br>git add *  </filename></p>
+<pre><code>
+这是 git 基本工作流程的第一步；  
+使用如下命令以实际提交改动：
+</code></pre><p>git commit -m “代码提交信息”  </p>
+<pre><code>现在，你的改动已经提交到了 **HEAD**，但是还没到你的远端仓库。  
+## 推送  
+你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：
+</code></pre><p>git push origin master  </p>
+<pre><code>可以把 master 换成你想要推送的任何分支。   
+
+如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：
+</code></pre><p>git remote add origin <server>  </server></p>
+<pre><code>如此你就能够将你的改动推送到所添加的服务器上去了。  
+#  分支  
+分支是用来将特性开发绝缘开来的。  
+在你创建仓库的时候，master 是“默认的”分支。  
+在其他分支上进行开发，完成后再将它们合并到主分支上。  
+创建一个叫做“feature_x”的分支，并切换过去：
+</code></pre><p>git checkout -b feature_x  </p>
+<pre><code>切换回主分支：
+</code></pre><p>git checkout master  </p>
+<pre><code>再把新建的分支删掉：
+</code></pre><p>git branch -d feature_x  </p>
+<pre><code>除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：
+</code></pre><p>git push origin <branch>  </branch></p>
+<pre><code># 更新与合并  
+要更新你的本地仓库至最新改动，执行：
+</code></pre><p>git pull  </p>
+<pre><code>以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。
+要合并其他分支到你的当前分支（例如 master），执行：
+</code></pre><p>git merge <branch></branch></p>
+<pre><code>在这两种情况下，git 都会尝试去自动合并改动。遗憾的是，这可能并非每次都成功，并可能出现冲突（conflicts）。   
+这时候就需要你修改这些文件来手动合并这些冲突（conflicts）。改完之后，你需要执行如下命令以将它们标记为合并成功：
+</code></pre><p>git add <filename></filename></p>
+<pre><code>在合并改动之前，你可以使用如下命令预览差异：
+</code></pre><p>git diff <source_branch> <target_branch></target_branch></source_branch></p>
+<pre><code># 替换本地改动  
+假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：
+</code></pre><p>git checkout – <filename></filename></p>
+<pre><code>此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到暂存区的改动以及新文件都不会受到影响。  
+
+假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：
+</code></pre><p>git fetch origin<br>git reset –hard origin/master<br>```  </p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-09-14T12:19:46.000Z" class="chip">2015-09-14</time>
+
+
+    
+    / <a href="/categories/Geek-Talks-·-奇客怪谈/" class="chip">Geek Talks · 奇客怪谈</a>
+
+
+
+
+    
+    / <a href="/tags/howto/" class="chip">howto</a> <a href="/tags/github/" class="chip">github</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-怎么使用github" data-title="开始使用Github" data-url="http://gaoryrt.com/2015/09-14-怎么使用github/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

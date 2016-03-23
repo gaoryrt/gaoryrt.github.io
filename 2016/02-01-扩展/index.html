@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>「翻译」 Swift 扩展</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="「翻译」 Swift 扩展"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        「翻译」 Swift 扩展
+    </h1>
+  
+
+
+  </header>
+  <p>这是对 swift 2.2 中 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151" target="_blank" rel="external">扩展</a> 一节的翻译<br>这篇略微有点长，翻译了两天。。。<br>哎呀春节来了还是有点忙的<br>不能全身心投入到学习当中<br>就是要说的我好像每天都在学一样  </p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p><em>扩展</em>为现有的类、结构体、枚举类型、或协议添加了新功能。这也包括了为无访问权限的源代码（即<em>逆向建模</em>）扩展类型的能力。扩展和 Objective-C 中的分类类似。（和 Objective-C 的分类不同，Swift 的扩展没有名字。）</p>
+<p>Swift 中的扩展可以：</p>
+<ul>
+<li>添加计算型实例属性和计算型类型属性</li>
+<li>定义实例方法和类型方法</li>
+<li>提供新初始化器</li>
+<li>定义下标</li>
+<li>定义、使用新嵌套类型</li>
+<li>使现有的类型遵循某协议</li>
+</ul>
+<p>在 Swift 中，你甚至可以扩展一个协议，以提供其要求的实现，或添加符合类型的附加功能。详见<a href="此处应有连接">协议扩展</a>。</p>
+<blockquote>
+<p>注意<br>扩展可以向一个类型添加新的方法，但是不能重写已有的方法。</p>
+</blockquote>
+<h1 id="扩展的语法"><a href="#扩展的语法" class="headerlink" title="扩展的语法"></a>扩展的语法</h1><p>使用<code>extension</code>关键字来声明扩展：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">SomeType</span> </span>&#123;</span><br><span class="line">    <span class="comment">// new functionality to add to SomeType goes here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>扩展可以使已有的类型遵循一个或多个协议。在这种情况下，协议名、类或结构体的书写方式完全一样：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">SomeType</span>: <span class="title">SomeProtocol</span>, <span class="title">AnotherProtocol</span> </span>&#123;</span><br><span class="line">    <span class="comment">// implementation of protocol requirements goes here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用这种方式添加协议一致性详见<a href="此处应有链接">使用扩展添加协议一致性</a>。</p>
+<blockquote>
+<p>注意<br>如果你正向已存在的类型添加新功能时，新功能会在该类型的所有实例中可用，即使实例在该扩展定义之前。</p>
+</blockquote>
+<h1 id="计算型属性"><a href="#计算型属性" class="headerlink" title="计算型属性"></a>计算型属性</h1><p>扩展可以向已有的类型添加计算型实例属性和计算型类型属性。下面的例子向 Swift 内建的<code>Double</code>类型添加了五个计算型实例属性，以提供对距离单位的基本支持：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Double</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> km: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> * <span class="number">1_000.0</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> m: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> cm: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> / <span class="number">100.0</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> mm: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> / <span class="number">1_000.0</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> ft: <span class="type">Double</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> / <span class="number">3.28084</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> oneInch = <span class="number">25.4</span>.mm</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"One inch is <span class="subst">\(oneInch)</span> meters"</span>)</span><br><span class="line"><span class="comment">// Prints "One inch is 0.0254 meters"</span></span><br><span class="line"><span class="keyword">let</span> threeFeet = <span class="number">3</span>.ft</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Three feet is <span class="subst">\(threeFeet)</span> meters"</span>)</span><br><span class="line"><span class="comment">// Prints "Three feet is 0.914399970739201 meters</span></span><br></pre></td></tr></table></figure>
+<p>这些计算型属性表述了<code>Double</code> 值应被看作是长度单位。即使他们被实现为计算型属性，这些属性的名字仍可使用点符号添加在浮点类型的文字值之后，作为一种使用该文本值来执行距离转换的方法。</p>
+<p>在上面的例子中，一个<code>1.0</code>的<code>Double</code>值表示『一米』。这就是<code>m</code>计算型属性要返回<code>self</code>的原因——表达式<code>1.m</code>表示计算<code>1.0</code>的<code>Double</code>值。</p>
+<p>其他的单位则在以米作为计量值的技术上加以转换表示。一千米表示1000米，所以<code>km</code>计算型属性将原值乘1000以表示米。类似的，一米有3.28084英尺，所以<code>ft</code>计算型属性用<code>Double</code>值除以3.28084，将英尺转换为米。</p>
+<p>上述属性为只读计算属性，为了简洁没有使用<code>get</code>关键字。他们都返回<code>Double</code>类型的值，可用于所有使用<code>Double</code>值的数学计算中：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> aMarathon = <span class="number">42</span>.km + <span class="number">195</span>.m</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"A marathon is <span class="subst">\(aMarathon)</span> meters long"</span>)</span><br><span class="line"><span class="comment">// Prints "A marathon is 42195.0 meters long</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意<br>扩展可以添加新的计算型属性，但是不能添加存储型属性，也不能向已有的属性添加属性观测值。</p>
+</blockquote>
+<h1 id="初始化器"><a href="#初始化器" class="headerlink" title="初始化器"></a>初始化器</h1><p>扩展可向已有的类型添加新的初始化器。这允许你使用自定义类型作为初始化器参数扩展其他类型，或提供该类型的原始实现中未包含的额外初始化选项。</p>
+<p>扩展能为类添加新的方便的初始化器，但是不能为类添加指定初始化器或反初始化器。指定初始化器和反初始化器 必须由原来类的实现提供。</p>
+<blockquote>
+<p>注意<br>如果你使用扩展为一个值类型添加初始化器，且该值类型为其所有储存的属性提供默认值，而又不定义任何自定义初始化器时，你可以在你扩展的初始化器中调用该类型默认的初始化器和成员初始化器。<br>如果你在值类型的原始实现中写过它的初始化器了，上述规则就不再适用了，详见<a href="此处应有连接">值类型的初始化器代理</a></p>
+</blockquote>
+<p>下面的例子定义了一个自定义的<code>Rect</code>结构体用于描述几何矩形。这个例子也定义了两个辅助结构体<code>Size</code>和<code>Point</code>，二者的默认值都是<code>0.0</code>：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Size</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width = <span class="number">0.0</span>, height = <span class="number">0.0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">0.0</span>, y = <span class="number">0.0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Rect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> origin = <span class="type">Point</span>()</span><br><span class="line">    <span class="keyword">var</span> size = <span class="type">Size</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于<code>Rect</code>结构体为其所有属性提供了默认值，它将自动接受一个默认的初始化器和一个逐个成员初始化器，详见<a href="应有链接">标准初始化器</a>。这些初始化器将被用于创建新的<code>Rect</code>实例：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> defaultRect = <span class="type">Rect</span>()</span><br><span class="line"><span class="keyword">let</span> memberwiseRect = <span class="type">Rect</span>(origin: <span class="type">Point</span>(x: <span class="number">2.0</span>, y: <span class="number">2.0</span>),</span><br><span class="line">    size: <span class="type">Size</span>(width: <span class="number">5.0</span>, height: <span class="number">5.0</span>))</span><br></pre></td></tr></table></figure>
+<p>你可以扩展<code>Rect</code>结构体以额外提供一个附带原点和大小的初始化器：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Rect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">init</span>(center: <span class="type">Point</span>, size: <span class="type">Size</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> originX = center.x - (size.width / <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">let</span> originY = center.y - (size.height / <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">self</span>.<span class="keyword">init</span>(origin: <span class="type">Point</span>(x: originX, y: originY), size: size)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个初始化器首先基于已知的<code>center</code>点和<code>size</code>值计算合适的原点。然后调用该结构体的自动逐个成员初始化器<code>init(origin:size:)</code>，这样就将新的原点和大小值保存在了对应属性中：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> centerRect = <span class="type">Rect</span>(center: <span class="type">Point</span>(x: <span class="number">4.0</span>, y: <span class="number">4.0</span>),</span><br><span class="line">    size: <span class="type">Size</span>(width: <span class="number">3.0</span>, height: <span class="number">3.0</span>))</span><br><span class="line"><span class="comment">// centerRect's origin is (2.5, 2.5) and its size is (3.0, 3.0)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意<br>如果你使用扩展提供了一个新的初始化器，你仍应确保每一个实例都在初始化完成时完全初始化。</p>
+</blockquote>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>扩展可以为已有的类型添加新的实例方法和类型方法。下面的例子为<code>Int</code>类型添加了一个名为<code>repetitions</code>的新实例方法：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">repetitions</span><span class="params">(task: <span class="params">()</span></span></span> -&gt; <span class="type">Void</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="keyword">self</span> &#123;</span><br><span class="line">            task()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>repetitions(_:)</code>方法接受一个<code>() -&gt; Void</code>类型的单参数，表示一个没有参数且无返回值的函数。</p>
+<p>在这个扩展定义之后，你可以在任何整形数字处调用<code>repetitions(_:)</code>方法，以执行相应次数的操作：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>.repetitions(&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello!"</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// Hello!</span></span><br><span class="line"><span class="comment">// Hello!</span></span><br><span class="line"><span class="comment">// Hello!</span></span><br></pre></td></tr></table></figure>
+<p>使用结尾闭包语法使调用更加简洁：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span>.repetitions&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Goodbye!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Goodbye!</span></span><br><span class="line"><span class="comment">// Goodbye!</span></span><br><span class="line"><span class="comment">// Goodbye!</span></span><br></pre></td></tr></table></figure>
+<h1 id="异变实例方法"><a href="#异变实例方法" class="headerlink" title="异变实例方法"></a>异变实例方法</h1><p>增加了扩展的实例方法仍可以修改（或<em>异变</em>）实例本身。结构体和枚举类型方法在修改<code>self</code>或本身的属性时必须标注实例方法为<code>mutating</code>，和原本实现的异变方法一样。</p>
+<p>下面的例子为Swift的<code>Int</code>类型添加了一个新的异变方法<code>square</code>，以表示原值的平方：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">square</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span> = <span class="keyword">self</span> * <span class="keyword">self</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> someInt = <span class="number">3</span></span><br><span class="line">someInt.square()</span><br><span class="line"><span class="comment">// someInt is now 9</span></span><br></pre></td></tr></table></figure>
+<h1 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h1><p>扩展能为已有的类型添加新的下标。下面的例子为Swift内建的<code>Int</code>类型添加了一个整形下标。这个下标<code>[n]</code>返回了从右开始第<code>n</code>位的十进制数字：</p>
+<ul>
+<li><code>123456789[0]</code>返回<code>9</code></li>
+<li><code>123456789[1]</code>返回<code>8</code></li>
+</ul>
+<p>……以此类推：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">subscript</span>(digitIndex: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> decimalBase = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">0</span>..&lt;digitIndex &#123;</span><br><span class="line">            decimalBase *= <span class="number">10</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">self</span> / decimalBase) % <span class="number">10</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">746381295</span>[<span class="number">0</span>]</span><br><span class="line"><span class="comment">// returns 5</span></span><br><span class="line"><span class="number">746381295</span>[<span class="number">1</span>]</span><br><span class="line"><span class="comment">// returns 9</span></span><br><span class="line"><span class="number">746381295</span>[<span class="number">2</span>]</span><br><span class="line"><span class="comment">// returns 2</span></span><br><span class="line"><span class="number">746381295</span>[<span class="number">8</span>]</span><br><span class="line"><span class="comment">// returns 7</span></span><br></pre></td></tr></table></figure>
+<p>若<code>Int</code>值没有所需的那么多数字，下标实现返回<code>0</code>，就像是这个数左边用零填充：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">746381295</span>[<span class="number">9</span>]</span><br><span class="line"><span class="comment">// returns 0, as if you had requested:</span></span><br><span class="line"><span class="number">0746381295</span>[<span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="嵌套类型"><a href="#嵌套类型" class="headerlink" title="嵌套类型"></a>嵌套类型</h1><p>扩展可以为已有的类，结构体，和枚举类型添加新的嵌套类型：</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extension Int &#123;</span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">Kind</span> &#123;</span></span><br><span class="line">        <span class="keyword">case</span> Negative, Zero, Positive</span><br><span class="line">    &#125;</span><br><span class="line">    var <span class="symbol">kind:</span> Kind &#123;</span><br><span class="line">        switch <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> .Zero</span><br><span class="line">        <span class="keyword">case</span> let x where x &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> .Positive</span><br><span class="line">        <span class="symbol">default:</span></span><br><span class="line">            <span class="keyword">return</span> .Negative</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个例子为<code>Int</code>添加了新的嵌套枚举类型。这个名为<code>Kind</code>的枚举类型表示一个特定整数的类型。具体表示了这个数字是负数、零还是正数。</p>
+<p>这个例还向<code>Int</code>中添加了新的可计算实例<code>kind</code>，以返回该整数的合适<code>Kind</code>枚举示例。</p>
+<p>这个嵌套的枚举类型可以和任意<code>Int</code>一起使用：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printIntegerKinds</span><span class="params">(numbers: [Int])</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> numbers &#123;</span><br><span class="line">        <span class="keyword">switch</span> number.kind &#123;</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Negative</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"- "</span>, terminator: <span class="string">""</span>)</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Zero</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"0 "</span>, terminator: <span class="string">""</span>)</span><br><span class="line">        <span class="keyword">case</span> .<span class="type">Positive</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"+ "</span>, terminator: <span class="string">""</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">""</span>)</span><br><span class="line">&#125;</span><br><span class="line">printIntegerKinds([<span class="number">3</span>, <span class="number">19</span>, -<span class="number">27</span>, <span class="number">0</span>, -<span class="number">6</span>, <span class="number">0</span>, <span class="number">7</span>])</span><br><span class="line"><span class="comment">// Prints "+ + - 0 - 0 +</span></span><br></pre></td></tr></table></figure>
+<p>这里<code>printIntegerKinds</code>函数接收一个<code>Int</code>的数组并对这些值进行迭代。在数组的每一次迭代中，该函数考虑这个整数的计算属性，并输出合适的描述。</p>
+<blockquote>
+<p>注意<br>已知<code>number.kind</code>是<code>Int.Kind</code>类型。因此，<code>switch</code>结构中的所有<code>Int.Kind</code>成员值都可以简写，例如用<code>.Negative</code>表示<code>Int.Kind.Negative</code>。</p>
+</blockquote>
+
+  
+  <footer class="meta">
+    <time datetime="2016-02-01T07:16:44.000Z" class="chip">2016-02-01</time>
+
+
+    
+    / <a href="/categories/疑似机器人/" class="chip">疑似机器人</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-扩展" data-title="「翻译」 Swift 扩展" data-url="http://gaoryrt.com/2016/02-01-扩展/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>

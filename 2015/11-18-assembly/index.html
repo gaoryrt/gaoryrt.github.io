@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Mac 下搭建汇编环境</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="Mac 下搭建汇编环境"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        Mac 下搭建汇编环境
+    </h1>
+  
+
+
+  </header>
+  <p>注意我搞的是32位的<br>汇编有很多不同的编译器，每个编译器的语法都不一样<br>尝试了 gcc，但是下载了半个小时卡在了 make 上面<br>也就是说我不能用 gcc 连接了，还好有 ld<br>然后查了好久才终于搞出来一个在 OSX 上面能够编译连接运行的汇编环境<br>sublime text 3 + x86 and x86_64 Assembly + nasm + zsh<br><a id="more"></a></p>
+<hr>
+<h1 id="装nasm"><a href="#装nasm" class="headerlink" title="装nasm"></a>装nasm</h1><p>看看有没有安装 nasm<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">nasm</span> -v</span><br></pre></td></tr></table></figure></p>
+<p>没有就装一个，貌似 brew 上有，自己装一个<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>nasm</span><br></pre></td></tr></table></figure></p>
+<p>安装好了的后查询版本应该是这样的<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NASM <span class="built_in">version</span> <span class="number">2.11</span><span class="number">.08</span> compiled <span class="keyword">on</span> MM DD YYYY</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="高亮-补全插件-for-sublime"><a href="#高亮-补全插件-for-sublime" class="headerlink" title="高亮/补全插件 for sublime"></a>高亮/补全插件 for sublime</h1><p>装 sublime 和 package control的过程就不仔细讲了<br>找个补全和高亮的插件，我用的<code>x86 and x86_64 Assembly</code>  </p>
+<hr>
+<h1 id="写一个汇编的-hello-world"><a href="#写一个汇编的-hello-world" class="headerlink" title="写一个汇编的 hello world"></a>写一个汇编的 hello world</h1><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">global</span> start</span><br><span class="line"></span><br><span class="line"><span class="meta">section</span> <span class="string">.text</span></span><br><span class="line"><span class="symbol">start:</span></span><br><span class="line">    <span class="keyword">push</span>    <span class="built_in">dword</span> msg.len</span><br><span class="line">    <span class="keyword">push</span>    <span class="built_in">dword</span> msg</span><br><span class="line">    <span class="keyword">push</span>    <span class="built_in">dword</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">mov</span>     <span class="built_in">eax</span>, <span class="number">4</span></span><br><span class="line">    <span class="keyword">sub</span>     <span class="built_in">esp</span>, <span class="number">4</span></span><br><span class="line">    <span class="keyword">int</span>     <span class="number">0x80</span></span><br><span class="line">    <span class="keyword">add</span>     <span class="built_in">esp</span>, <span class="number">16</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">push</span>    <span class="built_in">dword</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">mov</span>     <span class="built_in">eax</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">sub</span>     <span class="built_in">esp</span>, <span class="number">12</span></span><br><span class="line">    <span class="keyword">int</span>     <span class="number">0x80</span></span><br><span class="line"></span><br><span class="line"><span class="meta">section</span> <span class="string">.data</span></span><br><span class="line"><span class="symbol"></span><br><span class="line">msg:</span>    <span class="built_in">db</span>      <span class="string">"hello world"</span>, <span class="number">10</span></span><br><span class="line"><span class="string">.len</span>:   <span class="built_in">equ</span>     $ - msg</span><br></pre></td></tr></table></figure>
+<p>我这里存为<code>32.asm</code>  </p>
+<hr>
+<h1 id="ld-命令"><a href="#ld-命令" class="headerlink" title="ld 命令"></a>ld 命令</h1><p>这个命令就是用来链接用的，没有的话请下载一个 Xcode<br>我相信你有  </p>
+<hr>
+<h1 id="编译-链接-运行"><a href="#编译-链接-运行" class="headerlink" title="编译/链接/运行"></a>编译/链接/运行</h1><p>注意，mac上面的gcc编译<code>.o</code>文件的时候默认的入口是<code>_main</code>，而使用<code>ld</code>命令时，默认的是<code>start</code>。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nasm -f macho <span class="number">32</span><span class="selector-class">.asm</span></span><br><span class="line">ld -macosx_version_min <span class="number">10.7</span>.<span class="number">0</span> -o <span class="number">32</span> <span class="number">32</span><span class="selector-class">.o</span></span><br><span class="line">./<span class="number">32</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="zsh-alias"><a href="#zsh-alias" class="headerlink" title="zsh alias"></a>zsh alias</h1><p>上面的太长了，每次编译连接都要写一大串。。。<br>我懒，我这样搞的别名<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alias</span> <span class="title">comp</span>=<span class="string">"nasm -f macho "</span></span><br><span class="line"><span class="keyword">alias</span> <span class="title">lk</span>=<span class="string">"ld -macosx_version_min 10.7.0 -o"</span></span><br></pre></td></tr></table></figure></p>
+<p>这样的话，三行就简单多了<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">comp <span class="number">32</span><span class="selector-class">.asm</span></span><br><span class="line">lk <span class="number">32</span> <span class="number">32</span><span class="selector-class">.o</span></span><br><span class="line">./<span class="number">32</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-11-18T09:39:26.000Z" class="chip">2015-11-18</time>
+
+
+    
+    / <a href="/categories/Geek-Talks-·-奇客怪谈/" class="chip">Geek Talks · 奇客怪谈</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>
