@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 4 页</title>
+  <title>花了好长时间重装了Hexo</title>
   <meta name="author" content="gaoryrt">
    <meta name="description" content="为赋新词强说愁">
   
 
-  
+  <meta property="og:title" content="花了好长时间重装了Hexo"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
@@ -43,224 +43,67 @@ var _hmt = _hmt || [];
     <div class="row container">
 
   <section class="main">
-    <ul class="posts">
-        
-          
-<li class="post-item">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
   
-  
+  <!-- 以下是页内使用的 title -->
     <h1 class="title">
-        <a href="/2015/10-11-navbar/">
-            对主题的修改
-        </a>
+        花了好长时间重装了Hexo
     </h1>
   
 
 
-</li>
+  </header>
+  <p>今天使用hexo的时候，发现找不到这个命令了<br>打开finder，我的hexo文件夹还在那里<br>当时并不知道是哪个地方出问题了<br>就只是简单的在zshrc文件中添加了<code>hexo bin</code>文件的alias<br>但是今天在deploy新文章的时候，发现hexo彻底不能用了    </p>
+<p>#问题哪里来的<br>我昨天添加hexo sitemap插件的时候<br>顺手更改了nvm，并且没有配置好<br>导致系统使用的node版本中没有hexo<br>我在找到这个问题的途中尝试了重装npm<br>不幸的是npm问题更多，err红了一大片<br>在中间等待和<code>ctrl c</code>的多次循环中我选择了放弃  </p>
+<p>#重装<br>先备份，就是把hexo文件夹改个名字，比如说<code>hexo1</code><br>卸载nvm：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/<span class="selector-class">.nvm</span></span><br><span class="line">rm -rf ~/<span class="selector-class">.npm</span></span><br><span class="line">rm -rf ~/.bower</span><br></pre></td></tr></table></figure></p>
+<p>然后重新装：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -<span class="keyword">o</span>- http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/creationix/nvm/v0.<span class="number">31.0</span>/install.<span class="keyword">sh</span> | zsh</span><br></pre></td></tr></table></figure></p>
+<p>然后重新装hexo：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-<span class="keyword">cli</span> -<span class="keyword">g</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
+<p>还有之前的各种hexo插件：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure></p>
+<p>然后把之前备份的source文件夹，配置文件<code>_config.yml</code>，theme文件<br>都拷贝进去 </p>
+<p>#这个故事告诉我们<br>好好等，不要胡乱<code>ctrl c</code><br>然后时常备份，要会看报错信息  </p>
+<hr>
 
   
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/10-10-post-weibo/">
-            Python 刷微博
-        </a>
-    </h1>
-  
+  <footer class="meta">
+    <time datetime="2016-03-23T15:53:57.000Z" class="chip">2016-03-23</time>
 
 
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/10-09-whatsup/">
-            What&#39;s Up
-        </a>
-    </h1>
-  
+    
+    / <a href="/categories/麦客爱苹果/" class="chip">麦客爱苹果</a>
 
 
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/10-06-downloadDiveintopython3/">
-            下载Dive Into Python3
-        </a>
-    </h1>
-  
 
 
-</li>
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
 
   
-
-        
-          
-<li class="post-item">
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-reInstallHexo" data-title="花了好长时间重装了Hexo" data-url="http://gaoryrt.com/2016/03-23-reInstallHexo/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
   
-  
-    <h1 class="title">
-        <a href="/2015/10-04-开始python3抓取数据/">
-            开始Python3抓取数据
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/10-04-theme-my-theme/">
-            修改Next主题
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/10-01-鸽的表/">
-            鸽的表
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/09-30-upgrade-pyhton-on-mac/">
-            升级Mac的python
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/09-28-开始zsh-vim/">
-            开始zsh+vim+iTerm
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/09-27-StartingPython/">
-            开始Python
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/09-24-这几天都干了啥/">
-            这几天都干了啥
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-          
-<li class="post-item">
-  
-  
-    <h1 class="title">
-        <a href="/2015/09-21-一个calcu-app的实现/">
-            一个Calcu App的实现
-        </a>
-    </h1>
-  
-
-
-</li>
-
-  
-
-        
-</ul>
-
-<br>
-
-  
-    <a href="/page/3/" class="alignleft prev waves-effect waves-light btn">上一页</a>
-  
-  
-    <a href="/page/5/" class="alignright next waves-effect waves-light btn">下一页</a>
-  
-  <div class="clearfix"></div>
-
 
     <div class="clearfix"></div>
   </section>
