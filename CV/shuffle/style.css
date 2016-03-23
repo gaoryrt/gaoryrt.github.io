@@ -1,0 +1,72 @@
+body, div, ul, li, img {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.wrapper {
+    position: relative;
+    margin: 30px auto;
+    width: 800px;
+    height: 450px;
+}
+
+.banner {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.imageList {
+    position: relative;
+    width: 3200px;
+    height: 450px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.imageList li {
+    float: left;
+    display: inline;
+}
+
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 20;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+.indexList {
+    position: absolute;
+    left: 50%;
+    margin-left: -43px;
+    bottom: 2px;
+    z-index: 20;
+}
+
+.indexList li {
+    float: left;
+    margin-right: 5px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.selected {
+    filter: invert(.2);
+}
