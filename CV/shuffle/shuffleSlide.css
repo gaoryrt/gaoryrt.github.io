@@ -1,7 +1,7 @@
 body, div, ul, li, img {
-    margin: 0;
-    padding: 0;
-}
+     margin: 0;
+     padding: 0;
+ }
 
 ul, li {
     list-style: none;
@@ -16,16 +16,11 @@ ul, li {
 
 .banner {
     position: relative;
-    width: 800px;
-    height: 450px;
     overflow: hidden;
 }
 
 .imageList {
     position: relative;
-    width: 3200px;
-    height: 450px;
-    z-index: 10;
     overflow: hidden;
 }
 

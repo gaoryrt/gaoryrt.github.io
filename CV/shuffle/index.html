@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shuffleSlide.css">
     <title>demo</title>
 </head>
 <body>
@@ -14,17 +14,12 @@
             <li><img src="img/2.jpg" alt="2" width="800px"></li>
             <li><img src="img/3.jpg" alt="3" width="800px"></li>
         </ul>
-        <img src="img/left.png" alt="left" class="leftbuttom" width="25px" id="prev">
-        <img src="img/right.png" alt="right" class="rightbuttom" width="25px" id="next">
-        <ul class="indexList">
-            <li class="selected"><img src="img/circle.png" alt="0"  width="10px"></li>
-            <li><img src="img/circle.png" alt="1" width="10px"></li>
-            <li><img src="img/circle.png" alt="2" width="10px"></li>
-            <li><img src="img/circle.png" alt="3" width="10px"></li>
-        </ul>
     </div>
 </div>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js.js"></script>
+<script src="shuffleSlide.js"></script>
+<script type='text/javascript'>
+    $(".wrapper").shuffle();
+</script>
 </body>
 </html>
