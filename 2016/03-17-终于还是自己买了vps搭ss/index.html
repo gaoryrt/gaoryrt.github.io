@@ -56,19 +56,9 @@ var _hmt = _hmt || [];
   </header>
   <h1 id="先买一个vps"><a href="#先买一个vps" class="headerlink" title="先买一个vps"></a>先买一个vps</h1><p>主要是人家一般都要paypal，但是我没有，为了方便就直接上了淘宝，贵了11元/年<br>我是在tb上买的<code>alpharacks</code>，就是最便宜的那个套餐<br>年付35rmb，64MB内存，硬盘3G，月流量150G  </p>
 <h1 id="ssh登陆"><a href="#ssh登陆" class="headerlink" title="ssh登陆"></a>ssh登陆</h1><p>买完人家会给你账号密码和链接<br>然后进去找到<code>hostname</code>，复制<br>在自己的终端里<code>ssh root@刚刚复制的终端</code><br>输入刚刚的账号密码<br>这样就登陆到这个vps里了  </p>
-<h1 id="安装SS"><a href="#安装SS" class="headerlink" title="安装SS"></a>安装SS</h1><p>我用的是python版本的，另外还有什么go，R，libev版本的<br>紧接着刚刚的<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/teddysun/shadowsocks_install/master/shadowsocks.<span class="keyword">sh</span></span><br><span class="line">chmod +<span class="keyword">x</span> shadowsocks.<span class="keyword">sh</span></span><br><span class="line">./shadowsocks.<span class="keyword">sh</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> | tee shadowsocks.<span class="built_in">log</span></span><br></pre></td></tr></table></figure></p>
-<p>安装用不了多久<br>完了之后会提示你  </p>
-<pre><code>Congratulations, shadowsocks install completed!
-Your Server IP:your_server_ip
-Your Server Port:your_server_port
-Your Password:your_password
-Your Local IP:127.0.0.1
-Your Local Port:1080
-Your Encryption Method:aes-256-cfb
-
-Welcome to visit:https://teddysun.com/342.html
-Enjoy it!
-</code></pre><p>这样就在vps上安装好了SS了  </p>
+<h1 id="安装SS"><a href="#安装SS" class="headerlink" title="安装SS"></a>安装SS</h1><p>我用的是python版本的，另外还有什么go，R，libev版本的<br>紧接着刚刚的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure></p>
+<p>安装用不了多久<br>完了之后会提示你<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Congratulations, shadowsocks install completed!</span><br><span class="line">Your Server IP:your_server_ip</span><br><span class="line">Your Server Port:your_server_port</span><br><span class="line">Your Password:your_password</span><br><span class="line">Your Local IP:127.0.0.1</span><br><span class="line">Your Local Port:1080</span><br><span class="line">Your Encryption Method:aes-256-cfb</span><br><span class="line"></span><br><span class="line">Welcome to visit:https://teddysun.com/342.html</span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure></p>
+<p>这样就在vps上安装好了SS了  </p>
 <h1 id="本地登陆"><a href="#本地登陆" class="headerlink" title="本地登陆"></a>本地登陆</h1><p>先要自己下载ss客户端<br>原来的开源放在github上面的被迫下架了<br>我是在ishadowsocks上面找到的<br>大家可以尝试在什么佛跳墙啊，红杏之类的销售SS账号的网站中找到<br>地址是刚刚的<code>hostname</code>，端口号你没有该国的话是<code>8989</code><br>记住要把本地的代理接口改为<code>1080</code>  </p>
 <hr>
 <p>以上</p>
