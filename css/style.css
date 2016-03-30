@@ -5,10 +5,11 @@ body {
     text-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
 }
 
-figure, body {
+html, figure, body {
     font-family: 'Hiragino Sans GB', 'Lucida Sans Unicode', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Verdana, Aril, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
+
 
 /*header*/
 .banner {
@@ -618,7 +619,6 @@ a.menu-item:hover {
 
 a:hover {
     color: #FFF;
-
     /* ==== colors below would be OK to change ==== */
     background-color: #f44336;
 }
@@ -666,7 +666,6 @@ footer.page-footer {
 }
 
 /* ==== duoshuo custom ==== */
-/* ÎÒ×Ô¼ºµÄÒÑ¾­·ÅÔÚ¶àËµ×Ô¶¨ÒåÀïÁË£¬±¾µØµÄ¾Í×¢ÊÍµôÁË */
 #ds-thread #ds-reset .ds-textarea-wrapper {
     background: none !important;
 }
