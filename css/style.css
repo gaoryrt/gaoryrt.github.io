@@ -27,8 +27,8 @@ html, figure, body {
     padding: 0;
 }
 
-/*footer*/
-.site-footer {
+/*navifator*/
+.site-navifator {
     position: fixed;
     left: 0;
     right: 0;
@@ -44,11 +44,10 @@ h1, h2 {
     font-weight: normal;
 }
 
-/*.banner h1*/
-.logo {
-    display: none;
-}
+.post-time {
 
+}
+/*.banner h1*/
 .posts {
     margin: 5rem 0 0 0;
     padding: 0;
@@ -149,21 +148,12 @@ img {
     margin-left: -1.1rem;
 }
 
-.nav-wrapper {
-    margin: 0 auto;
-    max-width: 600px;
-    width: 90%;
-}
-
-.logolink {
-    background-image: url("http://7xs4ih.com1.z0.glb.clouddn.com/Untitled.png");
-    background-repeat: no-repeat;
-    background-size: 110px 45px;
-    margin-top: 7px;
-    width: 110px;
-    height: 45px;
-    display: inline-block;
-    position: fixed;
+.logo {
+    margin-left: 10px;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
 }
 
 .parallax-container {
@@ -618,9 +608,9 @@ a.menu-item:hover {
 }
 
 a:hover {
-    color: #FFF;
+    color: #f00;
     /* ==== colors below would be OK to change ==== */
-    background-color: #f44336;
+
 }
 
 figure {
@@ -628,7 +618,8 @@ figure {
 }
 
 a {
-    color: #d32f2f;
+    color: #000;
+    font-weight: 500;
 }
 
 code {
@@ -638,6 +629,19 @@ code {
 /* banner color */
 nav {
     background-color: #e53935;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.dropdown-content {
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+nav ul a {
+    color: #000 !important;
 }
 
 /* blockquote line color */
@@ -647,7 +651,7 @@ blockquote {
 
 /* page footer color */
 footer.page-footer {
-    background-color: #e53935;
+    background-color: #FFF;
 }
 
 /* dropdown item color */
