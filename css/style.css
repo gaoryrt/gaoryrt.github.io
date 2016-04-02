@@ -742,3 +742,18 @@ footer.page-footer {
 #ds-thread #ds-reset .ds-comments-info {
     padding: 4px 0;
 }
+
+::selection {
+    background:#d3d3d3;
+    color:#555;
+}
+
+::-moz-selection {
+    background:#d3d3d3;
+    color:#555;
+}
+
+::-webkit-selection {
+    background:#d3d3d3;
+    color:#555;
+}
