@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Fontend Test</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="为赋新词强说愁">
+  
+
+  <meta property="og:title" content="Fontend Test"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <meta name="google-site-verification" content="" />
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.min.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+
+
+<body>
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+    <h1 class="title">
+        Fontend Test
+    </h1>
+  
+
+
+  </header>
+  <p>随便找了一份前端的测试题来做<br>想看原版的可以<a href="http://www.tuicool.com/articles/YbQB3q">点这里</a>  </p>
+<hr>
+<h1 id="No-1"><a href="#No-1" class="headerlink" title="No.1"></a>No.1</h1><p>这里用到了css3中的<code>display: box</code>和<code>box-flex</code><br>题目里面html结构已经规定了，对于元素的选择只能使用<code>first-child</code>,<code>nth-child()</code>了<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">            <span class="attribute">background-color</span>: darkcyan;</span><br><span class="line">            <span class="attribute">display</span>: box;</span><br><span class="line">            <span class="attribute">display</span>: -moz-box;</span><br><span class="line">            <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">            <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">            <span class="attribute">text-indent</span>: <span class="number">10px</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">            <span class="attribute">-webkit-box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">-moz-box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">-ms-box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-pseudo">:first-child</span> &#123;</span><br><span class="line">            <span class="attribute">-webkit-box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">-moz-box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">-ms-box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意<code>box-flex: 1</code>的情况下，所有盒子的缩放比例都是一样的<br>所以后面还要把第一个盒子的该属性改回到0  </p>
+<hr>
+<h1 id="No-2"><a href="#No-2" class="headerlink" title="No.2"></a>No.2</h1><p>实现水平和垂直方向的居中<br>参考这<a href="https://www.smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css/" target="_blank" rel="external">一篇文章</a>以及后续一共四篇，都是关于居中的。  </p>
+<h2 id="绝对居中"><a href="#绝对居中" class="headerlink" title="绝对居中"></a>绝对居中</h2><p>用于父元素为<code>position: relative</code>，子元素为<code>position: absolute</code>：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.boxA</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: relative;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.boxB</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">max-width</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">max-height</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: blue;</span><br><span class="line">            <span class="attribute">margin</span>: auto;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="利用transform达到负边距"><a href="#利用transform达到负边距" class="headerlink" title="利用transform达到负边距"></a>利用transform达到负边距</h2><p><strong>感觉这个最常用</strong><br>设置<code>left: 50%;top: 50%</code>之后<br>再<code>margin</code>一个负值，以达到居中的目的<br>这里由于<strong>子元素是可变</strong>的，所以可以利用transform<br>可变大小的元素也能居中：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.boxA</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: relative;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: green;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.boxB</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">max-width</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">max-height</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: blue;</span><br><span class="line">            <span class="attribute">margin</span>: auto;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(-50%,-50%);</span><br><span class="line">            <span class="attribute">-ms-transform</span>: <span class="built_in">translate</span>(-50%,-50%);</span><br><span class="line">            <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%,-50%);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="假如不是-absolute"><a href="#假如不是-absolute" class="headerlink" title="假如不是 absolute"></a>假如不是 absolute</h2><p>这里用到了<code>inline-block</code>和<code>vertical-align</code>来居中<br>伪元素<code>:after</code>相当于给这个<code>inline-block</code>一个高度<br>这个算是<strong>css hack</strong>的一部分了<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.boxA</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: relative;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: green;</span><br><span class="line">            </span><br><span class="line">            <span class="attribute">text-align</span>: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.boxA</span><span class="selector-pseudo">:after</span>, <span class="selector-class">.boxB</span> &#123;</span><br><span class="line">            <span class="attribute">display</span>: inline-block;</span><br><span class="line">            <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.boxA</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">            <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.boxB</span> &#123;</span><br><span class="line">            <span class="comment">/*position: absolute;*/</span></span><br><span class="line">            <span class="attribute">max-width</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">max-height</span>: <span class="number">300px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: blue;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>挖坑待填</p>
+
+  
+  <footer class="meta">
+    <time datetime="2016-04-02T01:48:59.000Z" class="chip">2016-04-02</time>
+
+
+    
+    / <a href="/categories/前端/" class="chip">前端</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
+            Github
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
+            微博
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
+            知乎
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/rss2.xml"  class= "text-lighten-1">
+            rss
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+      <li class="menu-item waves-effect waves-light">
+        <a href="/CV"  class= "text-lighten-1">
+            关于我
+        </a>
+      </li>
+      <li class="divider"></li>
+    
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    
+    
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
+    <ul class="right">
+      <li><a href="/archives">归档</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
+    </ul>
+  </div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Blog Name Goes Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多</br>
+        <br>为赋新词强说愁</br>
+        gaoryrt@gmail.com</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">友链出租</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
+    gaoryrt 2015-2016
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    </div>
+</div></footer>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+
+</body>
+</html>
