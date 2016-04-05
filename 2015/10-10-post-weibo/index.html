@@ -13,9 +13,11 @@
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
   
-  <meta name="google-site-verification" content="" />
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
   <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.min.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -26,10 +28,94 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 </head>
 
+
 <body>
-  <div class="site-navifator"><ul id="dropdown2" class="dropdown-content">
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        Python 刷微博
+    </h1>
+  
+
+
+  </header>
+  <p><a href="http://gaoryrt.github.io/2015/10/09/whatsup/" target="_blank" rel="external">上一篇</a>里面说过了，要改冲神的<code>jincin.py</code><br>改成功了，能够刷微博，但是好像并不完美。。。<br><a id="more"></a></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    url = <span class="string">"http://m.weibo.cn/mblogDeal/addAMblog"</span></span><br><span class="line"></span><br><span class="line">    data = <span class="string">"content=发十次之"</span>+str(i)+<span class="string">"&amp;st=ceb309"</span></span><br><span class="line"></span><br><span class="line">    headers = &#123;<span class="string">'Host'</span>: <span class="string">'m.weibo.cn'</span>,</span><br><span class="line">            <span class="string">'Accept'</span>: <span class="string">'application/json, text/javascript, */*; q=0.01'</span>,</span><br><span class="line">            <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span>,</span><br><span class="line">            <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip, deflate'</span>,</span><br><span class="line">            <span class="string">'Accept-Language'</span>: <span class="string">'zh-cn'</span>,</span><br><span class="line">            <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span>,</span><br><span class="line">            <span class="string">'Origin'</span>: <span class="string">'http://m.weibo.cn'</span>,</span><br><span class="line">            <span class="string">'Content-Length'</span>: <span class="string">'26'</span>,</span><br><span class="line">            <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56'</span>,</span><br><span class="line">            <span class="string">'Referer'</span>: <span class="string">'http://m.weibo.cn/mblog'</span>,</span><br><span class="line">            <span class="string">'Cookie'</span>: <span class="string">'不准看'</span>&#125;</span><br><span class="line"></span><br><span class="line">    req = urllib2.Request(url, data, headers)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = urllib2.urlopen(req)</span><br><span class="line">        print(i)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">'error!'</span>)</span><br><span class="line">        exit()</span><br><span class="line"></span><br><span class="line">print(response.read())</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1eww0ouwkvrj207k0dm3zb.jpg" alt=""></p>
+<p>可惜不会吧所有的都发出来<br>但是已经晓得通过<code>m.weibo.com</code>可以通过发送<code>post</code>包的方式发微博<br>理论上现在只用改数据就可以做到发一百次一千次<br>不知道微博有没有限制，我还没有尝试<br>有的话就用 <code>delay</code> 吧，也是两三行的操作<br>希望新浪不要把这个给封了</p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2015-10-10T06:13:55.000Z" class="chip">2015-10-10</time>
+
+
+    
+    / <a href="/categories/硬悟学蛇/" class="chip">硬悟学蛇</a>
+
+
+
+
+    
+    / <a href="/tags/python/" class="chip">python</a>
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-post-weibo" data-title="Python 刷微博" data-url="http://gaoryrt.com/2015/10-10-post-weibo/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
     
       <li class="menu-item waves-effect waves-light">
         <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
@@ -71,110 +157,49 @@ var _hmt = _hmt || [];
 <ul id="dropdown1" class="dropdown-content">
     
     
-     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
 
 </ul>
 
 <nav>
-  <a class="logo" href="/">BNGH</a>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
     <ul class="right">
       <li><a href="/archives">归档</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
     </ul>
-</nav>
-</div>
-  <div class="section">
-    <div class="row container">
-    <section class="main">
-      
-<article class="single ty-basic ty-indent ty-wide post">
-  <header class="single_title">
-    
-  
-    <h1 class="title">
-        Python 刷微博
-    </h1>
-  
-
-
-  </header>
-  <p><a href="http://gaoryrt.github.io/2015/10/09/whatsup/" target="_blank" rel="external">上一篇</a>里面说过了，要改冲神的<code>jincin.py</code><br>改成功了，能够刷微博，但是好像并不完美。。。<br><a id="more"></a></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    url = <span class="string">"http://m.weibo.cn/mblogDeal/addAMblog"</span></span><br><span class="line"></span><br><span class="line">    data = <span class="string">"content=发十次之"</span>+str(i)+<span class="string">"&amp;st=ceb309"</span></span><br><span class="line"></span><br><span class="line">    headers = &#123;<span class="string">'Host'</span>: <span class="string">'m.weibo.cn'</span>,</span><br><span class="line">            <span class="string">'Accept'</span>: <span class="string">'application/json, text/javascript, */*; q=0.01'</span>,</span><br><span class="line">            <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span>,</span><br><span class="line">            <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip, deflate'</span>,</span><br><span class="line">            <span class="string">'Accept-Language'</span>: <span class="string">'zh-cn'</span>,</span><br><span class="line">            <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span>,</span><br><span class="line">            <span class="string">'Origin'</span>: <span class="string">'http://m.weibo.cn'</span>,</span><br><span class="line">            <span class="string">'Content-Length'</span>: <span class="string">'26'</span>,</span><br><span class="line">            <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">            <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/601.1.56 (KHTML, like Gecko) Version/9.0 Safari/601.1.56'</span>,</span><br><span class="line">            <span class="string">'Referer'</span>: <span class="string">'http://m.weibo.cn/mblog'</span>,</span><br><span class="line">            <span class="string">'Cookie'</span>: <span class="string">'不准看'</span>&#125;</span><br><span class="line"></span><br><span class="line">    req = urllib2.Request(url, data, headers)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = urllib2.urlopen(req)</span><br><span class="line">        print(i)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">'error!'</span>)</span><br><span class="line">        exit()</span><br><span class="line"></span><br><span class="line">print(response.read())</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1eww0ouwkvrj207k0dm3zb.jpg" alt=""></p>
-<p>可惜不会吧所有的都发出来<br>但是已经晓得通过<code>m.weibo.com</code>可以通过发送<code>post</code>包的方式发微博<br>理论上现在只用改数据就可以做到发一百次一千次<br>不知道微博有没有限制，我还没有尝试<br>有的话就用 <code>delay</code> 吧，也是两三行的操作<br>希望新浪不要把这个给封了</p>
-<hr>
-<p>以上</p>
-
-  
-  <footer class="meta">
-    <time datetime="2015-10-10T06:13:55.000Z" class="chip">2015-10-10</time>
-
-
-    
-    / <a href="/categories/硬悟学蛇/" class="chip">硬悟学蛇</a>
-
-
-
-
-    
-    / <a href="/tags/python/" class="chip">python</a>
-
-
-    <div class="clearfix"></div>
-  </footer>
-  
-  <hr>
-</article>
-
-
-  <section id="comments" class="comments">
-    <div class="ds-thread" data-thread-key="post-post-weibo" data-title="Python 刷微博" data-url="http://gaoryrt.com/2015/10-10-post-weibo/"></div>
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:'gaoryrt'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-  </section>
-  
-
-    </section>
-    </div>
   </div>
-  <footer class="page-footer z-depth-2"><div class="clearfix"></div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
 <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="black-text blod">Blog Name Goes Here</h5>
-        <p class="black-text text-lighten-4">精神病人思路广，弱智儿童欢乐多</br>
-        为赋新词强说愁</br>
-        gaoryrt@gmail.com</p>
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="black-text">友链出租</h5>
+        <h5 class="white-text">友链出租</h5>
         <ul>
-          <li><a class="text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
-          <li><a class="text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
-          <li><a class="text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
-          <li><a class="text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
         </ul>
       </div>
     </div>
   </div>
-<div class="footer-copyright red">
-    <div class="container white-text">
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
     gaoryrt 2015-2016
-    <a class="right white-text" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
     </div>
 </div></footer>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
 

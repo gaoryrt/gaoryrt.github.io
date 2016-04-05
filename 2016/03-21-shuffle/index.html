@@ -13,9 +13,11 @@
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
   
-  <meta name="google-site-verification" content="" />
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
   <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.min.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -26,10 +28,95 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 </head>
 
+
 <body>
-  <div class="site-navifator"><ul id="dropdown2" class="dropdown-content">
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        jQuery实现简单的轮播图
+    </h1>
+  
+
+
+  </header>
+  <p><a href="http://gaoryrt.com/CV/shuffle/index.html">demo点这里</a></p>
+<h1 id="需要达到的效果"><a href="#需要达到的效果" class="headerlink" title="需要达到的效果"></a>需要达到的效果</h1><p>常见的轮播图组件<br>自动翻页，左右跳转按钮，下方是index<br>index显示了当前图片位置，左右按钮就是更改当前位置<br>第一个版本暂时不定义api了，写简单点  </p>
+<h1 id="大概思路"><a href="#大概思路" class="headerlink" title="大概思路"></a>大概思路</h1><p>用banner隐藏超出部分的图片<br>imageList是inline<br>要显示的话就float到标签位置      </p>
+<h1 id="首先是html"><a href="#首先是html" class="headerlink" title="首先是html"></a>首先是html</h1><p>从sublime换了webstorm，自带了emmet插件<br>也就是可以这样写<br><code>div.wrapper&gt;div.banner&gt;ul.imageList&gt;(li&gt;img)*4^img+img&gt;ul.indexList&gt;(li&gt;img)*4</code><br><code>tab</code>之后就是这个效果了：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"banner"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"imageList"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"indexList"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>emmet还是挺方便的  </p>
+<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>为了使banner遮挡其他元素，overflow:hidden<br>然后 imgList的li 全部都float:left,display:inline<br>这样的话就可以在后面左右滑了<br>左右按键和indexList需要用position:absolute来定位<br>这俩就用绝对值50%再margin一个负值来居中  </p>
+<h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1><p>主要是通过一个changeTo()来完成到指定图片的跳转<br>三个直接事件：自动换、点击左右、点击indexList<br>都是对changeTo()的不同调用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeTo</span>(<span class="params">num</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">var</span> goLeft = num * <span class="number">800</span>;</span><br><span class="line">    $(<span class="string">".imgList"</span>).animate(&#123;left: <span class="string">"-"</span> + goLeft + <span class="string">"px"</span>&#125;,<span class="number">500</span>);</span><br><span class="line">    $(<span class="string">".indexList"</span>).find(<span class="string">"li"</span>).removeClass(<span class="string">"indexOn"</span>).eq(num).addClass(<span class="string">"indexOn"</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>还有就是通过设置全局变量的方法来添加一个循环：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var autoChange = setInterval(<span class="function"><span class="keyword">function</span></span> () &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">index</span>&lt;<span class="number">3</span>)&#123;</span><br><span class="line">        <span class="built_in">index</span>++</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">index</span>=<span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    changeTo(<span class="built_in">index</span>)</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure></p>
+<p>js代码中需要用到重新开始循环（如<code>wrapper:hover</code>）<br>只需要重新为<code>autoChange</code>赋相同的值即可再开始循环  </p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2016-03-21T09:39:56.000Z" class="chip">2016-03-21</time>
+
+
+    
+    / <a href="/categories/前端/" class="chip">前端</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-shuffle" data-title="jQuery实现简单的轮播图" data-url="http://gaoryrt.com/2016/03-21-shuffle/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
     
       <li class="menu-item waves-effect waves-light">
         <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
@@ -71,111 +158,49 @@ var _hmt = _hmt || [];
 <ul id="dropdown1" class="dropdown-content">
     
     
-     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
 
 </ul>
 
 <nav>
-  <a class="logo" href="/">BNGH</a>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
     <ul class="right">
       <li><a href="/archives">归档</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
     </ul>
-</nav>
-</div>
-  <div class="section">
-    <div class="row container">
-    <section class="main">
-      
-<article class="single ty-basic ty-indent ty-wide post">
-  <header class="single_title">
-    
-  
-    <h1 class="title">
-        jQuery实现简单的轮播图
-    </h1>
-  
-
-
-  </header>
-  <p><a href="http://gaoryrt.com/CV/shuffle/index.html">demo点这里</a></p>
-<h1 id="需要达到的效果"><a href="#需要达到的效果" class="headerlink" title="需要达到的效果"></a>需要达到的效果</h1><p>常见的轮播图组件<br>自动翻页，左右跳转按钮，下方是index<br>index显示了当前图片位置，左右按钮就是更改当前位置<br>第一个版本暂时不定义api了，写简单点  </p>
-<h1 id="大概思路"><a href="#大概思路" class="headerlink" title="大概思路"></a>大概思路</h1><p>用banner隐藏超出部分的图片<br>imageList是inline<br>要显示的话就float到标签位置      </p>
-<h1 id="首先是html"><a href="#首先是html" class="headerlink" title="首先是html"></a>首先是html</h1><p>从sublime换了webstorm，自带了emmet插件<br>也就是可以这样写<br><code>div.wrapper&gt;div.banner&gt;ul.imageList&gt;(li&gt;img)*4^img+img&gt;ul.indexList&gt;(li&gt;img)*4</code><br><code>tab</code>之后就是这个效果了：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"banner"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"imageList"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"indexList"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>emmet还是挺方便的  </p>
-<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>为了使banner遮挡其他元素，overflow:hidden<br>然后 imgList的li 全部都float:left,display:inline<br>这样的话就可以在后面左右滑了<br>左右按键和indexList需要用position:absolute来定位<br>这俩就用绝对值50%再margin一个负值来居中  </p>
-<h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1><p>主要是通过一个changeTo()来完成到指定图片的跳转<br>三个直接事件：自动换、点击左右、点击indexList<br>都是对changeTo()的不同调用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeTo</span>(<span class="params">num</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">var</span> goLeft = num * <span class="number">800</span>;</span><br><span class="line">    $(<span class="string">".imgList"</span>).animate(&#123;left: <span class="string">"-"</span> + goLeft + <span class="string">"px"</span>&#125;,<span class="number">500</span>);</span><br><span class="line">    $(<span class="string">".indexList"</span>).find(<span class="string">"li"</span>).removeClass(<span class="string">"indexOn"</span>).eq(num).addClass(<span class="string">"indexOn"</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>还有就是通过设置全局变量的方法来添加一个循环：<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var autoChange = setInterval(<span class="function"><span class="keyword">function</span></span> () &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">index</span>&lt;<span class="number">3</span>)&#123;</span><br><span class="line">        <span class="built_in">index</span>++</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">index</span>=<span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    changeTo(<span class="built_in">index</span>)</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure></p>
-<p>js代码中需要用到重新开始循环（如<code>wrapper:hover</code>）<br>只需要重新为<code>autoChange</code>赋相同的值即可再开始循环  </p>
-<hr>
-<p>以上</p>
-
-  
-  <footer class="meta">
-    <time datetime="2016-03-21T09:39:56.000Z" class="chip">2016-03-21</time>
-
-
-    
-    / <a href="/categories/前端/" class="chip">前端</a>
-
-
-
-
-
-    <div class="clearfix"></div>
-  </footer>
-  
-  <hr>
-</article>
-
-
-  <section id="comments" class="comments">
-    <div class="ds-thread" data-thread-key="post-shuffle" data-title="jQuery实现简单的轮播图" data-url="http://gaoryrt.com/2016/03-21-shuffle/"></div>
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:'gaoryrt'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-  </section>
-  
-
-    </section>
-    </div>
   </div>
-  <footer class="page-footer z-depth-2"><div class="clearfix"></div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
 <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="black-text blod">Blog Name Goes Here</h5>
-        <p class="black-text text-lighten-4">精神病人思路广，弱智儿童欢乐多</br>
-        为赋新词强说愁</br>
-        gaoryrt@gmail.com</p>
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="black-text">友链出租</h5>
+        <h5 class="white-text">友链出租</h5>
         <ul>
-          <li><a class="text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
-          <li><a class="text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
-          <li><a class="text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
-          <li><a class="text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
         </ul>
       </div>
     </div>
   </div>
-<div class="footer-copyright red">
-    <div class="container white-text">
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
     gaoryrt 2015-2016
-    <a class="right white-text" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
     </div>
 </div></footer>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
 

@@ -13,9 +13,11 @@
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
   
-  <meta name="google-site-verification" content="" />
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
   <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.min.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -26,10 +28,95 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 </head>
 
+
 <body>
-  <div class="site-navifator"><ul id="dropdown2" class="dropdown-content">
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        JQuery实现简单日历组件
+    </h1>
+  
+
+
+  </header>
+  <p><a href="http://gaoryrt.com/CV/calendar/index.html">demo点这里</a></p>
+<h1 id="需要达到的效果"><a href="#需要达到的效果" class="headerlink" title="需要达到的效果"></a>需要达到的效果</h1><p>常见的日历组件<br>从上到下是左右按键、年月、周标题、日期<br>点击左右按键可以跳月份<br>第一个版本就不谢其他东西了<br>能看到今天几号，某一天是周几这样  </p>
+<h1 id="大概思路"><a href="#大概思路" class="headerlink" title="大概思路"></a>大概思路</h1><p>先获得当前年月，这个月几天<br>然后算这个月一号周几<br>放好位置后，后面连着放好即可<br>主要函数就是一个放日期</p>
+<h1 id="首先是html"><a href="#首先是html" class="headerlink" title="首先是html"></a>首先是html</h1><p><code>div.wrapper&gt;title+img.prev+img.next&gt;(ul.week.w$&gt;li.date$*7)*7</code><br>七个week，第一个是用来放周一到周日的标志的<br>后面的六行刚好可以放分割最长的一周  </p>
+<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>需要注意的是，我用了<code>inline-block</code>来放置所有的日期项<br>有个关于<code>inline-blick</code>的问题就是上下不一定会对齐<br>那么这里就要把每一个项目都设置一个<code>max-height</code>而非只是<code>height</code>  </p>
+<h1 id="js"><a href="#js" class="headerlink" title="js"></a>js</h1><p>页面加载时生成本月，<code>prev</code>的上一月，<code>next</code>的下一月<br>都是围绕着一个函数<code>putMonth(year, month)</code><br>通过年月改变项目数字<br>这个函数也有几个注意的点<br>一是判断闰年：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var isleap = <span class="literal">false</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="built_in">year</span> % <span class="number">4</span> === <span class="number">0</span> &amp;&amp; <span class="built_in">year</span> % <span class="number">100</span> != <span class="number">0</span>) || <span class="built_in">year</span> % <span class="number">400</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        isleap = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>二是通过闰年判断该月的天数：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var <span class="attr">monthNum</span> = <span class="number">31</span></span><br><span class="line"><span class="keyword">if</span> (<span class="attr">month</span> === <span class="number">4</span> || <span class="attr">month</span> === <span class="number">6</span> || <span class="attr">month</span> === <span class="number">9</span> || <span class="attr">month</span> === <span class="number">11</span>) &#123;</span><br><span class="line">        <span class="attr">monthNum</span> = <span class="number">30</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="attr">month</span> === <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isleap) &#123;</span><br><span class="line">            <span class="attr">monthNum</span> = <span class="number">29</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="attr">monthNum</span> = <span class="number">28</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>三是循环填充的开始点：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            putDate(dayNum, <span class="built_in">row</span>, week01)</span><br><span class="line">            dayNum++</span><br><span class="line">            week01++</span><br><span class="line">        &#125; <span class="keyword">while</span> (week01 &lt; <span class="number">8</span> &amp;&amp; dayNum &lt;= monthNum)</span><br><span class="line">        <span class="built_in">row</span>++</span><br><span class="line">        week01 = <span class="number">1</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="built_in">row</span> &lt;= <span class="number">6</span> &amp;&amp; dayNum &lt;= monthNum)</span><br></pre></td></tr></table></figure></p>
+<p>这里用do-while而非for<br>还有就是两个需要自己调一调的地方：<br>getMonth()获得的是从零开始的月份<br><code>var month = now.getMonth() + 1</code><br>getDay()获得的是从零开始的日期<br><code>var week01 = new Date(year + &#39;/&#39; + month + &#39;/&#39; + &#39;0&#39;).getDay() + 1</code><br>另外两个按键就简单了  </p>
+<hr>
+<p>以上</p>
+
+  
+  <footer class="meta">
+    <time datetime="2016-03-22T18:19:09.000Z" class="chip">2016-03-23</time>
+
+
+    
+    / <a href="/categories/前端/" class="chip">前端</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-calender" data-title="JQuery实现简单日历组件" data-url="http://gaoryrt.com/2016/03-23-calender/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
     
       <li class="menu-item waves-effect waves-light">
         <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
@@ -71,111 +158,49 @@ var _hmt = _hmt || [];
 <ul id="dropdown1" class="dropdown-content">
     
     
-     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
 
 </ul>
 
 <nav>
-  <a class="logo" href="/">BNGH</a>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
     <ul class="right">
       <li><a href="/archives">归档</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
     </ul>
-</nav>
-</div>
-  <div class="section">
-    <div class="row container">
-    <section class="main">
-      
-<article class="single ty-basic ty-indent ty-wide post">
-  <header class="single_title">
-    
-  
-    <h1 class="title">
-        JQuery实现简单日历组件
-    </h1>
-  
-
-
-  </header>
-  <p><a href="http://gaoryrt.com/CV/calendar/index.html">demo点这里</a></p>
-<h1 id="需要达到的效果"><a href="#需要达到的效果" class="headerlink" title="需要达到的效果"></a>需要达到的效果</h1><p>常见的日历组件<br>从上到下是左右按键、年月、周标题、日期<br>点击左右按键可以跳月份<br>第一个版本就不谢其他东西了<br>能看到今天几号，某一天是周几这样  </p>
-<h1 id="大概思路"><a href="#大概思路" class="headerlink" title="大概思路"></a>大概思路</h1><p>先获得当前年月，这个月几天<br>然后算这个月一号周几<br>放好位置后，后面连着放好即可<br>主要函数就是一个放日期</p>
-<h1 id="首先是html"><a href="#首先是html" class="headerlink" title="首先是html"></a>首先是html</h1><p><code>div.wrapper&gt;title+img.prev+img.next&gt;(ul.week.w$&gt;li.date$*7)*7</code><br>七个week，第一个是用来放周一到周日的标志的<br>后面的六行刚好可以放分割最长的一周  </p>
-<h1 id="css"><a href="#css" class="headerlink" title="css"></a>css</h1><p>需要注意的是，我用了<code>inline-block</code>来放置所有的日期项<br>有个关于<code>inline-blick</code>的问题就是上下不一定会对齐<br>那么这里就要把每一个项目都设置一个<code>max-height</code>而非只是<code>height</code>  </p>
-<h1 id="js"><a href="#js" class="headerlink" title="js"></a>js</h1><p>页面加载时生成本月，<code>prev</code>的上一月，<code>next</code>的下一月<br>都是围绕着一个函数<code>putMonth(year, month)</code><br>通过年月改变项目数字<br>这个函数也有几个注意的点<br>一是判断闰年：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var isleap = <span class="literal">false</span></span><br><span class="line"><span class="keyword">if</span> ((<span class="built_in">year</span> % <span class="number">4</span> === <span class="number">0</span> &amp;&amp; <span class="built_in">year</span> % <span class="number">100</span> != <span class="number">0</span>) || <span class="built_in">year</span> % <span class="number">400</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        isleap = <span class="literal">true</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>二是通过闰年判断该月的天数：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var <span class="attr">monthNum</span> = <span class="number">31</span></span><br><span class="line"><span class="keyword">if</span> (<span class="attr">month</span> === <span class="number">4</span> || <span class="attr">month</span> === <span class="number">6</span> || <span class="attr">month</span> === <span class="number">9</span> || <span class="attr">month</span> === <span class="number">11</span>) &#123;</span><br><span class="line">        <span class="attr">monthNum</span> = <span class="number">30</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="attr">month</span> === <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isleap) &#123;</span><br><span class="line">            <span class="attr">monthNum</span> = <span class="number">29</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="attr">monthNum</span> = <span class="number">28</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>三是循环填充的开始点：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            putDate(dayNum, <span class="built_in">row</span>, week01)</span><br><span class="line">            dayNum++</span><br><span class="line">            week01++</span><br><span class="line">        &#125; <span class="keyword">while</span> (week01 &lt; <span class="number">8</span> &amp;&amp; dayNum &lt;= monthNum)</span><br><span class="line">        <span class="built_in">row</span>++</span><br><span class="line">        week01 = <span class="number">1</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="built_in">row</span> &lt;= <span class="number">6</span> &amp;&amp; dayNum &lt;= monthNum)</span><br></pre></td></tr></table></figure></p>
-<p>这里用do-while而非for<br>还有就是两个需要自己调一调的地方：<br>getMonth()获得的是从零开始的月份<br><code>var month = now.getMonth() + 1</code><br>getDay()获得的是从零开始的日期<br><code>var week01 = new Date(year + &#39;/&#39; + month + &#39;/&#39; + &#39;0&#39;).getDay() + 1</code><br>另外两个按键就简单了  </p>
-<hr>
-<p>以上</p>
-
-  
-  <footer class="meta">
-    <time datetime="2016-03-22T18:19:09.000Z" class="chip">2016-03-23</time>
-
-
-    
-    / <a href="/categories/前端/" class="chip">前端</a>
-
-
-
-
-
-    <div class="clearfix"></div>
-  </footer>
-  
-  <hr>
-</article>
-
-
-  <section id="comments" class="comments">
-    <div class="ds-thread" data-thread-key="post-calender" data-title="JQuery实现简单日历组件" data-url="http://gaoryrt.com/2016/03-23-calender/"></div>
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:'gaoryrt'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-  </section>
-  
-
-    </section>
-    </div>
   </div>
-  <footer class="page-footer z-depth-2"><div class="clearfix"></div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
 <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="black-text blod">Blog Name Goes Here</h5>
-        <p class="black-text text-lighten-4">精神病人思路广，弱智儿童欢乐多</br>
-        为赋新词强说愁</br>
-        gaoryrt@gmail.com</p>
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="black-text">友链出租</h5>
+        <h5 class="white-text">友链出租</h5>
         <ul>
-          <li><a class="text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
-          <li><a class="text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
-          <li><a class="text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
-          <li><a class="text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
         </ul>
       </div>
     </div>
   </div>
-<div class="footer-copyright red">
-    <div class="container white-text">
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
     gaoryrt 2015-2016
-    <a class="right white-text" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
     </div>
 </div></footer>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
 

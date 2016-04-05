@@ -13,9 +13,11 @@
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
   
-  <meta name="google-site-verification" content="" />
+  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
   <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.min.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -26,10 +28,93 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
 </head>
 
+
 <body>
-  <div class="site-navifator"><ul id="dropdown2" class="dropdown-content">
+  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
+  </div>
+  <div class="section z-depth-2">
+    <div class="row container">
+
+  <section class="main">
+    
+<article class="single ty-basic ty-indent ty-wide post">
+  <header class="single_title">
+    
+  
+  <!-- 以下是页内使用的 title -->
+    <h1 class="title">
+        「转」segue与delegate在ViewController返回的时候进行反向回传参数
+    </h1>
+  
+
+
+  </header>
+  <p>刚开始使用swift 的时候有很多问题<br>这篇文章帮了我很多<br>经过同意之后转过来记录一下<br>原帖地址<a href="http://www.zoejblog.com/iossegueyu-delegatezai-viewcontrollerfan-hui-de-shi-hou-jin-xing-fan-xiang-hui-chuan-can-shu/#comments" target="_blank" rel="external">[iOS]segue与delegate在ViewController返回的时候进行反向回传参数</a><br>作者<a href="http://www.zoejblog.com/author/zoej/" target="_blank" rel="external">zoej</a><br><a id="more"></a></p>
+<hr>
+<p>我们经常会使用navigationViewController，使用segue拉拉线，就可以实现页面跳转，使用<code>prepareForSegue</code>方便进行参数的正向传递，但我们也许也有的业务会是反向的传递参数，这个时候需要使用delegate。<br>假设有两个vc，事先做好了segue拉线，设置了按钮啥的，然后可以直接正向跳转，以及因为在一个navigation里面所以，第二个vc有个默认的back按钮可以反向的跳转，第一个是avc，第二个是bvc， 在bvc中我们写一个协议protocol，当然这个协议是写在类外面的，只是和类在同一个swift文件中：  </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">RidingDelegate</span>   </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> isRefreshDataFlag:<span class="type">Bool</span>&#123;<span class="keyword">get</span> <span class="keyword">set</span>&#125;<span class="comment">//我这里就只设置一个参数用来传递好了。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们在avc中要参照这个协议：  </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>,<span class="title">RidingDelegate</span> </span>&#123;</span><br><span class="line"><span class="keyword">var</span> isRefreshDataFlag=<span class="type">Bool</span>()<span class="comment">//并且直接实现这个协议参数，用来接收反向传输来的数据</span></span><br><span class="line"><span class="comment">//其他的方法这里都省略了，主要</span></span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">prepareForSegue</span><span class="params">(segue: UIStoryboardSegue, sender: AnyObject?)</span></span> &#123;  <span class="comment">//发生了segue的方法</span></span><br><span class="line">    <span class="keyword">if</span>(segue.identifier == <span class="string">"StartRiding"</span>)&#123;<span class="comment">//指定某一个segue的目标vc的委托指向自身</span></span><br><span class="line">        <span class="keyword">let</span> ridingVC = segue.destinationViewController <span class="keyword">as</span> <span class="type">RidingViewController</span></span><br><span class="line">        ridingVC.delegate=<span class="keyword">self</span>  <span class="comment">//设置代理，让第一个页面作为ridingView的代理来接受参数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">println</span>(<span class="string">"Segue: <span class="subst">\(segue.identifier)</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外在bvc中的类中，需要实例化这个delegate：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">delegate</span>:RidingDelegate?</span><br></pre></td></tr></table></figure></p>
+<p>并且在需要的地方进行这个委托中的参数变化：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delegate</span>?.isRefreshDataFlag=<span class="keyword">false</span></span><br></pre></td></tr></table></figure></p>
+<p>最后就可以实现这个反向传递参数了，委托协议里面可以写方法.<br>参照<a href="http://www.tuicool.com/articles/6zEne2" target="_blank" rel="external">Swift语言实现代理传值-推酷</a><br><a href="http://makeapppie.com/2014/07/01/swift-swift-using-segues-and-delegates-in-navigation-controllers-part-1-the-template/" target="_blank" rel="external">THE SWIFT SWIFT TUTORIAL: USING SEGUES AND DELEGATES IN NAVIGATION CONTROLLERS (PART 1 — THE TEMPLATE)</a></p>
+
+  
+  <footer class="meta">
+    <time datetime="2016-01-11T10:27:15.000Z" class="chip">2016-01-11</time>
+
+
+    
+    / <a href="/categories/疑似机器人/" class="chip">疑似机器人</a>
+
+
+
+
+
+    <div class="clearfix"></div>
+  </footer>
+  
+  <hr>
+</article>
+
+  
+  <section id="comments" class="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-segue" data-title="「转」segue与delegate在ViewController返回的时候进行反向回传参数" data-url="http://gaoryrt.com/2016/01-11-segue/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'gaoryrt'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+
+    <div class="clearfix"></div>
+  </section>
+
+ </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
+  </div>
+
+  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
     
       <li class="menu-item waves-effect waves-light">
         <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
@@ -71,109 +156,49 @@ var _hmt = _hmt || [];
 <ul id="dropdown1" class="dropdown-content">
     
     
-     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
 
 </ul>
 
 <nav>
-  <a class="logo" href="/">BNGH</a>
+
+  <div class="nav-wrapper">
+  <a href="/" class="logolink"></a>
     <ul class="right">
       <li><a href="/archives">归档</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
     </ul>
-</nav>
-</div>
-  <div class="section">
-    <div class="row container">
-    <section class="main">
-      
-<article class="single ty-basic ty-indent ty-wide post">
-  <header class="single_title">
-    
-  
-    <h1 class="title">
-        「转」segue与delegate在ViewController返回的时候进行反向回传参数
-    </h1>
-  
-
-
-  </header>
-  <p>刚开始使用swift 的时候有很多问题<br>这篇文章帮了我很多<br>经过同意之后转过来记录一下<br>原帖地址<a href="http://www.zoejblog.com/iossegueyu-delegatezai-viewcontrollerfan-hui-de-shi-hou-jin-xing-fan-xiang-hui-chuan-can-shu/#comments" target="_blank" rel="external">[iOS]segue与delegate在ViewController返回的时候进行反向回传参数</a><br>作者<a href="http://www.zoejblog.com/author/zoej/" target="_blank" rel="external">zoej</a><br><a id="more"></a></p>
-<hr>
-<p>我们经常会使用navigationViewController，使用segue拉拉线，就可以实现页面跳转，使用<code>prepareForSegue</code>方便进行参数的正向传递，但我们也许也有的业务会是反向的传递参数，这个时候需要使用delegate。<br>假设有两个vc，事先做好了segue拉线，设置了按钮啥的，然后可以直接正向跳转，以及因为在一个navigation里面所以，第二个vc有个默认的back按钮可以反向的跳转，第一个是avc，第二个是bvc， 在bvc中我们写一个协议protocol，当然这个协议是写在类外面的，只是和类在同一个swift文件中：  </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">RidingDelegate</span>   </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> isRefreshDataFlag:<span class="type">Bool</span>&#123;<span class="keyword">get</span> <span class="keyword">set</span>&#125;<span class="comment">//我这里就只设置一个参数用来传递好了。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后我们在avc中要参照这个协议：  </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>,<span class="title">RidingDelegate</span> </span>&#123;</span><br><span class="line"><span class="keyword">var</span> isRefreshDataFlag=<span class="type">Bool</span>()<span class="comment">//并且直接实现这个协议参数，用来接收反向传输来的数据</span></span><br><span class="line"><span class="comment">//其他的方法这里都省略了，主要</span></span><br><span class="line"> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">prepareForSegue</span><span class="params">(segue: UIStoryboardSegue, sender: AnyObject?)</span></span> &#123;  <span class="comment">//发生了segue的方法</span></span><br><span class="line">    <span class="keyword">if</span>(segue.identifier == <span class="string">"StartRiding"</span>)&#123;<span class="comment">//指定某一个segue的目标vc的委托指向自身</span></span><br><span class="line">        <span class="keyword">let</span> ridingVC = segue.destinationViewController <span class="keyword">as</span> <span class="type">RidingViewController</span></span><br><span class="line">        ridingVC.delegate=<span class="keyword">self</span>  <span class="comment">//设置代理，让第一个页面作为ridingView的代理来接受参数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">println</span>(<span class="string">"Segue: <span class="subst">\(segue.identifier)</span>"</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另外在bvc中的类中，需要实例化这个delegate：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">delegate</span>:RidingDelegate?</span><br></pre></td></tr></table></figure></p>
-<p>并且在需要的地方进行这个委托中的参数变化：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delegate</span>?.isRefreshDataFlag=<span class="keyword">false</span></span><br></pre></td></tr></table></figure></p>
-<p>最后就可以实现这个反向传递参数了，委托协议里面可以写方法.<br>参照<a href="http://www.tuicool.com/articles/6zEne2" target="_blank" rel="external">Swift语言实现代理传值-推酷</a><br><a href="http://makeapppie.com/2014/07/01/swift-swift-using-segues-and-delegates-in-navigation-controllers-part-1-the-template/" target="_blank" rel="external">THE SWIFT SWIFT TUTORIAL: USING SEGUES AND DELEGATES IN NAVIGATION CONTROLLERS (PART 1 — THE TEMPLATE)</a></p>
-
-  
-  <footer class="meta">
-    <time datetime="2016-01-11T10:27:15.000Z" class="chip">2016-01-11</time>
-
-
-    
-    / <a href="/categories/疑似机器人/" class="chip">疑似机器人</a>
-
-
-
-
-
-    <div class="clearfix"></div>
-  </footer>
-  
-  <hr>
-</article>
-
-
-  <section id="comments" class="comments">
-    <div class="ds-thread" data-thread-key="post-segue" data-title="「转」segue与delegate在ViewController返回的时候进行反向回传参数" data-url="http://gaoryrt.com/2016/01-11-segue/"></div>
-    <script type="text/javascript">
-      var duoshuoQuery = {short_name:'gaoryrt'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-  </section>
-  
-
-    </section>
-    </div>
   </div>
-  <footer class="page-footer z-depth-2"><div class="clearfix"></div>
+
+</nav>
+</footer>
+  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
 <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="black-text blod">Blog Name Goes Here</h5>
-        <p class="black-text text-lighten-4">精神病人思路广，弱智儿童欢乐多</br>
-        为赋新词强说愁</br>
-        gaoryrt@gmail.com</p>
+        <h5 class="white-text">Blog Name Gose Here</h5>
+        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="black-text">友链出租</h5>
+        <h5 class="white-text">友链出租</h5>
         <ul>
-          <li><a class="text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
-          <li><a class="text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
-          <li><a class="text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
-          <li><a class="text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
+          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
+          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
         </ul>
       </div>
     </div>
   </div>
-<div class="footer-copyright red">
-    <div class="container white-text">
+  <div class="footer-copyright z-depth-2">
+    <div class="container">
     gaoryrt 2015-2016
-    <a class="right white-text" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
+    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
     </div>
 </div></footer>
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
 
