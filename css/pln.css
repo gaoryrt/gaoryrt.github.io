@@ -206,3 +206,63 @@ td.code pre {
     width: 800px;
     white-space: pre;
 }
+
+@media screen and (max-width: 782px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .navbar-left {
+        order: 0;
+    }
+
+    .navbar-right {
+        order: 2;
+    }
+
+    .navbar-header {
+        order: 1;
+    }
+
+    li.archives {
+        display: none;
+    }
+
+    .navbar-left {
+        float: left;
+    }
+
+    .navbar-right {
+        float: right;
+    }
+
+    .behind {
+        color: rgba(0, 0, 0, 0);
+        padding: 0;
+    }
+
+    .right-foot {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        position: relative;
+        left: 0;
+        text-align: center;
+    }
+
+    i.fa-arrow-right {
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .standard, .archive, .archive-title {
+        padding: 0 8%;
+    }
+
+}
