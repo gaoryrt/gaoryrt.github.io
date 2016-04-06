@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>「翻译」 Swift 类型转换</title>
   <meta name="author" content="gaoryrt">
@@ -14,10 +15,11 @@
  <meta property="og:image" content="undefined"/>
   
   <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic|Open+Sans+Condensed:300,700|Pacifico" rel="stylesheet" media="all" type="text/css">
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -28,35 +30,52 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-
 </head>
 
-
 <body>
-  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+  <div id="main">
+    <div class="behind">
+            <div class="back">
+            <a href="/" class="black-color"><i class="fa fa-times-circle-o"></i></a>
+            </div>
+            <div class="description">
+                精神病人思路广，弱智儿童欢乐多
+            </div>
+        </div>
+    <div class="container">
+        
 
-
-  <div class="parallax-container">
-    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
-  </div>
-  <div class="section z-depth-2">
-    <div class="row container">
-
-  <section class="main">
-    
-<article class="single ty-basic ty-indent ty-wide post">
-  <header class="single_title">
-    
+  <article class="standard post">
+    <div class="title">
+      
   
   <!-- 以下是页内使用的 title -->
-    <h1 class="title">
+    <h1 class="page-title center">
         「翻译」 Swift 类型转换
     </h1>
   
 
 
-  </header>
-  <p>这是对 swift 2.2 中 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" target="_blank" rel="external">类型转换</a> 一节的翻译<br>第一次翻译这么长的。。。好麻烦</p>
+    </div>
+    <div class="meta center">
+      <time datetime="2016-01-28T16:07:28.000Z">
+    <i class="fa fa-calendar"></i>&nbsp;
+    2016-01-29
+</time>
+
+
+    
+    &nbsp;|&nbsp;&nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/疑似机器人/">疑似机器人</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <p>这是对 swift 2.2 中 <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TypeCasting.html#//apple_ref/doc/uid/TP40014097-CH22-ID338" target="_blank" rel="external">类型转换</a> 一节的翻译<br>第一次翻译这么长的。。。好麻烦</p>
 <h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><p><em>类型转换</em>可以判断实例的类型，也可以将该实例在其所在的类层次中视为其父类或子类的实例。</p>
 <p>Swift 中的类型转换使用 <code>is</code> 和 <code>as</code> 作为操作符。这两个操作符使用了一种简单传神的方式来检查一个值的类型或将某个值转换为另一种类型。</p>
 <p>你还可以使用类型转换来检查类型是否符合一个协议，参考<a href="">协议实现的检查</a>。</p>
@@ -108,141 +127,62 @@ var _hmt = _hmt || [];
 <p>你可以在 <code>switch</code> 结构的 case 中使用 <code>is</code> 和 <code>as</code> 操作符找出已知 Any 或 AnyObject 类型的常量或变量的具体类型。下面的例子使用 <code>switch</code> 语句遍历了 <code>things</code> 数组并查询每一项的类型。其中几个 <code>switch</code> 的 cases 将确定的值和确定类型的常量绑定在一起，使其值可以被输出：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> thing <span class="keyword">in</span> things &#123;</span><br><span class="line">    <span class="keyword">switch</span> thing &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span> <span class="keyword">as</span> <span class="type">Int</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"zero as an Int"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span> <span class="keyword">as</span> <span class="type">Double</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"zero as a Double"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> someInt <span class="keyword">as</span> <span class="type">Int</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"an integer value of <span class="subst">\(someInt)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> someDouble <span class="keyword">as</span> <span class="type">Double</span> <span class="keyword">where</span> someDouble &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"a positive double value of <span class="subst">\(someDouble)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">is</span> <span class="type">Double</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"some other double value that I don't want to print"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> someString <span class="keyword">as</span> <span class="type">String</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"a string value of \"<span class="subst">\(someString)</span>\""</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> (x, y) <span class="keyword">as</span> (<span class="type">Double</span>, <span class="type">Double</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"an (x, y) point at <span class="subst">\(x)</span>, <span class="subst">\(y)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> movie <span class="keyword">as</span> <span class="type">Movie</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"a movie called '<span class="subst">\(movie.name)</span>', dir. <span class="subst">\(movie.director)</span>"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> stringConverter <span class="keyword">as</span> <span class="type">String</span> -&gt; <span class="type">String</span>:</span><br><span class="line">        <span class="built_in">print</span>(stringConverter(<span class="string">"Michael"</span>))</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"something else"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// zero as an Int</span></span><br><span class="line"><span class="comment">// zero as a Double</span></span><br><span class="line"><span class="comment">// an integer value of 42</span></span><br><span class="line"><span class="comment">// a positive double value of 3.14159</span></span><br><span class="line"><span class="comment">// a string value of "hello"</span></span><br><span class="line"><span class="comment">// an (x, y) point at 3.0, 5.0</span></span><br><span class="line"><span class="comment">// a movie called 'Ghostbusters', dir. Ivan Reitman</span></span><br><span class="line"><span class="comment">// Hello, Michael</span></span><br></pre></td></tr></table></figure>
 
-  
-  <footer class="meta">
-    <time datetime="2016-01-28T16:07:28.000Z" class="chip">2016-01-29</time>
 
-
-    
-    / <a href="/categories/疑似机器人/" class="chip">疑似机器人</a>
+  </article>
 
 
 
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com'; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = gaoryrt; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
 
 
-    <div class="clearfix"></div>
-  </footer>
-  
-  <hr>
-</article>
-
-  
-  <section id="comments" class="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-类型转换" data-title="「翻译」 Swift 类型转换" data-url="http://gaoryrt.com/2016/01-29-类型转换/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'gaoryrt'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-  
-
-    <div class="clearfix"></div>
-  </section>
-
- </div>
+    </div>
   </div>
-  <div class="parallax-container">
-    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
-  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
 
-  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
-            Github
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
-            微博
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
-            知乎
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="/rss2.xml"  class= "text-lighten-1">
-            rss
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="/CV"  class= "text-lighten-1">
-            关于我
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-</ul>
+    <a class="backtop wow fadeIn animated" href="#top" >
+        <i class="fa fa-arrow-right"></i>
+    </a>
+    &nbsp;&nbsp;&nbsp;© Gaoryrt 2015-2016
+    <a href="/CV">
+        _About_me
+    </a>
 
-<ul id="dropdown1" class="dropdown-content">
-    
-    
-     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+</div>
 
-</ul>
-
-<nav>
-
-  <div class="nav-wrapper">
-  <a href="/" class="logolink"></a>
-    <ul class="right">
-      <li><a href="/archives">归档</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
-    </ul>
-  </div>
-
-</nav>
 </footer>
-  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
-<div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Blog Name Gose Here</h5>
-        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">友链出租</h5>
-        <ul>
-          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
-          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright z-depth-2">
-    <div class="container">
-    gaoryrt 2015-2016
-    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
-    </div>
-</div></footer>
-  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
-<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--scripts below-->
 <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="/js/materialize.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var disqus_shortname = 'gaoryrt';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 </body>

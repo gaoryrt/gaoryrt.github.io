@@ -1,0 +1,208 @@
+.index-title, .page-title, .navbar-brand, .btn {
+    font-family: "Open Sans Condensed", sans-serif;
+    text-transform: uppercase;
+}
+
+.index-title, .page-title, .btn {
+    font-weight: 600 !important;
+}
+
+.navbar-brand, .btn {
+    font-size: 1.5em;
+}
+
+body {
+    font-family: 'Hiragino Sans GB', 'Lucida Sans Unicode', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Verdana, Aril, sans-serif;
+    background-color: rgba(250, 248, 248, 1);
+}
+
+li {
+    list-style-type:none;
+}
+
+.right-foot {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    position: fixed;
+    left: 50%;
+    bottom: 45%;
+    writing-mode: lr-tb;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    z-index: 0;
+}
+.container {
+    max-width: 800px;
+    padding: 0 40px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.85em;
+    font-weight: 300;
+    color: #000;
+}
+
+.page-title {
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;
+    margin: 10px 0 20px;
+    text-transform: uppercase;
+}
+
+.behind {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding: 22px 0;
+    color: rgba(0, 0, 0, 0.36);
+    text-transform: uppercase;
+}
+
+
+
+.back {
+    position: fixed;
+    top: 18px;
+    left: 5%;
+}
+
+article {
+    padding: 40px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.meta {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 300;
+    padding-bottom: 30px;
+}
+
+.index-title {
+    width: 60%;
+    font-size: 34px;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+.excerpt {
+    width: 88%;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+.index-meta {
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+.arc-title {
+
+}
+
+.navbar {
+    background-color: white;
+}
+
+.black-color {
+    color:black;
+}
+
+pre .comment {
+    color: #8e908c;
+}
+
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+    color: #ea4335;
+}
+
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+    color: #f0b307;
+}
+
+pre .ruby .class .title,
+pre .css .rules .attribute {
+    color: #34a853;
+}
+
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+    color: #00a1f1;
+}
+
+pre .title,
+pre .css .hexcolor {
+    color: #34a853;
+}
+
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+    color: #4285f4;
+}
+
+pre .keyword,
+pre .javascript .function {
+    color: #f65314;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table tbody,figure {
+    width: 900px;
+    margin-left: -50px;
+    z-index: 2;
+}
+
+tbody tr {
+    width: 900px;
+    table-layout: fixed;
+}
+
+td.gutter {
+    width: 40px;
+}
+
+td.code, pre, tbody, table, tr, figure, td.code pre {
+    overflow: auto; !important;
+}
+
+td.code pre {
+    width: 800px;
+    white-space: pre;
+}

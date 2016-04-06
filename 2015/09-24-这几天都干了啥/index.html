@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <title>这几天都干了啥</title>
   <meta name="author" content="gaoryrt">
@@ -14,10 +15,11 @@
  <meta property="og:image" content="undefined"/>
   
   <meta name="baidu-site-verification" content="3TMWX9eAp1" />
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic|Open+Sans+Condensed:300,700|Pacifico" rel="stylesheet" media="all" type="text/css">
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/ty.css">
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" media="screen" type="text/css" href="/css/materialize.min.css"/>
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -28,35 +30,52 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-
 </head>
 
-
 <body>
-  <header class="banner"><h1 class="logo">Blog Name Goes Here</h1></header>
+  <div id="main">
+    <div class="behind">
+            <div class="back">
+            <a href="/" class="black-color"><i class="fa fa-times-circle-o"></i></a>
+            </div>
+            <div class="description">
+                精神病人思路广，弱智儿童欢乐多
+            </div>
+        </div>
+    <div class="container">
+        
 
-
-  <div class="parallax-container">
-    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax1.jpg"></div>
-  </div>
-  <div class="section z-depth-2">
-    <div class="row container">
-
-  <section class="main">
-    
-<article class="single ty-basic ty-indent ty-wide post">
-  <header class="single_title">
-    
+  <article class="standard post">
+    <div class="title">
+      
   
   <!-- 以下是页内使用的 title -->
-    <h1 class="title">
+    <h1 class="page-title center">
         这几天都干了啥
     </h1>
   
 
 
-  </header>
-  <p>这几天都更新了的，全部在这一篇里面👉<a href="http://gaoryrt.github.io/2015/09/21/一个calcu-app的实现/" target="_blank" rel="external">一个calcu app的实现</a><br>基本上都在写这个程序员计算器了<br><a id="more"></a> </p>
+    </div>
+    <div class="meta center">
+      <time datetime="2015-09-24T15:35:09.000Z">
+    <i class="fa fa-calendar"></i>&nbsp;
+    2015-09-24
+</time>
+
+
+    
+    &nbsp;|&nbsp;&nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/随笔与个人文集/">随笔与个人文集</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <p>这几天都更新了的，全部在这一篇里面👉<a href="http://gaoryrt.github.io/2015/09/21/一个calcu-app的实现/" target="_blank" rel="external">一个calcu app的实现</a><br>基本上都在写这个程序员计算器了<br><a id="more"></a> </p>
 <h1 id="计算器"><a href="#计算器" class="headerlink" title="计算器"></a>计算器</h1><p>写计算器刚开始还觉得简单用不了多久<br>但是写着写着功能一多bug就多得不得了<br>最开始设定的功能都还没有写完这边bug都爆炸了，今晚直接浪费1h在debug上面。。<br>最后发现出错的地方很傻逼。。自己把带参的函数形参都写掉了<br>然后学乖了。。没有的功能直接在不用的时候禁用掉，不准bug出来。。<br>希望越大失望越大。。还好已经习惯了，尽量要求自己不要把最初的目标打破<br>结果保持最初目标不变成了最低标准。。真伤心  </p>
 <hr>
 <h1 id="大江大海"><a href="#大江大海" class="headerlink" title="大江大海"></a>大江大海</h1><p>上次是哪里看到大江大海1949来着。。。<br>对了就是D版<br>有人说看到部分情节虐心<br>我就喜欢虐心的。。然后就找来看了<br>龙应台讲他爸妈和爸妈的朋友亲戚的故事<br>讲故事的时候总感觉她不是亲生的。。咋个语气那么冷淡<br>后面越来越感觉这样第三者来看明显不矫情啊<br>社会动荡 沧海桑田 个人在革命面前的渺小一下子就出来了。。<br>确实挺好看的，还没有看完  </p>
@@ -65,141 +84,62 @@ var _hmt = _hmt || [];
 <hr>
 <p>以上</p>
 
-  
-  <footer class="meta">
-    <time datetime="2015-09-24T15:35:09.000Z" class="chip">2015-09-24</time>
 
-
-    
-    / <a href="/categories/随笔与个人文集/" class="chip">随笔与个人文集</a>
+  </article>
 
 
 
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com'; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = gaoryrt; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
 
 
-    <div class="clearfix"></div>
-  </footer>
-  
-  <hr>
-</article>
-
-  
-  <section id="comments" class="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-这几天都干了啥" data-title="这几天都干了啥" data-url="http://gaoryrt.com/2015/09-24-这几天都干了啥/"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var duoshuoQuery = {short_name:'gaoryrt'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
-  </section>
-  
-
-    <div class="clearfix"></div>
-  </section>
-
- </div>
+    </div>
   </div>
-  <div class="parallax-container">
-    <div class="parallax"><img src="http://7xs4ih.com1.z0.glb.clouddn.com/parallax2.jpg"></div>
-  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
 
-  <footer class="site-footer"><ul id="dropdown2" class="dropdown-content">
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="https://github.com/gaoryrt/"  class= "text-lighten-1">
-            Github
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="http://weibo.com/R1T1AN"  class= "text-lighten-1">
-            微博
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="https://www.zhihu.com/people/gaoryrt"  class= "text-lighten-1">
-            知乎
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="/rss2.xml"  class= "text-lighten-1">
-            rss
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-      <li class="menu-item waves-effect waves-light">
-        <a href="/CV"  class= "text-lighten-1">
-            关于我
-        </a>
-      </li>
-      <li class="divider"></li>
-    
-</ul>
+    <a class="backtop wow fadeIn animated" href="#top" >
+        <i class="fa fa-arrow-right"></i>
+    </a>
+    &nbsp;&nbsp;&nbsp;© Gaoryrt 2015-2016
+    <a href="/CV">
+        _About_me
+    </a>
 
-<ul id="dropdown1" class="dropdown-content">
-    
-    
-     <li class="menu-site waves-effect waves-light"><a href="/categories/随笔与个人文集/" class= "text-lighten-1">随笔与个人文集</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/硬悟学蛇/" class= "text-lighten-1">硬悟学蛇</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/疑似机器人/" class= "text-lighten-1">疑似机器人</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Geek-Talks-·-奇客怪谈/" class= "text-lighten-1">Geek Talks · 奇客怪谈</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/前端/" class= "text-lighten-1">前端</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/Discovery/" class= "text-lighten-1">Discovery</a></li><li class="divider "></li><li class="menu-site waves-effect waves-light"><a href="/categories/麦客爱苹果/" class= "text-lighten-1">麦客爱苹果</a></li>
+</div>
 
-</ul>
-
-<nav>
-
-  <div class="nav-wrapper">
-  <a href="/" class="logolink"></a>
-    <ul class="right">
-      <li><a href="/archives">归档</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false">标签</a></li>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true">更多</a></li>
-    </ul>
-  </div>
-
-</nav>
 </footer>
-  <footer class="page-footer z-depth-1"><div class="clearfix"></div>
-<div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Blog Name Gose Here</h5>
-        <p class="grey-text text-lighten-4">精神病人思路广，弱智儿童欢乐多<br>傻穷丑三观不正<br>为赋新词强说愁<br>gaoryrt@gmail.com</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">友链出租</h5>
-        <ul>
-          <li><a class="grey-text text-lighten-3" href="https://hexo.io">Hexo - powerful blog framework</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://github.com/chadluo/hexo-theme-mame">Mame - theme for Hexo</a></li>
-          <li><a class="grey-text text-lighten-3" href="http://materializecss.com">Materialize Css</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://www.logcg.com">落格博客 Log everything</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright z-depth-2">
-    <div class="container">
-    gaoryrt 2015-2016
-    <a class="grey-text text-lighten-4 right" href="https://github.com/gaoryrt/dame">主题 - Dame</a>
-    </div>
-</div></footer>
-  <script src="//cdn.bootcss.com/jquery.imagesloaded/4.1.0/imagesloaded.min.js"></script>
-<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--scripts below-->
 <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<script src="/js/materialize.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var disqus_shortname = 'gaoryrt';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 </body>
