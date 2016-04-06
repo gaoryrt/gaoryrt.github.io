@@ -261,7 +261,7 @@ td.code pre {
         padding: 0;
     }
 
-    .standard, .archive, .archive-title {
+    .standard, .archive, .archive-title, #layout {
         padding: 0 8%;
     }
 
