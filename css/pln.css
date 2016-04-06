@@ -26,7 +26,7 @@ li {
     -o-transform: rotate(270deg);
     position: fixed;
     left: 50%;
-    bottom: 45%;
+    bottom: 50%;
     writing-mode: lr-tb;
     font-family: 'Pacifico', cursive;
     font-size: 1.5em;
@@ -34,7 +34,7 @@ li {
 }
 .container {
     max-width: 800px;
-    padding: 0 40px;
+    padding: 0 5%;
 }
 
 p {
