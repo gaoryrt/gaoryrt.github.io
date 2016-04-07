@@ -3,6 +3,28 @@
     text-transform: uppercase;
 }
 
+body {
+    font-family: 'Hiragino Sans GB', 'Lucida Sans Unicode', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Verdana, Aril, sans-serif;
+    background-color: rgba(250, 248, 248, 1);
+}
+
+pre {
+    font-size: 1.5rem;
+    padding: 15px;
+    line-height: 24px;
+    border: 0;
+}
+
+code {
+    color:#000;
+    font-size: 100%;
+}
+
+code, pre {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background: #eee;
+}
+
 .index-title, .page-title, .btn {
     font-weight: 600 !important;
 }
@@ -11,9 +33,8 @@
     font-size: 1.5em;
 }
 
-body {
-    font-family: 'Hiragino Sans GB', 'Lucida Sans Unicode', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Verdana, Aril, sans-serif;
-    background-color: rgba(250, 248, 248, 1);
+a, a:hover, a:focus {
+    color: #0E5AA4;
 }
 
 li {
@@ -117,6 +138,10 @@ article {
     color:black;
 }
 
+pre {
+    color:#5a5050;
+}
+
 pre .comment {
     color: #8e908c;
 }
@@ -133,7 +158,12 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-    color: #ea4335;
+    color: #547ab2;
+}
+
+pre .keyword,
+pre .javascript .function {
+    color: #547ab2;
 }
 
 pre .number,
@@ -142,12 +172,17 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-    color: #f0b307;
+    color: #3eacab;
 }
 
 pre .ruby .class .title,
 pre .css .rules .attribute {
-    color: #34a853;
+    color: #3eacab;
+}
+
+pre .title,
+pre .css .hexcolor {
+    color: #3eacab;
 }
 
 pre .string,
@@ -156,12 +191,7 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-    color: #00a1f1;
-}
-
-pre .title,
-pre .css .hexcolor {
-    color: #34a853;
+    color: #3eacab;
 }
 
 pre .function,
@@ -172,13 +202,10 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-    color: #4285f4;
+    color: #5a5050;
 }
 
-pre .keyword,
-pre .javascript .function {
-    color: #f65314;
-}
+
 
 table {
     width: 100%;
@@ -192,7 +219,6 @@ figure {
    overflow-x: auto;
    margin-left: -9%;
    width: 118%;
-   z-index: 2;
 }
 
 @media screen and (max-width: 782px) {
