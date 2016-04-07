@@ -254,6 +254,10 @@ figure {
         padding: 0 8%;
     }
 
+    .navbar-nav .open .dropdown-menu>li>a {
+        line-height: 40px;
+    }
+
 }
 
 @media screen and (min-width: 360px) and (max-width: 782px) {
