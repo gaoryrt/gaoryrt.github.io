@@ -181,32 +181,18 @@ pre .javascript .function {
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-table tbody,figure {
-    width: 900px;
-    margin-left: -50px;
-    z-index: 2;
-}
-
-tbody tr {
-    width: 900px;
-    table-layout: fixed;
+    width: 100%;
 }
 
 td.gutter {
-    width: 40px;
+    display: none;
 }
 
-td.code, pre, tbody, table, tr, figure, td.code pre {
-    overflow: auto; !important;
-}
-
-td.code pre {
-    width: 800px;
-    white-space: pre;
+figure {
+   overflow-x: auto;
+   margin-left: -9%;
+   width: 118%;
+   z-index: 2;
 }
 
 @media screen and (max-width: 782px) {
@@ -251,6 +237,7 @@ td.code pre {
         position: relative;
         left: 0;
         text-align: center;
+        margin-bottom: 20px;
     }
 
     i.fa-arrow-right {
@@ -263,8 +250,15 @@ td.code pre {
         padding: 0;
     }
 
-    .standard, .archive, .archive-title, #layout {
+    .standard, .archive, .archive-title, #disqus_thread {
         padding: 0 8%;
     }
 
+}
+
+@media screen and (min-width: 360px) and (max-width: 782px) {
+    .behind {
+        color: rgba(0, 0, 0, 0.42);
+        padding: 20px 0;
+    }
 }
