@@ -9,6 +9,7 @@
 
 body {
     font-family: 'Hiragino Sans GB', 'Lucida Sans Unicode', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Verdana, Aril, sans-serif;
+    background-color: rgb(249, 250, 251);
 }
 
 pre {
@@ -232,6 +233,10 @@ figure {
 }
 
 @media screen and (max-width: 782px) {
+    .back {
+        display: none;
+    }
+
     .nav-container {
         display: flex;
         justify-content: space-around;

@@ -300,6 +300,11 @@ var _hmt = _hmt || [];
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 700);
+  return false;
+});
+
 var disqus_shortname = 'gaoryrt';
 
 (function(){
