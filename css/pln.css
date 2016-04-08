@@ -40,6 +40,7 @@ code, pre {
 
 a, a:hover, a:focus {
     color: #2570A1;
+    transition:0.2s ease-in-out;
 }
 
 li {
@@ -86,10 +87,10 @@ p {
 .behind {
     text-align: center;
     font-size: 22px;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: 2px;
     padding: 22px 0;
-    color: rgba(0, 0, 0, 0.30);
+    color: #adadad;
     text-transform: uppercase;
 }
 
@@ -112,6 +113,7 @@ article {
     line-height: 20px;
     font-weight: 300;
     padding-bottom: 30px;
+    color: #adadad;
 }
 
 .index-title {
@@ -233,7 +235,7 @@ figure {
 }
 
 @media screen and (max-width: 782px) {
-    .back {
+    .back, li.archives {
         display: none;
     }
 
@@ -252,10 +254,6 @@ figure {
 
     .navbar-header {
         order: 1;
-    }
-
-    li.archives {
-        display: none;
     }
 
     .navbar-left {
