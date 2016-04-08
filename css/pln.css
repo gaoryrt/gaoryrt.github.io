@@ -9,7 +9,6 @@
 
 body {
     font-family: 'Hiragino Sans GB', 'Lucida Sans Unicode', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Verdana, Aril, sans-serif;
-    background-color: rgba(250, 248, 248, 1);
 }
 
 pre {
@@ -22,6 +21,7 @@ pre {
 code {
     color:#000;
     font-size: 100%;
+    word-wrap: break-word;
 }
 
 code, pre {
@@ -67,10 +67,11 @@ li {
 }
 
 p {
+    padding: 10px 0;
     font-size: 16px;
-    line-height: 1.85em;
-    font-weight: 300;
-    color: #000;
+    line-height: 2em;
+    font-weight: 100;
+    color: #444;
 }
 
 .page-title {
@@ -84,10 +85,10 @@ p {
 .behind {
     text-align: center;
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 100;
     letter-spacing: 2px;
     padding: 22px 0;
-    color: rgba(0, 0, 0, 0.36);
+    color: rgba(0, 0, 0, 0.30);
     text-transform: uppercase;
 }
 
@@ -293,11 +294,19 @@ figure {
         line-height: 40px;
     }
 
+    p {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 2.2em;
+    font-weight: 100;
+    color: #555;
+}
+
 }
 
 @media screen and (min-width: 360px) and (max-width: 782px) {
     .behind {
-        color: rgba(0, 0, 0, 0.42);
+        color: rgba(0, 0, 0, 0);
         padding: 20px 0;
     }
 }
