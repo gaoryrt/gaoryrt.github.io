@@ -1,3 +1,7 @@
+.post-item {
+    padding: 10px 0;
+}
+
 .index-title, .page-title, .navbar-brand, .btn {
     font-family: "Open Sans Condensed", sans-serif;
     text-transform: uppercase;
@@ -34,7 +38,7 @@ code, pre {
 }
 
 a, a:hover, a:focus {
-    color: #0E5AA4;
+    color: #2570A1;
 }
 
 li {
@@ -54,7 +58,7 @@ li {
     z-index: 0;
 }
 .container {
-    max-width: 800px;
+    max-width: 900px;
     padding: 0 5%;
 }
 
