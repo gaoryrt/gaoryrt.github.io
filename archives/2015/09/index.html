@@ -400,6 +400,7 @@ var disqus_shortname = 'gaoryrt';
 $(".dropdown").click(function(event) {
   var current = $(this);
   if($(current).children(".dropdown-content").hasClass("open")){
+    event.stopPropagation();
     $(current).children(".dropdown-content").removeClass("open");
   } else {
     event.stopPropagation();
@@ -407,13 +408,10 @@ $(".dropdown").click(function(event) {
   }
 });
 
-$("body").click(function(){
+$(document).click(function(){
     $(".dropdown-content").removeClass("open");
 })
 
-$(".dropdown-content").click(function (event) {
-  event.stopPropagation();
-})
 
 
 
