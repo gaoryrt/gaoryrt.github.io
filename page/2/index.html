@@ -107,7 +107,7 @@ var _hmt = _hmt || [];
     </ul>
     </li>
     <li class="archives"><a href="/archives">
-      <i class="fa fa-archive"></i>
+      <i class="fa fa-archive fa-lg"></i>
     </a></li>
   </ul>
   </div>
@@ -119,7 +119,6 @@ var _hmt = _hmt || [];
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2016/01-27-internship/">
             关于实习
@@ -162,7 +161,6 @@ var _hmt = _hmt || [];
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2016/01-24-newtheme/">
             开始使用 Dame 主题
@@ -200,7 +198,6 @@ var _hmt = _hmt || [];
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2016/01-21-material-ui/">
             「翻译」开始使用 Material-Ui
@@ -239,7 +236,6 @@ var _hmt = _hmt || [];
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2016/01-14-keywordsearcher2/">
             关键词搜索修正之二
@@ -281,7 +277,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2016/01-12-whatsup0112/">
             最近都在干啥01-12
@@ -321,7 +316,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2016/01-11-segue/">
             「转」segue与delegate在ViewController返回的时候进行反向回传参数
@@ -359,7 +353,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2015/12-29-whatsup1229/">
             最近在干什么12-29
@@ -399,7 +392,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2015/12-15-keywordsearcher/">
             关键词搜索修正
@@ -437,7 +429,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2015/12-13-socket/">
             Linux网络编程复习
@@ -475,7 +466,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2015/12-11-feminism/">
             直男癌、平权主义、乌云背后的幸福线、还有前女友
@@ -513,7 +503,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2015/11-30-HTMLParser/">
             HTMLRarser 的使用
@@ -551,7 +540,6 @@ word = &quot;信息工程&quot;
 <li class="post-item">
   
   
-    <!-- 以下是index 使用的 title -->
     <h1 class="index-title">
         <a href="/2015/11-27-assemblyreverse/">
             复习汇编
@@ -622,11 +610,8 @@ word = &quot;信息工程&quot;
 <div class="clearfix">
 </div>
 </footer>
-  <!--scripts below-->
-<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-/* by www.geekwen.com */
 function revealOnScroll() {
   var scrolled = $(window).scrollTop();
   $(".excerpt, .index-title, .index-meta, p").each(function() {
@@ -663,16 +648,15 @@ $(".dropdown").click(function(event) {
     $(current).children(".dropdown-content").addClass("open");
   }
 });
-
 $(document).click(function(){
     $(".dropdown-content").removeClass("open");
 })
 
-
-
-
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
 </script>
-
 
 
 </body>

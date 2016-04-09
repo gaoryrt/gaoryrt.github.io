@@ -51,7 +51,6 @@ var _hmt = _hmt || [];
     <div class="title">
       
   
-  <!-- 以下是页内使用的 title -->
     <h1 class="page-title center">
         一个Calcu App的实现
     </h1>
@@ -191,11 +190,8 @@ s.setAttribute('data-timestamp', +new Date());
 <div class="clearfix">
 </div>
 </footer>
-  <!--scripts below-->
-<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-/* by www.geekwen.com */
 function revealOnScroll() {
   var scrolled = $(window).scrollTop();
   $(".excerpt, .index-title, .index-meta, p").each(function() {
@@ -232,16 +228,15 @@ $(".dropdown").click(function(event) {
     $(current).children(".dropdown-content").addClass("open");
   }
 });
-
 $(document).click(function(){
     $(".dropdown-content").removeClass("open");
 })
 
-
-
-
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
 </script>
-
 
 
 </body>
