@@ -2,6 +2,10 @@
     padding: 10px 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 .index-title, .page-title, .navbar-brand, .btn {
     font-family: "Open Sans Condensed", sans-serif;
     text-transform: uppercase;
@@ -117,11 +121,11 @@ article {
 }
 
 .index-title, .excerpt, .index-meta {
-    -webkit-transition: all .8s ease-out;
-    -moz-transition: all .8s ease-out;
-    -ms-transition: all .8s ease-out;
-    -o-transition: all .8s ease-out;
-    transition: all .8s ease-out;
+    -webkit-transition: all .7s ease-out;
+    -moz-transition: all .7s ease-out;
+    -ms-transition: all .7s ease-out;
+    -o-transition: all .7s ease-out;
+    transition: all .7s ease-out;
 }
 
 .index-title, .index-meta {
