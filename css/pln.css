@@ -68,7 +68,7 @@ li {
     padding: 0 5%;
 }
 
-p {
+p, .excerpt {
     padding: 10px 0;
     font-size: 16px;
     line-height: 2em;
@@ -116,7 +116,7 @@ article {
     color: #adadad;
 }
 
-.index-title, .excerpt, .index-meta, p {
+.index-title, .excerpt, .index-meta {
     -webkit-transition: all .8s ease-out;
     -moz-transition: all .8s ease-out;
     -ms-transition: all .8s ease-out;
@@ -125,20 +125,20 @@ article {
 }
 
 .index-title, .index-meta {
-    -webkit-transform: translateY(35px);
-    -moz-transform: translateY(35px);
-    -ms-transform: translateY(35px);
-    -o-transform: translateY(35px);
-    transform: translateY(35px);
-}
-
-.excerpt, p {
-    opacity: 0;
     -webkit-transform: translateY(60px);
     -moz-transform: translateY(60px);
     -ms-transform: translateY(60px);
     -o-transform: translateY(60px);
     transform: translateY(60px);
+}
+
+.excerpt {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px);
 }
 
 .index-title {
@@ -154,7 +154,7 @@ article {
     padding: 10px 0;
 }
 
-.excerpt.animation, .index-title.animation, .index-meta.animation, p.animation {
+.excerpt.animation, .index-title.animation, .index-meta.animation {
   opacity: 1;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -327,7 +327,7 @@ figure {
         line-height: 40px;
     }
 
-    p {
+    p, .excerpt {
     padding: 10px 0;
     font-size: 14px;
     line-height: 2.2em;
