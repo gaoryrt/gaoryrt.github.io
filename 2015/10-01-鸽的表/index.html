@@ -149,10 +149,6 @@ function revealOnScroll() {
 $(window).on("scroll", revealOnScroll);
 $(window).load(revealOnScroll)
 
-$("a[href='#top']").click(function() {
-  $("html, body").animate({ scrollTop: 0 }, 700);
-  return false;
-});
 
 
 var disqus_shortname = 'gaoryrt';
@@ -165,14 +161,25 @@ var disqus_shortname = 'gaoryrt';
 }());
 
 
-$(".dropdown").hover(function () {
+$(".dropdown").click(function(event) {
   var current = $(this);
-  if($(current).find(".dropdown-content").hasClass("open")){
-    $(current).find(".dropdown-content").removeClass("open");
+  if($(current).children(".dropdown-content").hasClass("open")){
+    $(current).children(".dropdown-content").removeClass("open");
   } else {
-    $(current).find(".dropdown-content").addClass("open");
+    event.stopPropagation();
+    $(current).children(".dropdown-content").addClass("open");
   }
+});
+
+$("body").click(function(){
+    $(".dropdown-content").removeClass("open");
 })
+
+$(".dropdown-content").click(function (event) {
+  event.stopPropagation();
+})
+
+
 
 </script>
 

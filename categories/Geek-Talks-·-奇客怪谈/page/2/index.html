@@ -55,7 +55,7 @@ var _hmt = _hmt || [];
   <ul class="nav navbar-nav navbar-left">
 
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-arrow-circle-o-right fa-lg"></i>
       </span></a>
       <ul class="dropdown-content">
@@ -69,7 +69,7 @@ var _hmt = _hmt || [];
 
   <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
       <i class="fa fa-arrow-circle-o-left fa-lg"></i>
       </a>
       <ul class="dropdown-content">
@@ -289,10 +289,6 @@ function revealOnScroll() {
 $(window).on("scroll", revealOnScroll);
 $(window).load(revealOnScroll)
 
-$("a[href='#top']").click(function() {
-  $("html, body").animate({ scrollTop: 0 }, 700);
-  return false;
-});
 
 
 var disqus_shortname = 'gaoryrt';
@@ -305,14 +301,25 @@ var disqus_shortname = 'gaoryrt';
 }());
 
 
-$(".dropdown").hover(function () {
+$(".dropdown").click(function(event) {
   var current = $(this);
-  if($(current).find(".dropdown-content").hasClass("open")){
-    $(current).find(".dropdown-content").removeClass("open");
+  if($(current).children(".dropdown-content").hasClass("open")){
+    $(current).children(".dropdown-content").removeClass("open");
   } else {
-    $(current).find(".dropdown-content").addClass("open");
+    event.stopPropagation();
+    $(current).children(".dropdown-content").addClass("open");
   }
+});
+
+$("body").click(function(){
+    $(".dropdown-content").removeClass("open");
 })
+
+$(".dropdown-content").click(function (event) {
+  event.stopPropagation();
+})
+
+
 
 </script>
 

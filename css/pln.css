@@ -248,7 +248,7 @@ pre .comment {
     padding: 0;
     border: 1px solid #eee;
     width: 220px;
-    top: calc(100% + 2px);
+    top: calc(100% + 0px);
     visibility: hidden;
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
