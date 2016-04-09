@@ -433,6 +433,7 @@ figure {
         justify-content: center;
         flex-direction: column;
         text-align: center;
+        -webkit-overflow-scrolling: touch;
     }
 
     .navbar-right .dropdown-content {
@@ -441,6 +442,7 @@ figure {
 
     .dropdown-content li {
         border-bottom: 0px solid #eee;
+        -webkit-overflow-scrolling: touch;
     }
 
 }
