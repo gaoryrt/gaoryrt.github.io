@@ -160,13 +160,32 @@ s.setAttribute('data-timestamp', +new Date());
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+/* by www.geekwen.com */
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  // 视窗，即viewport，页面可视范围的窗口位置
+
+  $(".excerpt, .index-title, .index-meta").each(function() {
+    var current = $(this), // 当前元素
+      w_height = $(window).outerHeight(), //视窗高度
+      offsetTop = current.offset().top; //当前元素离顶部的高度
+
+    // 计算高度差（此处预留50是为了看效果）
+    // 当元素进入视窗时，添加class
+    if (scrolled + w_height + 50> offsetTop) {
+      current.addClass("animation");
+    }
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(window).load(revealOnScroll)
+
 $("a[href='#top']").click(function() {
   $("html, body").animate({ scrollTop: 0 }, 700);
   return false;
 });
 
 var disqus_shortname = 'gaoryrt';
-
 (function(){
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
@@ -174,6 +193,7 @@ var disqus_shortname = 'gaoryrt';
   dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
+
 </script>
 
 
