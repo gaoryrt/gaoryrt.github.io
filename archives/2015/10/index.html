@@ -341,7 +341,7 @@ function revealOnScroll() {
   var scrolled = $(window).scrollTop();
   // 视窗，即viewport，页面可视范围的窗口位置
 
-  $(".excerpt, .index-title, .index-meta").each(function() {
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
     var current = $(this), // 当前元素
       w_height = $(window).outerHeight(), //视窗高度
       offsetTop = current.offset().top; //当前元素离顶部的高度
