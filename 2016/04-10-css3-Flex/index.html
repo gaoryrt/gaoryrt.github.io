@@ -80,33 +80,33 @@ var _hmt = _hmt || [];
 <hr>
 <h1 id="container"><a href="#container" class="headerlink" title=".container"></a>.container</h1><p>flex的容器  </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;	<span class="attribute">display</span>: flex;</span><br><span class="line">	<span class="attribute">flex-direction</span>: row | row-re | column | column-re;</span><br><span class="line">	<span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">	<span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a><flex-direction>属性</flex-direction></h2><ol>
+<h2 id="lt-flex-direction-gt-属性"><a href="#lt-flex-direction-gt-属性" class="headerlink" title="&lt;flex-direction&gt;属性"></a><code>&lt;flex-direction&gt;</code>属性</h2><ol>
 <li>row 行</li>
 <li>row-re 逆序行</li>
 <li>column 列</li>
 <li>column-re 逆序列</li>
 </ol>
-<h2 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a><flex-wrap>属性</flex-wrap></h2><ol>
+<h2 id="lt-flex-wrap-gt-属性"><a href="#lt-flex-wrap-gt-属性" class="headerlink" title="&lt;flex-wrap&gt;属性"></a><code>&lt;flex-wrap&gt;</code>属性</h2><ol>
 <li>nowrap 禁止自动换行 </li>
 <li>wrap 自动换行</li>
 <li>wrap-reverse 自动换行，但是第一行会在下方</li>
 </ol>
-<h2 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a><flex-flow>属性</flex-flow></h2><p>为上面两个属性的复合/速记属性。<br>规则：<code>{flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;；}</code><br>例：<code>.container{flex-flow:row nowrap;}</code>  </p>
-<h2 id="水平属性"><a href="#水平属性" class="headerlink" title="水平属性"></a><strong>水平</strong><justify-content>属性</justify-content></h2><ol>
+<h2 id="lt-flex-flow-gt-属性"><a href="#lt-flex-flow-gt-属性" class="headerlink" title="&lt;flex-flow&gt;属性"></a><code>&lt;flex-flow&gt;</code>属性</h2><p>为上面两个属性的复合/速记属性。<br>规则：<code>{flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;；}</code><br>例：<code>.container{flex-flow:row nowrap;}</code>  </p>
+<h2 id="水平-lt-justify-content-gt-属性"><a href="#水平-lt-justify-content-gt-属性" class="headerlink" title="水平&lt;justify-content&gt;属性"></a><strong>水平</strong><code>&lt;justify-content&gt;</code>属性</h2><ol>
 <li>flex-start 聚拢靠左</li>
 <li>flex-end 聚拢靠右</li>
 <li>center 聚拢居中</li>
 <li>space-between （行内）内容间距相同</li>
 <li>sapce-around （行内）内容左右边距相同</li>
 </ol>
-<h2 id="纵向属性"><a href="#纵向属性" class="headerlink" title="纵向属性"></a><strong>纵向</strong><align-items>属性</align-items></h2><ol>
+<h2 id="纵向-lt-align-items-gt-属性"><a href="#纵向-lt-align-items-gt-属性" class="headerlink" title="纵向&lt;align-items&gt;属性"></a><strong>纵向</strong><code>&lt;align-items&gt;</code>属性</h2><ol>
 <li>flex-start 向上对齐</li>
 <li>flex-end 向下对齐</li>
 <li>center 居中对齐</li>
 <li>stretch 上下展开最大化</li>
 <li>baseline 文字基线对齐</li>
 </ol>
-<h2 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a><align-content>属性</align-content></h2><ol>
+<h2 id="lt-align-content-gt-属性"><a href="#lt-align-content-gt-属性" class="headerlink" title="&lt;align-content&gt;属性"></a><code>&lt;align-content&gt;</code>属性</h2><ol>
 <li>flex-start 聚拢靠上</li>
 <li>flex-end 聚拢靠下</li>
 <li>center 聚拢居中</li>
@@ -117,14 +117,14 @@ var _hmt = _hmt || [];
 <hr>
 <h1 id="item"><a href="#item" class="headerlink" title=".item"></a>.item</h1><p>flex的内容  </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;	<span class="attribute">order</span>: &lt;integer&gt;;</span><br><span class="line">	<span class="attribute">flex-grow</span>: &lt;number&gt;;</span><br><span class="line">	<span class="attribute">flex-shrink</span>: &lt;number&gt;;</span><br><span class="line">	<span class="attribute">flex-basis</span>: &lt;length&gt; || auto;</span><br><span class="line">	<span class="attribute">flex</span>: none || [ &lt;flex-grow&gt; &lt;flex-shrink&gt; || &lt;flex-basis&gt; ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a><order>属性</order></h2><p>整数型，flex的内容会由order由小到大排列。<br>例：  </p>
+<h2 id="lt-order-gt-属性"><a href="#lt-order-gt-属性" class="headerlink" title="&lt;order&gt;属性"></a><code>&lt;order&gt;</code>属性</h2><p>整数型，flex的内容会由order由小到大排列。<br>例：  </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.itemZ</span>&#123; <span class="attribute">order</span>: -<span class="number">1</span>;&#125;</span><br><span class="line"><span class="selector-class">.item0</span>&#123; <span class="attribute">order</span>: <span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-class">.item1</span>&#123; <span class="attribute">order</span>: <span class="number">1</span>;&#125; </span><br><span class="line"><span class="selector-class">.item2</span>&#123; <span class="attribute">order</span>: <span class="number">2</span>;&#125;</span><br></pre></td></tr></table></figure>
 <p>这样就是 <code>Z-0-1-2</code> 的熟悉排列。</p>
-<h2 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a><flex-grow>属性</flex-grow></h2><p>数字，内容根据该数字的大小为比例放大。  </p>
-<h2 id="属性-6"><a href="#属性-6" class="headerlink" title="属性"></a><flex-shrink>属性</flex-shrink></h2><p>数字，内容根据该数字的大小为比例缩小。  </p>
-<h2 id="属性-7"><a href="#属性-7" class="headerlink" title="属性"></a><flex-basis>属性</flex-basis></h2><p>长度或<code>auto</code>，内容按该长度伸缩剩余空间。<br>可以看<a href="https://css-tricks.com/almanac/properties/f/flex-basis/" target="_blank" rel="external">这一篇文章</a>详细了解<code>&lt;flex-fasis&gt;</code>属性。  </p>
-<h2 id="属性-8"><a href="#属性-8" class="headerlink" title="属性"></a><flex>属性</flex></h2><p>为上面三个属性<code>&lt;flex-grow&gt;</code>、<code>&lt;flex-shrink&gt;</code>、<code>&lt;flex-basis&gt;</code>的复合/速记属性。<br>规则： <code>{flex: none || [ &lt;flex-grow&gt; &lt;flex-shrink&gt; || &lt;flex-basis&gt; ];}</code><br>例：<code>.item{flex:1 1 auto;}</code>    </p>
-<h2 id="纵向属性-1"><a href="#纵向属性-1" class="headerlink" title="纵向属性"></a><strong>纵向</strong><align-self>属性</align-self></h2><ol>
+<h2 id="lt-flex-grow-gt-属性"><a href="#lt-flex-grow-gt-属性" class="headerlink" title="&lt;flex-grow&gt;属性"></a><code>&lt;flex-grow&gt;</code>属性</h2><p>数字，内容根据该数字的大小为比例放大。  </p>
+<h2 id="lt-flex-shrink-gt-属性"><a href="#lt-flex-shrink-gt-属性" class="headerlink" title="&lt;flex-shrink&gt;属性"></a><code>&lt;flex-shrink&gt;</code>属性</h2><p>数字，内容根据该数字的大小为比例缩小。  </p>
+<h2 id="lt-flex-basis-gt-属性"><a href="#lt-flex-basis-gt-属性" class="headerlink" title="&lt;flex-basis&gt;属性"></a><code>&lt;flex-basis&gt;</code>属性</h2><p>长度或<code>auto</code>，内容按该长度伸缩剩余空间。<br>可以看<a href="https://css-tricks.com/almanac/properties/f/flex-basis/" target="_blank" rel="external">这一篇文章</a>详细了解<code>&lt;flex-fasis&gt;</code>属性。  </p>
+<h2 id="lt-flex-gt-属性"><a href="#lt-flex-gt-属性" class="headerlink" title="&lt;flex&gt;属性"></a><code>&lt;flex&gt;</code>属性</h2><p>为上面三个属性<code>&lt;flex-grow&gt;</code>、<code>&lt;flex-shrink&gt;</code>、<code>&lt;flex-basis&gt;</code>的复合/速记属性。<br>规则： <code>{flex: none || [ &lt;flex-grow&gt; &lt;flex-shrink&gt; || &lt;flex-basis&gt; ];}</code><br>例：<code>.item{flex:1 1 auto;}</code>    </p>
+<h2 id="纵向-lt-align-self-gt-属性"><a href="#纵向-lt-align-self-gt-属性" class="headerlink" title="纵向&lt;align-self&gt;属性"></a><strong>纵向</strong><code>&lt;align-self&gt;</code>属性</h2><ol>
 <li>auto 与容器相同</li>
 <li>flex-start 向上对齐</li>
 <li>flex-end 向下对齐</li>
