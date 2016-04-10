@@ -8,8 +8,80 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>为赋新词强说愁</description>
-    <pubDate>Sun, 10 Apr 2016 09:24:53 GMT</pubDate>
+    <pubDate>Sun, 10 Apr 2016 14:19:59 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Flex Css3</title>
+      <link>http://gaoryrt.com/2016/04-10-css3-Flex/</link>
+      <guid>http://gaoryrt.com/2016/04-10-css3-Flex/</guid>
+      <pubDate>Sun, 10 Apr 2016 11:50:24 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;这一篇是从css-trics抄到本人小本本上面的，现在又从小本本上腾到博客上来。&lt;br&gt;刚刚找原文，发现&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html&quot; target=&quot;_blank&quot; re
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;这一篇是从css-trics抄到本人小本本上面的，现在又从小本本上腾到博客上来。&lt;br&gt;刚刚找原文，发现&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阮一峰&lt;/a&gt;也搬运过&lt;a href=&quot;https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这一篇文章&lt;/a&gt;。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;container&quot;&gt;&lt;a href=&quot;#container&quot; class=&quot;headerlink&quot; title=&quot;.container&quot;&gt;&lt;/a&gt;.container&lt;/h1&gt;&lt;p&gt;flex的容器  &lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;	&lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-direction&lt;/span&gt;: row | row-re | column | column-re;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-wrap&lt;/span&gt;: nowrap | wrap | wrap-reverse;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-flow&lt;/span&gt;: &amp;lt;flex-direction&amp;gt; || &amp;lt;flex-wrap&amp;gt;；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;flex-direction&gt;属性&lt;/flex-direction&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;row 行&lt;/li&gt;
+&lt;li&gt;row-re 逆序行&lt;/li&gt;
+&lt;li&gt;column 列&lt;/li&gt;
+&lt;li&gt;column-re 逆序列&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;属性-1&quot;&gt;&lt;a href=&quot;#属性-1&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;flex-wrap&gt;属性&lt;/flex-wrap&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;nowrap 禁止自动换行 &lt;/li&gt;
+&lt;li&gt;wrap 自动换行&lt;/li&gt;
+&lt;li&gt;wrap-reverse 自动换行，但是第一行会在下方&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;属性-2&quot;&gt;&lt;a href=&quot;#属性-2&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;flex-flow&gt;属性&lt;/flex-flow&gt;&lt;/h2&gt;&lt;p&gt;为上面两个属性的复合/速记属性。&lt;br&gt;规则：&lt;code&gt;{flex-flow: &amp;lt;flex-direction&amp;gt; || &amp;lt;flex-wrap&amp;gt;；}&lt;/code&gt;&lt;br&gt;例：&lt;code&gt;.container{flex-flow:row nowrap;}&lt;/code&gt;  &lt;/p&gt;
+&lt;h2 id=&quot;水平属性&quot;&gt;&lt;a href=&quot;#水平属性&quot; class=&quot;headerlink&quot; title=&quot;水平属性&quot;&gt;&lt;/a&gt;&lt;strong&gt;水平&lt;/strong&gt;&lt;justify-content&gt;属性&lt;/justify-content&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;flex-start 聚拢靠左&lt;/li&gt;
+&lt;li&gt;flex-end 聚拢靠右&lt;/li&gt;
+&lt;li&gt;center 聚拢居中&lt;/li&gt;
+&lt;li&gt;space-between （行内）内容间距相同&lt;/li&gt;
+&lt;li&gt;sapce-around （行内）内容左右边距相同&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;纵向属性&quot;&gt;&lt;a href=&quot;#纵向属性&quot; class=&quot;headerlink&quot; title=&quot;纵向属性&quot;&gt;&lt;/a&gt;&lt;strong&gt;纵向&lt;/strong&gt;&lt;align-items&gt;属性&lt;/align-items&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;flex-start 向上对齐&lt;/li&gt;
+&lt;li&gt;flex-end 向下对齐&lt;/li&gt;
+&lt;li&gt;center 居中对齐&lt;/li&gt;
+&lt;li&gt;stretch 上下展开最大化&lt;/li&gt;
+&lt;li&gt;baseline 文字基线对齐&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;属性-3&quot;&gt;&lt;a href=&quot;#属性-3&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;align-content&gt;属性&lt;/align-content&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;flex-start 聚拢靠上&lt;/li&gt;
+&lt;li&gt;flex-end 聚拢靠下&lt;/li&gt;
+&lt;li&gt;center 聚拢居中&lt;/li&gt;
+&lt;li&gt;stretch 展开最大化&lt;/li&gt;
+&lt;li&gt;space-between （块内）内容间距相同&lt;/li&gt;
+&lt;li&gt;space-around （块内）内容左右边距相同&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;item&quot;&gt;&lt;a href=&quot;#item&quot; class=&quot;headerlink&quot; title=&quot;.item&quot;&gt;&lt;/a&gt;.item&lt;/h1&gt;&lt;p&gt;flex的内容  &lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;	&lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &amp;lt;integer&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-grow&lt;/span&gt;: &amp;lt;number&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-shrink&lt;/span&gt;: &amp;lt;number&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-basis&lt;/span&gt;: &amp;lt;length&amp;gt; || auto;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex&lt;/span&gt;: none || [ &amp;lt;flex-grow&amp;gt; &amp;lt;flex-shrink&amp;gt; || &amp;lt;flex-basis&amp;gt; ];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;属性-4&quot;&gt;&lt;a href=&quot;#属性-4&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;order&gt;属性&lt;/order&gt;&lt;/h2&gt;&lt;p&gt;整数型，flex的内容会由order由小到大排列。&lt;br&gt;例：  &lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.itemZ&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: -&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item0&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item1&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item2&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样就是 &lt;code&gt;Z-0-1-2&lt;/code&gt; 的熟悉排列。&lt;/p&gt;
+&lt;h2 id=&quot;属性-5&quot;&gt;&lt;a href=&quot;#属性-5&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;flex-grow&gt;属性&lt;/flex-grow&gt;&lt;/h2&gt;&lt;p&gt;数字，内容根据该数字的大小为比例放大。  &lt;/p&gt;
+&lt;h2 id=&quot;属性-6&quot;&gt;&lt;a href=&quot;#属性-6&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;flex-shrink&gt;属性&lt;/flex-shrink&gt;&lt;/h2&gt;&lt;p&gt;数字，内容根据该数字的大小为比例缩小。  &lt;/p&gt;
+&lt;h2 id=&quot;属性-7&quot;&gt;&lt;a href=&quot;#属性-7&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;flex-basis&gt;属性&lt;/flex-basis&gt;&lt;/h2&gt;&lt;p&gt;长度或&lt;code&gt;auto&lt;/code&gt;，内容按该长度伸缩剩余空间。&lt;br&gt;可以看&lt;a href=&quot;https://css-tricks.com/almanac/properties/f/flex-basis/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这一篇文章&lt;/a&gt;详细了解&lt;code&gt;&amp;lt;flex-fasis&amp;gt;&lt;/code&gt;属性。  &lt;/p&gt;
+&lt;h2 id=&quot;属性-8&quot;&gt;&lt;a href=&quot;#属性-8&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;&lt;flex&gt;属性&lt;/flex&gt;&lt;/h2&gt;&lt;p&gt;为上面三个属性&lt;code&gt;&amp;lt;flex-grow&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;flex-shrink&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;flex-basis&amp;gt;&lt;/code&gt;的复合/速记属性。&lt;br&gt;规则： &lt;code&gt;{flex: none || [ &amp;lt;flex-grow&amp;gt; &amp;lt;flex-shrink&amp;gt; || &amp;lt;flex-basis&amp;gt; ];}&lt;/code&gt;&lt;br&gt;例：&lt;code&gt;.item{flex:1 1 auto;}&lt;/code&gt;    &lt;/p&gt;
+&lt;h2 id=&quot;纵向属性-1&quot;&gt;&lt;a href=&quot;#纵向属性-1&quot; class=&quot;headerlink&quot; title=&quot;纵向属性&quot;&gt;&lt;/a&gt;&lt;strong&gt;纵向&lt;/strong&gt;&lt;align-self&gt;属性&lt;/align-self&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;auto 与容器相同&lt;/li&gt;
+&lt;li&gt;flex-start 向上对齐&lt;/li&gt;
+&lt;li&gt;flex-end 向下对齐&lt;/li&gt;
+&lt;li&gt;center 居中对齐&lt;/li&gt;
+&lt;li&gt;stretch 上下展开最大化&lt;/li&gt;
+&lt;li&gt;baseline 文字基线对齐&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/04-10-css3-Flex/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>最近在干什么04-10</title>
@@ -681,31 +753,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/01-11-segue/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>最近在干什么12-29</title>
-      <link>http://gaoryrt.com/2015/12-29-whatsup1229/</link>
-      <guid>http://gaoryrt.com/2015/12-29-whatsup1229/</guid>
-      <pubDate>Mon, 28 Dec 2015 16:55:28 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;一不小心 github 上面的 contribution 就空了11天&lt;br&gt;上周就沉浸在做 keynote 和补全软件功能上面了&lt;br&gt;周五去比赛，周日晚上才回来，今天（周一）就开始补 contribution 了   &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;演讲完了的时候真的是送了一
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;一不小心 github 上面的 contribution 就空了11天&lt;br&gt;上周就沉浸在做 keynote 和补全软件功能上面了&lt;br&gt;周五去比赛，周日晚上才回来，今天（周一）就开始补 contribution 了   &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;演讲完了的时候真的是送了一口气了&lt;br&gt;忙了起码有两个月，付出的真的挺多的&lt;br&gt;然后终于得到了一个安慰奖了，毕竟人家都是三个研究生&lt;br&gt;我自己写的东西著作权应该在我这里吧，等会儿传 github&lt;br&gt;等等，今天&lt;em&gt;2015年12月29日15:31:30&lt;/em&gt;已经有颜色了&lt;br&gt;那就明天来  &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;题目选的是基于 hash 链的伪随机数发生器和检测&lt;br&gt;我在做发生器部分&lt;br&gt;用 swift 写的 iOS app  &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/gaoryrt/PRNG&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;项目地址在这里&lt;/a&gt;&lt;/p&gt;
-</content:encoded>
-      
-      
     </item>
     
   </channel>
