@@ -8,8 +8,43 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>为赋新词强说愁</description>
-    <pubDate>Sun, 10 Apr 2016 17:48:21 GMT</pubDate>
+    <pubDate>Sun, 10 Apr 2016 18:54:37 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>解决hexo的MODULE_NOT_FOUND问题</title>
+      <link>http://gaoryrt.com/2016/04-11-MODULE-NOT-FOUND/</link>
+      <guid>http://gaoryrt.com/2016/04-11-MODULE-NOT-FOUND/</guid>
+      <pubDate>Sun, 10 Apr 2016 18:19:32 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;看见其他地方是其他的方法，我这里还是记录下来，万一别人也遇见了呢。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;问题-PROBLEM&quot;&gt;&lt;a href=&quot;#问题-PROBLEM&quot; class=&quot;headerlink&quot; title=&quot;问题 PROBLEM&quot;&gt;&lt;/a&gt;问题 PROBLEM
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;看见其他地方是其他的方法，我这里还是记录下来，万一别人也遇见了呢。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;问题-PROBLEM&quot;&gt;&lt;a href=&quot;#问题-PROBLEM&quot; class=&quot;headerlink&quot; title=&quot;问题 PROBLEM&quot;&gt;&lt;/a&gt;问题 PROBLEM&lt;/h1&gt;&lt;p&gt;在使用hexo的时候会遇见以下问题&lt;br&gt;every time i run &lt;code&gt;hexo&lt;/code&gt; command, i encounter the follow problems   &lt;/p&gt;
+&lt;figure class=&quot;highlight qml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123; [&lt;span class=&quot;attribute&quot;&gt;Error&lt;/span&gt;: Cannot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/Release/DTraceProviderBindings&#39;&lt;/span&gt;] &lt;span class=&quot;attribute&quot;&gt;code&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123; [&lt;span class=&quot;attribute&quot;&gt;Error&lt;/span&gt;: Cannot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/default/DTraceProviderBindings&#39;&lt;/span&gt;] &lt;span class=&quot;attribute&quot;&gt;code&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123; [&lt;span class=&quot;attribute&quot;&gt;Error&lt;/span&gt;: Cannot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/Debug/DTraceProviderBindings&#39;&lt;/span&gt;] &lt;span class=&quot;attribute&quot;&gt;code&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;分析-ANALYZATION&quot;&gt;&lt;a href=&quot;#分析-ANALYZATION&quot; class=&quot;headerlink&quot; title=&quot;分析 ANALYZATION&quot;&gt;&lt;/a&gt;分析 ANALYZATION&lt;/h1&gt;&lt;p&gt;Stackoverflow上查了一下，人家说，&lt;code&gt;npm install hexo --no-optional&lt;/code&gt;就可以解决了。&lt;br&gt;after check stackoverflow, i got the solution &lt;code&gt;npm install hexo --no-optional&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;但是我并不需要重新安装整个hexo模块，毕竟依赖很多，而且重新下载时若网络环境不好，又会产生同样的错误，所以我需要用更简单的解决方法。&lt;br&gt;As the hexo module have numerous dependencies, and rebuild it under an unstable network-environment would give rise to the same problem, there’s no need to reinstall the whole module.&lt;/p&gt;
+&lt;p&gt;在hexo目录下通过关键字&lt;code&gt;DTraceProviderBindings&lt;/code&gt;找了一下，发现了这个模块。&lt;br&gt;i found this module after seaching &lt;code&gt;DTraceProviderBindings&lt;/code&gt; in hexo’s folder.&lt;br&gt;&lt;code&gt;dtrace-provider@0.6.0 node_modules/dtrace-provider&lt;/code&gt;这个模块用于调试时提供更高级的信息，可以在&lt;a href=&quot;https://github.com/chrisa/node-dtrace-provider&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;其页面&lt;/a&gt;查看更多信息。&lt;br&gt;this extension allows you to create native DTrace providers for your Node.js applications. That is, to create providers and probes which expose information specific to your application, rather than information about the node runtime. read more on &lt;a href=&quot;https://github.com/chrisa/node-dtrace-provider&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;it’s github page&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;解决-SOLUTION&quot;&gt;&lt;a href=&quot;#解决-SOLUTION&quot; class=&quot;headerlink&quot; title=&quot;解决 SOLUTION&quot;&gt;&lt;/a&gt;解决 SOLUTION&lt;/h1&gt;&lt;p&gt;由于是&lt;code&gt;--no-optional&lt;/code&gt;，也不是必要的包，我就大胆删除了&lt;br&gt;delete this optional module   &lt;/p&gt;
+&lt;figure class=&quot;highlight coffeescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;npm&lt;/span&gt; uninstall dtrace-provider&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在此之后就不会有烦人的三行报错了。&lt;br&gt;no more error info.&lt;/p&gt;
+&lt;p&gt;鉴于还是有需要调试的场景，还是可以选择重新安装上这个模块&lt;br&gt;but if you need to use this module, you can reinstall it   &lt;/p&gt;
+&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; dtrace-provider&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;当然这是可选的。&lt;br&gt;of course it’s optional.  &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;感觉自己连续学这么多天前端知识还是有用嘛。&lt;br&gt;以上。&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/04-11-MODULE-NOT-FOUND/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Flex Css3</title>
@@ -697,31 +732,6 @@
 </content:encoded>
       
       
-    </item>
-    
-    <item>
-      <title>「转」segue与delegate在ViewController返回的时候进行反向回传参数</title>
-      <link>http://gaoryrt.com/2016/01-11-segue/</link>
-      <guid>http://gaoryrt.com/2016/01-11-segue/</guid>
-      <pubDate>Mon, 11 Jan 2016 10:27:15 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;刚开始使用swift 的时候有很多问题&lt;br&gt;这篇文章帮了我很多&lt;br&gt;经过同意之后转过来记录一下&lt;br&gt;原帖地址&lt;a href=&quot;http://www.zoejblog.com/iossegueyu-delegatezai-viewcontrollerfan-hui-de-shi-hou-jin-xing-fan-xiang-hui-chuan-can-shu/#comments&quot;&gt;[iOS]segue与delegate在ViewController返回的时候进行反向回传参数&lt;/a&gt;&lt;br&gt;作者&lt;a href=&quot;http://www.zoejblog.com/author/zoej/&quot;&gt;zoej&lt;/a&gt;&lt;br&gt;
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;刚开始使用swift 的时候有很多问题&lt;br&gt;这篇文章帮了我很多&lt;br&gt;经过同意之后转过来记录一下&lt;br&gt;原帖地址&lt;a href=&quot;http://www.zoejblog.com/iossegueyu-delegatezai-viewcontrollerfan-hui-de-shi-hou-jin-xing-fan-xiang-hui-chuan-can-shu/#comments&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;[iOS]segue与delegate在ViewController返回的时候进行反向回传参数&lt;/a&gt;&lt;br&gt;作者&lt;a href=&quot;http://www.zoejblog.com/author/zoej/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zoej&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;我们经常会使用navigationViewController，使用segue拉拉线，就可以实现页面跳转，使用&lt;code&gt;prepareForSegue&lt;/code&gt;方便进行参数的正向传递，但我们也许也有的业务会是反向的传递参数，这个时候需要使用delegate。&lt;br&gt;假设有两个vc，事先做好了segue拉线，设置了按钮啥的，然后可以直接正向跳转，以及因为在一个navigation里面所以，第二个vc有个默认的back按钮可以反向的跳转，第一个是avc，第二个是bvc， 在bvc中我们写一个协议protocol，当然这个协议是写在类外面的，只是和类在同一个swift文件中：  &lt;/p&gt;
-&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;RidingDelegate&lt;/span&gt;   &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; isRefreshDataFlag:&lt;span class=&quot;type&quot;&gt;Bool&lt;/span&gt;&amp;#123;&lt;span class=&quot;keyword&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;set&lt;/span&gt;&amp;#125;&lt;span class=&quot;comment&quot;&gt;//我这里就只设置一个参数用来传递好了。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;然后我们在avc中要参照这个协议：  &lt;/p&gt;
-&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ViewController&lt;/span&gt;: &lt;span class=&quot;title&quot;&gt;UIViewController&lt;/span&gt;,&lt;span class=&quot;title&quot;&gt;RidingDelegate&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; isRefreshDataFlag=&lt;span class=&quot;type&quot;&gt;Bool&lt;/span&gt;()&lt;span class=&quot;comment&quot;&gt;//并且直接实现这个协议参数，用来接收反向传输来的数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//其他的方法这里都省略了，主要&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;prepareForSegue&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(segue: UIStoryboardSegue, sender: AnyObject?)&lt;/span&gt;&lt;/span&gt; &amp;#123;  &lt;span class=&quot;comment&quot;&gt;//发生了segue的方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(segue.identifier == &lt;span class=&quot;string&quot;&gt;&quot;StartRiding&quot;&lt;/span&gt;)&amp;#123;&lt;span class=&quot;comment&quot;&gt;//指定某一个segue的目标vc的委托指向自身&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; ridingVC = segue.destinationViewController &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;type&quot;&gt;RidingViewController&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ridingVC.delegate=&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;//设置代理，让第一个页面作为ridingView的代理来接受参数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;println&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;Segue: &lt;span class=&quot;subst&quot;&gt;\(segue.identifier)&lt;/span&gt;&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;另外在bvc中的类中，需要实例化这个delegate：&lt;br&gt;&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;delegate&lt;/span&gt;:RidingDelegate?&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;并且在需要的地方进行这个委托中的参数变化：&lt;br&gt;&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;delegate&lt;/span&gt;?.isRefreshDataFlag=&lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;最后就可以实现这个反向传递参数了，委托协议里面可以写方法.&lt;br&gt;参照&lt;a href=&quot;http://www.tuicool.com/articles/6zEne2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Swift语言实现代理传值-推酷&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://makeapppie.com/2014/07/01/swift-swift-using-segues-and-delegates-in-navigation-controllers-part-1-the-template/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;THE SWIFT SWIFT TUTORIAL: USING SEGUES AND DELEGATES IN NAVIGATION CONTROLLERS (PART 1 — THE TEMPLATE)&lt;/a&gt;&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/01-11-segue/#disqus_thread</comments>
     </item>
     
   </channel>
