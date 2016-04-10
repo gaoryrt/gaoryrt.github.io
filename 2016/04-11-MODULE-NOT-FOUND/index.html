@@ -6,12 +6,12 @@
   <meta content="yes" name="apple-mobile-web-app-capable">
   <meta content="black" name="apple-mobile-web-app-status-bar-style">
   
-  <title>解决hexo的MODULE_NOT_FOUND问题</title>
+  <title>解决Hexo MODULE NOT FOUND问题</title>
   <meta name="author" content="gaoryrt">
    <meta name="description" content="为赋新词强说愁">
   
 
-  <meta property="og:title" content="解决hexo的MODULE_NOT_FOUND问题"/>
+  <meta property="og:title" content="解决Hexo MODULE NOT FOUND问题"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
@@ -52,7 +52,7 @@ var _hmt = _hmt || [];
       
   
     <h1 class="page-title center">
-        解决hexo的MODULE_NOT_FOUND问题
+        解决Hexo MODULE NOT FOUND问题
     </h1>
   
 
@@ -78,10 +78,10 @@ var _hmt = _hmt || [];
     <hr>
     <p>看见其他地方是其他的方法，我这里还是记录下来，万一别人也遇见了呢。</p>
 <hr>
-<h1 id="问题-PROBLEM"><a href="#问题-PROBLEM" class="headerlink" title="问题 PROBLEM"></a>问题 PROBLEM</h1><p>在使用hexo的时候会遇见以下问题<br>every time i run <code>hexo</code> command, i encounter the follow problems   </p>
+<h1 id="问题-PROBLEM"><a href="#问题-PROBLEM" class="headerlink" title="问题 PROBLEM"></a>问题 PROBLEM</h1><p>在使用hexo的时候会遇见以下问题<br>every time i run <code>hexo</code> command, i encounter following problems   </p>
 <figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; [<span class="attribute">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] <span class="attribute">code</span>: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [<span class="attribute">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] <span class="attribute">code</span>: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [<span class="attribute">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] <span class="attribute">code</span>: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="分析-ANALYZATION"><a href="#分析-ANALYZATION" class="headerlink" title="分析 ANALYZATION"></a>分析 ANALYZATION</h1><p>Stackoverflow上查了一下，人家说，<code>npm install hexo --no-optional</code>就可以解决了。<br>after check stackoverflow, i got the solution <code>npm install hexo --no-optional</code>.</p>
+<h1 id="分析-ANALYZATION"><a href="#分析-ANALYZATION" class="headerlink" title="分析 ANALYZATION"></a>分析 ANALYZATION</h1><p>Stackoverflow上查了一下，人家说，<code>npm install hexo --no-optional</code>就可以解决了。<br>after stackoverflowing it, i got the solution <code>npm install hexo --no-optional</code>.</p>
 <p>但是我并不需要重新安装整个hexo模块，毕竟依赖很多，而且重新下载时若网络环境不好，又会产生同样的错误，所以我需要用更简单的解决方法。<br>As the hexo module have numerous dependencies, and rebuild it under an unstable network-environment would give rise to the same problem, there’s no need to reinstall the whole module.</p>
 <p>在hexo目录下通过关键字<code>DTraceProviderBindings</code>找了一下，发现了这个模块。<br>i found this module after seaching <code>DTraceProviderBindings</code> in hexo’s folder.<br><code>dtrace-provider@0.6.0 node_modules/dtrace-provider</code>这个模块用于调试时提供更高级的信息，可以在<a href="https://github.com/chrisa/node-dtrace-provider" target="_blank" rel="external">其页面</a>查看更多信息。<br>this extension allows you to create native DTrace providers for your Node.js applications. That is, to create providers and probes which expose information specific to your application, rather than information about the node runtime. read more on <a href="https://github.com/chrisa/node-dtrace-provider" target="_blank" rel="external">it’s github page</a>.</p>
 <hr>
