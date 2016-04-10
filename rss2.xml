@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>为赋新词强说愁</description>
-    <pubDate>Sun, 10 Apr 2016 14:24:21 GMT</pubDate>
+    <pubDate>Sun, 10 Apr 2016 14:46:16 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -43,6 +43,8 @@
 &lt;h2 id=&quot;lt-flex-basis-gt-属性&quot;&gt;&lt;a href=&quot;#lt-flex-basis-gt-属性&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex-basis&amp;gt;属性&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex-basis&amp;gt;&lt;/code&gt;属性&lt;/h2&gt;&lt;p&gt;长度或&lt;code&gt;auto&lt;/code&gt;，内容按该长度伸缩剩余空间。&lt;br&gt;可以看&lt;a href=&quot;https://css-tricks.com/almanac/properties/f/flex-basis/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这一篇文章&lt;/a&gt;详细了解&lt;code&gt;&amp;lt;flex-fasis&amp;gt;&lt;/code&gt;属性。  &lt;/p&gt;
 &lt;h2 id=&quot;lt-flex-gt-属性&quot;&gt;&lt;a href=&quot;#lt-flex-gt-属性&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex&amp;gt;属性&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex&amp;gt;&lt;/code&gt;属性&lt;/h2&gt;&lt;p&gt;为上面三个属性&lt;code&gt;&amp;lt;flex-grow&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;flex-shrink&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;flex-basis&amp;gt;&lt;/code&gt;的复合/速记属性。&lt;br&gt;规则： &lt;code&gt;{flex: none || [ &amp;lt;flex-grow&amp;gt; &amp;lt;flex-shrink&amp;gt; || &amp;lt;flex-basis&amp;gt; ];}&lt;/code&gt;&lt;br&gt;例：&lt;code&gt;.item{flex:1 1 auto;}&lt;/code&gt;    &lt;/p&gt;
 &lt;h2 id=&quot;纵向-lt-align-self-gt-属性&quot;&gt;&lt;a href=&quot;#纵向-lt-align-self-gt-属性&quot; class=&quot;headerlink&quot; title=&quot;纵向&amp;lt;align-self&amp;gt;属性&quot;&gt;&lt;/a&gt;&lt;strong&gt;纵向&lt;/strong&gt;&lt;code&gt;&amp;lt;align-self&amp;gt;&lt;/code&gt;属性&lt;/h2&gt;&lt;p&gt;auto 与容器相同&lt;br&gt;flex-start 向上对齐&lt;br&gt;flex-end 向下对齐&lt;br&gt;center 居中对齐&lt;br&gt;stretch 上下展开最大化&lt;br&gt;baseline 文字基线对齐&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;源文件在这里&quot;&gt;&lt;a href=&quot;#源文件在这里&quot; class=&quot;headerlink&quot; title=&quot;源文件在这里&quot;&gt;&lt;/a&gt;源文件在这里&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs4ih.com1.z0.glb.clouddn.com/css3flex.jpg&quot; alt=&quot;css3flex&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;按照自己的理解进行的整理，如有错误还请提醒。&lt;br&gt;以上。&lt;/p&gt;
 </content:encoded>
