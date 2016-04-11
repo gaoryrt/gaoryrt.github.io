@@ -1,0 +1,45 @@
+#avatar {
+    width: 230px;
+    height: 230px;
+    border: 10px solid #ff5252;
+    display:block;
+    margin:0 auto;
+}
+.section {
+    color: white;
+    font-weight: 300;
+}
+.center-align, .card {
+    margin-top: -1px;
+}
+
+.card .card-content {
+    padding: 10px 20px 0px 20px;
+}
+
+a {
+    color: #FFF;
+}
+
+.center-align {
+    font-weight: 900;
+}
+
+#pp-nav li .active span {
+    background: rgba(255,255,255,.4);
+}
+
+@media screen and (max-width:993px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #avatar {
+    width: 150px;
+    height: 150px;
+    }
+
+    .collapsible {
+        margin: -5px 0;
+    }
+}
