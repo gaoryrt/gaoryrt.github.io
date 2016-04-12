@@ -16,12 +16,11 @@
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
   
-  <meta name="baidu-site-verification" content="3TMWX9eAp1" />
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic|Open+Sans+Condensed:300,700|Pacifico" rel="stylesheet" media="all" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Pacifico" rel="stylesheet" media="all" type="text/css">
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/pln.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -37,15 +36,15 @@ var _hmt = _hmt || [];
 <body>
   <div id="main">
     <div class="behind">
-            <div class="back">
-            <a href="/" class="black-color"><i class="fa fa-times-circle-o"></i></a>
-            </div>
-            <div class="description">
-                bootstrap的dropdown.js有点大，可以F12看看我写的版本
-            </div>
-        </div>
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times-circle-o"></i></a>
+      </div>
+      <div class="description">
+        bootstrap的dropdown.js有点大，可以F12看看我写的版本
+      </div>
+    </div>
     <div class="container">
-        <nav class="navigator"><nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navigator"><nav class="navbar navbar-default navbar-fixed-top">
   <div class="nav-container">
 
   <div class="navbar-header">
@@ -121,7 +120,7 @@ var _hmt = _hmt || [];
   疑似机器人
 </h1>
 <div class="archive-num">
-该分类共 7 篇文章
+  该分类共 7 篇文章
 </div>
 <div class="archive">
   
@@ -274,7 +273,7 @@ var _hmt = _hmt || [];
     <a class="backtop wow fadeIn animated" href="#top" >
         <i class="fa fa-arrow-right"></i>
     </a>
-    &nbsp;&nbsp;&nbsp;© Gaoryrt 2015-2016
+    © Gaoryrt 2015-2016
     <a href="/CV">
         _About_me
     </a>
@@ -285,13 +284,15 @@ var _hmt = _hmt || [];
 </footer>
   <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script type="text/javascript">
+
+// comments below to disable loading animation
 function revealOnScroll() {
   var scrolled = $(window).scrollTop();
   $(".excerpt, .index-title, .index-meta, p").each(function() {
     var current = $(this),
-      w_height = $(window).outerHeight(),
+      height = $(window).outerHeight(),
       offsetTop = current.offset().top;
-    if (scrolled + w_height + 50> offsetTop) {
+    if (scrolled + height + 50 > offsetTop) {
       current.addClass("animation");
     }
   });
@@ -299,7 +300,7 @@ function revealOnScroll() {
 $(window).on("scroll", revealOnScroll);
 $(window).load(revealOnScroll)
 
-
+// disqus scripts
 
 var disqus_shortname = 'gaoryrt';
 (function(){
@@ -311,6 +312,7 @@ var disqus_shortname = 'gaoryrt';
 }());
 
 
+// dropdown scripts
 $(".dropdown").click(function(event) {
   var current = $(this);
   if($(current).children(".dropdown-content").hasClass("open")){
@@ -325,12 +327,13 @@ $(document).click(function(){
     $(".dropdown-content").removeClass("open");
 })
 
+// back to top scripts
 $("a[href='#top']").click(function() {
   $("html, body").animate({ scrollTop: 0 }, 500);
   return false;
 });
-</script>
 
+</script>
 
 </body>
 </html>
