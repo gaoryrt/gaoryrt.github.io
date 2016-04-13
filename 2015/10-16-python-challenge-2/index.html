@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 
 
     
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;
     <i class="fa fa-tag"></i>&nbsp;
     <a href="/categories/硬悟学蛇/">硬悟学蛇</a>
 
@@ -77,6 +77,9 @@ var _hmt = _hmt || [];
 
     </div>
     <hr>
+    <div class="picture-container">
+      
+    </div>
     <p>我感觉我是做入迷了<br>因为确实好玩啊。。。<br>学到的知识比看书多多了<br>我这种就适合考前突击<br><a id="more"></a></p>
 <hr>
 <h1 id="第十一关-图片处理"><a href="#第十一关-图片处理" class="headerlink" title="第十一关 图片处理"></a><a href="http://www.pythonchallenge.com/pc/return/evil.html" target="_blank" rel="external">第十一关</a> 图片处理</h1><p>这一关还是考验图片处理的能力<br>但是对我来说却是考验安装第三方库、正确使用<code>Stack Overflow</code> 的能力<br>没有想到这一篇还要更新: <a href="http://gaoryrt.github.io/2015/10/16/install-python-package/" target="_blank" rel="external">安装 Python 库文件</a><br>开始的时候<code>.jpg</code>文件还不能解析，换成了<code>.png</code>，结果一样不能用。。。<br>重装了与<code>Image</code>相关的库，重新装了<br>然后就简单了<br>题目是奇数偶数，然后图片叫做<code>cave</code>，意思就是空了里面有东西<br>下载下来放大看是这样的:<br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1ex3eauvv3oj20lr0ca7c1.jpg" alt=""><br>想了一会儿还以为有另外一个图片拿给我放一起拼起来。。。<br>放大看其实里面不全是黑色的，话说 mac 的数码测色计真是好用啊<br>就是把有颜色的都去掉:<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">im = Image.open(<span class="string">'cave.jpg'</span>)</span><br><span class="line"></span><br><span class="line">print im.<span class="built_in">size</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> in range(<span class="number">640</span>):</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span> in range(<span class="number">480</span>):</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">i</span>+<span class="built_in">j</span>)<span class="comment">%2==1:</span></span><br><span class="line">            im.putpixel((<span class="built_in">i</span>,<span class="built_in">j</span>),(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>))</span><br><span class="line">im.show()</span><br></pre></td></tr></table></figure></p>

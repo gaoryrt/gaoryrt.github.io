@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 
 
     
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;
     <i class="fa fa-tag"></i>&nbsp;
     <a href="/categories/硬悟学蛇/">硬悟学蛇</a>
 
@@ -77,6 +77,9 @@ var _hmt = _hmt || [];
 
     </div>
     <hr>
+    <div class="picture-container">
+      
+    </div>
     <p>我用的<code>pythonbrew</code>来管理我的两个 <code>python</code>版本<br>但是在使用第三方<code>package</code>的时候，<code>pip</code>总是不好用<br><code>pip install</code>的全部都在原来的地方，而非<code>pythonbrew</code>的文件夹下面<br>搞了好久才找到正确使用的姿势<br><a id="more"></a></p>
 <hr>
 <h1 id="取消rootless"><a href="#取消rootless" class="headerlink" title="取消rootless"></a>取消<code>rootless</code></h1><p><code>OSX</code>有个<code>rootless</code>机制，不要你碰<code>usr/bin</code>里面的东西<br>就算你加上了<code>sudo</code>都不行，用这个来关闭:<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram <span class="keyword">boot</span>-<span class="keyword">args</span>=<span class="string">"rootless=0"</span></span><br></pre></td></tr></table></figure></p>

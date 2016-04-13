@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 
 
     
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;
     <i class="fa fa-tag"></i>&nbsp;
     <a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a>
 
@@ -77,6 +77,9 @@ var _hmt = _hmt || [];
 
     </div>
     <hr>
+    <div class="picture-container">
+      
+    </div>
     <h1 id="先买一个vps"><a href="#先买一个vps" class="headerlink" title="先买一个vps"></a>先买一个vps</h1><p>主要是人家一般都要paypal，但是我没有，为了方便就直接上了淘宝，贵了11元/年<br>我是在tb上买的<code>alpharacks</code>，就是最便宜的那个套餐<br>年付35rmb，64MB内存，硬盘3G，月流量150G  </p>
 <h1 id="ssh登陆"><a href="#ssh登陆" class="headerlink" title="ssh登陆"></a>ssh登陆</h1><p>买完人家会给你账号密码和链接<br>然后进去找到<code>hostname</code>，复制<br>在自己的终端里<code>ssh root@刚刚复制的终端</code><br>输入刚刚的账号密码<br>这样就登陆到这个vps里了  </p>
 <h1 id="安装SS"><a href="#安装SS" class="headerlink" title="安装SS"></a>安装SS</h1><p>我用的是python版本的，另外还有什么go，R，libev版本的<br>紧接着刚刚的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</span><br><span class="line">chmod +x shadowsocks.sh</span><br><span class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</span><br></pre></td></tr></table></figure></p>

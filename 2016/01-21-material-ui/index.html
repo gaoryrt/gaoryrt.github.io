@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 
 
     
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;
     <i class="fa fa-tag"></i>&nbsp;
     <a href="/categories/疑似机器人/">疑似机器人</a>
 
@@ -77,6 +77,9 @@ var _hmt = _hmt || [];
 
     </div>
     <hr>
+    <div class="picture-container">
+      
+    </div>
     <p>翻译自<a href="http://www.material-ui.com/#/get-started/prerequisites" target="_blank" rel="external">这一篇文章</a>，这个是 material-ui 的官方文档。  </p>
 <h1 id="开始的前提"><a href="#开始的前提" class="headerlink" title="开始的前提"></a>开始的前提</h1><p>我们建议你在开始使用 Material UI 之前先了解一下 <a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a>。Material-UI 基于 React，所以了解 React 是怎样工作的尤其重要。<br>如果你已经熟知单页面程序（SPAs）和 Node，觉得可以跳过这个前提段落的话，请到直接到<a href="http://www.material-ui.com/#/get-started/installation" target="_blank" rel="external">安装</a>部分。<br>那么，下面简单讲一下 SPAs 和 Node。这个对你这种前端新手（或者只了解过『传统的』使用 HTML 和 CSS 以及 JavaScript 的人）来说特别有帮助。  </p>
 <h1 id="SPAs-单页面程序"><a href="#SPAs-单页面程序" class="headerlink" title="SPAs 单页面程序"></a>SPAs 单页面程序</h1><p>很久之前，静态网页都是由 HTML 搭建的，我们使用 CSS 来做样式，用 JavaScript 来做互动和动画。大多数，尤其是相应数据的客户端都包含了一整套往返流程：客户端的数据发送到服务器，结果又返回到客户端。加之大多数回话都被『屏蔽』了。那么在这些往返的流程当中，客户端都在忙着做一些无用功。<br>在异步服务器（AJAX）诞生之后，客户端可以在发送和等待数据的同时做一些其他事情。然而大多数的客户端还是在等待服务器的往返流程结束，这时的网页的流畅程度还是无法和普通的桌面应用相比。这就是 SPAs 产生的原因。<br>一个 SPA 本质上就是一个单页面的站点。这就是说，服务器只需要一次性将网页（一般来说是一个 JavaScript 文件）发送给客户端。所有客户端相应所需的逻辑都储存于这个文件当中。因此，保证流畅性可靠性和高速网络体验的所有必备条件都提前发送到了浏览器的储存空间当中。这种 web 编程体系在过去十年内促使了众多流行的面向 SPAs 的 JavaScript 框架的诞生：  </p>

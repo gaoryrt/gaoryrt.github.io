@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 
 
     
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;
     <i class="fa fa-tag"></i>&nbsp;
     <a href="/categories/麦客爱苹果/">麦客爱苹果</a>
 
@@ -77,6 +77,9 @@ var _hmt = _hmt || [];
 
     </div>
     <hr>
+    <div class="picture-container">
+      
+    </div>
     <p>今天使用hexo的时候，发现找不到这个命令了<br>打开finder，我的hexo文件夹还在那里<br>当时并不知道是哪个地方出问题了<br>就只是简单的在zshrc文件中添加了<code>hexo bin</code>文件的alias<br>但是今天在deploy新文章的时候，发现hexo彻底不能用了    </p>
 <h1 id="问题哪里来的"><a href="#问题哪里来的" class="headerlink" title="问题哪里来的"></a>问题哪里来的</h1><p>我昨天添加hexo sitemap插件的时候<br>顺手更改了nvm，并且没有配置好<br>导致系统使用的node版本中没有hexo<br>我在找到这个问题的途中尝试了重装npm<br>不幸的是npm问题更多，err红了一大片<br>在中间等待和<code>ctrl c</code>的多次循环中我选择了放弃  </p>
 <h1 id="重装"><a href="#重装" class="headerlink" title="重装"></a>重装</h1><p>先备份，就是把hexo文件夹改个名字，比如说<code>hexo1</code><br>卸载nvm：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/.nvm</span><br><span class="line">rm -rf ~/.npm</span><br><span class="line">rm -rf ~/.bower</span><br></pre></td></tr></table></figure></p>

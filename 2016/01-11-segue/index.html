@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 
 
     
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;
     <i class="fa fa-tag"></i>&nbsp;
     <a href="/categories/疑似机器人/">疑似机器人</a>
 
@@ -77,6 +77,9 @@ var _hmt = _hmt || [];
 
     </div>
     <hr>
+    <div class="picture-container">
+      
+    </div>
     <p>刚开始使用swift 的时候有很多问题<br>这篇文章帮了我很多<br>经过同意之后转过来记录一下<br>原帖地址<a href="http://www.zoejblog.com/iossegueyu-delegatezai-viewcontrollerfan-hui-de-shi-hou-jin-xing-fan-xiang-hui-chuan-can-shu/#comments" target="_blank" rel="external">[iOS]segue与delegate在ViewController返回的时候进行反向回传参数</a><br>作者<a href="http://www.zoejblog.com/author/zoej/" target="_blank" rel="external">zoej</a><br><a id="more"></a></p>
 <hr>
 <p>我们经常会使用navigationViewController，使用segue拉拉线，就可以实现页面跳转，使用<code>prepareForSegue</code>方便进行参数的正向传递，但我们也许也有的业务会是反向的传递参数，这个时候需要使用delegate。<br>假设有两个vc，事先做好了segue拉线，设置了按钮啥的，然后可以直接正向跳转，以及因为在一个navigation里面所以，第二个vc有个默认的back按钮可以反向的跳转，第一个是avc，第二个是bvc， 在bvc中我们写一个协议protocol，当然这个协议是写在类外面的，只是和类在同一个swift文件中：  </p>

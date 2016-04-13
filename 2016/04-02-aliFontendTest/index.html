@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/pln.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <script>
 var _hmt = _hmt || [];
@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
 
 
     
-    &nbsp;
+    &nbsp;&nbsp;&nbsp;
     <i class="fa fa-tag"></i>&nbsp;
     <a href="/categories/前端/">前端</a>
 
@@ -77,6 +77,9 @@ var _hmt = _hmt || [];
 
     </div>
     <hr>
+    <div class="picture-container">
+      
+    </div>
     <p>随便找了一份前端的测试题来做<br>想看原版的可以<a href="http://www.tuicool.com/articles/YbQB3q">点这里</a>  </p>
 <hr>
 <h1 id="No-1"><a href="#No-1" class="headerlink" title="No.1"></a>No.1</h1><p>这里用到了css3中的<code>display: box</code>和<code>box-flex</code><br>题目里面html结构已经规定了，对于元素的选择只能使用<code>first-child</code>,<code>nth-child()</code>了<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">            <span class="attribute">background-color</span>: darkcyan;</span><br><span class="line">            <span class="attribute">display</span>: box;</span><br><span class="line">            <span class="attribute">display</span>: -moz-box;</span><br><span class="line">            <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">            <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">            <span class="attribute">text-indent</span>: <span class="number">10px</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">            <span class="attribute">-webkit-box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">-moz-box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">-ms-box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">box-flex</span>: <span class="number">1</span>;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-pseudo">:first-child</span> &#123;</span><br><span class="line">            <span class="attribute">-webkit-box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">-moz-box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">-ms-box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">box-flex</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.item</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span><br><span class="line">            <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
