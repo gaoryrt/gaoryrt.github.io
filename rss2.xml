@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>为赋新词强说愁</description>
-    <pubDate>Thu, 14 Apr 2016 18:13:31 GMT</pubDate>
+    <pubDate>Thu, 14 Apr 2016 18:14:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,13 +18,19 @@
       <pubDate>Thu, 14 Apr 2016 14:31:45 GMT</pubDate>
       <description>
       
-        &lt;p&gt;原本第一句话是『.DS_store是git的敌人』，我想了一下，还是默默改成了下面这一句。&lt;br&gt;DS.store是hexo generate的敌人。&lt;/p&gt;
+        &lt;p&gt;原本第一句话是『.DS_store是git的敌人』，我想了一下，还是默默改成了下面这一句。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DS.store是hexo generate的敌人。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;起&quot;&gt;&lt;a href=&quot;#起&quot; class=&quot;headerlink&quot; title=&quot;起&quot;
+&lt;h1 id=&quot;起&quot;&gt;&lt;a href=
       
       </description>
       
-      <content:encoded>&lt;p&gt;原本第一句话是『.DS_store是git的敌人』，我想了一下，还是默默改成了下面这一句。&lt;br&gt;DS.store是hexo generate的敌人。&lt;/p&gt;
+      <content:encoded>&lt;p&gt;原本第一句话是『.DS_store是git的敌人』，我想了一下，还是默默改成了下面这一句。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DS.store是hexo generate的敌人。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;起&quot;&gt;&lt;a href=&quot;#起&quot; class=&quot;headerlink&quot; title=&quot;起&quot;&gt;&lt;/a&gt;起&lt;/h1&gt;&lt;p&gt;本来还想举例说git使用中&lt;code&gt;.DS_store&lt;/code&gt;文件很麻烦，后来想到添加gitignore就可以了。&lt;br&gt;&lt;strong&gt;但是&lt;/strong&gt;&lt;br&gt;我不知道如何向hexo generator中添加忽略文件，所以每一次带有&lt;code&gt;hexo generate&lt;/code&gt;的操作都会得到以下错误：&lt;br&gt;&lt;figure class=&quot;highlight coffeescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ERROR Process failed: layout&lt;span class=&quot;regexp&quot;&gt;/_partial/&lt;/span&gt;.DS_Store&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;TypeError: Cannot read property &lt;span class=&quot;string&quot;&gt;&#39;compile&#39;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;undefined&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;虽然不会影响网页生成，但是总碍眼。&lt;/p&gt;

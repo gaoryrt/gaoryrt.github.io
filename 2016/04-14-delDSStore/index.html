@@ -79,7 +79,10 @@ var _hmt = _hmt || [];
     <div class="picture-container">
       
     </div>
-    <p>原本第一句话是『.DS_store是git的敌人』，我想了一下，还是默默改成了下面这一句。<br>DS.store是hexo generate的敌人。</p>
+    <p>原本第一句话是『.DS_store是git的敌人』，我想了一下，还是默默改成了下面这一句。  </p>
+<blockquote>
+<p>DS.store是hexo generate的敌人。</p>
+</blockquote>
 <hr>
 <h1 id="起"><a href="#起" class="headerlink" title="起"></a>起</h1><p>本来还想举例说git使用中<code>.DS_store</code>文件很麻烦，后来想到添加gitignore就可以了。<br><strong>但是</strong><br>我不知道如何向hexo generator中添加忽略文件，所以每一次带有<code>hexo generate</code>的操作都会得到以下错误：<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR Process failed: layout<span class="regexp">/_partial/</span>.DS_Store</span><br><span class="line">TypeError: Cannot read property <span class="string">'compile'</span> <span class="keyword">of</span> <span class="literal">undefined</span></span><br></pre></td></tr></table></figure></p>
 <p>虽然不会影响网页生成，但是总碍眼。</p>
