@@ -97,9 +97,24 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>定时器会异步的，不会阻塞，所以会先执行下一个赋值命令  </p>
 </blockquote>
-<p>按时间顺序是这样的：<br>alert(0)<br>第一个开始计时<br>a = 2<br>第二个开始计时<br>第一个时间到了<br>alert(a)<br>a = 3<br>第二个时间到了<br>alert(a)<br>a = 4  </p>
+<p>按时间顺序是这样的：  </p>
+<ol>
+<li>alert(0)  </li>
+<li>第一个开始计时  </li>
+<li>a = 2  </li>
+<li>第二个开始计时  </li>
+<li>第一个时间到了  </li>
+<li>alert(a)  </li>
+<li>a = 3  </li>
+<li>第二个时间到了  </li>
+<li>alert(a)  </li>
+<li>a = 4  </li>
+</ol>
 <hr>
-<h1 id="No-5"><a href="#No-5" class="headerlink" title="No.5"></a>No.5</h1><p>未完待续</p>
+<h1 id="No-5"><a href="#No-5" class="headerlink" title="No.5"></a>No.5</h1><p>这个也是查的，感觉js什么都不会呢。。。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">! <span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* CSS TRANSITION SUPPORT (http://www.modernizr.com/)</span><br><span class="line">     * ======================================================= */</span></span><br><span class="line">    $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $.support.transition = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> transitionEnd = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> el = <span class="built_in">document</span>.createElement(<span class="string">'bootstrap'</span>),</span><br><span class="line">                    transEndEventNames = &#123;</span><br><span class="line">                        <span class="string">'WebkitTransition'</span>: <span class="string">'webkitTransitionEnd'</span>,</span><br><span class="line">                        <span class="string">'MozTransition'</span>: <span class="string">'transitionend'</span>,</span><br><span class="line">                        <span class="string">'OTransition'</span>: <span class="string">'oTransitionEnd otransitionend'</span>,</span><br><span class="line">                        <span class="string">'transition'</span>: <span class="string">'transitionend'</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    name;</span><br><span class="line">                <span class="keyword">for</span> (name <span class="keyword">in</span> transEndEventNames) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (el.style[name] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">                        <span class="keyword">return</span> transEndEventNames[name];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;());</span><br><span class="line">            <span class="keyword">return</span> transitionEnd &amp;&amp; &#123;</span><br><span class="line">                end: transitionEnd</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;)();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;(<span class="built_in">window</span>.jQuery);</span><br></pre></td></tr></table></figure></p>
+<p>检查<code>box-shadow</code>同理，也是生成一个元素时，同时生成一个<code>transition</code>属性，然后检查这个属性是否是<code>undefined</code>。从而达到检查浏览器是否支持的目的。  </p>
+<hr>
+<h1 id="No-6"><a href="#No-6" class="headerlink" title="No.6"></a>No.6</h1><p>当时阿里电话面就问了这个问题，我当时还什么都不懂。  </p>
 
 
   </article>
