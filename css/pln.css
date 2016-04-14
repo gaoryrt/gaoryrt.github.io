@@ -28,6 +28,8 @@ pre {
     padding: 15px;
     line-height: 24px;
     border: 0;
+    border-radius: 5px;
+    margin-bottom: 0px;
 }
 
 code {
@@ -106,17 +108,17 @@ li {
 
 p,
 .excerpt {
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 16px;
-    line-height: 2em;
+    line-height: 1.85em;
     color: #444;
+    letter-spacing: 0.5px;
 }
 
 .page-title {
     font-size: 36px;
     line-height: 45px;
     margin: 10px 0 20px;
-    text-transform: uppercase;
 }
 
 .behind {
@@ -124,7 +126,6 @@ p,
     letter-spacing: 2px;
     padding: 22px 0;
     color: #adadad;
-    text-transform: uppercase;
 }
 
 .back {
@@ -360,13 +361,12 @@ iframe {
 }
 
 td.gutter {
-    display: none;
+    width: 50px;
 }
 
 figure {
     overflow-x: auto;
-    margin-left: -9%;
-    width: 118%;
+    border-radius: 5px;
 }
 
 @media screen and (max-width:782px) {
@@ -402,7 +402,7 @@ figure {
 
     .behind {
         color: rgba(0, 0, 0, 0);
-        padding: 20px 0;
+        padding: 0;
     }
 
     .right-foot {
@@ -439,8 +439,8 @@ figure {
 
     p,
     .excerpt {
-        font-size: 14px;
-        line-height: 2.2em;
+        font-size: 16px;
+        line-height: 1.85em;
         font-weight: 300;
         color: #555;
     }
@@ -476,12 +476,23 @@ figure {
         transform: translateY(50px);
     }
 
+    figure {
+        width: 110%;
+        margin-left: -5%;
+    }
+
+    pre {
+    font-size: 1.2rem;
+    padding: 10px;
+    line-height: 18px;
+    }
+
 }
 
 @media screen and (min-width:360px) and (max-width:782px) {
     .behind {
         color: rgba(0, 0, 0, 0);
-        padding: 20px 0;
+        padding: 10px 0;
     }
 
 }
