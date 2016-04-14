@@ -487,6 +487,10 @@ figure {
     line-height: 18px;
     }
 
+    a.backtop {
+        padding: 8px;
+    }
+
 }
 
 @media screen and (min-width:360px) and (max-width:782px) {
