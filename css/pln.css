@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(http://7xs4ih.com1.z0.glb.clouddn.com/opensanscondlight.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Condensed Bold'), local('OpenSans-CondensedBold'), url(http://7xs4ih.com1.z0.glb.clouddn.com/opensanscondbold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(http://7xs4ih.com1.z0.glb.clouddn.com/pacificoregular.woff) format('woff');
+}
+
 .picture-container {
     text-align: center
 }
