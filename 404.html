@@ -6,107 +6,25 @@
     <title>404 Not Found</title>
 </head>
 <style type="text/css" media="screen">
-    html {
-        height: 100%;
-    }
-    body {
-        height: 98%;
-        background-color: rgb(249, 250, 251);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .win {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .error {
-        width: 470px;
-        height: 120px;
-        border: 3px outset #F1F1F1;
-        background-color: #F1F1F1;
-        align-self: center;
-    }
-    .banner {
-        height: 27px;
-        background-color: #CFDCEA;
-        margin-right: 1px;
-        line-height: 27px;
-        color: #434E54;
-        font-size: 15px;
-        font-family: '宋体', Arial;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .close {
-        height: 19px;
-        width: 14px;
-        display: inline-block;
-        background-color: #F1F1F1;
-        border: 2px outset #F1F1F1;
-        text-align: center;
-        line-height: 19px;
-        font-size: 18px;
-        font-family: '宋体', Arial;
-    }
-    .content {
-        height: 60px;
-        line-height: 60px;
-        font-size: 14px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    .redDot {
-        width: 2.5em;
-        height: 2.5em;
-        background: #f00;
-        display: inline-block;
-        -moz-border-radius: 50px;
-        -webkit-border-radius: 50px;
-        border-radius: 50px;
-    }
-    .submite {
-        height: 20px;
-        width: 75px;
-        border: 2px outset #fff;
-        margin: 0 auto;
-        text-align: center;
-        font-size: 14px;
-    }
-    a {
-        padding: 2px 22px;
-        text-decoration:none;
-    }
-    @media screen and (max-width:440px){
-        .content {
-        padding: 0 18px;
-        height: 60px;
-        line-height: 30px;
-        white-space: normal;
-        font-size: 14px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-    }
+html{height:100%}body{height:98%;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAAC2CAYAAAAGPxWyAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAABCRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgICAgICAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDx0aWZmOkNvbXByZXNzaW9uPjU8L3RpZmY6Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjcyPC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj43MjwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjEzODwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MTgyPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAg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);background-repeat:no-repeat;background-color:#F9FAFB;background-size:310px 400px;background-position:center;justify-content:center;flex-direction:column}body,.win,.banner,.content{display:flex;align-items:center}.win{width:100%;justify-content:center}.error{width:400px;height:120px;border:3px outset #F1F1F1;background-color:#F1F1F1;align-self:center}.banner{height:27px;background-color:#CFDCEA;margin-right:1px;line-height:27px;color:#434E54;font-size:15px;font-family:'宋体',Arial;justify-content:space-between}.close{background-color:#F1F1F1;margin:2px}.close,.redX{height:19px;width:14px;font-family:'宋体',Arial;border:2px outset #F1F1F1;text-align:center;line-height:19px;font-size:18px}.content{height:60px;line-height:60px;font-size:14px;justify-content:space-around}.noPic{height:2.6em;width:2.6em;border:2px inset #F1F1F1;background-color:#fff}.redX{margin:6px 8px;color:red;font-family:'宋体',Arial}.submite{height:20px;width:75px;border:2px outset #fff;margin:0 auto;text-align:center;font-size:14px}a{padding:2px 22px;text-decoration:none}@media screen and (max-width:440px){.content{padding:0 18px;line-height:30px;white-space:normal}}
 </style>
 <body>
 <div class="win">
-<div class="error">
-    <div class="wrapper">
-        <div class="banner">
-            &nbsp404 - Page Not Found
-            <div class="close">x</div>
+    <div class="error">
+        <div class="wrapper">
+            <div class="banner">
+                &nbsp404 - Page Not Found
+                <div class="close">x</div>
+            </div>
+            <div class="content">
+                <div class="noPic">
+                    <div class="redX">x</div>
+                </div>
+                Something happend.&nbspI know nothing.&nbsp&nbsp
+            </div>
+            <div class="submite"><a href="/">Close</a></div>
         </div>
-        <div class="content">
-            信息中心提示您：你发现了新世界。请单击“确定”，回到过去。
-        </div>
-        <div class="submite"><a href="/">确定</a></div>
     </div>
-</div>
 </div>
 </body>
 </html>
