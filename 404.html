@@ -6,7 +6,99 @@
     <title>404 Not Found</title>
 </head>
 <style type="text/css" media="screen">
-html{height:100%}body{height:98%;justify-content:center;flex-direction:column;background-color:#0F8181;font-family:'Fixedsys','Fixedsys Excelsior 3.01','WenQuanYi Micro Hei Mono','ProggySquareTTSZ'}body,.win,.banner,.content{display:flex;align-items:center}.win{width:100%;justify-content:center}.error{width:400px;height:120px;border:2px outset #25323C;background-color:#C1C1C1;align-self:center}.banner{height:20px;background:linear-gradient(left,#04056E,#157cda);background:-webkit-linear-gradient(left,#04056E,#157cda);background:-o-linear-gradient(left,#04056E,#157cda);background:-moz-linear-gradient(left,#04056E,#157cda);margin:2px;line-height:20px;color:#C1C1C1;font-size:14px;justify-content:space-between}.close{background-color:#C1C1C1;margin:2px;color:#808080}.close,.redX{height:12px;width:12px;border:2px outset #F1F1F1;text-align:center;line-height:11px;font-size:18px}.content{height:60px;line-height:60px;font-size:14px}.noPic{height:2.6em;width:2.6em;border:2px inset #F1F1F1;background-color:#fff;margin:0 1.5em}.redX{margin:6px 8px;color:red}.submite{height:20px;width:75px;border:2px outset #000;margin:0 auto;text-align:center;font-size:14px}a{display:block;line-height:16px;border:1px dotted #000;margin:1px 2px;text-decoration:none;color:#000}@media screen and (max-width:440px){.content{padding:0 18px;line-height:18px;white-space:normal}}
+html {
+    height: 100%
+}
+body {
+    height: 98%;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #0F8181;
+    font-family: 'Fixedsys', 'Fixedsys Excelsior 3.01', 'WenQuanYi Micro Hei Mono', 'ProggySquareTTSZ';
+}
+body, .win, .banner, .content {
+    display: flex;
+    align-items: center
+}
+.win {
+    width: 100%;
+    justify-content: center
+}
+.error {
+    width: 400px;
+    height: 120px;
+    border: 2px outset #25323C;
+    background-color: #C1C1C1;
+    align-self: center
+}
+.banner {
+    height: 20px;
+    background: linear-gradient(left, #04056E, #157cda);
+    background: -webkit-linear-gradient(left, #04056E, #157cda);
+    background: -o-linear-gradient(left, #04056E, #157cda);
+    background: -moz-linear-gradient(left, #04056E, #157cda);
+    margin: 2px;
+    line-height: 20px;
+    color: #C1C1C1;
+    font-size: 14px;
+    justify-content: space-between
+}
+.close {
+    background-color: #C1C1C1;
+    margin: 2px;
+    color: #808080;
+}
+.close, .redX {
+    height: 12px;
+    width: 12px;
+    border: 2px outset #F1F1F1;
+    text-align: center;
+    line-height: 12px;
+    font-size: 18px
+}
+.content {
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+}
+.noPic {
+    height: 2.6em;
+    width: 2.6em;
+    border: 2px inset #F1F1F1;
+    background-color: #fff;
+    margin: 0 1.5em;
+}
+.redX {
+    margin: 6px 8px;
+    color: red;
+}
+.submite {
+    height: 20px;
+    width: 75px;
+    border: 2px outset #000;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px
+}
+a {
+    display: block;
+    line-height: 16px;
+    border: 1px dotted #000;
+    margin: 0 2px 1px 2px;
+    text-decoration: none;
+    color: #000;
+}
+.lighten {
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+@media screen and (max-width:440px) {
+    .content {
+        padding: 0 18px;
+        line-height: 18px;
+        white-space: normal;
+    }
+}
 </style>
 <body>
 <div class="win">
@@ -14,15 +106,17 @@ html{height:100%}body{height:98%;justify-content:center;flex-direction:column;ba
         <div class="wrapper">
             <div class="banner">
                 &nbsp404 - Page Not Found
-                <div class="close">x</div>
+                <div class="close">✕</div>
             </div>
             <div class="content">
                 <div class="noPic">
-                    <div class="redX">x</div>
+                    <div class="redX">✕</div>
                 </div>
                 Something happend.&nbspI know nothing.&nbsp&nbsp
             </div>
-            <div class="submite"><a href="/">Close</a></div>
+            <div class="submite">
+                <div class="lighten"><a href="/">Close</a></div>
+            </div>
         </div>
     </div>
 </div>
