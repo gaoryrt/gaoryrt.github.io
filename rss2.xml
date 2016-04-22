@@ -8,8 +8,44 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Thu, 21 Apr 2016 11:33:42 GMT</pubDate>
+    <pubDate>Fri, 22 Apr 2016 13:57:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>CSS3笔记</title>
+      <link>http://gaoryrt.com/2016/04-22-CSS3notes/</link>
+      <guid>http://gaoryrt.com/2016/04-22-CSS3notes/</guid>
+      <pubDate>Fri, 22 Apr 2016 10:57:56 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）具有代表性的要点，写下来再加深印象。&lt;br&gt;
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）具有代表性的要点，写下来再加深印象。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;边框&quot;&gt;&lt;a href=&quot;#边框&quot; class=&quot;headerlink&quot; title=&quot;边框&quot;&gt;&lt;/a&gt;边框&lt;/h1&gt;&lt;p&gt;border-radius: 1-4 length|% / 1-4 length|%;&lt;br&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;border-radiu&lt;span class=&quot;variable&quot;&gt;s:2em&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;border-radiu&lt;span class=&quot;variable&quot;&gt;s:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; / &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1个值：(top, right, bottom, left)；&lt;/li&gt;
+&lt;li&gt;2个值：(top, bottom), (left, right)；&lt;/li&gt;
+&lt;li&gt;3个值：top, (left, right), bottom；&lt;/li&gt;
+&lt;li&gt;4个值：(top), (right), (bottom), (left)；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;box-shadow: h-shadow v-shadow blur spread color inset;&lt;br&gt;&lt;figure class=&quot;highlight less&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;box-shadow&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;#888888&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;box-shadow&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;#aaaaaa&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;border-image: &amp;lt;’ border-image-source ‘&amp;gt; || &amp;lt;’ border-image-slice ‘&amp;gt; [ / &amp;lt;’ border-image-width ‘&amp;gt; | / &amp;lt;’ border-image-width ‘&amp;gt;? / &amp;lt;’ border-image-outset ‘&amp;gt; ]? || &amp;lt;’ border-image-repeat ‘&amp;gt;&lt;br&gt;&lt;figure class=&quot;highlight less&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;10px&lt;/span&gt; solid gray;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;border-image&lt;/span&gt;: url(&lt;span class=&quot;string&quot;&gt;test.png&lt;/span&gt;) &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;10px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;background-size: length|percentage|cover|contain;&lt;br&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;35&lt;/span&gt;% &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;%;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;background&lt;/span&gt;-&lt;span class=&quot;built_in&quot;&gt;size&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;px &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;px;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;background-origin: padding-box|border-box|content-box;&lt;br&gt;padding-box根据padding定位&lt;br&gt;border-box根据margin定位&lt;br&gt;content-box根据content定位&lt;br&gt;background-clip: padding-box|border-box|content-box;&lt;br&gt;padding-box在padding内绘制&lt;br&gt;border-box在margin内绘制&lt;br&gt;content-box在content内绘制&lt;br&gt;关于上面这两个的区别运用，&lt;a href=&quot;http://www.planabc.net/2008/04/14/background-clip_background-origin/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;看这一篇文章&lt;/a&gt;，写的真好。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;文本&quot;&gt;&lt;a href=&quot;#文本&quot; class=&quot;headerlink&quot; title=&quot;文本&quot;&gt;&lt;/a&gt;文本&lt;/h1&gt;&lt;p&gt;text-shadow: h-shadow v-shadow blur color;&lt;br&gt;&lt;figure class=&quot;highlight less&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;text-shadow&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;#FF0000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;text-shadow&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3px&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;#FF0000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;word-wrap: normal|break-word;&lt;br&gt;word-break: normal|break-all|keep-all;&lt;br&gt;关于上面这两个的区别运用，&lt;a href=&quot;http://blog.csdn.net/u011043843/article/details/39375677?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;看这一篇文章&lt;/a&gt;。&lt;br&gt;主要区别是，&lt;code&gt;word-wrap&lt;/code&gt;是另起一行后分割，&lt;code&gt;word-break&lt;/code&gt;是直接分割。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;字体&quot;&gt;&lt;a href=&quot;#字体&quot; class=&quot;headerlink&quot; title=&quot;字体&quot;&gt;&lt;/a&gt;字体&lt;/h1&gt;&lt;figure class=&quot;highlight fsharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@font-face &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  font-family: &amp;lt;YourWebFontName&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  src: &amp;lt;source&amp;gt; &lt;span class=&quot;meta&quot;&gt;[&amp;lt;format&amp;gt;]&lt;/span&gt;[,&amp;lt;source&amp;gt; &lt;span class=&quot;meta&quot;&gt;[&amp;lt;format&amp;gt;]&lt;/span&gt;]*;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [font-weight: &amp;lt;weight&amp;gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [font-style: &amp;lt;style&amp;gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里是一个多浏览器支持的例子：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;  @&lt;span class=&quot;keyword&quot;&gt;font-face&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;font-family&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;YourWebFontName&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;YourWebFontName.eot&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;/* IE9 Compat Modes */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;src&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;YourWebFontName.eot?#iefix&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;embedded-opentype&#39;&lt;/span&gt;), &lt;span class=&quot;comment&quot;&gt;/* IE6-IE8 */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;YourWebFontName.woff&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;woff&#39;&lt;/span&gt;), &lt;span class=&quot;comment&quot;&gt;/* Modern Browsers */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;YourWebFontName.ttf&#39;&lt;/span&gt;)  &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;truetype&#39;&lt;/span&gt;), &lt;span class=&quot;comment&quot;&gt;/* Safari, Android, iOS */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;YourWebFontName.svg#YourWebFontName&#39;&lt;/span&gt;) &lt;span class=&quot;built_in&quot;&gt;format&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;svg&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;/* Legacy iOS */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;先引入，后同系统已有字体使用。&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/04-22-CSS3notes/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>JS笔记</title>
@@ -730,40 +766,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/01-29-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>关于实习</title>
-      <link>http://gaoryrt.com/2016/01-27-internship/</link>
-      <guid>http://gaoryrt.com/2016/01-27-internship/</guid>
-      <pubDate>Wed, 27 Jan 2016 14:51:54 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;已经大三寒假了&lt;br&gt;今年开学就应该要实习了&lt;br&gt;以下内容参考自&lt;a href=&quot;http://my.oschina.net/u/1440297&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AJason&lt;/a&gt;在&lt;a href=&quot;http://www.
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;已经大三寒假了&lt;br&gt;今年开学就应该要实习了&lt;br&gt;以下内容参考自&lt;a href=&quot;http://my.oschina.net/u/1440297&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AJason&lt;/a&gt;在&lt;a href=&quot;http://www.oschina.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;开源中国&lt;/a&gt;发布的文章&lt;a href=&quot;http://my.oschina.net/u/1440297/blog/494690?fromerr=kUzDAUdz&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;V2EX大牛的指点&lt;/a&gt;&lt;br&gt;没有经过允许所以不敢全部搬&lt;br&gt;侵权删，先谢过  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;作为一个实习生，需要什么能力？&quot;&gt;&lt;a href=&quot;#作为一个实习生，需要什么能力？&quot; class=&quot;headerlink&quot; title=&quot;作为一个实习生，需要什么能力？&quot;&gt;&lt;/a&gt;作为一个实习生，需要什么能力？&lt;/h1&gt;&lt;p&gt;以下就写实际一些，选近的写  &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;代码和注释的规范性可维护性&lt;/li&gt;
-&lt;li&gt;参与算法的研究与实现    &lt;/li&gt;
-&lt;li&gt;对新技术的探索，包括不仅限于新框架、新思想、新工具&lt;/li&gt;
-&lt;li&gt;对 github 作品认真负责，包括不仅限于规范的 commit、干净的代码、以 feature 为单位提交、分支合并、bug 修复、将 git 烂熟于心、还有 log 的习惯&lt;/li&gt;
-&lt;li&gt;主动解决问题的能力  &lt;/li&gt;
-&lt;li&gt;设计模式、完全分离前后端的 MVC    &lt;/li&gt;
-&lt;li&gt;gitignore 也要好好写  &lt;/li&gt;
-&lt;li&gt;团队工作经历    &lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;接下来干什么？&quot;&gt;&lt;a href=&quot;#接下来干什么？&quot; class=&quot;headerlink&quot; title=&quot;接下来干什么？&quot;&gt;&lt;/a&gt;接下来干什么？&lt;/h1&gt;&lt;p&gt;寒假结束的时候看操作系统&lt;br&gt;这个是重要度最高的，毕竟毕业需要这个&lt;br&gt;在此之外还是以 swift 为先&lt;br&gt;自己的博客是加分项&lt;br&gt;最近看了很多，真真觉着自己什么知识技能都没有啊&lt;br&gt;还要抓紧寒假时间好好充电&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;swift、ios、设计模式、操作系统&lt;/strong&gt;  &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;以上&lt;/p&gt;
-</content:encoded>
-      
-      
     </item>
     
   </channel>
