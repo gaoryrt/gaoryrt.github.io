@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Fri, 22 Apr 2016 14:02:33 GMT</pubDate>
+    <pubDate>Fri, 22 Apr 2016 14:03:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,11 +18,11 @@
       <pubDate>Fri, 22 Apr 2016 10:57:56 GMT</pubDate>
       <description>
       
-        &lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）具有代表性的要点，写下来再加深印象。&lt;br&gt;
+        &lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）容易忽略的要点，写下来再加深印象。&lt;br&gt;
       
       </description>
       
-      <content:encoded>&lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）具有代表性的要点，写下来再加深印象。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <content:encoded>&lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）容易忽略的要点，写下来再加深印象。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;边框&quot;&gt;&lt;a href=&quot;#边框&quot; class=&quot;headerlink&quot; title=&quot;边框&quot;&gt;&lt;/a&gt;边框&lt;/h1&gt;&lt;p&gt;border-radius: 1-4 length|% / 1-4 length|%;&lt;br&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;border-radiu&lt;span class=&quot;variable&quot;&gt;s:2em&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;border-radiu&lt;span class=&quot;variable&quot;&gt;s:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; / &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;1个值：(top, right, bottom, left)；&lt;/li&gt;
