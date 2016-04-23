@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gaoryrt.com/links.html</loc>
+    
+    <lastmod>2016-04-23T14:01:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gaoryrt.com/2016/04-23-cssOrder/</loc>
     
     <lastmod>2016-04-23T08:14:53.000Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://gaoryrt.com/2016/04-02-aliFontendTest/</loc>
     
     <lastmod>2016-04-19T05:35:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://gaoryrt.com/links.html</loc>
-    
-    <lastmod>2016-04-18T13:05:01.000Z</lastmod>
     
   </url>
   
