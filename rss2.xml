@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sat, 23 Apr 2016 08:14:53 GMT</pubDate>
+    <pubDate>Sat, 23 Apr 2016 16:07:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,12 +18,13 @@
       <pubDate>Fri, 22 Apr 2016 19:29:34 GMT</pubDate>
       <description>
       
-        &lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejidaren.com/css-written-specifications.html&quot;&gt;推荐大家使用的CSS书写规范、顺序&lt;/a&gt;两篇文章之后，对css 压缩和美化有了另一番认识。&lt;br&gt;
+        &lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejida
       
       </description>
       
-      <content:encoded>&lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejidaren.com/css-written-specifications.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推荐大家使用的CSS书写规范、顺序&lt;/a&gt;两篇文章之后，对css 压缩和美化有了另一番认识。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;美化-Beautify-EasytoRead&quot;&gt;&lt;a href=&quot;#美化-Beautify-EasytoRead&quot; class=&quot;headerlink&quot; title=&quot;美化/Beautify/EasytoRead&quot;&gt;&lt;/a&gt;美化/Beautify/EasytoRead&lt;/h1&gt;&lt;h2 id=&quot;书写顺序&quot;&gt;&lt;a href=&quot;#书写顺序&quot; class=&quot;headerlink&quot; title=&quot;书写顺序&quot;&gt;&lt;/a&gt;书写顺序&lt;/h2&gt;&lt;p&gt;这个并没有统一的标准，以便于阅读理解为首要目的排序。&lt;br&gt;显示属性  &lt;/p&gt;
+      <content:encoded>&lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejidaren.com/css-written-specifications.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推荐大家使用的CSS书写规范、顺序&lt;/a&gt;两篇文章之后，对css 压缩和美化有了另一番认识。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;美化-Beautify-EasytoRead&quot;&gt;&lt;a href=&quot;#美化-Beautify-EasytoRead&quot; class=&quot;headerlink&quot; title=&quot;美化/ Beautify/ EasytoRead&quot;&gt;&lt;/a&gt;美化/ Beautify/ EasytoRead&lt;/h1&gt;&lt;h2 id=&quot;书写顺序&quot;&gt;&lt;a href=&quot;#书写顺序&quot; class=&quot;headerlink&quot; title=&quot;书写顺序&quot;&gt;&lt;/a&gt;书写顺序&lt;/h2&gt;&lt;p&gt;这个并没有统一的标准，以便于阅读理解为首要目的排序。&lt;br&gt;显示属性  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;display&lt;/li&gt;
 &lt;li&gt;float&lt;/li&gt;
@@ -47,9 +48,9 @@
 &lt;li&gt;white-space&lt;/li&gt;
 &lt;li&gt;content&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;
 &lt;h2 id=&quot;CSS顺序&quot;&gt;&lt;a href=&quot;#CSS顺序&quot; class=&quot;headerlink&quot; title=&quot;CSS顺序&quot;&gt;&lt;/a&gt;CSS顺序&lt;/h2&gt;&lt;p&gt;css中节点排序，暂时没有想到一个好办法。大概思路就是按照Dom节点的顺序排序，但是js如何获得css选择器一样的节点集呢？&lt;br&gt;问题暂时放这里。  &lt;/p&gt;
-&lt;h1 id=&quot;压缩-Uglify-Compress&quot;&gt;&lt;a href=&quot;#压缩-Uglify-Compress&quot; class=&quot;headerlink&quot; title=&quot;压缩/Uglify/Compress&quot;&gt;&lt;/a&gt;压缩/Uglify/Compress&lt;/h1&gt;&lt;h2 id=&quot;CSS缩写&quot;&gt;&lt;a href=&quot;#CSS缩写&quot; class=&quot;headerlink&quot; title=&quot;CSS缩写&quot;&gt;&lt;/a&gt;CSS缩写&lt;/h2&gt;&lt;ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;压缩-Uglify-Compress&quot;&gt;&lt;a href=&quot;#压缩-Uglify-Compress&quot; class=&quot;headerlink&quot; title=&quot;压缩/ Uglify/ Compress&quot;&gt;&lt;/a&gt;压缩/ Uglify/ Compress&lt;/h1&gt;&lt;h2 id=&quot;CSS缩写&quot;&gt;&lt;a href=&quot;#CSS缩写&quot; class=&quot;headerlink&quot; title=&quot;CSS缩写&quot;&gt;&lt;/a&gt;CSS缩写&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;background: background-image ~-repeat ~-position&lt;/li&gt;
 &lt;li&gt;font: font-style | font-variant | font-weight | font-size | line-height | font-family&lt;/li&gt;
 &lt;li&gt;去掉最后一个分号&lt;/li&gt;
@@ -74,11 +75,12 @@
       <pubDate>Fri, 22 Apr 2016 10:57:56 GMT</pubDate>
       <description>
       
-        &lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）容易忽略的要点，写下来再加深印象。&lt;br&gt;
+        &lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）容易忽略的要点，写下来再加深印象。&lt;/p&gt;
+&lt;h1 id=&quot;边框&quot;&gt;&lt;a href=&quot;#边框&quot; class=&quot;headerlink&quot; title=&quot;边框&quot;&gt;&lt;/a&gt;边框&lt;/h1&gt;&lt;p&gt;border-radius: 1-
       
       </description>
       
-      <content:encoded>&lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）容易忽略的要点，写下来再加深印象。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+      <content:encoded>&lt;p&gt;当时看w3school的CSS3时记下来的一些（私以为）容易忽略的要点，写下来再加深印象。&lt;/p&gt;
 &lt;h1 id=&quot;边框&quot;&gt;&lt;a href=&quot;#边框&quot; class=&quot;headerlink&quot; title=&quot;边框&quot;&gt;&lt;/a&gt;边框&lt;/h1&gt;&lt;p&gt;border-radius: 1-4 length|% / 1-4 length|%;&lt;br&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;border-radiu&lt;span class=&quot;variable&quot;&gt;s:2em&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;border-radiu&lt;span class=&quot;variable&quot;&gt;s:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; / &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;em&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;1个值：(top, right, bottom, left)；&lt;/li&gt;
