@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Mon, 25 Apr 2016 16:55:19 GMT</pubDate>
+    <pubDate>Mon, 25 Apr 2016 17:13:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -28,8 +28,8 @@
 &lt;li&gt;一字节：分区状态、活动分区判定&lt;/li&gt;
 &lt;li&gt;一字节：开始磁头&lt;/li&gt;
 &lt;li&gt;.75字节（00 0001）：右边六位为起始扇区号&lt;/li&gt;
-&lt;li&gt;1.25字节 上面左边六位加上这里八位：起始柱面号&lt;/li&gt;
-&lt;li&gt;一字节：分区类型，0B为FAT32，83为Linux，07为ntfs&lt;/li&gt;
+&lt;li&gt;1.25字节 上面左边两位加上这里八位：起始柱面号&lt;/li&gt;
+&lt;li&gt;一字节：分区类型，0B为FAT32，83为Linux，07为ntfs，05是扩展分区&lt;/li&gt;
 &lt;li&gt;三字节：分区结束的磁头，扇区，柱面号&lt;/li&gt;
 &lt;li&gt;四字节：线性寻址方式下的分区相对扇区地址&lt;/li&gt;
 &lt;li&gt;四字节：该分区占用的 总扇区数&lt;/li&gt;
