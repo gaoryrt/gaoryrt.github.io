@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Mon, 25 Apr 2016 17:13:30 GMT</pubDate>
+    <pubDate>Tue, 26 Apr 2016 04:38:53 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -38,7 +38,7 @@
 &lt;h2 id=&quot;为什么要重定位技术&quot;&gt;&lt;a href=&quot;#为什么要重定位技术&quot; class=&quot;headerlink&quot; title=&quot;为什么要重定位技术&quot;&gt;&lt;/a&gt;为什么要重定位技术&lt;/h2&gt;&lt;p&gt;病毒要用到变量，但依附到程序上时位置变化就不能正常使用，这里需要用到重定位。&lt;/p&gt;
 &lt;h2 id=&quot;如何实现重定位&quot;&gt;&lt;a href=&quot;#如何实现重定位&quot; class=&quot;headerlink&quot; title=&quot;如何实现重定位&quot;&gt;&lt;/a&gt;如何实现重定位&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;call跳到下一条指令，使下一条指令感染后的实际地址进栈。&lt;/li&gt;
-&lt;li&gt;用pop或mov exx,[esp] 去除站定内容，这样就得到了感染后下一条指令的实际地址。&lt;/li&gt;
+&lt;li&gt;用pop或mov exx,[esp] 去除栈顶内容，这样就得到了感染后下一条指令的实际地址。&lt;/li&gt;
 &lt;li&gt;令V_start为感染前call的下一条指令地址。Var_lable为感染前变量地址。于是变量Var的实际地址为Base + (OffSet(Var_Lable) - OffSet(V_start))&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;蠕虫和普通病毒的对比&quot;&gt;&lt;a href=&quot;#蠕虫和普通病毒的对比&quot; class=&quot;headerlink&quot; title=&quot;蠕虫和普通病毒的对比&quot;&gt;&lt;/a&gt;蠕虫和普通病毒的对比&lt;/h2&gt;&lt;p&gt;病毒：寄生存在、插入宿主复制、宿主运行时传染、针对本地、user触发、影响文件系统、user水平决定传播、摘除还原&lt;br&gt;蠕虫：独立存在、拷贝自身复制、系统漏洞传染、针对网络、自身触发、影响网络系统性能、user水平不影响、补丁还原&lt;/p&gt;
