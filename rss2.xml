@@ -103,7 +103,7 @@
       
       </description>
       
-      <content:encoded>&lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejidaren.com/css-written-specifications.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推荐大家使用的CSS书写规范、顺序&lt;/a&gt;两篇文章之后，对css 压缩和美化有了另一番认识。  &lt;/p&gt;
+      <content:encoded>&lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejidaren.com/css-written-specifications.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推荐大家使用的CSS书写规范、顺序&lt;/a&gt;两篇文章之后，对css 压缩和美化有了另一番认识。&lt;br&gt;&lt;code&gt;2016-04-27 更新&lt;/code&gt;：发现CSSComb已经实现并且很优雅。&lt;a href=&quot;http://csscomb.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;csscomb&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;美化-Beautify-EasytoRead&quot;&gt;&lt;a href=&quot;#美化-Beautify-EasytoRead&quot; class=&quot;headerlink&quot; title=&quot;美化/ Beautify/ EasytoRead&quot;&gt;&lt;/a&gt;美化/ Beautify/ EasytoRead&lt;/h1&gt;&lt;h2 id=&quot;书写顺序&quot;&gt;&lt;a href=&quot;#书写顺序&quot; class=&quot;headerlink&quot; title=&quot;书写顺序&quot;&gt;&lt;/a&gt;书写顺序&lt;/h2&gt;&lt;p&gt;这个并没有统一的标准，以便于阅读理解为首要目的排序。&lt;br&gt;显示属性  &lt;/p&gt;
 &lt;ul&gt;
