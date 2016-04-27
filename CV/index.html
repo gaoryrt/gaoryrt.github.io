@@ -17,7 +17,7 @@ body {
     height: 98%;
     width: 97%;
     background-color: #2E3336;
-    font-family: 'Fixedsys', 'FS500', 'WenQuanYi Micro Hei Mono', 'ProggySquareTTSZ';
+    font-family: 'MS Sans Serif', Courier, monospace;
 }
 span {
     color: #939393;
@@ -45,7 +45,7 @@ span {
     line-height: 1.5em;
     display: inline-block;
     margin: 0 -.6em 0 0;
-    padding: 0 .5em;
+    padding: 0 .7em;
 }
 .blueRightArr {
     border-left: .75em solid #3563A2;
@@ -66,17 +66,19 @@ span {
     margin: 0 0 0 1em;
     color: #81931C;
 }
-.plainText {
-    color: #A1A1A1;
-}
-.plainOut {
-    color: #C3C3C3;
+.plainText, .plainOut {
+    color: #c3c3c3;
 }
 .colorOut {
     color: #7DD6CF;
 }
 a {
     color: #AC4142;
+}
+::selection {
+    background-color: transparent;
+    color: white;
+    font-size: 900;
 }
 @media screen and (max-width:440px) {
     body {
