@@ -151,19 +151,19 @@ s.setAttribute('data-timestamp', +new Date());
 <script type="text/javascript">
 
 // comments below to disable loading animation
-function revealOnScroll() {
-  var scrolled = $(window).scrollTop();
-  $(".excerpt, .index-title, .index-meta, p").each(function() {
-    var current = $(this),
-      height = $(window).outerHeight(),
-      offsetTop = current.offset().top;
-    if (scrolled + height + 50 > offsetTop) {
-      current.addClass("animation");
-    }
-  });
-}
-$(window).on("scroll", revealOnScroll);
-$(window).load(revealOnScroll)
+// function revealOnScroll() {
+//   var scrolled = $(window).scrollTop();
+//   $(".excerpt, .index-title, .index-meta, p").each(function() {
+//     var current = $(this),
+//       height = $(window).outerHeight(),
+//       offsetTop = current.offset().top;
+//     if (scrolled + height + 50 > offsetTop) {
+//       current.addClass("animation");
+//     }
+//   });
+// }
+// $(window).on("scroll", revealOnScroll);
+// $(window).load(revealOnScroll)
 
 // disqus scripts
 
