@@ -48,15 +48,13 @@
     methods: {
         panicToday: function () {
             this.panicMessage = 'To panic or not to panic, that\'s a question.';
-            $.ajaxPrefilter( function (options) {
-  if (options.crossDomain && jQuery.support.cors) {
-    var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-    options.url = http + '//ipn.li/kernelpanic/';
-    //options.url = "http://cors.corsproxy.io/url=" + options.url;
-  }
-});
-
-
+            $.ajax({
+                crossOrigin: true,
+                url: 'https://ipn.li/kernelpanic/',
+                success: function(data) {
+                    alert(data);
+                }
+            });
         }
     }
 });
