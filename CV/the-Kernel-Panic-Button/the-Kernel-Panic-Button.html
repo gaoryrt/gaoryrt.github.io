@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>the Kernel Panic Button</title>
+    <style type="text/css" media="screen">
+    html {
+        height: 100%;
+    }
+    body {
+        height: 98%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    button {
+        background-color: transparent;
+        margin: auto 0.5em;
+        padding: 0.5em;
+        border: #999 solid 1px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    button:Active {
+        color: #aaa;
+    }
+    p {
+        line-height: 1.4em;
+        font-size: 1em;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="panicToday">今天恐慌吗?</button>
+        <p>{{ panicMessage }}</p>
+    </div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+<script src="http://cdn.bootcss.com/vue/1.0.17/vue.min.js"></script>
+<script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        panicMessage: '你永远不知道你按下之后会发生什么'
+    },
+    methods: {
+        panicToday: function () {
+            this.panicMessage = 'To panic or not to panic, that\'s a question.';
+          $.get("https://ipn.li/kernelpanic/", function(data){
+            if (htmlToDateArray(data) == new Date().Format("yyyy-MM-dd")) {
+                alert("恐慌。");
+                this.panicMessage = 'konghuang';
+            } else {
+                alert("不恐慌。");
+                this.panicMessage = 'konghuang';
+            }
+        });
+      }
+  }
+});
+    Date.prototype.Format = function(fmt)
+{ //author: meizz
+  var o = {
+    "M+" : this.getMonth()+1,                 //月份
+    "d+" : this.getDate(),                    //日
+    "h+" : this.getHours(),                   //小时
+    "m+" : this.getMinutes(),                 //分
+    "s+" : this.getSeconds(),                 //秒
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度
+    "S"  : this.getMilliseconds()             //毫秒
+};
+if(/(y+)/.test(fmt))
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+for(var k in o)
+    if(new RegExp("("+ k +")").test(fmt))
+      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+  return fmt;
+};
+
+function htmlToDateArray(data) {
+    var re = /\d{1,4}-\d{1,2}-\d{1,2}/;
+    var arr = re.exec(data);
+    return arr[0];
+}
+</script>
+</html>

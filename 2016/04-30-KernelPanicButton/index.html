@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="blank">
+  <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
+  
+  <title>今天恐慌吗？</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="记录gaoryrt的学习和生活">
+  
+
+  <meta property="og:title" content="今天恐慌吗？"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/plnV2.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times-circle-o"></i></a>
+      </div>
+      <div class="description">
+        安利两个网站：tutorialzine, css-tricks
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        今天恐慌吗？
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-04-30T12:41:56.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-04-30
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>今天回家，路上听了第38期的内核恐慌，这一期的题目就叫做<a href="https://ipn.li/kernelpanic/38/" target="_blank" rel="external">Hit the Kernel Panic Button（点击查看/收听）</a>，提到了一个内核恐慌按钮，和微博用户<a href="http://weibo.com/frifrifriday" target="_blank" rel="external">今天是周五么</a>、话题<a href="http://weibo.com/p/1008083db00081c6bc19771bf8f16b1c7dbc15" target="_blank" rel="external">#索尼今天倒闭了吗#</a>的目的类似。大概是因为内核恐慌改为不定期播出了，rio说需要在官网上做一个按钮，『今天恐慌吗』？  <em>你永远不知道你按下之后会发现什么</em></p>
+<hr>
+<h1 id="大概的思路"><a href="#大概的思路" class="headerlink" title="大概的思路"></a>大概的思路</h1><ol>
+<li>使用js，从url得到html，我只用得到内核恐慌的html文件就行了。</li>
+<li>解析html文件获得最新一起的时间，然后对比新建的时间，然后进行相应输出。  </li>
+</ol>
+<p>大概就这两个步骤。毕竟 the Kernel Panic Button 的用途很单一。想起来哪里听到过『我手机上的每一个app都有它单独的用处』，真是蠢啊。<br>另，我这个是中二。  </p>
+<h1 id="js得到html文件"><a href="#js得到html文件" class="headerlink" title="js得到html文件"></a>js得到html文件</h1><p>三个办法，其中两种用到了jquery：<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">function</span> readHTML()&#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        async:false,</span><br><span class="line">        url : <span class="string">"https://ipn.li/kernelpanic/"</span>,</span><br><span class="line">        success : function(<span class="name">data</span>)&#123;</span><br><span class="line">            alert(<span class="name">data</span>)<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)<span class="comment">;</span></span><br><span class="line">&#125;)()<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面这个版本不知道为什么在点击确定之前网页都属于加载中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.get(<span class="string">"https://ipn.li/kernelpanic/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    alert(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>还有一个纯的js，详见<a href="http://stackoverflow.com/questions/8197709/javascript-read-html-from-url-into-string" target="_blank" rel="external">stackoverflow的讨论</a>。  </p>
+<h1 id="从html得到最新时间"><a href="#从html得到最新时间" class="headerlink" title="从html得到最新时间"></a>从html得到最新时间</h1><p><strong>上一次这么做我还是一个不会正则的孩子，天真的我使用<code>.index</code>一层一层解析html字符串。</strong><br><strong>直到我遇见了正则。</strong><br>关于正则的学习，推荐一个网站：<a href="http://www.rubular.com" target="_blank" rel="external">rubular</a>，还有<code>practice makes perfect</code>。<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">function</span> htmlToDateArray(<span class="class"><span class="keyword">data</span>) &#123;</span><br><span class="line">    <span class="title">var</span> <span class="title">re</span> = /\<span class="title">d</span>&#123;1,4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;/;</span></span><br><span class="line">    var arr = re.exec(<span class="class"><span class="keyword">data</span>);</span></span><br><span class="line">    return arr[<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="获取当前时间和比较"><a href="#获取当前时间和比较" class="headerlink" title="获取当前时间和比较"></a>获取当前时间和比较</h1><p><code>Date().format()</code>功能居然没有写到jquery的Date里面。<br>也是，javascript作为前端使用时也不应该有这么大的体积，这一期的播客中也说到了的，left-pad有它存在的理由。。。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Date</span>.prototype.Format = <span class="function"><span class="keyword">function</span>(<span class="params">fmt</span>)</span><br><span class="line"></span>&#123; <span class="comment">//author: meizz</span></span><br><span class="line">  <span class="keyword">var</span> o = &#123;</span><br><span class="line">    <span class="string">"M+"</span> : <span class="keyword">this</span>.getMonth()+<span class="number">1</span>,                 <span class="comment">//月份</span></span><br><span class="line">    <span class="string">"d+"</span> : <span class="keyword">this</span>.getDate(),                    <span class="comment">//日</span></span><br><span class="line">    <span class="string">"h+"</span> : <span class="keyword">this</span>.getHours(),                   <span class="comment">//小时</span></span><br><span class="line">    <span class="string">"m+"</span> : <span class="keyword">this</span>.getMinutes(),                 <span class="comment">//分</span></span><br><span class="line">    <span class="string">"s+"</span> : <span class="keyword">this</span>.getSeconds(),                 <span class="comment">//秒</span></span><br><span class="line">    <span class="string">"q+"</span> : <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth()+<span class="number">3</span>)/<span class="number">3</span>), <span class="comment">//季度</span></span><br><span class="line">    <span class="string">"S"</span>  : <span class="keyword">this</span>.getMilliseconds()             <span class="comment">//毫秒</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">if</span>(<span class="regexp">/(y+)/</span>.test(fmt))</span><br><span class="line">    fmt=fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear()+<span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> o)</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span>+ k +<span class="string">")"</span>).test(fmt))</span><br><span class="line">  fmt = fmt.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="built_in">RegExp</span>.$<span class="number">1.</span>length==<span class="number">1</span>) ? (o[k]) : ((<span class="string">"00"</span>+ o[k]).substr((<span class="string">""</span>+ o[k]).length)));</span><br><span class="line">  <span class="keyword">return</span> fmt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码来自<a href="http://blog.csdn.net/meizz/article/details/405708?Pending=true" target="_blank" rel="external">csdn 的 Meizz</a>。  </p>
+<hr>
+<p>最后上作品：<a href="http://gaoryrt.com/CV/the-Kernel-Panic-Button/">the Kernel Panic Button</a><br>以上</p>
+
+
+  </article>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/2016/04-30-KernelPanicButton/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+
+    <a class="backtop wow fadeIn animated" href="#top" >
+        <i class="fa fa-arrow-right"></i>
+    </a>
+    © Gaoryrt 2015-2016
+    <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+    </a>
+
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    if (scrolled + height + 50 > offsetTop) {
+      current.addClass("animation");
+    }
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(window).load(revealOnScroll)
+
+// disqus scripts
+
+var disqus_shortname = 'gaoryrt';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  if($(current).children(".dropdown-content").hasClass("open")){
+    event.stopPropagation();
+    $(current).children(".dropdown-content").removeClass("open");
+  } else {
+    event.stopPropagation();
+    $(current).children(".dropdown-content").addClass("open");
+  }
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>
