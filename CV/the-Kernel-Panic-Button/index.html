@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <title>the Kernel Panic Button</title>
     <style type="text/css" media="screen">
-    html {
-        height: 100%;
-    }
-    body {
-        height: 98%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    button {
-        background-color: transparent;
-        margin: auto 0.5em;
-        padding: 0.5em;
-        border: #999 solid 1px;
-        border-radius: 5px;
-        font-size: 14px;
-    }
-    button:Active {
-        color: #aaa;
-    }
-    p {
-        line-height: 1.4em;
-        font-size: 1em;
-    }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 98%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        button {
+            background-color: transparent;
+            margin: auto 0.5em;
+            padding: 0.5em;
+            border: #999 solid 1px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button:Active {
+            color: #aaa;
+        }
+        p {
+            line-height: 1.4em;
+            font-size: 1em;
+        }
     </style>
 </head>
 <body>
@@ -48,15 +48,21 @@
     methods: {
         panicToday: function () {
             this.panicMessage = 'To panic or not to panic, that\'s a question.';
-          $.get("https://ipn.li/kernelpanic/", function(data){
-            if (htmlToDateArray(data) == new Date().Format("yyyy-MM-dd")) {
+            $.ajax({
+                url:"https://ipn.li/kernelpanic/",
+                dataType:'html',
+                data:'',
+                jsonp:'callback',
+                success:function(result) {
+                    if (htmlToDateArray(result) == new Date().Format("yyyy-MM-dd")) {
                 alert("恐慌。");
             } else {
                 alert("不恐慌。");
             }
-        });
-      }
-  }
+                }
+            });
+        }
+    }
 });
     Date.prototype.Format = function(fmt)
 { //author: meizz
@@ -81,6 +87,9 @@ function htmlToDateArray(data) {
     var re = /\d{1,4}-\d{1,2}-\d{1,2}/;
     var arr = re.exec(data);
     return arr[0];
+}
+function OK(){
+    alert("ok");
 }
 </script>
 </html>
