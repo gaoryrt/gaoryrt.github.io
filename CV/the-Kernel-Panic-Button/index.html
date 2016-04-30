@@ -50,7 +50,7 @@
             this.panicMessage = 'To panic or not to panic, that\'s a question.';
             $.ajax({
                 url:"https://ipn.li/kernelpanic/",
-                dataType:'html',
+                dataType:'jsonp',
                 data:'',
                 jsonp:'callback',
                 success:function(result) {
