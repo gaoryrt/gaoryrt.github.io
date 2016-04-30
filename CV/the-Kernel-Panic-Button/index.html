@@ -51,10 +51,8 @@
           $.get("https://ipn.li/kernelpanic/", function(data){
             if (htmlToDateArray(data) == new Date().Format("yyyy-MM-dd")) {
                 alert("恐慌。");
-                this.panicMessage = 'konghuang';
             } else {
                 alert("不恐慌。");
-                this.panicMessage = 'konghuang';
             }
         });
       }
