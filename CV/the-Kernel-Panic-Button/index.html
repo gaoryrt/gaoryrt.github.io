@@ -48,18 +48,19 @@
     methods: {
         panicToday: function () {
             this.panicMessage = 'To panic or not to panic, that\'s a question.';
-            $.ajax({
-                url:"https://ipn.li/kernelpanic/",
-                dataType:'jsonp',
-                data:'',
-                jsonp:'callback',
-                success:function(result) {
-                    if (htmlToDateArray(result) == new Date().Format("yyyy-MM-dd")) {
-                alert("恐慌。");
-            } else {
-                alert("不恐慌。");
-            }
-                }
+            $.ajaxSetup({
+                scriptCharset: "utf-8", //or "ISO-8859-1"
+                contentType: "application/json; charset=utf-8"
+            });
+
+            $.getJSON('http://whateverorigin.org/get?url=' +
+                encodeURIComponent('https://ipn.li/kernelpanic/') + '&callback=?',
+                function (data) {
+                    if (htmlToDateArray(data.contents) == new Date().Format("yyyy-MM-dd")) {
+                        alert("恐慌。");
+                    } else {
+                        alert("不恐慌。");
+                    }
             });
         }
     }
