@@ -132,13 +132,11 @@ function stackOnScroll() {
     var current = $(this);
     (scrolled > 60) ? current.addClass("stack"):current.removeClass("stack");
     $(this).hasClass("stack") ? $(".three").addClass("margin"):$(".three").removeClass("margin");
-    console.log(current.offset().top);
   });
   $(".right").each(function() {
     var current = $(this);
     (scrolled > 2273-$(window).height()) ? current.addClass("stop"):current.removeClass("stop");
   });
-
 }
 $(window).on("scroll", stackOnScroll);
 </script>
