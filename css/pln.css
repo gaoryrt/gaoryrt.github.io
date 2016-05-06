@@ -550,15 +550,19 @@ figure
     }
     p,
     .excerpt,
-    li
+    .post li
     {
         font-size: 16px;
         font-weight: 300;
-        line-height: 1.8em;
+        line-height: 1.9em;
 
         margin: 0;
 
         color: #666;
+    }
+    code {
+        font-size: 16px;
+        line-height: 1.9em;
     }
     .archive-title
     {
