@@ -154,7 +154,7 @@ s.setAttribute('data-timestamp', +new Date());
   <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-// comments below to disable loading animation
+//loading animation
 function revealOnScroll() {
   var scrolled = $(window).scrollTop();
   $(".excerpt, .index-title, .index-meta, p").each(function() {
@@ -194,20 +194,6 @@ $("a[href='#top']").click(function() {
   $("html, body").animate({ scrollTop: 0 }, 500);
   return false;
 });
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    bp.src = ((curProtocol === 'https')?'https://zz.bdstatic.com/linksubmit/push.js':'http://push.zhanzhang.baidu.com/push.js')
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e9ebc48b7426f8e47380b8699af2ca24";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
 </script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
