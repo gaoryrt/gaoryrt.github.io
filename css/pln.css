@@ -282,9 +282,24 @@ article
 {
     padding-bottom: 30px;
 }
-.navbar
+.fixed-top
 {
-    background-color: white;
+    background-color: #fff;
+    top: 0;
+    border-width: 0 0 1px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #e7e7e7;
+    display: block;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+.fixed-top .fa, .navbar-brand {
+    color: #777;
 }
 .black-color
 {
@@ -479,7 +494,8 @@ figure
 {
     .back,
     li.archives,
-    .busuanzi
+    .busuanzi,
+    .googleSearch
     {
         display: none;
     }
