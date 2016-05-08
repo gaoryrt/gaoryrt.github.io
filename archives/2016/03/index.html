@@ -51,7 +51,7 @@
       <ul class="dropdown-content">
 
           
-           <li><a href="/categories/前端/">前端</a></li><li><a href="/categories/随笔与个人文集/">随笔与个人文集</a></li><li><a href="/categories/硬悟学蛇/">硬悟学蛇</a></li><li><a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a></li><li><a href="/categories/Discovery/">Discovery</a></li><li><a href="/categories/疑似机器人/">疑似机器人</a></li><li><a href="/categories/麦客爱苹果/">麦客爱苹果</a></li>
+           <li><a href="/categories/随笔与个人文集/">随笔与个人文集</a></li><li><a href="/categories/硬悟学蛇/">硬悟学蛇</a></li><li><a href="/categories/前端/">前端</a></li><li><a href="/categories/Discovery/">Discovery</a></li><li><a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a></li><li><a href="/categories/疑似机器人/">疑似机器人</a></li><li><a href="/categories/麦客爱苹果/">麦客爱苹果</a></li>
 
       </ul>
     </li>
@@ -292,7 +292,7 @@ var disqus_shortname = 'gaoryrt';
   dsq.type = 'text/javascript';
   dsq.async = true;
   dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-  (document.getElementsByTagName('body')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  document.getElementsByTagName('body')[0].appendChild(dsq);
 }());
 
 
@@ -315,6 +315,7 @@ $("a[href='#top']").click(function() {
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 <span style='display:none'>
+总<span id="busuanzi_value_site_pv"></span>
 客<span id="busuanzi_value_site_uv"></span>
 读<span id="busuanzi_value_page_pv"></span>
 </span>
