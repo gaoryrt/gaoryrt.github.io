@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/plnV6.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
@@ -120,8 +120,8 @@
 <p>这个是输入“讽刺实现”的结果<br>下面是源代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> thread</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">word = <span class="string">"讽刺实现"</span></span><br><span class="line">size = len(word) / <span class="number">3</span> - <span class="number">1</span></span><br><span class="line">dic = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入为需要评分的词，会在 dic 中储存&#123;123:相关,124:关结,122:结果&#125;，评分过程中会输出分数，size 用于等待进程结束</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pinfen</span><span class="params">(keyword1)</span>:</span></span><br><span class="line">    url = <span class="string">"http://www.baidu.com/s?wd="</span> + keyword1</span><br><span class="line">    request = urllib2.Request(url)</span><br><span class="line">    response = urllib2.urlopen(request)</span><br><span class="line">    rawhtml = response.read()</span><br><span class="line">    response.close()</span><br><span class="line">    headposition = rawhtml.index(<span class="string">'相关结果约'</span>)</span><br><span class="line">    tailposition = rawhtml.index(</span><br><span class="line">        <span class="string">'''个&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;script type="text/javascript"&gt;'''</span>)</span><br><span class="line">    result = rawhtml[headposition + <span class="number">15</span>:tailposition].split(<span class="string">','</span>)</span><br><span class="line">    result = int(<span class="string">''</span>.join(result))</span><br><span class="line">    dic[word.index(keyword1) / <span class="number">3</span>] = result</span><br><span class="line">    <span class="keyword">print</span> keyword1, <span class="string">":"</span>, result</span><br><span class="line">    <span class="keyword">global</span> size</span><br><span class="line">    size -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">liangzifenci</span><span class="params">(keyword0)</span>:</span>  <span class="comment"># 两个字为一组进行分词</span></span><br><span class="line">    list0 = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(keyword0) - <span class="number">3</span>, <span class="number">3</span>):</span><br><span class="line">        list0.append(keyword0[i] + keyword0[i + <span class="number">1</span>] + keyword0[i + <span class="number">2</span>] +</span><br><span class="line">                     keyword0[i + <span class="number">3</span>] + keyword0[i + <span class="number">4</span>] + keyword0[i + <span class="number">5</span>])</span><br><span class="line">    <span class="keyword">return</span> list0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shuchu</span><span class="params">(dic)</span>:</span></span><br><span class="line">    dic = &#123;value: key <span class="keyword">for</span> key, value <span class="keyword">in</span> dic.items()&#125;</span><br><span class="line">    position = dic[sorted(dic.keys())[<span class="number">0</span>]] * <span class="number">3</span></span><br><span class="line">    <span class="keyword">print</span> word[<span class="number">0</span>:position + <span class="number">3</span>], <span class="string">"|"</span>, word[position + <span class="number">3</span>:]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下都是处理线程用的</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> liangzifenci(word):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        thread.start_new_thread(pinfen, (x,))</span><br><span class="line">        <span class="keyword">print</span> x, <span class="string">": thread created"</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">print</span> x, <span class="string">": unable to start new thread "</span></span><br><span class="line"><span class="keyword">while</span> size != <span class="number">0</span>:</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">shuchu(dic)</span><br></pre></td></tr></table></figure></p>
 <p>突然发现不知道应该在哪里加入 GA 的东西了。。。略尴尬</p>
 
-
   </article>
+
 
 
 
@@ -142,6 +142,11 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+<div class='busuanzi center'>
+页访问量:<span id="busuanzi_value_page_pv"></span>・
+站访客数:<span id="busuanzi_value_site_uv"></span>・
+站访问量:<span id="busuanzi_value_site_pv"></span>
+</div>
 
 
 
@@ -210,10 +215,6 @@ $("a[href='#top']").click(function() {
 </script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<span style='display:none'>
-总<span id="busuanzi_value_site_pv"></span>
-客<span id="busuanzi_value_site_uv"></span>
-读<span id="busuanzi_value_page_pv"></span>
-</span>
+
 </body>
 </html>

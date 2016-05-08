@@ -469,10 +469,17 @@ figure
 .footerFirstRow {
     display: inline-block;
 }
+.busuanzi {
+    font-size: 15px;
+    line-height: 15px;
+    margin: 30px 0;
+    color: #adadad;
+}
 @media screen and (max-width:782px)
 {
     .back,
-    li.archives
+    li.archives,
+    .busuanzi
     {
         display: none;
     }

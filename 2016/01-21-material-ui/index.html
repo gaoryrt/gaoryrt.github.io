@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/plnV6.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
@@ -91,8 +91,8 @@
 <p>在 Node 流行起来的同时，独立开发者和团队将几乎将所有（使用 Node 的）代码都 web 程序化了。当然，整个社区都会受益于这些“自定义 Node 脚本”，这就要求任何人都可以上传他们的 Node 脚本，其他开发人员可以在自己的项目中使用这些脚本。<br><a href="https://www.npmjs.com/" target="_blank" rel="external">Node Package Manager</a>，也就是大家熟知的『npm』就是用来干这个事情的。npm是一个命令行工具，主要用来将外部JavaScript引入自己的项目。例如 Material UI 就可以作为 npm 的一个包。也就是说，你可以使用<code>npm install material-ui</code>将 Material UI 引入你的项目，然后在你想要用的地方使用 Material UI。  </p>
 <p>以上。</p>
 
-
   </article>
+
 
 
 
@@ -113,6 +113,11 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+<div class='busuanzi center'>
+页访问量:<span id="busuanzi_value_page_pv"></span>・
+站访客数:<span id="busuanzi_value_site_uv"></span>・
+站访问量:<span id="busuanzi_value_site_pv"></span>
+</div>
 
 
 
@@ -181,10 +186,6 @@ $("a[href='#top']").click(function() {
 </script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<span style='display:none'>
-总<span id="busuanzi_value_site_pv"></span>
-客<span id="busuanzi_value_site_uv"></span>
-读<span id="busuanzi_value_page_pv"></span>
-</span>
+
 </body>
 </html>

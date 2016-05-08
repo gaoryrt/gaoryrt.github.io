@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/plnV6.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
@@ -92,8 +92,8 @@
 <p>这里是一个多浏览器支持的例子：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  @<span class="keyword">font-face</span> &#123;</span><br><span class="line"><span class="attribute">font-family</span>: <span class="string">'YourWebFontName'</span>;</span><br><span class="line"><span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'YourWebFontName.eot'</span>); <span class="comment">/* IE9 Compat Modes */</span></span><br><span class="line"><span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'YourWebFontName.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>), <span class="comment">/* IE6-IE8 */</span></span><br><span class="line">            <span class="built_in">url</span>(<span class="string">'YourWebFontName.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>), <span class="comment">/* Modern Browsers */</span></span><br><span class="line">            <span class="built_in">url</span>(<span class="string">'YourWebFontName.ttf'</span>)  <span class="built_in">format</span>(<span class="string">'truetype'</span>), <span class="comment">/* Safari, Android, iOS */</span></span><br><span class="line">            <span class="built_in">url</span>(<span class="string">'YourWebFontName.svg#YourWebFontName'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>); <span class="comment">/* Legacy iOS */</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <p>先引入，后同系统已有字体使用。</p>
 
-
   </article>
+
 
 
 
@@ -114,6 +114,11 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+<div class='busuanzi center'>
+页访问量:<span id="busuanzi_value_page_pv"></span>・
+站访客数:<span id="busuanzi_value_site_uv"></span>・
+站访问量:<span id="busuanzi_value_site_pv"></span>
+</div>
 
 
 
@@ -182,10 +187,6 @@ $("a[href='#top']").click(function() {
 </script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<span style='display:none'>
-总<span id="busuanzi_value_site_pv"></span>
-客<span id="busuanzi_value_site_uv"></span>
-读<span id="busuanzi_value_page_pv"></span>
-</span>
+
 </body>
 </html>

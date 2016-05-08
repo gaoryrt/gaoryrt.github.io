@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/plnV6.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
@@ -88,8 +88,8 @@
 <hr>
 <h2 id="接下来的问题"><a href="#接下来的问题" class="headerlink" title="接下来的问题"></a>接下来的问题</h2><p>这里先挖个坑，等我看看书再来。本来写了一个我认为可以的通用版本，但是不行。怎样做到各个元素的高度都改变之后还可以使用呢？<br>还有一个问题，大家可以看看<a href="http://www.ifanr.com" target="_blank" rel="external">ifanr主页</a>，右边<code>sidebar</code>在滚到最后的时候，会跟footer重合在一起，这个是个问题，怎样做到落到footer上方又重新static或relative呢？<br>以上</p>
 
-
   </article>
+
 
 
 
@@ -110,6 +110,11 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+<div class='busuanzi center'>
+页访问量:<span id="busuanzi_value_page_pv"></span>・
+站访客数:<span id="busuanzi_value_site_uv"></span>・
+站访问量:<span id="busuanzi_value_site_pv"></span>
+</div>
 
 
 
@@ -178,10 +183,6 @@ $("a[href='#top']").click(function() {
 </script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<span style='display:none'>
-总<span id="busuanzi_value_site_pv"></span>
-客<span id="busuanzi_value_site_uv"></span>
-读<span id="busuanzi_value_page_pv"></span>
-</span>
+
 </body>
 </html>

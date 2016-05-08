@@ -20,7 +20,7 @@
   <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
   <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://7xs4ih.com1.z0.glb.clouddn.com/plnV6.css">
+  <link rel="stylesheet" href="/css/pln.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
@@ -120,8 +120,8 @@
 <hr>
 <h1 id="操作符号"><a href="#操作符号" class="headerlink" title="操作符号"></a>操作符号</h1><p><code>+</code> 加<br><code>-</code> 减<br><code>*</code> 乘<br><code>**</code> 次方<br><code>/</code> 除<br><code>//</code> 浮点除，四舍五入<br><code>%</code> 取余数<br><code>&lt;</code> 小于<br><code>&gt;</code> 大于<br><code>&lt;=</code> 小于等于<br><code>&gt;=</code> 大于等于<br><code>==</code> 等于<br><code>!=</code> 不等于<br><code>&lt;&gt;</code> 不等于<br><code>( )</code> 元组<br><code>[ ]</code> 列表<br><code>{ }</code> 字典<br><code>@</code> 从第一个函数修饰符开始，自下而上做参数传递，这样实际是使用了约定的函数修饰符达到函数嵌套的目的。<br><code>,</code> 参数传递时分隔，元组转换，输出无换行<br><code>:</code> 函数，循环，if条件，类定义等后面有冒号<br><code>.</code> 调用某个类的方法或成员<br><code>=</code> 赋值<br><code>;</code> 语句结束<br><code>a += b</code> a = a + b<br><code>a -= b</code> a = a - b<br><code>a *= b</code> a = a <em> b<br><code>a /= b</code> a = a / b<br><code>a //= b</code> a = a // b<br><code>a %= b</code> a = a % b<br><code>a **= b</code> a = a *</em> b</p>
 
-
   </article>
+
 
 
 
@@ -142,6 +142,11 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+<div class='busuanzi center'>
+页访问量:<span id="busuanzi_value_page_pv"></span>・
+站访客数:<span id="busuanzi_value_site_uv"></span>・
+站访问量:<span id="busuanzi_value_site_pv"></span>
+</div>
 
 
 
@@ -210,10 +215,6 @@ $("a[href='#top']").click(function() {
 </script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-<span style='display:none'>
-总<span id="busuanzi_value_site_pv"></span>
-客<span id="busuanzi_value_site_uv"></span>
-读<span id="busuanzi_value_page_pv"></span>
-</span>
+
 </body>
 </html>
