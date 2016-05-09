@@ -51,13 +51,12 @@
       <ul class="dropdown-content">
 
           
-           <li><a href="/categories/随笔与个人文集/">随笔与个人文集</a></li><li><a href="/categories/硬悟学蛇/">硬悟学蛇</a></li><li><a href="/categories/前端/">前端</a></li><li><a href="/categories/Discovery/">Discovery</a></li><li><a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a></li><li><a href="/categories/疑似机器人/">疑似机器人</a></li><li><a href="/categories/麦客爱苹果/">麦客爱苹果</a></li>
+           <li><a href="/categories/随笔与个人文集/">随笔与个人文集</a></li><li><a href="/categories/前端/">前端</a></li><li><a href="/categories/硬悟学蛇/">硬悟学蛇</a></li><li><a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a></li><li><a href="/categories/Discovery/">Discovery</a></li><li><a href="/categories/疑似机器人/">疑似机器人</a></li><li><a href="/categories/麦客爱苹果/">麦客爱苹果</a></li>
 
       </ul>
     </li>
   </ul>
   
-
   <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
       <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -348,6 +347,7 @@
 </div>
 </footer>
   <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
 <script type="text/javascript">
 
 // comments below to disable loading animation
@@ -390,6 +390,11 @@ $("a[href='#top']").click(function() {
   $("html, body").animate({ scrollTop: 0 }, 500);
   return false;
 });
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
 </script>
 
 </body>
