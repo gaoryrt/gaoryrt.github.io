@@ -1,7 +1,6 @@
 #site_search {
     display: flex;
     margin: 8px;
-    width: calc(900px-100%);
     flex-grow: 1;
 }
 .navbar {
@@ -40,13 +39,18 @@
 .search-result-list li {
     padding: 40px 50px 0 20px;
 }
-.search-result {
+.search-result, .search-result-title:hover {
     color: #ddd;
 }
 .search-keyword {
     color: #fff;
-    font: 900 1.2em/1em "";
-    margin: 6px;
+    font: 900 1em/1em "";
+    text-decoration: underline;
+    margin: 2px;
+}
+.search-result {
+    word-wrap: break-word;
+    word-break: normal;
 }
 @media screen and (max-width:782px)
 {
