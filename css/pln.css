@@ -466,6 +466,11 @@ figure
 .pager a {
     color: #333;
 }
+a.page-number:hover, a.next:hover, a.prev:hover {
+    transition: background-color .2s, color .2s;
+    background-color: #337ab7;
+    color: #e7e7e7;
+}
 @media screen and (max-width:782px)
 {
     .back,
