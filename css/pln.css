@@ -454,11 +454,18 @@ figure
 .pager {
     flex-direction: row;
     justify-content: space-between;
+    background-color: #fff;
+    border: #e7e7e7 solid 1px;
 }
 .prev, .page-number, .next {
-    padding: 10px;
+    padding: 10px 25px;
 }
-
+.space {
+    padding: 10px 0;
+}
+.pager a {
+    color: #333;
+}
 @media screen and (max-width:782px)
 {
     .back,
@@ -516,6 +523,12 @@ figure
              -o-transform: rotate(0deg);
         text-align: center;
         letter-spacing: 1px;
+    }
+    .prev, .page-number, .next {
+        padding: 10px;
+    }
+    .space {
+        padding: 10px 0;
     }
     i.fa-arrow-right
     {
