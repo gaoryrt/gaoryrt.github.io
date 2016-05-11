@@ -14,21 +14,52 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            font-size: 1em;
         }
+
         button {
-            background-color: transparent;
-            margin: auto 0.5em;
-            padding: 0.5em;
-            border: #999 solid 1px;
-            border-radius: 5px;
-            font-size: 14px;
+            display: inline-block;
+            background-color: #eee;
+            height: 64px;
+            width: 144px;
+            border-radius: 12px;
+            border: 0;
+            font-size: 1em;
+            -webkit-transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
-        button:Active,a {
+        button:hover {
+            background-color: #fff;
+            color: #333;
+        }
+        button:focus {
+            outline: 0;
+        }
+        button::before {
+            content: '';
+            position: absolute;
+            margin: -21px -28px;
+            height: 60px;
+            width: 140px;
+            border-radius: 12px;
+            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0;
+            border: 2px solid #333;
+            -webkit-transform: scale3d(1.2, 1.35, 1);
+            transform: scale3d(1.2, 1.35, 1);
+        }
+        button:hover::before {
+            opacity: 1;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+
+        a {
             color: #aaa;
         }
         p, a {
             line-height: 1.4em;
-            font-size: 1em;
         }
         a, a:Visited {
             text-decoration: none;
