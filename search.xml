@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 几个纯CSS的按钮轮子]]></title>
+      <url>http://gaoryrt.com/2016/05-11-buttonStyleInspiration/</url>
+      <content type="html"><![CDATA[ 
+ 本篇是从 codrops 的一篇文章获得的灵感，文章使用css伪元素实现了很多按钮效果，看的我心动，动手自己也写一写。想看的看，不想看就别看。 Antiman效果可以看这里，指针悬浮时黑色边框从无到有、在周围慢慢缩小到达按钮指定边框位置，伴有按钮的背景颜色改变。#antiman &#123; display: inline-block; background-color: #eee; height: 64px; width: 144px; border-radius: 12px; border: 0; font-size: 1em; -webkit-transition: background-color 0.3s, color 0.3s; transition: background-color 0.3s, color 0.3s;&#125;#antiman:hover &#123; background-color: #fff; color: #333;&#125;#antiman::before &#123; content: ''; position: absolute; margin: -21px -28px; height: 60px; width: 140px; border-radius: 12px; -webkit-transition: -webkit-transform 0.3s, opacity 0.3s; transition: transform 0.3s, opacity 0.3s; opacity: 0; border: 2px solid #333; -webkit-transform: scale3d(1.2, 1.35, 1); transform: scale3d(1.2, 1.35, 1);&#125;#antiman:hover::before &#123; opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1);&#125;#antiman:focus &#123; outline: 0;&#125; 主要是靠伪元素，这里要注意#antiman {display: inline-block}和#antiman {position: absolute}之间的关系，不要搞到其他地方去了。 其他几个并不感冒，就没有写了。以上]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  关于速度优化]]></title>
       <url>http://gaoryrt.com/2016/05-08-fasten/</url>
       <content type="html"><![CDATA[ 

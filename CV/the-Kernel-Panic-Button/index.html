@@ -17,7 +17,8 @@
             font-size: 1em;
         }
 
-        button {
+/*-------- antiman --------*/
+        #antiman {
             display: inline-block;
             background-color: #eee;
             height: 64px;
@@ -28,17 +29,14 @@
             -webkit-transition: background-color 0.3s, color 0.3s;
             transition: background-color 0.3s, color 0.3s;
         }
-        button:hover {
+        #antiman:hover {
             background-color: #fff;
             color: #333;
         }
-        button:focus {
-            outline: 0;
-        }
-        button::before {
+        #antiman::before {
             content: '';
             position: absolute;
-            margin: -21px -28px;
+            margin: -24px -28px;
             height: 60px;
             width: 140px;
             border-radius: 12px;
@@ -49,11 +47,63 @@
             -webkit-transform: scale3d(1.2, 1.35, 1);
             transform: scale3d(1.2, 1.35, 1);
         }
-        button:hover::before {
+        #antiman:hover::before {
             opacity: 1;
             -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1);
         }
+        #antiman:focus, #winona:focus {
+            outline: 0;
+        }
+
+/*-------- winona --------*/
+        #winona {
+            display: inline-block;
+            background-color: transparent;
+            height: 64px;
+            width: 144px;
+            border-radius: 32px;
+            border: 3px solid #000;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #000;
+            -webkit-transition: border-color .3s;
+            -o-transition: border-color .3s;
+            transition: border-color .3s;
+        }
+        #winona:hover {
+            border-color: #3f51b5;
+        }
+        #winona::after {
+            content: 'winona';
+            position: absolute;
+            margin-left: -32px;
+            color: #3f51b5;
+            opacity: 0;
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            -webkit-transition: transform .3s, opacity .3s;
+            -o-transition: transform .3s, opacity .3s;
+            transition: transform .3s, opacity .3s;
+        }
+        #winona:hover::after {
+            opacity: 1;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        #winona > span {
+            display: block;
+            -webkit-transition: transform .3s, opacity .3s;
+            -o-transition: transform .3s, opacity .3s;
+            transition: transform .3s, opacity .3s;
+        }
+        #winona:hover > span {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+
+
 
         a {
             color: #aaa;
@@ -69,7 +119,8 @@
 </head>
 <body>
     <div id="app">
-        <button v-on:click="panicToday">今天恐慌吗?</button>
+        <button id="winona"><span>winona</span></button>
+        <button id="antiman" v-on:click="panicToday">今天恐慌吗?</button>
         <p>{{ panicMessage }}</p>
         {{{ go }}}
     </div>
