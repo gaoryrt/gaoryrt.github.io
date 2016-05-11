@@ -15,6 +15,10 @@
             align-items: center;
             text-align: center;
             font-size: 1em;
+            background: #fff;
+        }
+        #antiman, #wayra, #winona {
+            margin: 20px;
         }
 
 /*-------- antiman --------*/
@@ -43,7 +47,7 @@
             -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
             transition: transform 0.3s, opacity 0.3s;
             opacity: 0;
-            border: 2px solid #333;
+            border: 3px solid #333;
             -webkit-transform: scale3d(1.2, 1.35, 1);
             transform: scale3d(1.2, 1.35, 1);
         }
@@ -75,7 +79,7 @@
             border-color: #3f51b5;
         }
         #winona::after {
-            content: 'hover';
+            content: 'winona';
             position: absolute;
             margin-left: -32px;
             color: #3f51b5;
@@ -103,6 +107,50 @@
             transform: translate3d(0, -100%, 0);
         }
 
+/*-------- wayra --------*/
+        #wayra {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            background: transparent;
+            height: 50px;
+            width: 245px;
+            border: 3px solid #3f51b5;
+            color: #3f51b5;
+            font-size: 1.2em;
+            z-index: 1;
+            font-weight: 600;
+            -webkit-transition: border-color .3s, color .3s;
+            -o-transition: border-color .3s, color .3s;
+            transition: border-color .3s, color .3s;
+        }
+        #wayra:hover {
+            border-color: #37474F;
+            color: #fff;
+        }
+        #wayra::before {
+            margin: -14px 0 0 -100px;
+            content: '';
+            position: absolute;
+            height: 50px;
+            width: 400px;
+            z-index: -1;
+            background-color: #3f51b5;
+            -webkit-transform-origin: 50px 245px;
+            transform-origin: 50px 245px;
+            transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -8em, 0);
+            -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -8em, 0);
+            -webkit-transition: transform .3s, opacity .3s, background-color .3s;
+            -o-transition: transform .3s, opacity .3s, background-color .3s;
+            transition: transform .3s, opacity .3s, background-color .3s;
+        }
+        #wayra:hover::before {
+            opacity: 1;
+            z-index: -1;
+            background-color: #37474F;
+            transform: rotate3d(0, 0, 0, 0deg) translate3d(0, 0, 0);
+            -webkit-transform: rotate3d(0, 0, 0, 0deg) translate3d(0, 0, 0);
+        }
 
 
         a {
@@ -121,6 +169,7 @@
     <div id="app">
         <button id="winona"><span>winona</span></button>
         <button id="antiman" v-on:click="panicToday">今天恐慌吗?</button>
+        <button id="wayra">WAYRA</button>
         <p>{{ panicMessage }}</p>
         {{{ go }}}
     </div>
