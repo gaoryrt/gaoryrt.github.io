@@ -17,7 +17,7 @@
             font-size: 1em;
             background: #fff;
         }
-        #antiman, #wayra, #winona {
+        #antiman, #wayra, #winona, #tamaya {
             margin: 20px;
         }
 
@@ -120,9 +120,9 @@
             font-size: 1.2em;
             z-index: 1;
             font-weight: 600;
-            -webkit-transition: border-color .3s, color .3s;
-            -o-transition: border-color .3s, color .3s;
-            transition: border-color .3s, color .3s;
+            -webkit-transition: border-color .5s, color .5s;
+            -o-transition: border-color .5s, color .5s;
+            transition: border-color .5s, color .5s;
         }
         #wayra:hover {
             border-color: #37474F;
@@ -140,9 +140,9 @@
             transform-origin: 50px 245px;
             transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -8em, 0);
             -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -8em, 0);
-            -webkit-transition: transform .3s, opacity .3s, background-color .3s;
-            -o-transition: transform .3s, opacity .3s, background-color .3s;
-            transition: transform .3s, opacity .3s, background-color .3s;
+            -webkit-transition: transform .4s, opacity .4s, background-color .4s;
+            -o-transition: transform .4s, opacity .4s, background-color .3s;
+            transition: transform .4s, opacity .4s, background-color .4s;
         }
         #wayra:hover::before {
             opacity: 1;
@@ -151,6 +151,66 @@
             transform: rotate3d(0, 0, 0, 0deg) translate3d(0, 0, 0);
             -webkit-transform: rotate3d(0, 0, 0, 0deg) translate3d(0, 0, 0);
         }
+
+/*-------- tamaya --------*/
+        #tamaya {
+            position: relative;
+            overflow: hidden;
+            height: 60px;
+            width: 140px;
+            background-color: transparent;
+            border: 3px solid #37474F;
+            font-size: 1.2em;
+            z-index: 1;
+        }
+        #tamaya::before, #tamaya::after {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            content: 'tamaya';
+            background-color: #7986cb;
+            color: #fff;
+            width: 140px;
+            z-index: -1;
+            -webkit-transition: transform .3s;
+            -o-transition: transform .3s;
+            transition: transform .3s;
+        }
+        #tamaya::before {
+            margin: -19px -9px;
+            padding-top: 1em;
+            height: 13px;
+        }
+        #tamaya::after {
+            height: 30px;
+            line-height: 0;
+            margin: -11px -9px;
+        }
+        #tamaya span {
+            display: block;
+            z-index: -2;
+            opacity: 0;
+            -webkit-transform: scale3d(.8, .8, .8);
+            transform: scale3d(.8, .8, .8);
+            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        #tamaya:hover::before {
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+        }
+        #tamaya:hover::after {
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+        }
+        #tamaya:hover span {
+            opacity: 1;
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+        }
+
+
+
 
 
         a {
@@ -170,6 +230,7 @@
         <button id="winona"><span>winona</span></button>
         <button id="antiman" v-on:click="panicToday">今天恐慌吗?</button>
         <button id="wayra">WAYRA</button>
+        <button id="tamaya"><span>tamaya</span></button>
         <p>{{ panicMessage }}</p>
         {{{ go }}}
     </div>
