@@ -8,8 +8,42 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Thu, 12 May 2016 06:22:39 GMT</pubDate>
+    <pubDate>Sat, 14 May 2016 19:00:34 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>拆分CSS</title>
+      <link>http://gaoryrt.com/2016/05-14-splitCSS/</link>
+      <guid>http://gaoryrt.com/2016/05-14-splitCSS/</guid>
+      <pubDate>Sat, 14 May 2016 13:55:22 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;在我开始着手写&lt;a href=&quot;&quot;&gt;hexo-theme-pln&lt;/a&gt;的时候我就已经预见到了这一幕：这个 css 文件太过巨大，对于普通的维护来说比较复杂，我需要将它拆分开来。&lt;br&gt;这篇文章就在进行的同时记录一下过程。&lt;br&gt;&lt;strong&gt;想看的看，不想看就别看。&lt;/
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;在我开始着手写&lt;a href=&quot;&quot;&gt;hexo-theme-pln&lt;/a&gt;的时候我就已经预见到了这一幕：这个 css 文件太过巨大，对于普通的维护来说比较复杂，我需要将它拆分开来。&lt;br&gt;这篇文章就在进行的同时记录一下过程。&lt;br&gt;&lt;strong&gt;想看的看，不想看就别看。&lt;/strong&gt;  &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;这个css文件是这个项目中的唯一的一个 css，我需要将它根据作用分成几个部分，再为其加上变量选项，以便维护。&lt;br&gt;所以我需要一款可以运行在 node.js 上的，支持变量以及导入的css预处理器。&lt;br&gt;那么就要选择是 Less、Sass 还是 Stylus 了，关于这几个之间的比较我找到一些文章：&lt;a href=&quot;https://css-tricks.com/sass-vs-less/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sass vs. LESS&lt;/a&gt;、&lt;a href=&quot;http://efe.baidu.com/blog/revisiting-css-preprocessors/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;再谈 CSS 预处理器&lt;/a&gt;。&lt;br&gt;简单看了一下，不用游标卡尺的&lt;a href=&quot;http://sass-lang.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SCSS&lt;/a&gt;，就是你了。&lt;br&gt;在这之前我还需要将css文件根据DOM排序，分成几个文件。我想这个时候就不需要第三方的工具了，既然这几天在看node.js相关，其实也可以自己写一个爬虫，树状输出该页面下所有节点名。&lt;br&gt;那么整个过程就是下面几步：  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本地安装SCSS，以及常用操作&lt;/li&gt;
+&lt;li&gt;爬到页面的树状节点名&lt;/li&gt;
+&lt;li&gt;手动拆分原css&lt;/li&gt;
+&lt;li&gt;SCSS优化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;关于SCSS&quot;&gt;&lt;a href=&quot;#关于SCSS&quot; class=&quot;headerlink&quot; title=&quot;关于SCSS&quot;&gt;&lt;/a&gt;关于SCSS&lt;/h2&gt;&lt;p&gt;私以为这个是sass的升级版，就是有了大括号和分号的sass。&lt;br&gt;Mac 下的安装：&lt;br&gt;&lt;figure class=&quot;highlight cmake&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gem &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; sass&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果不行请用&lt;code&gt;sudo&lt;/code&gt;，安装完了用&lt;code&gt;sass -v&lt;/code&gt;检查一下是否成功。&lt;br&gt;常用操作就不再累述，想看的看&lt;a href=&quot;http://sass-lang.com/guide&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网的介绍&lt;/a&gt;吧，都差不多。&lt;br&gt;使用的话是这个：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;sass&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;--watch&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.scss&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:style.css&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;压缩的话是这个：&lt;br&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sass --watch --style compressed style&lt;span class=&quot;selector-class&quot;&gt;.scss&lt;/span&gt;:style&lt;span class=&quot;selector-class&quot;&gt;.min&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.css&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;爬虫&quot;&gt;&lt;a href=&quot;#爬虫&quot; class=&quot;headerlink&quot; title=&quot;爬虫&quot;&gt;&lt;/a&gt;爬虫&lt;/h2&gt;&lt;p&gt;新建文件夹，cd进去&lt;code&gt;npm init&lt;/code&gt;，然后修改&lt;code&gt;package.json&lt;/code&gt;，添加上&lt;code&gt;&amp;quot;private&amp;quot;: true&lt;/code&gt;，再确保自己写了&lt;code&gt;&amp;quot;description&amp;quot;&lt;/code&gt;这一项之后继续，都是为了方式&lt;code&gt;NPM WARN&lt;/code&gt;。&lt;br&gt;然后是爬虫和jquery相关的库：&lt;br&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; superagent cheerio &lt;span class=&quot;comment&quot;&gt;--save&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;以下就是编写这个通过html获得节点列表的爬虫了。&lt;br&gt;好吧写了大概有三个小时我还是放弃了，这个循环的递归我还不知道怎么写呢。。。&lt;br&gt;一开始写的第一个版本写到后面发现需要递归。第二个版本递归写好了发现还需要循环进去。&lt;br&gt;或许还是我的逻辑问题，不该写&lt;code&gt;startSelector Return SonNodeArr&lt;/code&gt;这么一个函数的，应该就一层接着一层，返回下一层第一个，然后下一个，直到没有下一个，直到没有下一层。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;慢慢更，&lt;br&gt;明天再来。  &lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/05-14-splitCSS/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>几个纯CSS的按钮轮子</title>
@@ -769,34 +803,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/03-23-calender/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>为站点添加Rss和sitemap</title>
-      <link>http://gaoryrt.com/2016/03-22-addrss/</link>
-      <guid>http://gaoryrt.com/2016/03-22-addrss/</guid>
-      <pubDate>Tue, 22 Mar 2016 09:54:35 GMT</pubDate>
-      <description>
-      
-        &lt;h1 id=&quot;rss是什么&quot;&gt;&lt;a href=&quot;#rss是什么&quot; class=&quot;headerlink&quot; title=&quot;rss是什么&quot;&gt;&lt;/a&gt;rss是什么&lt;/h1&gt;&lt;p&gt;全称是really simple syndication&lt;br&gt;简易信息聚合&lt;br&gt;以下是个人YY&lt;br&gt;在
-      
-      </description>
-      
-      <content:encoded>&lt;h1 id=&quot;rss是什么&quot;&gt;&lt;a href=&quot;#rss是什么&quot; class=&quot;headerlink&quot; title=&quot;rss是什么&quot;&gt;&lt;/a&gt;rss是什么&lt;/h1&gt;&lt;p&gt;全称是really simple syndication&lt;br&gt;简易信息聚合&lt;br&gt;以下是个人YY&lt;br&gt;在我国，有新浪微博、微信公众号、各路新闻/聚合软件瓜分市场的大前提下&lt;br&gt;你要好好使用一个rss还是蛮不容易的&lt;br&gt;不说rss阅读器的选择，单单是订阅和迁移订阅源的过程就够繁琐的了&lt;br&gt;新浪微博可以推荐相似用户，公众号有钱拿&lt;br&gt;rss确实做下去不容易  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;为hexo添加rss&quot;&gt;&lt;a href=&quot;#为hexo添加rss&quot; class=&quot;headerlink&quot; title=&quot;为hexo添加rss&quot;&gt;&lt;/a&gt;为hexo添加rss&lt;/h1&gt;&lt;p&gt;hexo的plugin页面就有相应插件&lt;br&gt;配置也相当简单&lt;br&gt;&lt;a href=&quot;https://github.com/hexojs/hexo-generator-feed&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点这里看原文&lt;/a&gt;&lt;br&gt;安装：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-generator-feed --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;配置，在&lt;code&gt;hexo/_config.yml&lt;/code&gt;里添加：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;feed&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;type&lt;/span&gt;: &lt;span class=&quot;selector-tag&quot;&gt;rss2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;path&lt;/span&gt;: &lt;span class=&quot;selector-tag&quot;&gt;rss2&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.xml&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;limit&lt;/span&gt;: 20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;hub&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;然后把rss连接放在&lt;code&gt;theme/_config.yml&lt;/code&gt;中：&lt;br&gt;&lt;figure class=&quot;highlight avrasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;rss:&lt;/span&gt; /rss2.xml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;然后&lt;code&gt;generate&lt;/code&gt;，再&lt;code&gt;deploy&lt;/code&gt;就行了&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;为hexo添加sitemap&quot;&gt;&lt;a href=&quot;#为hexo添加sitemap&quot; class=&quot;headerlink&quot; title=&quot;为hexo添加sitemap&quot;&gt;&lt;/a&gt;为hexo添加sitemap&lt;/h1&gt;&lt;p&gt;hexo的plugin页面就有相应插件&lt;br&gt;配置也相当简单&lt;br&gt;&lt;a href=&quot;https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点这里看原文&lt;/a&gt;&lt;br&gt;安装：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-seo-friendly-sitemap --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;配置，在&lt;code&gt;hexo/_config.yml&lt;/code&gt;里添加：&lt;br&gt;&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;sitemap:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;    path:&lt;/span&gt; sitemap.xml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;然后就可以拿给搜索引擎了&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;以上&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/03-22-addrss/#disqus_thread</comments>
     </item>
     
   </channel>

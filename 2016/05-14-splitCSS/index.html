@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
+  
+  <title>拆分CSS</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="记录gaoryrt的学习和生活">
+  
+
+  <meta property="og:title" content="拆分CSS"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/pln.css">
+  <link rel="stylesheet" href="/css/search.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times-circle-o"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;想看的看，不想看就别看
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        拆分CSS
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-05-14T13:55:22.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-05-14
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>在我开始着手写<a href="">hexo-theme-pln</a>的时候我就已经预见到了这一幕：这个 css 文件太过巨大，对于普通的维护来说比较复杂，我需要将它拆分开来。<br>这篇文章就在进行的同时记录一下过程。<br><strong>想看的看，不想看就别看。</strong>  </p>
+<hr>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这个css文件是这个项目中的唯一的一个 css，我需要将它根据作用分成几个部分，再为其加上变量选项，以便维护。<br>所以我需要一款可以运行在 node.js 上的，支持变量以及导入的css预处理器。<br>那么就要选择是 Less、Sass 还是 Stylus 了，关于这几个之间的比较我找到一些文章：<a href="https://css-tricks.com/sass-vs-less/" target="_blank" rel="external">Sass vs. LESS</a>、<a href="http://efe.baidu.com/blog/revisiting-css-preprocessors/" target="_blank" rel="external">再谈 CSS 预处理器</a>。<br>简单看了一下，不用游标卡尺的<a href="http://sass-lang.com" target="_blank" rel="external">SCSS</a>，就是你了。<br>在这之前我还需要将css文件根据DOM排序，分成几个文件。我想这个时候就不需要第三方的工具了，既然这几天在看node.js相关，其实也可以自己写一个爬虫，树状输出该页面下所有节点名。<br>那么整个过程就是下面几步：  </p>
+<ol>
+<li>本地安装SCSS，以及常用操作</li>
+<li>爬到页面的树状节点名</li>
+<li>手动拆分原css</li>
+<li>SCSS优化</li>
+</ol>
+<hr>
+<h2 id="关于SCSS"><a href="#关于SCSS" class="headerlink" title="关于SCSS"></a>关于SCSS</h2><p>私以为这个是sass的升级版，就是有了大括号和分号的sass。<br>Mac 下的安装：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem <span class="keyword">install</span> sass</span><br></pre></td></tr></table></figure></p>
+<p>如果不行请用<code>sudo</code>，安装完了用<code>sass -v</code>检查一下是否成功。<br>常用操作就不再累述，想看的看<a href="http://sass-lang.com/guide" target="_blank" rel="external">官网的介绍</a>吧，都差不多。<br>使用的话是这个：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sass</span> <span class="selector-tag">--watch</span> <span class="selector-tag">style</span><span class="selector-class">.scss</span><span class="selector-pseudo">:style.css</span></span><br></pre></td></tr></table></figure></p>
+<p>压缩的话是这个：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch --style compressed style<span class="selector-class">.scss</span>:style<span class="selector-class">.min</span><span class="selector-class">.css</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h2><p>新建文件夹，cd进去<code>npm init</code>，然后修改<code>package.json</code>，添加上<code>&quot;private&quot;: true</code>，再确保自己写了<code>&quot;description&quot;</code>这一项之后继续，都是为了方式<code>NPM WARN</code>。<br>然后是爬虫和jquery相关的库：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> superagent cheerio <span class="comment">--save</span></span><br></pre></td></tr></table></figure></p>
+<p>以下就是编写这个通过html获得节点列表的爬虫了。<br>好吧写了大概有三个小时我还是放弃了，这个循环的递归我还不知道怎么写呢。。。<br>一开始写的第一个版本写到后面发现需要递归。第二个版本递归写好了发现还需要循环进去。<br>或许还是我的逻辑问题，不该写<code>startSelector Return SonNodeArr</code>这么一个函数的，应该就一层接着一层，返回下一层第一个，然后下一个，直到没有下一个，直到没有下一层。  </p>
+<hr>
+<p>慢慢更，<br>明天再来。  </p>
+
+
+  </article>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/2016/05-14-splitCSS/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+
+    <a class="backtop wow fadeIn animated" href="#top" >
+        <i class="fa fa-arrow-right"></i>
+    </a>
+    © Gaoryrt 2015-2016
+    <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+    </a>
+
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(document).ready(revealOnScroll)
+
+// disqus scripts
+
+var disqus_shortname = 'gaoryrt';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('body')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
