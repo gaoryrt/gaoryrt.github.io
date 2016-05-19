@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>flex - the simple guide</title>
+    <link rel="stylesheet" href="all.css" type="text/css">
+</head>
+<body>
+    <div class="section">
+        <h1>flex - the simple guide</h1>
+        <p>just a brief intro of CSS3 flex. no deep shit ;)</p>
+        <p class="meta">
+            credits to <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background">A Complete Guide to Flexbox</a><br>
+            also <a href="http://rogerdudler.github.io/git-guide/index.html">git - the simple guide</a><br>
+            by <a href="http://gaoryrt.com/">gaoryrt</a><br>
+            please report issues on <a href="">github</a><br>
+        </p>
+    </div>
+    <div class="section container-common">
+        <h1>container-common</h1>
+        <p>
+            every flex based on
+            <code>display: flex</code><br>
+            <ul>
+            <li><code>flex-direction</code>: <code>row</code> | <code>row-re</code> | <code>column</code> | <code>column-re</code></li>
+            <li><code>flex-wrap</code>: <code>nowrap</code> | <code>wrap</code> | <code>wrap-reverse</code></li>
+            <li><code>flex-flow</code>: <code>&lt;flex-direction&gt;</code> | <code>&lt;flex-wrap&gt;</code></li>
+            </ul>
+        </p>
+    </div>
+    <div class="section justify-content">
+        <h1>justify-content</h1>
+        <p>
+            alignment along the container<br>
+        </p>
+    </div>
+    <div class="section align-items">
+        <h1>align-items</h1>
+        <p>
+            flex items laying on the line
+        </p>
+    </div>
+    <div class="section align-content">
+        <h1>align-content</h1>
+        <p>
+            This aligns a flex container's lines within when there is extra space in the cross-axis
+        </p>
+    </div>
+    <div class="section item-common">
+        <h1>item-common</h1>
+        <p>
+        set these attributes in flexd <b>items</b><br>
+        instead of flexd <b>container</b>
+        <ul>
+            <li><code>order</code>: <code>&lt;integer&gt;</code></li>
+            <li><code>flex-grow</code>: <code>&lt;number&gt;</code></li>
+            <li><code>flex-shrink</code>: <code>&lt;number&gt;</code></li>
+            <li><code>flex-basis</code>: <code>&lt;length&gt;</code> || <code>auto</code></li>
+            <li><code>flex</code>: <code>none</code> | [ <code>&lt;flex-grow&gt;</code><code>&lt;flex-shrink&gt;</code> || <code>&lt;flex-basis&gt;</code> ]</li>
+        </ul>
+        </p>
+    </div>
+    <div class="section align-slef">
+        <h1>align-slef</h1>
+        <p>
+            set this attribute between flexd <b>items</b><br>
+            instead of flexd <b>container</b>
+        </p>
+    </div>
+    <div class="section">
+        <h1>comments</h1>
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/CV/flex-the-simple-guide/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+</body>
+</html>
