@@ -50,14 +50,6 @@ ul {
 .counter {
     position: relative;
 }
-
-
-
-
-
-
-
-
 .container-common {
     color: #C5E99B;
     background-color: #548687;
@@ -91,5 +83,17 @@ ul {
     background-color: #6a60a9;
     code {
         background-color: #38335A;
+    }
+}
+@media screen and (max-width:782px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    img {
+        width: 100%
+    }
+    #disqus_thread {
+        padding-bottom: 50px;
+        width: 80%;
     }
 }
