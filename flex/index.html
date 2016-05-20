@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>flex - the simple guide</title>
+    <link rel="stylesheet" href="all.css" type="text/css">
+</head>
+<body>
+    <div class="section">
+        <h1>flex - the simple guide</h1>
+        <p>just a brief intro of CSS3 flex. no deep shit ;)</p>
+        <p class="meta">
+            credits to <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background">A Complete Guide to Flexbox</a><br>
+            also <a href="http://rogerdudler.github.io/git-guide/index.html">git - the simple guide</a><br>
+            by <a href="http://gaoryrt.com/">gaoryrt</a><br>
+            please report issues on <a href="">github</a><br>
+        </p>
+        <h1>☟</h1>
+    </div>
+    <div class="section container-common">
+        <h1>.container</h1>
+        <p>
+            every flex based on
+            <code>{display: flex}</code><br>
+            set these attributes in flexd <b>container</b><br>
+            instead of flexd <b>items</b>
+            <ul>
+            <li><code>flex-direction</code>: <code>row</code> | <code>row-re</code> | <code>column</code> | <code>column-re</code></li>
+            <li><code>flex-wrap</code>: <code>nowrap</code> | <code>wrap</code> | <code>wrap-reverse</code></li>
+            <li><code>&lt;flex-flow&gt;</code>: <code>&lt;flex-direction&gt;</code> || <code>&lt;flex-wrap&gt;</code></li>
+            </ul>
+        </p>
+    </div>
+    <div class="section justify-content">
+        <h1>&lt;justify-content&gt;</h1>
+        <p>
+            alignment along the container<br>
+            this <b>WON'T</b> make items diaplay horizontally<br>
+            <code>&lt;justify-content&gt;</code>: <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code>
+        </p>
+        <img src="img/justify-content.png">
+    </div>
+    <div class="section align-items">
+        <h1>&lt;align-items&gt;</h1>
+        <p>
+            flex items laying on the line <br>
+            <code>&lt;align-items&gt;</code>: <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>stretch</code> | <code>baseline</code>
+        </p>
+        <img src="img/align-items.png">
+    </div>
+    <div class="section item-common">
+        <h1>.item</h1>
+        <p>
+        set these attributes in flexd <b>items</b><br>
+        instead of flexd <b>container</b>
+        <ul>
+            <li><code>order</code>: <code>/integer/</code></li>
+            <li><code>flex-grow</code>: <code>/number/</code></li>
+            <li><code>flex-shrink</code>: <code>/number/</code></li>
+            <li><code>flex-basis</code>: <code>/length/</code> || <code>auto</code></li>
+            <li><code>flex</code>: <code>none</code> | [ <code>&lt;flex-grow&gt;</code><code>&lt;flex-shrink&gt;</code> || <code>&lt;flex-basis&gt;</code> ]</li>
+        </ul>
+        </p>
+    </div>
+    <div class="section align-self">
+        <h1>&lt;align-self&gt;</h1>
+        <p>
+            set this attribute between flexd <b>items</b><br>
+            instead of flexd <b>container</b><br>
+            <code>&lt;align-self&gt;</code>: <code>auto</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code><br>
+            <code>align-self: auto</code> would follow .cotainer <br>
+        </p>
+        <img src="img/align-self.png">
+    </div>
+    <div class="section">
+        <h1>comments</h1>
+    </div>
+    <div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/CV/flex-the-simple-guide/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+</body>
+</html>

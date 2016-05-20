@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gaoryrt.com/flex/all.css</loc>
+    
+    <lastmod>2016-05-20T10:00:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gaoryrt.com/2016/05-14-splitCSS/</loc>
     
     <lastmod>2016-05-15T14:42:31.000Z</lastmod>
