@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://gaoryrt.com/404.html</loc>
+    
+    <lastmod>2016-05-20T18:01:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gaoryrt.com/2016/04-29-VueBasics/</loc>
     
     <lastmod>2016-05-20T17:03:01.000Z</lastmod>
@@ -9,7 +16,14 @@
   </url>
   
   <url>
-    <loc>http://gaoryrt.com/flex/all.css</loc>
+    <loc>http://gaoryrt.com/flex-the-simple-guide/index.html</loc>
+    
+    <lastmod>2016-05-20T13:09:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://gaoryrt.com/flex-the-simple-guide/all.css</loc>
     
     <lastmod>2016-05-20T10:00:53.000Z</lastmod>
     
@@ -61,13 +75,6 @@
     <loc>http://gaoryrt.com/2016/05-01-allAboutTheButton/</loc>
     
     <lastmod>2016-05-01T05:31:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://gaoryrt.com/404.html</loc>
-    
-    <lastmod>2016-04-27T16:57:18.000Z</lastmod>
     
   </url>
   

@@ -1,0 +1,99 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 0;
+    font-family: 'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;
+    text-align: center;
+}
+h1 {
+    font-size: 4.5rem;
+}
+p {
+    margin: 40px 0 30px 0;
+    font-size: 1.8rem;
+    font-weight: 500
+}
+.meta {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: #aaa
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+code {
+    padding: 0 7px;
+    border-radius: 5px;
+}
+ul {
+    margin: 0;
+    text-align: start;
+    font-size: 1.8rem;
+    font-weight: 500;
+    li {
+        margin: 10px 0;
+    }
+}
+#disqus_thread {
+    padding-bottom: 80px;
+    position: absolute;
+    width: 55%;
+    left:50%;
+    transform: translate(-50%)
+}
+.counter {
+    position: relative;
+}
+.container-common {
+    color: #C5E99B;
+    background-color: #548687;
+    code {
+        background-color: #285943;
+    }
+}
+.justify-content {
+    color: #373c4d;
+    background-color: #d9e1e8;
+    code {
+        background-color: #9ba7b6;
+    }
+}
+.align-items{
+    color: #a3daff;
+    background-color: #0080ff;
+    code {
+        background-color: #283f4c;
+    }
+}
+.item-common {
+    color: #c9d6de;
+    background-color: #52616a;
+    code {
+        background-color: #2c3f4a;
+    }
+}
+.align-self {
+    color: #fffcf0;
+    background-color: #6a60a9;
+    code {
+        background-color: #38335A;
+    }
+}
+@media screen and (max-width:782px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    img {
+        width: 100%
+    }
+    #disqus_thread {
+        padding-bottom: 50px;
+        width: 80%;
+    }
+}
