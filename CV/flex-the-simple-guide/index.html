@@ -18,57 +18,60 @@
             by <a href="http://gaoryrt.com/">gaoryrt</a><br>
             please report issues on <a href="">github</a><br>
         </p>
+        <h1>☟</h1>
     </div>
     <div class="section container-common">
-        <h1>container-common</h1>
+        <h1>.container</h1>
         <p>
             every flex based on
-            <code>display: flex</code><br>
+            <code>{display: flex}</code><br>
             <ul>
             <li><code>flex-direction</code>: <code>row</code> | <code>row-re</code> | <code>column</code> | <code>column-re</code></li>
             <li><code>flex-wrap</code>: <code>nowrap</code> | <code>wrap</code> | <code>wrap-reverse</code></li>
-            <li><code>flex-flow</code>: <code>&lt;flex-direction&gt;</code> | <code>&lt;flex-wrap&gt;</code></li>
+            <li><code>&lt;flex-flow&gt;</code>: <code>&lt;flex-direction&gt;</code> || <code>&lt;flex-wrap&gt;</code></li>
             </ul>
         </p>
     </div>
     <div class="section justify-content">
-        <h1>justify-content</h1>
+        <h1>&lt;justify-content&gt;</h1>
         <p>
             alignment along the container<br>
+            this <b>WON'T</b> make items diaplay horizontally<br>
+            <code>&lt;justify-content&gt;</code>: <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code>
         </p>
+        <img src="img/justify-content.png">
     </div>
     <div class="section align-items">
-        <h1>align-items</h1>
+        <h1>&lt;align-items&gt;</h1>
         <p>
-            flex items laying on the line
+            flex items laying on the line <br>
+            <code>&lt;align-items&gt;</code>: <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>stretch</code> | <code>baseline</code>
         </p>
-    </div>
-    <div class="section align-content">
-        <h1>align-content</h1>
-        <p>
-            This aligns a flex container's lines within when there is extra space in the cross-axis
-        </p>
+        <img src="img/align-items.png">
     </div>
     <div class="section item-common">
-        <h1>item-common</h1>
+        <h1>.item</h1>
         <p>
         set these attributes in flexd <b>items</b><br>
         instead of flexd <b>container</b>
         <ul>
-            <li><code>order</code>: <code>&lt;integer&gt;</code></li>
-            <li><code>flex-grow</code>: <code>&lt;number&gt;</code></li>
-            <li><code>flex-shrink</code>: <code>&lt;number&gt;</code></li>
-            <li><code>flex-basis</code>: <code>&lt;length&gt;</code> || <code>auto</code></li>
+            <li><code>order</code>: <code>/integer/</code></li>
+            <li><code>flex-grow</code>: <code>/number/</code></li>
+            <li><code>flex-shrink</code>: <code>/number/</code></li>
+            <li><code>flex-basis</code>: <code>/length/</code> || <code>auto</code></li>
             <li><code>flex</code>: <code>none</code> | [ <code>&lt;flex-grow&gt;</code><code>&lt;flex-shrink&gt;</code> || <code>&lt;flex-basis&gt;</code> ]</li>
         </ul>
         </p>
     </div>
-    <div class="section align-slef">
-        <h1>align-slef</h1>
+    <div class="section align-self">
+        <h1>&lt;align-self&gt;</h1>
         <p>
             set this attribute between flexd <b>items</b><br>
-            instead of flexd <b>container</b>
+            instead of flexd <b>container</b><br>
+            <code>&lt;align-self&gt;</code>: <code>auto</code> | <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code> | <code>space-around</code><br>
+            <code>align-self: auto</code> would follow .cotainer <br>
         </p>
+        <img src="img/align-self.png">
     </div>
     <div class="section">
         <h1>comments</h1>

@@ -7,7 +7,7 @@
     text-align: center;
 }
 h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
 }
 p {
     margin: 40px 0 30px 0;
@@ -68,23 +68,28 @@ ul {
 .justify-content {
     color: #373c4d;
     background-color: #d9e1e8;
-}
-.align-slef {
-    color: #fffcf0;
-    background-color: #6a60a9;
-}
-.align-content {
-    color: #c9d6de;
-    background-color: #52616a;
-}
-.item-common {
-    color: #df99b2;
-    background-color: #512645;
     code {
-        background-color: #311e3e;
+        background-color: #9ba7b6;
     }
 }
 .align-items{
     color: #a3daff;
     background-color: #0080ff;
+    code {
+        background-color: #283f4c;
+    }
+}
+.item-common {
+    color: #c9d6de;
+    background-color: #52616a;
+    code {
+        background-color: #2c3f4a;
+    }
+}
+.align-self {
+    color: #fffcf0;
+    background-color: #6a60a9;
+    code {
+        background-color: #38335A;
+    }
 }
