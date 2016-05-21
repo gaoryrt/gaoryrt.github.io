@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 最近在干什么05-21]]></title>
+      <url>http://gaoryrt.com/2016/05-21-whatsup2016-05-21/</url>
+      <content type="html"><![CDATA[ 
+ 本系列的目的是避免自己感觉自己白活了。 今天是5月21日，在本月的16号，我停止了目前人生中最长的一次contribution：61天。越发感觉自己是为了commit而commit，再加之有个非个人项目需要完成，索性停止了commit。 非个人项目一个用vue+browserify写的15选10在线APP。第一次用vueify不太熟练，加之自己js也不是强项，遇见了很多问题。比如说两个vue之间获取数据我也只能使用this.$parent.$children[n].xxx的形式来调用，不应该直接是Vue.xxx.xx这样么。还有现在也没有搞明白为什么用for定义的动态属性不能在template中使用v-for里面调用。说回来MVVM真是个好东西，一个部件一个vue文件，集成template、js、css。加上vueify还可以用jade，less，ES2015。然而在上传的时候把之前的git文件给覆盖了。。。不然也不会有17号的空白，残念。周四就提交了，今天也没有见一个回复。我已经龊到人家不愿意回复的境界了。 写代码时听什么还是写了不少行了，感觉自己在听歌的时候，尤其是熟悉的音乐时效率高得多。第一个版本是个后摇的歌单，这个并不属于上面说到的「熟悉的音乐」，反而是空灵了很多。后摇 - 代码必备第二个版本是自己收集的nu-disco，这个也是最常用的歌单，开始循环就感觉bug都少多了。nu-disco最近还发现一个杂杂的歌单，杂在都是EDM但是类型挺多，大部分都算是氛围音乐吧，在工作的时候听白噪声的应该会蛮喜欢这个歌单的。「 幻 」 Vol.3田皮听歌居然都已经一万二千五首了，他是没有停过么。 个人项目等等我看看。retro-404新增了一个DOS样式的404页面。其实还可以添加osX、nintendo的ww仿照git-the simple guide写了一个flex guide，把小本本上最常用的那一页搬到了网上，小本本不在身边的时候也可以速查了。flex - the simple guide 接下来干什么感觉还是造轮子吧，试试用vue写日期选择的控件，轮播组件。还是有目标的生活安逸啊。]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  拆分CSS]]></title>
       <url>http://gaoryrt.com/2016/05-14-splitCSS/</url>
       <content type="html"><![CDATA[ 
