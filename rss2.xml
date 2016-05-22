@@ -8,8 +8,39 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sat, 21 May 2016 10:27:43 GMT</pubDate>
+    <pubDate>Sun, 22 May 2016 09:12:01 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>反对键不是</title>
+      <link>http://gaoryrt.com/2016/05-22-down-vote/</link>
+      <guid>http://gaoryrt.com/2016/05-22-down-vote/</guid>
+      <pubDate>Sun, 22 May 2016 08:35:26 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;突然发现一个问题，我在使用知乎的时候，基本上只会点击表示「赞同」的那一个向上的箭头，而对于自己反对的回答，我基本上是不会去点击表示「反对」的那一个向下的箭头。&lt;/p&gt;
+&lt;p&gt;然后我问了一下小良，他会不会给不喜欢的回答点「反对」键，他说他会直接忽视自己不喜欢的那个回答。当我问
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;突然发现一个问题，我在使用知乎的时候，基本上只会点击表示「赞同」的那一个向上的箭头，而对于自己反对的回答，我基本上是不会去点击表示「反对」的那一个向下的箭头。&lt;/p&gt;
+&lt;p&gt;然后我问了一下小良，他会不会给不喜欢的回答点「反对」键，他说他会直接忽视自己不喜欢的那个回答。当我问到「赞同」和「反对」之间的比例时，小良的回答是「100：1」。&lt;/p&gt;
+&lt;p&gt;浅浅想了一下，大概原因是知乎将表示票数的这个数字和「赞同」箭头放在了同一个父元素中。毫无疑问，这样放，对使用者的选择肯定是有一定干预的，看看国产流氓软件的安装和卸载过程，就会明显的对你的操作进行视觉和操作难度上的干预。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;down-vote/uninstall.png&quot; alt=&quot;猎豹免费wifi的卸载界面&quot;&gt;&lt;/p&gt;
+&lt;p&gt;👆这两张图👇有着相同的流氓点。（截图时间为发布时间，图源猎豹免费wifi、知乎，感谢小良供图）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;down-vote/downvote.png&quot; alt=&quot;不公平的知乎&quot;&gt;&lt;/p&gt;
+&lt;p&gt;为什么不给一个「反对」的个数呢？那么我点击反对之后会有什么用呢？只有管理员看得到么？&lt;/p&gt;
+&lt;p&gt;我打开了几个同样具有投票元素的站点：&lt;a href=&quot;http://stackoverflow.com/questions/30770006/dplyr-max-value-in-a-group-excluding-the-value-in-each-row&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stackoverflow&lt;/a&gt;、&lt;a href=&quot;https://segmentfault.com/q/1010000005176174&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;segmentefault&lt;/a&gt;、&lt;a href=&quot;https://www.quora.com/Do-fathers-feel-uncomfortable-when-their-pubescent-daughters-go-out-to-the-beach-or-pool-wearing-a-bikini-Do-they-start-to-avoid-looking-once-their-daughters-start-growing-up&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;quora&lt;/a&gt;，发现quora也是这样做的，但是另两个技术型问答网站则将票数放在了同意和反对中间。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;down-vote/e.png&quot; alt=&quot;公平的stackoverflow&quot;&gt;&lt;/p&gt;
+&lt;p&gt;又想起来朋友圈可以屏蔽不想看的人的相关信息，但是在微博要这样做的话你需要付费。什么时候连个人喜好这样的基本权利都需要付费才能使用了？又是什么时候连「屏蔽都要付费」这种行为都变得「不可耻」了呢？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;想看的看，不想看的就别看&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;想到再说&lt;/p&gt;
+&lt;p&gt;以上&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/05-22-down-vote/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>最近在干什么05-21</title>
@@ -782,31 +813,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/04-02-aliFontendTest/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>花了好长时间重装了Hexo</title>
-      <link>http://gaoryrt.com/2016/03-23-reInstallHexo/</link>
-      <guid>http://gaoryrt.com/2016/03-23-reInstallHexo/</guid>
-      <pubDate>Wed, 23 Mar 2016 15:53:57 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;今天使用hexo的时候，发现找不到这个命令了&lt;br&gt;打开finder，我的hexo文件夹还在那里&lt;br&gt;当时并不知道是哪个地方出问题了&lt;br&gt;就只是简单的在zshrc文件中添加了&lt;code&gt;hexo bin&lt;/code&gt;文件的alias&lt;br&gt;但是今天在deploy新文章的
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;今天使用hexo的时候，发现找不到这个命令了&lt;br&gt;打开finder，我的hexo文件夹还在那里&lt;br&gt;当时并不知道是哪个地方出问题了&lt;br&gt;就只是简单的在zshrc文件中添加了&lt;code&gt;hexo bin&lt;/code&gt;文件的alias&lt;br&gt;但是今天在deploy新文章的时候，发现hexo彻底不能用了    &lt;/p&gt;
-&lt;h1 id=&quot;问题哪里来的&quot;&gt;&lt;a href=&quot;#问题哪里来的&quot; class=&quot;headerlink&quot; title=&quot;问题哪里来的&quot;&gt;&lt;/a&gt;问题哪里来的&lt;/h1&gt;&lt;p&gt;我昨天添加hexo sitemap插件的时候&lt;br&gt;顺手更改了nvm，并且没有配置好&lt;br&gt;导致系统使用的node版本中没有hexo&lt;br&gt;我在找到这个问题的途中尝试了重装npm&lt;br&gt;不幸的是npm问题更多，err红了一大片&lt;br&gt;在中间等待和&lt;code&gt;ctrl c&lt;/code&gt;的多次循环中我选择了放弃  &lt;/p&gt;
-&lt;h1 id=&quot;重装&quot;&gt;&lt;a href=&quot;#重装&quot; class=&quot;headerlink&quot; title=&quot;重装&quot;&gt;&lt;/a&gt;重装&lt;/h1&gt;&lt;p&gt;先备份，就是把hexo文件夹改个名字，比如说&lt;code&gt;hexo1&lt;/code&gt;&lt;br&gt;卸载nvm：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;rm -rf ~/.nvm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rm -rf ~/.npm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rm -rf ~/.bower&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;然后重新装：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;然后重新装hexo：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;还有之前的各种hexo插件：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-feed --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-sitemap --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;然后把之前备份的source文件夹，配置文件&lt;code&gt;_config.yml&lt;/code&gt;，theme文件&lt;br&gt;都拷贝进去 &lt;/p&gt;
-&lt;h1 id=&quot;这个故事告诉我们&quot;&gt;&lt;a href=&quot;#这个故事告诉我们&quot; class=&quot;headerlink&quot; title=&quot;这个故事告诉我们&quot;&gt;&lt;/a&gt;这个故事告诉我们&lt;/h1&gt;&lt;p&gt;好好等，不要胡乱&lt;code&gt;ctrl c&lt;/code&gt;&lt;br&gt;然后时常备份，要会看报错信息  &lt;/p&gt;
-&lt;hr&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/03-23-reInstallHexo/#disqus_thread</comments>
     </item>
     
   </channel>
