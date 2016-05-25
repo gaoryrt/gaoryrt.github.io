@@ -200,13 +200,16 @@ table {
     width: 100%;
 }
 
+img, object, video, iframe {
+    max-width: 110%;
+}
+
 iframe {
     min-width: 100%;
     min-height: 400px;
 }
 
 img {
-    max-width: 110%;
     display: block;
     height: auto;
     position: relative;
