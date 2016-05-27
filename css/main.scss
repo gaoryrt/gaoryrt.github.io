@@ -129,7 +129,6 @@ li {
     padding: 22px 0;
     letter-spacing: 2px;
     color: $lighter;
-    font-family: sans-serif;
 }
 
 .back {
@@ -150,6 +149,9 @@ li {
     font-size: 15px;
     color: $lighter;
     padding-top: 13px;
+    a {
+        color: lighten($theme, 10%);
+    }
 }
 
 .black-color {
