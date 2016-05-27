@@ -89,6 +89,10 @@ p,
     font-size: 1.5em;
 }
 
+.busuanzi, .behind, .dropdown-content, .meta {
+    -webkit-font-smoothing: antialiased;
+}
+
 a,
 a:hover,
 a:focus {
@@ -125,6 +129,7 @@ li {
     padding: 22px 0;
     letter-spacing: 2px;
     color: $lighter;
+    font-family: sans-serif;
 }
 
 .back {
@@ -143,9 +148,8 @@ li {
 
 .meta {
     font-size: 15px;
-    line-height: 20px;
-    padding-bottom: 30px;
     color: $lighter;
+    padding-top: 13px;
 }
 
 .black-color {
