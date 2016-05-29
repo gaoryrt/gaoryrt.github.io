@@ -28,6 +28,7 @@ pre {
     padding: 15px;
     border: 0;
     border-radius: 0px;
+    tab-size: 4;
     color: $theme;
     background-size: auto 4em;
     background-origin: content-box;
@@ -118,7 +119,6 @@ pre .coffeescript .title {
         background-size: auto 36px;
     }
     code {
-        font-size: 16px;
         line-height: 1.9em;
     }
 }
