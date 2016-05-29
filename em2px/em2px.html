@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EM2PX - unit converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="em2px.css">
+</head>
+<body>
+    <div id="vue">
+        <div class="sec1">
+        <div class="title">
+            <h1>em2px</h1>
+            <p>an easy way to convert <b>font-size</b> unit.</p>
+            <p class="meta">
+                credits to <a href="http://vuejs.org/">Vue</a><br>
+                by <a href="http://gaoryrt.com/">gaoryrt</a> with love<br>
+            </p>
+            <h1>☟</h1>
+        </div></div>
+        <div class="sec2">
+        <div class="container">
+            <div class="base">
+                base pixel size:
+                <input v-model="base">px
+            </div>
+        </div>
+        <div class="container">
+            <div class="input-item">
+                <input v-model="px">px
+            </div>
+            <div class="input-item">
+                <input v-model="pt">pt
+            </div>
+            <div class="input-item">
+                <input v-model="em">em
+            </div>
+            <div class="input-item">
+                <input v-model="per">%
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
+    <script type="text/javascript">
+
+    new Vue({
+      el: '#vue',
+      data: {
+        base: 16,
+        origin: 16
+      },
+      computed: {
+        px: {
+            get: function() {
+                return this.origin
+            },
+            set: function(px) {
+                this.origin = px
+            }
+        },
+        pt: {
+            get: function() {
+                return (this.origin*3/4).toFixed(0)
+            },
+            set: function(pt) {
+                this.origin = pt*4/3
+            }
+        },
+        em: {
+            get: function() {
+                return (this.origin / this.base).toFixed(2)
+            },
+            set: function(em) {
+                this.origin = em * this.base
+            }
+        },
+        per: {
+            get: function() {
+                return (this.origin / this.base * 100).toFixed(0)
+            },
+            set: function(per) {
+                this.origin = per * this.base / 100
+            }
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>
