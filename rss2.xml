@@ -8,8 +8,46 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sat, 04 Jun 2016 14:40:43 GMT</pubDate>
+    <pubDate>Fri, 10 Jun 2016 11:56:14 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>压缩Css的一个想法</title>
+      <link>http://gaoryrt.com/2016/06-10-css-sgweez/</link>
+      <guid>http://gaoryrt.com/2016/06-10-css-sgweez/</guid>
+      <pubDate>Fri, 10 Jun 2016 11:12:19 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;本篇写于这个压缩css自动化工具完成之前，暂时记录一下想法，不保证完成，想看的看，不想看的就别看。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;css的原理&quot;&gt;&lt;a href=&quot;#css的原理&quot; class=&quot;headerlink&quot; title=&quot;css的原理&quot;&gt;&lt;/a&gt;css的原理
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;本篇写于这个压缩css自动化工具完成之前，暂时记录一下想法，不保证完成，想看的看，不想看的就别看。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;css的原理&quot;&gt;&lt;a href=&quot;#css的原理&quot; class=&quot;headerlink&quot; title=&quot;css的原理&quot;&gt;&lt;/a&gt;css的原理&lt;/h2&gt;&lt;p&gt;css的声明是由&lt;code&gt;选择器&lt;/code&gt;和&lt;code&gt;声明语句&lt;/code&gt;一同构成的，下面写了两个声明的语句：&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;box-sizing&lt;/span&gt;: border-box&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.sec2&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.pt1&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.title&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;56px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;36px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;css可以将相同的&lt;code&gt;声明语句&lt;/code&gt;提出来写在一起，上下这两段的功能相同： &lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt;, &lt;span class=&quot;selector-class&quot;&gt;.sec2&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.pt1&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.title&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;font-weight&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;box-sizing&lt;/span&gt;: border-box&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.sec2&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.pt1&lt;/span&gt; &lt;span class=&quot;selector-class&quot;&gt;.title&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;56px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;font-size&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;36px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;压缩的基本原理&quot;&gt;&lt;a href=&quot;#压缩的基本原理&quot; class=&quot;headerlink&quot; title=&quot;压缩的基本原理&quot;&gt;&lt;/a&gt;压缩的基本原理&lt;/h2&gt;&lt;p&gt;从上面能知道css提出相同&lt;code&gt;声明语句&lt;/code&gt;后的功能相同，以此在特定的条件下可以减少css的总大小。  &lt;/p&gt;
+&lt;p&gt;但是在什么时候可以减少呢?考虑到选择器的个数，非共同语句的个数，以及个别一个选择器对应一个语句的情况，还是交给程序，先统统缩写，减少了就确定写入，没减少就不写。&lt;/p&gt;
+&lt;p&gt;另，配合js可以做到替换html和css中的所有class选择器，以做到最少化。&lt;/p&gt;
+&lt;p&gt;然而这一过程是不可逆的。显然只有在发布版本上适用这一功能。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;流程&quot;&gt;&lt;a href=&quot;#流程&quot; class=&quot;headerlink&quot; title=&quot;流程&quot;&gt;&lt;/a&gt;流程&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;将css文件变为&lt;code&gt;一个声明&lt;/code&gt;对应&lt;code&gt;数个选择器&lt;/code&gt;的字典&lt;/li&gt;
+&lt;li&gt;按声明语句排序，手动改相似的语句，这样可以有效进一步减少css总大小&lt;/li&gt;
+&lt;li&gt;遍历字典中每一条，判断简写是否有效，并写入&lt;/li&gt;
+&lt;li&gt;在css和html中改动所有class选择器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;以上&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/06-10-css-sgweez/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>最近在干什么05-21</title>
@@ -749,33 +787,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/04-10-css3-Flex/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>最近在干什么04-10</title>
-      <link>http://gaoryrt.com/2016/04-10-whatsup2016-04-10/</link>
-      <guid>http://gaoryrt.com/2016/04-10-whatsup2016-04-10/</guid>
-      <pubDate>Sun, 10 Apr 2016 08:39:22 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;&lt;a href=&quot;http://gaoryrt.com/categories/随笔与个人文集/&quot;&gt;本系列&lt;/a&gt;的目的是避免自己感觉自己白活了。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;截止今天，我的&lt;a href=&quot;https://github.com/gaoryrt/&quot; targe
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;&lt;a href=&quot;http://gaoryrt.com/categories/随笔与个人文集/&quot;&gt;本系列&lt;/a&gt;的目的是避免自己感觉自己白活了。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;截止今天，我的&lt;a href=&quot;https://github.com/gaoryrt/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github contribution&lt;/a&gt;已经连续25日常绿了。&lt;br&gt;也就是从&lt;em&gt;Mar 17&lt;/em&gt;到&lt;em&gt;Apr 10&lt;/em&gt;，以清明节&lt;em&gt;Apr 4&lt;/em&gt;为节点，之前在看基础前端，之后在重写本博客的主题。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;前端基础&quot;&gt;&lt;a href=&quot;#前端基础&quot; class=&quot;headerlink&quot; title=&quot;前端基础&quot;&gt;&lt;/a&gt;前端基础&lt;/h1&gt;&lt;p&gt;这25天的前几日都在关注前端面试题，后来发现治标不治本，不懂得东西还多，后来就决定系统学习。&lt;br&gt;主要渠道还是&lt;a href=&quot;http://www.w3school.com.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;w3school&lt;/a&gt;，学习了基本的html，css，css3，javascript，其间在&lt;a href=&quot;https://www.codecademy.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;codecademy&lt;/a&gt;上学javascript。&lt;br&gt;codecademy实践性比w3school好多了，我指的是在线js编辑器，所以继续在上面学习jquery。&lt;br&gt;现在的工作环境还是 sublime text 3 + safari，webstorm都很少用，在线编辑器对我来说已经够用了。&lt;br&gt;暂时还没有发现需要 LiveStyle + chrome/firefox 的场景，感觉在将来会转到上面去，到时候又有&lt;strong&gt;开心的配置时光&lt;/strong&gt;了。&lt;br&gt;感觉自己的编程功力越来越差了，工具带给我们很多便利，但是最好还是了解一下人家的原理。不然一直都会是脚本小子，这样的话水平随着时间慢慢下降，看似能做什么东西，其实都不是自己的。&lt;br&gt;学习css的时候，从网上往小本本上搬了很多css的经验，看什么时候再把小本本上的搬到个人博客上面，多抄几遍还是有用的，这是高三的经验之谈。&lt;br&gt;后来自己也在前辈的建议下尝试了自己造js的轮子，一个是&lt;a href=&quot;http://gaoryrt.com/2016/03-21-shuffle/&quot;&gt;图片的轮播图&lt;/a&gt;，一个是&lt;a href=&quot;http://gaoryrt.com/2016/03-23-calender/&quot;&gt;日历组件&lt;/a&gt;。&lt;br&gt;自己写出来的和github上star多的对比，完全就是渣啊，还是要多写js。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;重写主题&quot;&gt;&lt;a href=&quot;#重写主题&quot; class=&quot;headerlink&quot; title=&quot;重写主题&quot;&gt;&lt;/a&gt;重写主题&lt;/h1&gt;&lt;p&gt;在清明节的时候，&lt;a href=&quot;http://itgonglun.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;it公论&lt;/a&gt;停播了，取而代之的是新的节目&lt;a href=&quot;https://ipn.li/yitianshijie/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一天世界&lt;/a&gt;。一天世界还是由不鸟万如一先生主播，我很尊敬这样三观感染力强的人，虽然我最喜欢的是&lt;a href=&quot;https://ipn.li/kernelpanic/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;内核恐慌&lt;/a&gt;。&lt;br&gt;然后再看&lt;a href=&quot;https://github.com/gaoryrt/dame&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dame主题&lt;/a&gt;的时候就决定重新写了。&lt;br&gt;先后问了很多朋友，大家也积极给我提供意见和建议，感谢鸡哥、冲哥、小黑、翰林、奶神、奶妈、小良、姐姐还有其他暂时没有想起来名字的朋友，还有在主题建设过程中热情提供PV的各位。&lt;br&gt;灵感主要是来自于各个美妙的站点：&lt;a href=&quot;https://dribbble.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dribbble&lt;/a&gt;，&lt;a href=&quot;http://flipboard.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flipboard&lt;/a&gt;，还有 &lt;a href=&quot;http://uranusjr.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;uranusjr&lt;/a&gt;，&lt;a href=&quot;https://www.logcg.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;logcg&lt;/a&gt;，&lt;a href=&quot;http://netsh.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;netsh&lt;/a&gt;等个人博客。&lt;br&gt;字体，颜色，排版，都是大家的精华，我的内容相比之下就差了很多。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;要走的路还长，慢慢来。&lt;br&gt;以上。&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/04-10-whatsup2016-04-10/#disqus_thread</comments>
     </item>
     
   </channel>

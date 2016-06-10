@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 压缩Css的一个想法]]></title>
+      <url>http://gaoryrt.com/2016/06-10-css-sgweez/</url>
+      <content type="html"><![CDATA[ 
+ 本篇写于这个压缩css自动化工具完成之前，暂时记录一下想法，不保证完成，想看的看，不想看的就别看。 css的原理css的声明是由选择器和声明语句一同构成的，下面写了两个声明的语句： body &#123; font-weight: 300; box-sizing: border-box&#125;.sec2 .wrapper .pt1 .title &#123; font-weight: 300; height: 56px; font-size: 36px;&#125; css可以将相同的声明语句提出来写在一起，上下这两段的功能相同： body, .sec2 .wrapper .pt1 .title &#123; font-weight: 300;&#125;body &#123; box-sizing: border-box&#125;.sec2 .wrapper .pt1 .title &#123; height: 56px; font-size: 36px;&#125; 压缩的基本原理从上面能知道css提出相同声明语句后的功能相同，以此在特定的条件下可以减少css的总大小。 但是在什么时候可以减少呢?考虑到选择器的个数，非共同语句的个数，以及个别一个选择器对应一个语句的情况，还是交给程序，先统统缩写，减少了就确定写入，没减少就不写。 另，配合js可以做到替换html和css中的所有class选择器，以做到最少化。 然而这一过程是不可逆的。显然只有在发布版本上适用这一功能。 流程 将css文件变为一个声明对应数个选择器的字典 按声明语句排序，手动改相似的语句，这样可以有效进一步减少css总大小 遍历字典中每一条，判断简写是否有效，并写入 在css和html中改动所有class选择器 以上]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  最近在干什么05-21]]></title>
       <url>http://gaoryrt.com/2016/06-04-whatsup20160604/</url>
       <content type="html"><![CDATA[ 

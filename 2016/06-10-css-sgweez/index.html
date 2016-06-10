@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
+  
+  <title>压缩Css的一个想法</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="记录gaoryrt的学习和生活">
+  
+
+  <meta property="og:title" content="压缩Css的一个想法"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;13[0-9]{9} 正则手机号 13\d{9}
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        压缩Css的一个想法
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-06-10T11:12:19.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-06-10
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Discovery/">Discovery</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>本篇写于这个压缩css自动化工具完成之前，暂时记录一下想法，不保证完成，想看的看，不想看的就别看。</p>
+<hr>
+<h2 id="css的原理"><a href="#css的原理" class="headerlink" title="css的原理"></a>css的原理</h2><p>css的声明是由<code>选择器</code>和<code>声明语句</code>一同构成的，下面写了两个声明的语句：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">font-weight</span>: <span class="number">300</span>;</span><br><span class="line">	<span class="attribute">box-sizing</span>: border-box</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sec2</span> <span class="selector-class">.wrapper</span> <span class="selector-class">.pt1</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">	<span class="attribute">font-weight</span>: <span class="number">300</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">56px</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">36px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>css可以将相同的<code>声明语句</code>提出来写在一起，上下这两段的功能相同： </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>, <span class="selector-class">.sec2</span> <span class="selector-class">.wrapper</span> <span class="selector-class">.pt1</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">	<span class="attribute">font-weight</span>: <span class="number">300</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">box-sizing</span>: border-box</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sec2</span> <span class="selector-class">.wrapper</span> <span class="selector-class">.pt1</span> <span class="selector-class">.title</span> &#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">56px</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">36px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="压缩的基本原理"><a href="#压缩的基本原理" class="headerlink" title="压缩的基本原理"></a>压缩的基本原理</h2><p>从上面能知道css提出相同<code>声明语句</code>后的功能相同，以此在特定的条件下可以减少css的总大小。  </p>
+<p>但是在什么时候可以减少呢?考虑到选择器的个数，非共同语句的个数，以及个别一个选择器对应一个语句的情况，还是交给程序，先统统缩写，减少了就确定写入，没减少就不写。</p>
+<p>另，配合js可以做到替换html和css中的所有class选择器，以做到最少化。</p>
+<p>然而这一过程是不可逆的。显然只有在发布版本上适用这一功能。</p>
+<hr>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li>将css文件变为<code>一个声明</code>对应<code>数个选择器</code>的字典</li>
+<li>按声明语句排序，手动改相似的语句，这样可以有效进一步减少css总大小</li>
+<li>遍历字典中每一条，判断简写是否有效，并写入</li>
+<li>在css和html中改动所有class选择器</li>
+</ol>
+<hr>
+<p>以上</p>
+
+
+  </article>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/2016/06-10-css-sgweez/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" >
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © Gaoryrt 2015-2016
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(document).ready(revealOnScroll)
+
+// disqus scripts
+
+var disqus_shortname = 'gaoryrt';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('body')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
