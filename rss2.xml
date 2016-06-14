@@ -8,8 +8,40 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Fri, 10 Jun 2016 11:56:14 GMT</pubDate>
+    <pubDate>Tue, 14 Jun 2016 14:39:03 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>吃苦耐劳</title>
+      <link>http://gaoryrt.com/2016/06-14-hardwork/</link>
+      <guid>http://gaoryrt.com/2016/06-14-hardwork/</guid>
+      <pubDate>Tue, 14 Jun 2016 12:42:38 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;又看到「吃苦耐劳」这个词了。&lt;br&gt;私以为这不是什么好事，是封建残余。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;看不惯的&quot;&gt;&lt;a href=&quot;#看不惯的&quot; class=&quot;headerlink&quot; title=&quot;看不惯的&quot;&gt;&lt;/a&gt;看不惯的&lt;/h2&gt;&lt;p&gt;公司招聘的时候，时常能看
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;又看到「吃苦耐劳」这个词了。&lt;br&gt;私以为这不是什么好事，是封建残余。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;看不惯的&quot;&gt;&lt;a href=&quot;#看不惯的&quot; class=&quot;headerlink&quot; title=&quot;看不惯的&quot;&gt;&lt;/a&gt;看不惯的&lt;/h2&gt;&lt;p&gt;公司招聘的时候，时常能看见这一条标准。我们经常看到，还真以为这是某一种美德了。吃苦是人做自己不愿意做的事情，耐劳是事情多却不抱怨。&lt;/p&gt;
+&lt;p&gt;一个自由人有选择自己想做的事情的自由，当然也有选择做自己不想做的事情的自由。对于这种明知道要吃苦的还继续坚持的人，我&lt;em&gt;希望&lt;/em&gt;我能带着怜悯的眼光去看他。&lt;/p&gt;
+&lt;p&gt;热爱工作，就不会有苦，除非有人强加于你。同理，什么样的工作会要求你做事多又不能抱怨呢？我能想到的只有基层的工作了，而且，环境总在引导我去认为「基层的工作是道德上至高无上的」。放屁。&lt;/p&gt;
+&lt;p&gt;想起黑哥面试的时候，问到别人单位的薪资怎么样，人家的回答是&lt;strong&gt;「如果你抱着这样的心态来问，我看你还是不要来我们公司了」&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;然后黑哥说「没有没有，我就是这么随便一问」。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;如果是我&quot;&gt;&lt;a href=&quot;#如果是我&quot; class=&quot;headerlink&quot; title=&quot;如果是我&quot;&gt;&lt;/a&gt;如果是我&lt;/h2&gt;&lt;p&gt;「我工作就是为了钱，如果你不给钱我一定不会来；如果暂时拿不到，我希望在将来拿到更多。」&lt;/p&gt;
+&lt;p&gt;凭什么一个公司有底气嘲讽询问薪资的潜在员工。互相尊重这种事情都做不到，什么公司会找去当HR。我能想到的只有国企了，而且，环境总在引导我去认为「国企的工作在道德上是无限正义的」。放屁。&lt;/p&gt;
+&lt;p&gt;如果我的工作要求我吃苦耐劳，我应该是要想一下是不是自己有点太差了，或许不知不觉就混到了自己都看不下去的程度。&lt;/p&gt;
+&lt;p&gt;然后可能就是考虑再就业的问题了把~&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;想看的看，不想看的就别看&lt;/strong&gt;&lt;br&gt;以上&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/06-14-hardwork/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>压缩Css的一个想法</title>
@@ -746,47 +778,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/04-11-MODULE-NOT-FOUND/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Flex Css3</title>
-      <link>http://gaoryrt.com/2016/04-10-css3-Flex/</link>
-      <guid>http://gaoryrt.com/2016/04-10-css3-Flex/</guid>
-      <pubDate>Sun, 10 Apr 2016 11:50:24 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;这一篇是从css-trics抄到本人小本本上面的，现在又从小本本上腾到博客上来。&lt;br&gt;刚刚找原文，发现&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html&quot; target=&quot;_blank&quot; re
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;这一篇是从css-trics抄到本人小本本上面的，现在又从小本本上腾到博客上来。&lt;br&gt;刚刚找原文，发现&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阮一峰&lt;/a&gt;也搬运过&lt;a href=&quot;https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这一篇文章&lt;/a&gt;。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;container&quot;&gt;&lt;a href=&quot;#container&quot; class=&quot;headerlink&quot; title=&quot;.container&quot;&gt;&lt;/a&gt;.container&lt;/h1&gt;&lt;p&gt;flex的容器  &lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;	&lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-direction&lt;/span&gt;: row | row-re | column | column-re;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-wrap&lt;/span&gt;: nowrap | wrap | wrap-reverse;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-flow&lt;/span&gt;: &amp;lt;flex-direction&amp;gt; || &amp;lt;flex-wrap&amp;gt;；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;lt-flex-direction-gt&quot;&gt;&lt;a href=&quot;#lt-flex-direction-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex-direction&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex-direction&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;row 行&lt;br&gt;row-re 逆序行&lt;br&gt;column 列&lt;br&gt;column-re 逆序列&lt;/p&gt;
-&lt;h2 id=&quot;lt-flex-wrap-gt&quot;&gt;&lt;a href=&quot;#lt-flex-wrap-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex-wrap&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex-wrap&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;nowrap 禁止自动换行&lt;br&gt;wrap 自动换行&lt;br&gt;wrap-reverse 自动换行，但是第一行会在下方&lt;/p&gt;
-&lt;h2 id=&quot;lt-flex-flow-gt&quot;&gt;&lt;a href=&quot;#lt-flex-flow-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex-flow&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex-flow&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;为上面两个属性的复合/速记属性。&lt;br&gt;规则：&lt;code&gt;{flex-flow: &amp;lt;flex-direction&amp;gt; || &amp;lt;flex-wrap&amp;gt;；}&lt;/code&gt;&lt;br&gt;例：&lt;code&gt;.container{flex-flow:row nowrap;}&lt;/code&gt;  &lt;/p&gt;
-&lt;h2 id=&quot;水平-lt-justify-content-gt&quot;&gt;&lt;a href=&quot;#水平-lt-justify-content-gt&quot; class=&quot;headerlink&quot; title=&quot;水平&amp;lt;justify-content&amp;gt;&quot;&gt;&lt;/a&gt;&lt;strong&gt;水平&lt;/strong&gt;&lt;code&gt;&amp;lt;justify-content&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;flex-start 聚拢靠左&lt;br&gt;flex-end 聚拢靠右&lt;br&gt;center 聚拢居中&lt;br&gt;space-between （行内）内容间距相同&lt;br&gt;sapce-around （行内）内容左右边距相同&lt;/p&gt;
-&lt;h2 id=&quot;纵向-lt-align-items-gt&quot;&gt;&lt;a href=&quot;#纵向-lt-align-items-gt&quot; class=&quot;headerlink&quot; title=&quot;纵向&amp;lt;align-items&amp;gt;&quot;&gt;&lt;/a&gt;&lt;strong&gt;纵向&lt;/strong&gt;&lt;code&gt;&amp;lt;align-items&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;flex-start 向上对齐&lt;br&gt;flex-end 向下对齐&lt;br&gt;center 居中对齐&lt;br&gt;stretch 上下展开最大化&lt;br&gt;baseline 文字基线对齐&lt;/p&gt;
-&lt;h2 id=&quot;lt-align-content-gt&quot;&gt;&lt;a href=&quot;#lt-align-content-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;align-content&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;align-content&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;flex-start 聚拢靠上&lt;br&gt;flex-end 聚拢靠下&lt;br&gt;center 聚拢居中&lt;br&gt;stretch 展开最大化&lt;br&gt;space-between （块内）内容间距相同&lt;br&gt;space-around （块内）内容左右边距相同&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;item&quot;&gt;&lt;a href=&quot;#item&quot; class=&quot;headerlink&quot; title=&quot;.item&quot;&gt;&lt;/a&gt;.item&lt;/h1&gt;&lt;p&gt;flex的内容  &lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;	&lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &amp;lt;integer&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-grow&lt;/span&gt;: &amp;lt;number&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-shrink&lt;/span&gt;: &amp;lt;number&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex-basis&lt;/span&gt;: &amp;lt;length&amp;gt; || auto;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;attribute&quot;&gt;flex&lt;/span&gt;: none || [ &amp;lt;flex-grow&amp;gt; &amp;lt;flex-shrink&amp;gt; || &amp;lt;flex-basis&amp;gt; ];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;lt-order-gt&quot;&gt;&lt;a href=&quot;#lt-order-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;order&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;order&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;整数型，flex的内容会由order由小到大排列。&lt;br&gt;例：  &lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.itemZ&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: -&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item0&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item1&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item2&lt;/span&gt;&amp;#123; &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这样就是 &lt;code&gt;Z-0-1-2&lt;/code&gt; 的熟悉排列。&lt;/p&gt;
-&lt;h2 id=&quot;lt-flex-grow-gt&quot;&gt;&lt;a href=&quot;#lt-flex-grow-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex-grow&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex-grow&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;数字，内容根据该数字的大小为比例放大。  &lt;/p&gt;
-&lt;h2 id=&quot;lt-flex-shrink-gt&quot;&gt;&lt;a href=&quot;#lt-flex-shrink-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex-shrink&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex-shrink&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;数字，内容根据该数字的大小为比例缩小。  &lt;/p&gt;
-&lt;h2 id=&quot;lt-flex-basis-gt&quot;&gt;&lt;a href=&quot;#lt-flex-basis-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex-basis&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex-basis&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;长度或&lt;code&gt;auto&lt;/code&gt;，内容按该长度伸缩剩余空间。&lt;br&gt;可以看&lt;a href=&quot;https://css-tricks.com/almanac/properties/f/flex-basis/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这一篇文章&lt;/a&gt;详细了解&lt;code&gt;&amp;lt;flex-fasis&amp;gt;&lt;/code&gt;属性。  &lt;/p&gt;
-&lt;h2 id=&quot;lt-flex-gt&quot;&gt;&lt;a href=&quot;#lt-flex-gt&quot; class=&quot;headerlink&quot; title=&quot;&amp;lt;flex&amp;gt;&quot;&gt;&lt;/a&gt;&lt;code&gt;&amp;lt;flex&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;为上面三个属性&lt;code&gt;&amp;lt;flex-grow&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;flex-shrink&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;flex-basis&amp;gt;&lt;/code&gt;的复合/速记属性。&lt;br&gt;规则： &lt;code&gt;{flex: none || [ &amp;lt;flex-grow&amp;gt; &amp;lt;flex-shrink&amp;gt; || &amp;lt;flex-basis&amp;gt; ];}&lt;/code&gt;&lt;br&gt;例：&lt;code&gt;.item{flex:1 1 auto;}&lt;/code&gt;    &lt;/p&gt;
-&lt;h2 id=&quot;纵向-lt-align-self-gt&quot;&gt;&lt;a href=&quot;#纵向-lt-align-self-gt&quot; class=&quot;headerlink&quot; title=&quot;纵向&amp;lt;align-self&amp;gt;&quot;&gt;&lt;/a&gt;&lt;strong&gt;纵向&lt;/strong&gt;&lt;code&gt;&amp;lt;align-self&amp;gt;&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;auto 与容器相同&lt;br&gt;flex-start 向上对齐&lt;br&gt;flex-end 向下对齐&lt;br&gt;center 居中对齐&lt;br&gt;stretch 上下展开最大化&lt;br&gt;baseline 文字基线对齐&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;源文件在这里&quot;&gt;&lt;a href=&quot;#源文件在这里&quot; class=&quot;headerlink&quot; title=&quot;源文件在这里&quot;&gt;&lt;/a&gt;源文件在这里&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://7xs4ih.com1.z0.glb.clouddn.com/css3flex.jpg&quot; alt=&quot;css3flex&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;按照自己的理解进行的整理，如有错误还请提醒。&lt;br&gt;以上。&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/04-10-css3-Flex/#disqus_thread</comments>
     </item>
     
   </channel>
