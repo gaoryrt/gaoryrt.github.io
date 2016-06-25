@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
+  
+  <title>快速上手使用 Gulp</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="记录gaoryrt的学习和生活">
+  
+
+  <meta property="og:title" content="快速上手使用 Gulp"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;自由、平等、公正、法治
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        快速上手使用 Gulp
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-06-25T15:34:10.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-06-25
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>这篇文章的目的是让你使用Gulp。<br><strong>前提</strong>：你要至少了解NPM，Gulp是什么，对前端开发的流程有个大概的概念。<br>如果你想知道Gulp是什么，那么请你先看<a href="http://gulpjs.com/" target="_blank" rel="external">Gulp的官方文档（英文）</a>。<br>我第一次看<a href="http://www.gulpjs.com.cn/" target="_blank" rel="external">中文官方文档</a>时并没有怎么看懂。<br>要感谢<a href="https://github.com/cssmagic/blog/issues/62" target="_blank" rel="external">css魔法的博客中对Gulp4入门指南的翻译</a>。  </p>
+<hr>
+<p>我默认你已经安装了npm。<br>并全局安装了gulp：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> -g gulp</span><br></pre></td></tr></table></figure></p>
+<h2 id="在gulp配置文件之前"><a href="#在gulp配置文件之前" class="headerlink" title="在gulp配置文件之前"></a>在gulp配置文件之前</h2><p>项目文件夹结构如下<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">app</span><br><span class="line"></span>	index.html</span><br><span class="line">	-<span class="ruby">css</span><br><span class="line"></span>		.scss</span><br><span class="line">	-<span class="ruby">img</span><br><span class="line"></span>	-<span class="ruby">js</span><br><span class="line"></span>		dropdown.js</span><br><span class="line">		scroll.js</span><br><span class="line">-<span class="ruby">DIST</span><br><span class="line"></span>gulpfile.js</span><br><span class="line">-<span class="ruby">node_modules</span><br><span class="line"></span>package.json</span><br></pre></td></tr></table></figure></p>
+<p>下面是需要在项目文件夹根目录执行的命令<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br><span class="line">cnpm i -D gulp-sass gulp-uglify gulp-concat gulp-concat-css gulp-clean-css gulp-<span class="keyword">merge</span>-<span class="keyword">link</span> gulp-zip gulp-imagemin gulp-<span class="keyword">sequence</span> gulp-<span class="keyword">connect</span> gulp-<span class="keyword">open</span> gulp</span><br><span class="line">touch gulpfile.js &amp;&amp; <span class="keyword">open</span> gulpfile.js</span><br></pre></td></tr></table></figure></p>
+<p>npm的小trick：<br><code>i</code>是<code>install</code>的缩写<br><code>-D</code>是<code>--save-dev</code>的缩写</p>
+<h2 id="gulp配置文件"><a href="#gulp配置文件" class="headerlink" title="gulp配置文件"></a>gulp配置文件</h2><p>上面的命令执行之后应该就直接打开编辑器了<br>填下面的内容<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</span><br><span class="line">    D = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>),</span><br><span class="line">    concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),</span><br><span class="line">    concatCss = <span class="built_in">require</span>(<span class="string">'gulp-concat-css'</span>),</span><br><span class="line">    cleanCSS = <span class="built_in">require</span>(<span class="string">'gulp-clean-css'</span>),</span><br><span class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),</span><br><span class="line">    merge = <span class="built_in">require</span>(<span class="string">'gulp-merge-link'</span>),</span><br><span class="line">    zip = <span class="built_in">require</span>(<span class="string">'gulp-zip'</span>),</span><br><span class="line">    imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>),</span><br><span class="line">    connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>),</span><br><span class="line">    connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>),</span><br><span class="line">    gulpOpen = <span class="built_in">require</span>(<span class="string">'gulp-open'</span>),</span><br><span class="line">    uncss = <span class="built_in">require</span>(<span class="string">'gulp-uncss'</span>)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/css/*.scss'</span>)</span><br><span class="line">        .pipe(sass().on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'app/css'</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'sass:watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'app/css/*.scss'</span>, [<span class="string">'sass'</span>])</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'mergejs'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/js/*.js'</span>)</span><br><span class="line">        .pipe(concat(<span class="string">'merged.js'</span>))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'app'</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'mergecss'</span>, [<span class="string">'sass'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/css/*.css'</span>)</span><br><span class="line">        .pipe(concatCss(<span class="string">"merged.css"</span>))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'app'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'minicss'</span>, [<span class="string">'mergecss'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/merged.css'</span>)</span><br><span class="line">        .pipe(uncss(&#123;</span><br><span class="line">            <span class="attribute">html</span>: [<span class="string">'app/*.html'</span>]</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(cleanCSS(&#123; <span class="attribute">compatibility</span>: <span class="string">'ie8'</span> &#125;))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'DIST'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'minijs'</span>, [<span class="string">'mergejs'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/merged.js'</span>)</span><br><span class="line">        .pipe(uglify())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'DIST'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'merge'</span>, [<span class="string">'minicss'</span>, <span class="string">'minijs'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/index.html'</span>)</span><br><span class="line">        .pipe(merge(&#123;</span><br><span class="line">            <span class="string">'merged.css'</span>: [<span class="string">'css/*.css'</span>],</span><br><span class="line">            <span class="string">'merged.js'</span>: [<span class="string">'js/*.js'</span>]</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'DIST'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'zip'</span>, [<span class="string">'merge'</span>, <span class="string">'miniimg'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'DIST/**'</span>])</span><br><span class="line">        .pipe(zip(D.toLocaleString() + <span class="string">'.zip'</span>))</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./'</span>))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'miniimg'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'app/img/*'</span>)</span><br><span class="line">        .pipe(imagemin())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'DIST/img'</span>))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'reload'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src([<span class="string">'app/*.html'</span>, <span class="string">'app/js/*.js'</span>, <span class="string">'app/css/*.scss'</span>, <span class="string">'app/img/*'</span>])</span><br><span class="line">        .pipe(connect.reload());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'build'</span>, [<span class="string">'sass'</span>, <span class="string">'mergejs'</span>, <span class="string">'mergecss'</span>, <span class="string">'minijs'</span>, <span class="string">'minicss'</span>, <span class="string">'merge'</span>, <span class="string">'miniimg'</span>, <span class="string">'zip'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'building files'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'web'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        <span class="attribute">port</span>: <span class="number">8878</span>,</span><br><span class="line">        <span class="attribute">livereload</span>: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">    gulp.src([<span class="string">'app/index.html'</span>])</span><br><span class="line">        .pipe(gulpOpen(&#123;</span><br><span class="line">            <span class="attribute">uri</span>: <span class="string">'http://localhost:8878/app'</span></span><br><span class="line">        &#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, [<span class="string">'web'</span>, <span class="string">'sass'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'app/css/*.scss'</span>, [<span class="string">'sass'</span>, <span class="string">'reload'</span>])</span><br><span class="line">    gulp.watch(<span class="string">'app/js/*.js'</span>, [<span class="string">'reload'</span>])</span><br><span class="line">    gulp.watch(<span class="string">'app/img/*'</span>, [<span class="string">'reload'</span>])</span><br><span class="line">    gulp.watch(<span class="string">'app/*.html'</span>, [<span class="string">'reload'</span>])</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'web'</span>]);</span><br></pre></td></tr></table></figure></p>
+<p>在这里我不解释命令有什么作用，<br>这篇文章里，你只用知道使用方法和后果。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">gulp</span> <span class="keyword">build</span><br><span class="line"></span><span class="symbol">gulp</span> watch</span><br></pre></td></tr></table></figure>
+<p><code>gulp watch</code>会打开本地服务器预览<code>app/index.html</code>文件，然后监听<code>scss</code>，<code>js</code>，<code>img(文件夹内容)</code>，<code>html</code>的改变实时更新浏览器。  </p>
+<p><code>gulp build</code>则会合并<code>js</code>和<code>css</code>，然后在html中替换原有的对资源的多个请求，然后压缩img文件夹中的图片，复制到DIST文件夹中，最后压缩该文件夹，压缩文件名为执行时间。</p>
+<hr>
+<p>以上</p>
+
+
+  </article>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/2016/06-25-gulp/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" >
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © Gaoryrt 2015-2016
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(document).ready(revealOnScroll)
+
+// disqus scripts
+
+var disqus_shortname = 'gaoryrt';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('body')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
