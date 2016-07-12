@@ -5,87 +5,47 @@
 @import "footer";
 @import "code";
 @import "animation";
-
 $background: #fcfcfc;
 $theme: #2570a1;
 $para: #555;
 $lighter: #adadad;
-
 ::selection {
-    background:lighten($theme, 40%);
+    background: lighten($theme, 40%);
 }
 
 ::-moz-selection {
-    background:lighten($theme, 40%);
+    background: lighten($theme, 40%);
 }
 
 ::-webkit-selection {
-    background:lighten($theme, 40%);
+    background: lighten($theme, 40%);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-@font-face {
-    font-family: 'Open Sans Condensed';
-    font-weight: 300;
-    font-style: normal;
-    src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(http://7xs4ih.com1.z0.glb.clouddn.com/opensanscondlight.woff) format('woff');
-}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Pacifico);
+@import url(https://fonts.gmirror.org/css?family=Open+Sans+Condensed:300,700|Pacifico);
 
-@font-face {
-    font-family: 'Open Sans Condensed';
-    font-weight: 700;
-    font-style: normal;
-    src: local('Open Sans Condensed Bold'), local('OpenSans-CondensedBold'), url(http://7xs4ih.com1.z0.glb.clouddn.com/opensanscondbold.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Pacifico';
-    font-weight: 400;
-    font-style: normal;
-    src: local('Pacifico Regular'), local('Pacifico-Regular'), url(http://7xs4ih.com1.z0.glb.clouddn.com/pacificoregular.woff) format('woff');
-}
-
-.index-title,
-.navbar-brand,
-.section-year,
-.archive-title,
-.pager {
+.index-title, .navbar-brand, .section-year, .archive-title, .pager {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
-body,
-.archive-time {
-    font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+body, .archive-time {
+    font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     background-color: $background;
 }
 
-.index-title,
-.archive-link,
-.dropdown-content,
-.index-meta,
-.current {
+.index-title, .archive-link, .dropdown-content, .index-meta, .current {
     font-weight: 700 !important;
 }
 
-p,
-.excerpt,
-.behind,
-.meta,
-.post li {
+p, .excerpt, .behind, .meta, .post li {
     font-weight: 300;
 }
 
-.navbar-brand,
-.right-foot,
-.pager {
+.navbar-brand, .right-foot, .pager {
     font-size: 1.5em;
 }
 
@@ -93,9 +53,7 @@ p,
     -webkit-font-smoothing: antialiased;
 }
 
-a,
-a:hover,
-a:focus {
+a, a:hover, a:focus {
     color: $theme;
 }
 
@@ -137,11 +95,7 @@ li {
     left: 5%;
 }
 
-.center,
-.behind,
-.archive-title,
-.archive-num,
-.picture-container {
+.center, .behind, .archive-title, .archive-num, .picture-container {
     text-align: center;
 }
 
@@ -233,26 +187,20 @@ img {
 }
 
 @media screen and (max-width:782px) {
-    .back,
-    li.archives,
-    .busuanzi {
+    .back, li.archives, .busuanzi {
         display: none;
     }
     .behind {
-        padding: 3px 0;
+        padding: 12px 0;
         opacity: 0;
     }
     .container {
         padding: 0;
     }
-    .standard,
-    .archive,
-    .archive-title,
-    #disqus_thread {
+    .standard, .archive, .archive-title, #disqus_thread {
         padding: 0 7%;
     }
-    p,
-    .post li {
+    p, .post li {
         font-size: 16px;
         line-height: 1.9em;
     }
