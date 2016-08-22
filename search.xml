@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 今天删了网易云音乐]]></title>
+      <url>http://gaoryrt.com/2016/08-22-shut-up-n-listen/</url>
+      <content type="html"><![CDATA[ 
+ 实话讲，网易云音乐的评论确实是一个亮点，但正是因为评论，我是真的对这个软件没有什么留恋了。 手机上有 apple musicapple music 的推荐是编者选择的，相对应的，网易云的歌单是听众自己选择的。 apple music 每个月十元，可以离线听。网易云每个月八元可以听SQ，依然不是所有歌曲都可以听。 在VPN加成速度没有差距的情况下，可能就只有评论、电台、社交功能打到了痛点。 然而我真的对这些有需求？ 评论、电台、再加上社交？因为对评论的管理并不严格，我经常能看到博取赞的评论、各种段子、对喷。我在听歌的时候真的想去看看别人对这首歌有什么意见么？想了想还是算了。 至于电台，连前进后退 15s 这种关键动作都没有，你还让我听 broadcast？ Overcast 已经在速度快慢上加上了智能缩进空白的功能（smart speed, shortens silences），而且还是免费的。 社交？ 我从来都是往外分享，就没有仔细看过这个里面的。。。「音乐圈」？ 评论渣在哪里评论区有「热评」和「普通评论」，「普通」通过大家的点赞可以常驻「热评」。 民主吧？公平吧？理论上完美吧？ 然而这里也恰好是完美展示经验差的地方，人外有人，天外有天。 一开始是「看过xx来的赞我」，后来是「xx跟这个比起来就是狗」，再往后还有「喜欢xx的可以点我头像关注我」、「不上999直播吃电风扇把我顶上去」。 你直接说你人没有点赞就要死了，可能赞来的要快一点。 最近还看到一种，把一首歌里面的所有评论挨个点赞。可能是因为每个赞都可以通知到用户，这个也是一个打广告的方法。这种广告我貌似还必须收。 想看的看，不想看的也必须跟着看。微博至少不想看的你可以不关注，但是在网易云音乐的评论区你必须和所有人一起忍，付费都不行，真不公平。即使是渣浪，你付费了还是能享受到屏蔽某人的权利。 嗨呀，好气啊貌似这不是第一次放弃这种「民主」了，还是「编辑选择」靠谱。想看的看，不想看的，就别看完。]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  「精神病人思路广」]]></title>
       <url>http://gaoryrt.com/2016/08-13-i-do-not-need-a-relationship/</url>
       <content type="html"><![CDATA[ 
@@ -680,16 +688,16 @@
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/em2px/em2px.css</url>
+      <url>http://gaoryrt.com/flex/all.css</url>
       <content type="html"><![CDATA[ 
- html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
+ .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/flex/all.css</url>
+      <url>http://gaoryrt.com/em2px/em2px.css</url>
       <content type="html"><![CDATA[ 
- .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
+ html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
     </entry>
     
   
