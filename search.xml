@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 在 PLN 主题中使用搜索功能]]></title>
+      <url>http://gaoryrt.com/2016/08-25-run-da-search/</url>
+      <content type="html"><![CDATA[ 
+ 这篇文章简单描述了一下怎样在 hexo-theme-pln 中用上搜索功能。简单描述的意思就是很简单。 tl;dr在你的 hexo 根目录下执行 shell 语句：$ npm install --save hexo-generator-search 在 _config.yml 文件中添加配置信息：search: path: search.xml field: all 然后 hexo d 就行了心路历程参见 这篇文章，都是人家写好的。 感恩的心，感谢有你。]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  今天删了网易云音乐]]></title>
       <url>http://gaoryrt.com/2016/08-22-shut-up-n-listen/</url>
       <content type="html"><![CDATA[ 

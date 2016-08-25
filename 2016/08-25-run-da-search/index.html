@@ -7,12 +7,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
   
-  <title>app</title>
+  <title>在 PLN 主题中使用搜索功能</title>
   <meta name="author" content="gaoryrt">
    <meta name="description" content="记录gaoryrt的学习和生活">
   
 
-  
+  <meta property="og:title" content="在 PLN 主题中使用搜索功能"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
@@ -36,127 +36,78 @@
       </div>
     </div>
     <div class="container">
-      <nav class="navigator"><nav class="navbar navbar-default navbar-fixed-top">
-  <div class="nav-container">
-
-
-  
-  <ul class="nav navbar-nav navbar-left">
-    <li class="navbar-header">
-      <a href="/" class="navbar-brand">BNGH</a>
-    </li>
-    <li class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-tags fa-lg"></i>
-      </span></a>
-      <ul class="dropdown-content">
-
-          
-           <li><a href="/categories/随笔与个人文集/">随笔与个人文集</a></li><li><a href="/categories/硬悟学蛇/">硬悟学蛇</a></li><li><a href="/categories/前端/">前端</a></li><li><a href="/categories/Discovery/">Discovery</a></li><li><a href="/categories/疑似机器人/">疑似机器人</a></li><li><a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a></li><li><a href="/categories/麦客爱苹果/">麦客爱苹果</a></li>
-
-      </ul>
-    </li>
-  </ul>
-  
-  <div id="site_search" class="">
-  <input type="text" id="local-search-input" name="q" placeholder="搜索" class="form-control"/>
-</div>
-<div id="local-search-result"></div>
-
-
-  <ul class="nav navbar-nav navbar-right">
-    <li class="dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-      <i class="fa fa-link fa-lg"></i>
-      </a>
-      <ul class="dropdown-content">
-        
-          <li>
-            <a href="/links.html">
-        友情链接
-      </a>
-    </li>
-     
-          <li>
-            <a href="https://github.com/gaoryrt/">
-        Github
-      </a>
-    </li>
-     
-          <li>
-            <a href="http://weibo.com/R1T1AN">
-        微博
-      </a>
-    </li>
-     
-          <li>
-            <a href="https://www.zhihu.com/people/gaoryrt">
-        知乎
-      </a>
-    </li>
-     
-          <li>
-            <a href="/rss2.xml">
-        rss
-      </a>
-    </li>
-     
-          <li>
-            <a href="/CV">
-        关于我
-      </a>
-    </li>
-     
-    </ul>
-    </li>
-    <li class="archives"><a href="/archives">
-      <i class="fa fa-archive fa-lg"></i>
-    </a></li>
-  </ul>
-  </div>
-</nav></nav>
-
-
-<h1 class="archive-title  tag">
-  
-  <i class="fa fa-tag"></i>
-  
-  app
-</h1>
-<div class="archive-num">
-  该分类共 1 篇文章
-</div>
-<div class="archive">
-  
-    
       
 
+  <article class="standard post">
+    <div class="title">
       
+  
+    <h1 class="page-title center">
+        在 PLN 主题中使用搜索功能
+    </h1>
+  
 
-        
 
-        
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-08-25T14:02:13.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-08-25
+</time>
 
-        
 
-        </ul></section>
-        <section data-link="year-2015" class="section-year">
-            <h2>2015</h2>
-            <ul class="archive-list">
-                <div class="archive-item">
-                    <div class="archive-time">
-                      09-21
-                    </div>
-                    <div class="archive-detail">
-                      <a href="/2015/09-21-一个calcu-app的实现/" class="archive-link">
-                        一个Calcu App的实现
-                      </a>
-                    </div>
-                </div>
-                <hr>
-                
+
     
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>这篇文章简单描述了一下怎样在 hexo-theme-pln 中用上搜索功能。<br>简单描述的意思就是很简单。</p>
+<h2 id="tl-dr"><a href="#tl-dr" class="headerlink" title="tl;dr"></a>tl;dr</h2><p>在你的 hexo 根目录下执行 shell 语句：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> <span class="comment">--save hexo-generator-search</span></span><br></pre></td></tr></table></figure></p>
+<p>在 <code>_config.yml</code> 文件中添加配置信息：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.<span class="keyword">xml</span></span><br><span class="line">  <span class="title">field</span>: all</span><br></pre></td></tr></table></figure></p>
+<h2 id="然后-hexo-d-就行了"><a href="#然后-hexo-d-就行了" class="headerlink" title="然后 hexo d 就行了"></a>然后 <code>hexo d</code> 就行了</h2><h2 id="心路历程"><a href="#心路历程" class="headerlink" title="心路历程"></a>心路历程</h2><p>参见 <a href="http://hahack.com/codes/local-search-engine-for-hexo/" target="_blank" rel="external">这篇文章</a>，都是人家写好的。</p>
+<p>感恩的心，感谢有你。</p>
+
+
+  </article>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/2016/08-25-run-da-search/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
 </div>
+
 
 
     </div>
@@ -203,7 +154,7 @@ var disqus_shortname = 'gaoryrt';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('body')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 
