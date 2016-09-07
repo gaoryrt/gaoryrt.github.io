@@ -15,14 +15,14 @@
     padding: 0;
 }
 html {
-    height: 100%
+    height: 100%;
     width: 100%;
 }
 body {
-    height: 98%;
+    height: 100%;
     width: auto;
     background-color: #2E3336;
-    font: normal 800 1em/1.5em Fixedsys, Profont, Proggy, 'Courier New', Courier, monospace;
+    font: normal 1em/1.5em Fixedsys, Profont, Proggy, 'Courier New', Courier, monospace;
 }
 span {
     color: #939393;
@@ -43,8 +43,8 @@ span {
     color: #B68A19;
 }
 .inrow {
-    max-width: calc(100% - 1.1em);
-    margin: 0 -.55em
+    max-width: 100%;
+    overflow: hidden;
 }
 .opeText {
     margin: 0 0 0 1em;
@@ -85,11 +85,6 @@ a {
     background-color: transparent;
     color: white;
     font-size: 900;
-}
-@media screen and (max-width:440px) {
-    body {
-        width: 91%;
-    }
 }
 </style>
 <body>
@@ -148,8 +143,8 @@ a {
 </div>
 <div class="inrow">
     <div class="line plainOut">## <div class="line colorOut">专业知识</div> &emsp;# 本科专业信息安全，SC本家，虽然没有毕业，但对数据结构、设计模式、计算机网络、操作系统有一定基础。</div><br>
-    <div class="line plainOut">## <div class="line colorOut">工作环境</div> &emsp;# 三年MacOS使用经验，熟悉常用命令与配置，使用工具强化工作流。能熟练使用Sublime Text、Xcode和Git。</div><br>
-    <div class="line plainOut">## <div class="line colorOut">编程基础</div> &emsp;# 系统学习过C、Java、Python、Swift并能熟练用。代码规范，注释到位。</div><br>
+    <div class="line plainOut">## <div class="line colorOut">工作环境</div> &emsp;# 三年MacOS使用经验，熟悉常用命令与配置，使用工具强化工作流。能熟练使用Sublime Text和Git。[+]还有Chrome。</div><br>
+    <div class="line plainOut">## <div class="line colorOut">编程基础</div> &emsp;# 系统学习过C、Java、Python、Swift。代码规范，注释到位。</div><br>
     <div class="line plainOut">## <div class="line colorOut">英文</div> &emsp;# 四级已过，参与了第三方Swift语言官方文档的翻译，熟练使用Github、Google、StackOverflow；看美剧、简单交流无大碍。</div><br>
 </div><br>
 <div class="inrow">
@@ -162,9 +157,9 @@ a {
 </div>
 <div class="inrow">
     <div class="line plainOut">## <div class="line colorOut">HTML/CSS</div> &emsp;# 熟悉html、css(3)，基本不在话下。</div><br>
-    <div class="line plainOut">## <div class="line colorOut">Javascript</div> &emsp;# 处于『了解』与『熟练』之间，正在慢慢造轮子。</div><br>
-    <div class="line plainOut">## <div class="line colorOut">主流工具</div> &emsp;# 了解并正在使用CoffeeScript、Sass、Webpack、Browserify，常用Gulp, npm无碍。</div><br>
-    <div class="line plainOut">## <div class="line colorOut">主流框架</div> &emsp;# MVVM->Vue.js，只能说还在熟练的路上。能熟练使用Hexo。『会看官方文档』。</div><br>
+    <div class="line plainOut">## <div class="line colorOut">Javascript</div> &emsp;# 处于「了解」与「熟练」之间，正在慢慢造轮子。</div><br>
+    <div class="line plainOut">## <div class="line colorOut">主流工具</div> &emsp;# 了解并正在使用CoffeeScript、Sass、Gulp、Browserify，常用Webpack, npm无大碍。</div><br>
+    <div class="line plainOut">## <div class="line colorOut">主流框架</div> &emsp;# 能较为熟练的使用Vue.js。npm嘛，「会看文档」。</div><br>
 </div><br>
 <div class="inrow">
     <div class="line blueback">/Users/gaoryrt/skills</div>
@@ -175,12 +170,12 @@ a {
     <div class="line plainText">projects</div>
 </div>
 <div class="inrow">
-    <div class="line plainOut"> <a href="http://gaoryrt.com/">个人博客</a> &emsp;# 采用Hexo在Github搭建的个人静态博客，使用Node.js+Materialize完成页面的生成、布局和提交。在博客上分享学习经验和生活经历。</div><br>
-    <div class="line plainOut"> <a href="https://github.com/gaoryrt/hexo-theme-pln">Hexo主题Pln</a> &emsp;# 基于Hexo的MV*框架，独立设计开发的主题。结构良好，DOM语义化，主流浏览器、设备兼容，排版、字体、颜色、动画调校精良。针对国内网络环境进行了速度优化。现已被hexo themes收录。</div><br>
-    <div class="line plainOut"> <a href="https://github.com/gaoryrt/dame">Hexo主题dame</a> &emsp;# 使用ejs、css、js和materialize框架进行搭建，实现了hexo博客的各项功能并添加了自定义选项。</div><br>
+    <div class="line plainOut"> <a href="http://gaoryrt.com/">个人博客</a> &emsp;# 采用Hexo在Github搭建的个人静态博客，使用Hexo完成页面的生成、布局和提交。在博客上分享学习经验和生活经历。</div><br>
+    <div class="line plainOut"> <a href="https://github.com/gaoryrt/hexo-theme-pln">Hexo主题Pln</a> &emsp;# 基于Hexo，独立设计开发的主题。结构良好，DOM语义化，主流浏览器、设备兼容，排版、字体、颜色、动画调校精良。针对国内网络环境进行了速度优化。现已被hexo themes收录。</div><br>
+    <!--<div class="line plainOut"> <a href="https://github.com/gaoryrt/dame">Hexo主题dame</a> &emsp;# 使用ejs、css、js和materialize框架进行搭建，实现了hexo博客的各项功能并添加了自定义选项。</div><br>-->
     <div class="line plainOut"> <a href="https://github.com/gaoryrt/PRNG">iOS端伪随机数发生器</a> &emsp;# 从陀螺仪获得种子信息并使用多种密码算法Hash后生成伪随机数，并实现了一个随机数生成器demo。参加全国密码学大赛进入决赛获优胜奖。</div><br>
-    <div class="line plainOut"> <a href="https://github.com/gaoryrt/vueify-demo">vueify-demo</a> &emsp;# 一个 Vue + Browserify 的项目，MVVM还是挺好用的~</div><br>
     <div class="line plainOut"> <a href="http://gaoryrt.com/flex/">flex - the simple guide</a> &emsp;# a brief intro of CSS3 flex. </div><br>
+    <div class="line plainOut">更多请到 <a href="https://github.com/gaoryrt/">我的github</a> 看一看。</div>
 </div><br>
 
 <div class="inrow">
@@ -226,7 +221,7 @@ a {
     <div class="line opeText">date</div>
 </div>
 <div class="inrow">
-    <div class="line plainOut"> 2016年 7月 3日 星期日 03时10分50秒 CST </div>
+    <div class="line plainOut"> 2016年 9月 7日 星期三 18时24分40秒 CST </div>
 </div><br>
 </body>
 </html>
