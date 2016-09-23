@@ -8,13 +8,32 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sun, 18 Sep 2016 19:38:51 GMT</pubDate>
+    <pubDate>Fri, 23 Sep 2016 10:08:12 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
+      <title></title>
+      <link>http://gaoryrt.com/2016/09-23-what_i_learned_today/</link>
+      <guid>http://gaoryrt.com/2016/09-23-what_i_learned_today/</guid>
+      <pubDate>Fri, 23 Sep 2016 06:41:04 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;怎样正确使用vue-resource-vuex&quot;&gt;&lt;a href=&quot;#怎样正确使用vue-resource-vuex&quot; class=&quot;headerlink&quot; title=&quot;怎样正确使用vue-resource, vuex&quot;&gt;&lt;/a&gt;怎样正确使用vue-resour
+      
+      </description>
+      
+      <content:encoded>&lt;h2 id=&quot;怎样正确使用vue-resource-vuex&quot;&gt;&lt;a href=&quot;#怎样正确使用vue-resource-vuex&quot; class=&quot;headerlink&quot; title=&quot;怎样正确使用vue-resource, vuex&quot;&gt;&lt;/a&gt;怎样正确使用vue-resource, vuex&lt;/h2&gt;&lt;figure class=&quot;highlight qml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// actions.js&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 父组件调用这个action&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; getData = (&amp;#123; dispatch &amp;#125;) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    Vue.http.get(&lt;span class=&quot;built_in&quot;&gt;url&lt;/span&gt;, &amp;#123; &lt;span class=&quot;attribute&quot;&gt;req&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;req body&#39;&lt;/span&gt; &amp;#125;).then((res) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 正常返回, 别忘了处理错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        dispatch(REFRESH_DATA, res.data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;, (err) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(err.message)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ........&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// store.js&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; state = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;data&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; mutations = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [REFRESH_DATA] (state, data) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        state.data = data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ......&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 各个需要更新数据的子控件.vue&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ....&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;decorator&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// ....&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;vuex&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;getters&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attribute&quot;&gt;data&lt;/span&gt;: (&amp;#123; data &amp;#125;) =&amp;gt; data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// .....&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ....&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.doc00.com/doc/1001004eg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;看这里&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;在android-ios中使用vue&quot;&gt;&lt;a href=&quot;#在android-ios中使用vue&quot; class=&quot;headerlink&quot; title=&quot;在android/ios中使用vue&quot;&gt;&lt;/a&gt;在android/ios中使用vue&lt;/h2&gt;&lt;p&gt;aka 暴露全局函数给webview回调&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;actionscript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ReallNativeJSObj&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	methods: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		setScore(tag, score) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.list[tag] = score&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	ready() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		ReallNativeJSObj = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/09-23-what_i_learned_today/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>Review of Network Attack and Defense</title>
-      <link>http://gaoryrt.com/2016/09-19-review-of-Network-attack-and-defense/</link>
-      <guid>http://gaoryrt.com/2016/09-19-review-of-Network-attack-and-defense/</guid>
+      <link>http://gaoryrt.com/2016/09-19-Network-attack-and-defense/</link>
+      <guid>http://gaoryrt.com/2016/09-19-Network-attack-and-defense/</guid>
       <pubDate>Sun, 18 Sep 2016 17:02:38 GMT</pubDate>
       <description>
       
@@ -92,7 +111,7 @@
 &lt;/ol&gt;
 </content:encoded>
       
-      <comments>http://gaoryrt.com/2016/09-19-review-of-Network-attack-and-defense/#disqus_thread</comments>
+      <comments>http://gaoryrt.com/2016/09-19-Network-attack-and-defense/#disqus_thread</comments>
     </item>
     
     <item>
@@ -729,87 +748,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/04-29-VueBasics/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>复习计算机病毒分析与防范</title>
-      <link>http://gaoryrt.com/2016/04-25-reviewVirusPrinciple/</link>
-      <guid>http://gaoryrt.com/2016/04-25-reviewVirusPrinciple/</guid>
-      <pubDate>Mon, 25 Apr 2016 14:57:37 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;引导型病毒的工作原理&quot;&gt;&lt;a href=&quot;#引导型病毒的工作原理&quot; class=&quot;headerlink&quot; title=&quot;引导型病毒的工作原理&quot;&gt;&lt;/a&gt;引导型病毒的工作原理&lt;/h2&gt;&lt;p&gt;在BIOS后，操作系统前，通过中断服务程序(向量表 INT 13H)，占据物
-      
-      </description>
-      
-      <content:encoded>&lt;h2 id=&quot;引导型病毒的工作原理&quot;&gt;&lt;a href=&quot;#引导型病毒的工作原理&quot; class=&quot;headerlink&quot; title=&quot;引导型病毒的工作原理&quot;&gt;&lt;/a&gt;引导型病毒的工作原理&lt;/h2&gt;&lt;p&gt;在BIOS后，操作系统前，通过中断服务程序(向量表 INT 13H)，占据物理位置(常驻内存高端)，替换、截获系统中断从而伺机传染发作。&lt;/p&gt;
-&lt;h2 id=&quot;主引导扇区BS的结构&quot;&gt;&lt;a href=&quot;#主引导扇区BS的结构&quot; class=&quot;headerlink&quot; title=&quot;主引导扇区BS的结构&quot;&gt;&lt;/a&gt;主引导扇区BS的结构&lt;/h2&gt;&lt;p&gt;MBR主引导记录、DPT(Disk Partition Table)分区信息、结束标志(AA55H)。&lt;/p&gt;
-&lt;h2 id=&quot;DPT结构（16字节）&quot;&gt;&lt;a href=&quot;#DPT结构（16字节）&quot; class=&quot;headerlink&quot; title=&quot;DPT结构（16字节）&quot;&gt;&lt;/a&gt;DPT结构（16字节）&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;一字节：分区状态、活动分区判定&lt;/li&gt;
-&lt;li&gt;一字节：开始磁头&lt;/li&gt;
-&lt;li&gt;.75字节（00 0001）：右边六位为起始扇区号&lt;/li&gt;
-&lt;li&gt;1.25字节 上面左边两位加上这里八位：起始柱面号&lt;/li&gt;
-&lt;li&gt;一字节：分区类型，0B为FAT32，83为Linux，07为ntfs，05是扩展分区&lt;/li&gt;
-&lt;li&gt;三字节：分区结束的磁头，扇区，柱面号&lt;/li&gt;
-&lt;li&gt;四字节：线性寻址方式下的分区相对扇区地址&lt;/li&gt;
-&lt;li&gt;四字节：该分区占用的 总扇区数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;PE文件结构&quot;&gt;&lt;a href=&quot;#PE文件结构&quot; class=&quot;headerlink&quot; title=&quot;PE文件结构&quot;&gt;&lt;/a&gt;PE文件结构&lt;/h2&gt;&lt;p&gt;MZ文件头（4D5A），DOS插桩程序，NT映像头（Signature、FileHeader、OptionalHeader），节表，节（包含引入引出节）。&lt;/p&gt;
-&lt;h2 id=&quot;为什么要重定位技术&quot;&gt;&lt;a href=&quot;#为什么要重定位技术&quot; class=&quot;headerlink&quot; title=&quot;为什么要重定位技术&quot;&gt;&lt;/a&gt;为什么要重定位技术&lt;/h2&gt;&lt;p&gt;病毒要用到变量，但依附到程序上时位置变化就不能正常使用，这里需要用到重定位。&lt;/p&gt;
-&lt;h2 id=&quot;如何实现重定位&quot;&gt;&lt;a href=&quot;#如何实现重定位&quot; class=&quot;headerlink&quot; title=&quot;如何实现重定位&quot;&gt;&lt;/a&gt;如何实现重定位&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;call跳到下一条指令，使下一条指令感染后的实际地址进栈。&lt;/li&gt;
-&lt;li&gt;用pop或mov exx,[esp] 去除栈顶内容，这样就得到了感染后下一条指令的实际地址。&lt;/li&gt;
-&lt;li&gt;令V_start为感染前call的下一条指令地址。Var_lable为感染前变量地址。于是变量Var的实际地址为Base + (OffSet(Var_Lable) - OffSet(V_start))&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;蠕虫和普通病毒的对比&quot;&gt;&lt;a href=&quot;#蠕虫和普通病毒的对比&quot; class=&quot;headerlink&quot; title=&quot;蠕虫和普通病毒的对比&quot;&gt;&lt;/a&gt;蠕虫和普通病毒的对比&lt;/h2&gt;&lt;p&gt;病毒：寄生存在、插入宿主复制、宿主运行时传染、针对本地、user触发、影响文件系统、user水平决定传播、摘除还原&lt;br&gt;蠕虫：独立存在、拷贝自身复制、系统漏洞传染、针对网络、自身触发、影响网络系统性能、user水平不影响、补丁还原&lt;/p&gt;
-&lt;h2 id=&quot;判断PE文件的方法&quot;&gt;&lt;a href=&quot;#判断PE文件的方法&quot; class=&quot;headerlink&quot; title=&quot;判断PE文件的方法&quot;&gt;&lt;/a&gt;判断PE文件的方法&lt;/h2&gt;&lt;p&gt;mz头4d5a，pe头（nt映像头signature）50450000。&lt;/p&gt;
-&lt;h2 id=&quot;感染PE文件的方法-如何实现添加新节&quot;&gt;&lt;a href=&quot;#感染PE文件的方法-如何实现添加新节&quot; class=&quot;headerlink&quot; title=&quot;感染PE文件的方法/如何实现添加新节&quot;&gt;&lt;/a&gt;感染PE文件的方法/如何实现添加新节&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;判断MZ、PE、感染标记&lt;/li&gt;
-&lt;li&gt;获得数据目录Directory个数（每个8字节）&lt;/li&gt;
-&lt;li&gt;获得节表起始位置（Directory偏移地址+目录字节数）、最后节表的末尾偏移（节表起始位置+节个数*28H）&lt;/li&gt;
-&lt;li&gt;新节写入节表&lt;ol&gt;
-&lt;li&gt;节名8&lt;/li&gt;
-&lt;li&gt;节的实际字节数4&lt;/li&gt;
-&lt;li&gt;本节开始偏移地址（上一节开始偏移地址+(上节大小/节对齐+1)*节对齐）&lt;/li&gt;
-&lt;li&gt;本节对齐后大小&lt;/li&gt;
-&lt;li&gt;本节在文件中的开始位置（上节文件开始位置+上节对齐后大小）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;修改nt映像头节表数&lt;/li&gt;
-&lt;li&gt;替换AddressOfEntryPoint为病毒入口&lt;/li&gt;
-&lt;li&gt;更新pe映像尺寸SizeOfImage（原SizeOfImage+病毒节对齐后大小）&lt;/li&gt;
-&lt;li&gt;写入感染标记，病毒代码，设置当前位置为文件末尾&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;系统引导过程&quot;&gt;&lt;a href=&quot;#系统引导过程&quot; class=&quot;headerlink&quot; title=&quot;系统引导过程&quot;&gt;&lt;/a&gt;系统引导过程&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;开机&lt;/li&gt;
-&lt;li&gt;BIOS加电自检，电源稳定后，CPU从内存地址ffff:0000处开始执行&lt;/li&gt;
-&lt;li&gt;BS读入 0000:7c00&lt;/li&gt;
-&lt;li&gt;检查0000：7def 是否为0xaa55&lt;/li&gt;
-&lt;li&gt;跳转到0000:7c00处执行MBR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;以下由MBR程序执行&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;MBR将自己复制到0000:0600处&lt;/li&gt;
-&lt;li&gt;在主分区表中搜索是否有活动分区&lt;/li&gt;
-&lt;li&gt;将活动分区的第一个扇区读入0000:7c00&lt;/li&gt;
-&lt;li&gt;检查0000：7def 是否为0xaa55&lt;/li&gt;
-&lt;li&gt;跳转到0000:7c00处继续执行启动程序&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;病毒如何常驻内存&quot;&gt;&lt;a href=&quot;#病毒如何常驻内存&quot; class=&quot;headerlink&quot; title=&quot;病毒如何常驻内存&quot;&gt;&lt;/a&gt;病毒如何常驻内存&lt;/h2&gt;&lt;p&gt;将自身复制到内存高端（10 0000H之后），修改内存容量标志单元（0000:0413处），减去病毒长度，使得常驻内存；然后将原int 13h磁盘中断服务程序的中断向量保存，并修改其指向病毒代码&lt;/p&gt;
-&lt;h2 id=&quot;引导型病毒特点&quot;&gt;&lt;a href=&quot;#引导型病毒特点&quot; class=&quot;headerlink&quot; title=&quot;引导型病毒特点&quot;&gt;&lt;/a&gt;引导型病毒特点&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;在操作系统之前进入内存&lt;/li&gt;
-&lt;li&gt;减少操作系统所掌管的内存大小&lt;/li&gt;
-&lt;li&gt;修改int 13h 的中断向量，指向内存高端&lt;/li&gt;
-&lt;li&gt;必定驻留硬盘的主引导扇区或引导扇区，并且只驻留一次&lt;/li&gt;
-&lt;li&gt;把感染的主引导扇区或引导扇区和未感染的进行比较，若不一样，有毒。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;节表&quot;&gt;&lt;a href=&quot;#节表&quot; class=&quot;headerlink&quot; title=&quot;节表&quot;&gt;&lt;/a&gt;节表&lt;/h2&gt;&lt;p&gt;储存了每个节（数目由NumberOfSection决定）的具体信息，每个节信息大小为28H/40。&lt;/p&gt;
-&lt;h2 id=&quot;引入引出节&quot;&gt;&lt;a href=&quot;#引入引出节&quot; class=&quot;headerlink&quot; title=&quot;引入引出节&quot;&gt;&lt;/a&gt;引入引出节&lt;/h2&gt;&lt;p&gt;引入表exe：是用来描述可执行文件需要调用的外部函数（API）。&lt;br&gt;引出表dll：DLL向PE提供的导出函数信息的列表，通常这些信息包含了导出的函数名和函数的地址。  &lt;/p&gt;
-&lt;h2 id=&quot;动态获取api&quot;&gt;&lt;a href=&quot;#动态获取api&quot; class=&quot;headerlink&quot; title=&quot;动态获取api&quot;&gt;&lt;/a&gt;动态获取api&lt;/h2&gt;&lt;p&gt;LoadLibrary加载一个DLL，返回DLL地址。&lt;br&gt;GetProcAddress通过DLL地址和API函数名获得API函数的地址。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;木马结构&quot;&gt;&lt;a href=&quot;#木马结构&quot; class=&quot;headerlink&quot; title=&quot;木马结构&quot;&gt;&lt;/a&gt;木马结构&lt;/h2&gt;&lt;p&gt;木马软件一般由木马配置程序、控制端程序和被控端程序三部分组成。&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/04-25-reviewVirusPrinciple/#disqus_thread</comments>
     </item>
     
   </channel>
