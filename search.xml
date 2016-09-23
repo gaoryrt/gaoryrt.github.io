@@ -4,7 +4,8 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[ 
+ What I Learned Today]]></title>
       <url>http://gaoryrt.com/2016/09-23-what_i_learned_today/</url>
       <content type="html"><![CDATA[ 
  怎样正确使用vue-resource, vuex// actions.js// 父组件调用这个actionexport const getData = (&#123; dispatch &#125;) =&gt; &#123; Vue.http.get(url, &#123; req: 'req body' &#125;).then((res) =&gt; &#123; // 正常返回, 别忘了处理错误 dispatch(REFRESH_DATA, res.data) &#125;, (err) =&gt; &#123; alert(err.message) &#125;)&#125;// ........// store.jsconst state = &#123; data: null&#125;const mutations = &#123; [REFRESH_DATA] (state, data) &#123; state.data = data &#125;&#125;// ......// 各个需要更新数据的子控件.vue// ....export default &#123; // .... vuex: &#123; getters: &#123; data: (&#123; data &#125;) =&gt; data &#125; &#125;, // .....&#125;// .... 看这里 在android/ios中使用vueaka 暴露全局函数给webview回调 &lt;script&gt;var ReallNativeJSObj...export default &#123; methods: &#123; setScore(tag, score) &#123; this.list[tag] = score &#125; &#125;,... ready() &#123; ReallNativeJSObj = this &#125;&#125;&lt;/script&gt;]]></content>

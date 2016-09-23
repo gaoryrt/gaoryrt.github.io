@@ -7,12 +7,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
   
-  <title>Blog Name Goes Here</title>
+  <title>What I Learned Today</title>
   <meta name="author" content="gaoryrt">
    <meta name="description" content="记录gaoryrt的学习和生活">
   
 
-  
+  <meta property="og:title" content="What I Learned Today"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="Blog Name Goes Here"/>
  <meta property="og:image" content="undefined"/>
@@ -43,7 +43,7 @@
       
   
     <h1 class="page-title center">
-        
+        What I Learned Today
     </h1>
   
 
@@ -51,12 +51,17 @@
     </div>
     <div class="meta center">
       
-<time datetime="2016-09-23T06:41:04.000Z">
+<time datetime="2016-09-23T15:44:25.000Z">
   <i class="fa fa-calendar"></i>&nbsp;
   2016-09-23
 </time>
 
 
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/前端/">前端</a>
 
 
 
@@ -71,6 +76,7 @@
 <p><a href="http://www.doc00.com/doc/1001004eg" target="_blank" rel="external">看这里</a></p>
 <h2 id="在android-ios中使用vue"><a href="#在android-ios中使用vue" class="headerlink" title="在android/ios中使用vue"></a>在android/ios中使用vue</h2><p>aka 暴露全局函数给webview回调</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></span><br><span class="line"><span class="keyword">var</span> ReallNativeJSObj</span><br><span class="line">...</span><br><span class="line">export <span class="keyword">default</span> &#123;</span><br><span class="line">	methods: &#123;</span><br><span class="line">		setScore(tag, score) &#123;</span><br><span class="line">			<span class="keyword">this</span>.list[tag] = score</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">...</span><br><span class="line">	ready() &#123;</span><br><span class="line">		ReallNativeJSObj = <span class="keyword">this</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 
   </article>
 
