@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sat, 01 Oct 2016 16:39:34 GMT</pubDate>
+    <pubDate>Sat, 01 Oct 2016 16:43:36 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -66,7 +66,7 @@
 &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;这就是为什么即使场景没有进行 3D 变换，我也总是将场景放在一个包裹的元素当中。比如下面的例子：&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;LRkGkR&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;thebabydino&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/thebabydino/pen/LRkGkR/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;blue hex helix candy (pure CSS 3D)&lt;/a&gt; by Ana Tudor (&lt;a href=&quot;http://codepen.io/thebabydino&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@thebabydino&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;LRkGkR&quot; data-default-tab=&quot;result&quot; data-user=&quot;thebabydino&quot; data-embed-version=&quot;2&quot; data-preview=&quot;true&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/thebabydino/pen/LRkGkR/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;blue hex helix candy (pure CSS 3D)&lt;/a&gt; by Ana Tudor (&lt;a href=&quot;http://codepen.io/thebabydino&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@thebabydino&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
 &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;所有旋转的六边形列都放在一个&lt;code&gt;.helix&lt;/code&gt;元素当中：&lt;/p&gt;
