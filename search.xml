@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 「译」CSS 3D 注意事项]]></title>
+      <url>http://gaoryrt.com/2016/10-01-things-watch-working-css-3d/</url>
+      <content type="html"><![CDATA[ 
+ 原文链接：Things to Watch Out for When Working with CSS 3D 作者 ANA TUDOR 我一直挺喜欢 3D 几何。在注意到 CSS 支持得越来越全面的同时，我也开始使用 CSS 3D 变换（transform）。然而在创建多面体时，我自然地在 3D 中使用 transform 去创建 2D 图形并移动、旋转它们，一开始有些东西就绊倒了我。我想我该记录一下我遇见过的奇特的东西，希望你能绕过这些障碍。 3D 渲染上下文我还记得那晚好奇心驱使我写了一个小小的演示，看看浏览器如何处理平面的交叉。这个演示包括了两个平面元素： &lt;div class='plane'&gt;&lt;/div&gt;&lt;div class='plane'&gt;&lt;/div&gt; 它们大小相同，用绝对定位放在屏幕的中间，为了看到它们又加了个背景： $dim: 40vmin;.plane &#123; position: absolute; top: 50%; left: 50%; margin: -.5*$dim; width: $dim; height: $dim; background: #ee8c25;&#125; 这个场景就是整个body元素，让其覆盖整个视窗（viewport），然后给了一个perspective（透视）使得远一点的看起来小一点，近一点的显示的更大： body &#123; margin: 0; height: 100vh; perspective: 40em;&#125; 为了测试平面相交的效果，第二个平面元素有一个rotateY()变换（transform），和一个不同的背景： .plane:last-child { transform: rotateY(60deg); background: #d14730; } 结果是令人失望的。似乎没有浏览器可以正确的处理平面相交： See the Pen test plane intersection (WRONG!) by Ana Tudor (@thebabydino) on CodePen.]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  What I Learned Today]]></title>
       <url>http://gaoryrt.com/2016/09-23-what_i_learned_today/</url>
       <content type="html"><![CDATA[ 

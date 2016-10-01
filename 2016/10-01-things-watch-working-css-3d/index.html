@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
+  
+  <title>「译」CSS 3D 注意事项</title>
+  <meta name="author" content="gaoryrt">
+   <meta name="description" content="记录gaoryrt的学习和生活">
+  
+
+  <meta property="og:title" content="「译」CSS 3D 注意事项"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Blog Name Goes Here"/>
+ <meta property="og:image" content="undefined"/>
+  
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/atom.xml" title="Blog Name Goes Here" type="application/atom+xml">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="main">
+    <div class="behind">
+      <div class="back">
+        <a href="/" class="black-color"><i class="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="description">
+        &nbsp;自由、平等、公正、法治
+      </div>
+    </div>
+    <div class="container">
+      
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        「译」CSS 3D 注意事项
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      
+<time datetime="2016-10-01T14:39:28.000Z">
+  <i class="fa fa-calendar"></i>&nbsp;
+  2016-10-01
+</time>
+
+
+
+    
+    &nbsp;
+    <i class="fa fa-tag"></i>&nbsp;
+    <a href="/categories/前端/">前端</a>
+
+
+
+
+
+    </div>
+    <hr>
+    <div class="picture-container">
+      
+    </div>
+    <p>原文链接：<a href="https://css-tricks.com/things-watch-working-css-3d/" target="_blank" rel="external">Things to Watch Out for When Working with CSS 3D</a> 作者 <a href="https://css-tricks.com/author/thebabydino/" target="_blank" rel="external">ANA TUDOR</a></p>
+<hr>
+<p>我一直挺喜欢 3D 几何。在注意到 CSS 支持得越来越全面的同时，我也开始使用 CSS 3D 变换（transform）。然而在创建多面体时，我自然地在 3D 中使用 transform 去创建 2D 图形并移动、旋转它们，一开始有些东西就绊倒了我。我想我该记录一下我遇见过的奇特的东西，希望你能绕过这些障碍。</p>
+<h2 id="3D-渲染上下文"><a href="#3D-渲染上下文" class="headerlink" title="3D 渲染上下文"></a>3D 渲染上下文</h2><p>我还记得那晚好奇心驱使我写了一个小小的演示，看看浏览器如何处理平面的交叉。这个演示包括了两个平面元素：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'plane'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'plane'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>它们大小相同，用绝对定位放在屏幕的中间，为了看到它们又加了个背景：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$dim</span>: <span class="number">40vmin</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.plane</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>; <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin</span>: -.<span class="number">5</span>*<span class="variable">$dim</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">$dim</span>; <span class="attribute">height</span>: <span class="variable">$dim</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ee8c25</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个场景就是整个<code>body</code>元素，让其覆盖整个视窗（viewport），然后给了一个<code>perspective（透视）</code>使得远一点的看起来小一点，近一点的显示的更大：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">  <span class="attribute">perspective</span>: <span class="number">40em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了测试平面相交的效果，第二个平面元素有一个<code>rotateY()</code>变换（transform），和一个不同的背景：</p>
+<pre><code>.plane:last-child {
+  transform: rotateY(60deg);
+  background: #d14730;
+}
+</code></pre><p>结果是令人失望的。似乎没有浏览器可以正确的处理平面相交：</p>
+<p></p><p data-height="265" data-theme-id="light" data-slug-hash="ozzWWp" data-default-tab="css,result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/thebabydino/pen/ozzWWp/" target="_blank" rel="external">test plane intersection (WRONG!)</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+  </article>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = 'http://gaoryrt.com/2016/10-01-things-watch-working-css-3d/index.html';
+this.page.identifier = undefined;
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//gaoryrt.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="busuanzi center">
+页阅读量:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+站访问量:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+站访客数:&nbsp;<span id="busuanzi_value_site_uv"></span>
+</div>
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot container">
+    <div class="firstrow">
+        <a href="#top" >
+        <i class="fa fa-arrow-right"></i>
+        </a>
+        © Gaoryrt 2015-2016
+    </div>
+    <div class="secondrow">
+        <a href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+
+// comments below to disable loading animation
+function revealOnScroll() {
+  var scrolled = $(window).scrollTop();
+  $(".excerpt, .index-title, .index-meta, p").each(function() {
+    var current = $(this),
+      height = $(window).outerHeight(),
+      offsetTop = current.offset().top;
+    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
+  });
+}
+$(window).on("scroll", revealOnScroll);
+$(document).ready(revealOnScroll)
+
+// disqus scripts
+
+var disqus_shortname = 'gaoryrt';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('body')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+
+
+// dropdown scripts
+$(".dropdown").click(function(event) {
+  var current = $(this);
+  event.stopPropagation();
+  $(current).children(".dropdown-content")[($(current).children(".dropdown-content").hasClass("open"))?'removeClass':'addClass']("open")
+});
+$(document).click(function(){
+    $(".dropdown-content").removeClass("open");
+})
+
+// back to top scripts
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, 500);
+  return false;
+});
+
+
+var path = "/search.xml";
+searchFunc(path, 'local-search-input', 'local-search-result');
+
+</script>
+
+</body>
+</html>
