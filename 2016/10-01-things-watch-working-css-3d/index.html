@@ -95,6 +95,27 @@
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <p>在实际的工作环境中，场景不一定是<code>body</code>，我们也会为场景添加其他属性。其他的属性可能会干扰到它。</p>
+<h2 id="破坏-3D-（或造成扁平化）的情况"><a href="#破坏-3D-（或造成扁平化）的情况" class="headerlink" title="破坏 3D （或造成扁平化）的情况"></a>破坏 3D （或造成扁平化）的情况</h2><p>例如这个场景是页面中的另一个<code>div</code>，有其他东西环绕着它：</p>
+<p></p><p data-height="265" data-theme-id="light" data-slug-hash="NRRgrp" data-default-tab="html,result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/thebabydino/pen/NRRgrp/" target="_blank" rel="external">two planes in smaller scene #0</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>我为第二个平面添加了一些变换使其更加明显，这里超出了场景。这并不是我想看到的。我希望我既能阅读文字，也能操作控件。</p>
+<h3 id="1）overflow"><a href="#1）overflow" class="headerlink" title="1）overflow"></a>1）overflow</h3><p>我最先想到的就是在场景中使用<code>overflow: hidden</code>。然而在使用之后失去了漂亮的 3D 交叉：</p>
+<p></p><p data-height="265" data-theme-id="light" data-slug-hash="Zppyqj" data-default-tab="result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/thebabydino/pen/Zppyqj/" target="_blank" rel="external">two planes in smaller scene #2</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>这是因为给任意元素一个非<code>visible</code>的<code>overflow</code>属性都会强行将这个元素的<code>transform-style</code>设置为<code>flat</code>，即使它们已经被设置为了<code>preserve-3d</code>。所以使用元素来包裹他们，虽然代码多一点，却能少一点头疼。</p>
+<p></p><p data-height="265" data-theme-id="light" data-slug-hash="KggqLo" data-default-tab="result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/thebabydino/pen/KggqLo/" target="_blank" rel="external">two planes in smaller scene #3</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>这就是为什么即使场景没有进行 3D 变换，我也总是将场景放在一个包裹的元素当中。比如下面的例子：</p>
+<p></p><p data-height="265" data-theme-id="light" data-slug-hash="KggqLo" data-default-tab="result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/thebabydino/pen/KggqLo/" target="_blank" rel="external">two planes in smaller scene #3</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>所有旋转的六边形列都放在一个<code>.helix</code>元素当中：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'helix'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'col'</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- all the hexagons inside a column --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- the other columns --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>.helix</code>元素只设置了一些属性用于保证整个部件被绝对定位于视窗中心、并且所有列都被放在同一个 3D 渲染上下文中，没有设置其他的样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.helix</span> &#123; <span class="attribute">top</span>: <span class="number">50%</span>; <span class="attribute">left</span>: <span class="number">50%</span>; &#125;</span><br></pre></td></tr></table></figure>
 
 
   </article>
