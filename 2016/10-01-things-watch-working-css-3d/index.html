@@ -74,7 +74,7 @@
     </div>
     <p>原文链接：<a href="https://css-tricks.com/things-watch-working-css-3d/" target="_blank" rel="external">Things to Watch Out for When Working with CSS 3D</a> · 作者 <a href="https://css-tricks.com/author/thebabydino/" target="_blank" rel="external">ANA TUDOR</a></p>
 <hr>
-<p>我一直挺喜欢 3D 几何。在注意到 CSS 支持得越来越全面的同时，我也开始使用 CSS 3D 变换（transform）。一开始就有些东西难住了我：在创建多面体时，我自然地在 3D 中使用 transform 去创建 2D 图形并移动、旋转它们。我想我该记录下我遇见的奇特的部分，希望你能绕过这些障碍。</p>
+<p>我一直挺喜欢 3D 几何。在注意到 CSS 支持得越来越全面的同时，我也开始使用 CSS 3D 变换（transform）。但刚开始就有些东西难住了我：在创建多面体时，我自然地在 3D 中使用 transform 去创建 2D 图形并移动、旋转它们。我想我该记录下我遇见的奇特的部分，希望你能绕过这些障碍。</p>
 <h2 id="3D-渲染上下文"><a href="#3D-渲染上下文" class="headerlink" title="3D 渲染上下文"></a>3D 渲染上下文</h2><p>还记得那晚好奇心驱使我写了一个小小的演示，想看看浏览器如何处理平面的交叉。这个演示包括了两个平面元素：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'plane'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'plane'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>它们大小相同，用绝对定位放在屏幕的中间，为了看到它们又加了个背景：</p>
@@ -88,7 +88,7 @@
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 <p>但是我错了。这些代码就应该显示成这个样子。我本应该将这两个平面放在同一个<a href="https://drafts.csswg.org/css-transforms/#3d-rendering-contexts" target="_blank" rel="external">3D 渲染上下文</a>中。鉴于有人不熟悉 3D 渲染上下文，简单来说它和<a href="https://philipwalton.com/articles/what-no-one-told-you-about-z-index/" target="_blank" rel="external">堆叠上下文</a>差不多。在不同的堆叠上下文中我们不能通过<code>z-index</code>来对元素进行排序，同样的，在不同的 3D 渲染上下文中，3D 变换后的元素不能进行 3D 排序或交叉。</p>
-<p>将他们放在同一个 3D 渲染上下文中的方法也很简单，将他们放在另一个元素内：</p>
+<p>将元素放在同一个 3D 渲染上下文中的方法也很简单，即放在另一个元素内：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'assembly'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'plane'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'plane'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后把包裹元素用绝对定位放在场景中间，并为其设置<code>transform-style: preserve-3d</code>：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123; <span class="attribute">position</span>: absolute; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.assembly</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>; <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -101,17 +101,17 @@
 <p></p><p data-height="265" data-theme-id="light" data-slug-hash="BLLkkK" data-default-tab="css,result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/thebabydino/pen/BLLkkK/" target="_blank" rel="external">test plane intersection (working, BUT…)</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<p>在实际的工作环境中，场景不一定是<code>body</code>，我们也会为场景添加其他属性。其他的属性可能会干扰到它。</p>
-<h2 id="破坏-3D-（或造成扁平化）的情况"><a href="#破坏-3D-（或造成扁平化）的情况" class="headerlink" title="破坏 3D （或造成扁平化）的情况"></a>破坏 3D （或造成扁平化）的情况</h2><p>例如这个场景是页面中的另一个<code>div</code>，有其他东西环绕着它：</p>
+<p>但是在实际的工作环境中，场景不一定是<code>body</code>，我们也会为场景添加其他属性。这些其他属性则可能会干扰到展示效果。</p>
+<h2 id="破坏-3D-（或造成扁平化）的情况"><a href="#破坏-3D-（或造成扁平化）的情况" class="headerlink" title="破坏 3D （或造成扁平化）的情况"></a>破坏 3D （或造成扁平化）的情况</h2><p>例子场景是页面中的另一个<code>div</code>，有其他元素环绕着它：</p>
 <p></p><p data-height="265" data-theme-id="light" data-slug-hash="NRRgrp" data-default-tab="html,result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/thebabydino/pen/NRRgrp/" target="_blank" rel="external">two planes in smaller scene #0</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<p>我为第二个平面添加了一些变换使其更加明显，这里超出了场景。这并不是我想看到的。我希望我既能阅读文字，也能操作控件。</p>
-<h3 id="1）overflow"><a href="#1）overflow" class="headerlink" title="1）overflow"></a>1）overflow</h3><p>我最先想到的就是在场景中使用<code>overflow: hidden</code>。然而在使用之后失去了漂亮的 3D 交叉：</p>
+<p>我为第二个平面添加了一些变换使其更加明显，但在这里它超出了场景。这并不是我想看到的。我希望我既能阅读文字，也能操作控件。</p>
+<h3 id="1）overflow"><a href="#1）overflow" class="headerlink" title="1）overflow"></a>1）overflow</h3><p>我最先想到的就是在场景中使用<code>overflow: hidden</code>。然而在使用之后，它失去了漂亮的 3D 交叉效果：</p>
 <p></p><p data-height="265" data-theme-id="light" data-slug-hash="Zppyqj" data-default-tab="result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/thebabydino/pen/Zppyqj/" target="_blank" rel="external">two planes in smaller scene #2</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<p>这是因为给任意元素一个非<code>visible</code>的<code>overflow</code>属性都会强行将这个元素的<code>transform-style</code>设置为<code>flat</code>，即使它们已经被设置为了<code>preserve-3d</code>。所以使用元素来包裹他们，虽然代码多一点，却能少一点头疼。</p>
+<p>这是因为给任意元素一个非<code>visible</code>的<code>overflow</code>属性都会强行将这个元素的<code>transform-style</code>设置为<code>flat</code>，即使它们已经被设置为了<code>preserve-3d</code>。所以我要使用元素来包裹他们，虽然多一点代码，却能少一点头疼。</p>
 <p></p><p data-height="265" data-theme-id="light" data-slug-hash="KggqLo" data-default-tab="result" data-user="thebabydino" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/thebabydino/pen/KggqLo/" target="_blank" rel="external">two planes in smaller scene #3</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
@@ -119,13 +119,17 @@
 <p></p><p data-height="265" data-theme-id="light" data-slug-hash="LRkGkR" data-default-tab="result" data-user="thebabydino" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/thebabydino/pen/LRkGkR/" target="_blank" rel="external">blue hex helix candy (pure CSS 3D)</a> by Ana Tudor (<a href="http://codepen.io/thebabydino" target="_blank" rel="external">@thebabydino</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<p>所有旋转的六边形列都放在一个<code>.helix</code>元素当中：</p>
+<p>每一列旋转的六边形都被放在<code>.helix</code>元素当中：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'helix'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'col'</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- all the hexagons inside a column --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- the other columns --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>.helix</code>元素只设置了一些属性用于保证整个部件被绝对定位于视窗中心、并且所有列都被放在同一个 3D 渲染上下文中，没有设置其他的样式：</p>
+<p><code>.helix</code>设置的属性只有两个作用：</p>
+<ol>
+<li>保证整个部件被绝对定位于视窗中心 </li>
+<li>所有列都被放在同一个 3D 渲染上下文中 </li>
+</ol>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.helix</span> &#123; <span class="attribute">top</span>: <span class="number">50%</span>; <span class="attribute">left</span>: <span class="number">50%</span>; &#125;</span><br></pre></td></tr></table></figure>
 <p>这是因为我为场景（例子中的<code>body</code>）设置了<code>overflow: hidden</code>，同时六边形的大小也不由视窗决定，所以我不知道他们会不会向外延伸（产生我不想要的滚动条）。</p>
 <p>我承认我被这个坑了很多次。<code>overflow: hidden</code>在某些情况下显示的并不明显。</p>
-<p><code>transform-style: preserve-3d</code><a href="https://davidwalsh.name/3d-transforms" target="_blank" rel="external">告诉浏览器</a>设置了该属性的元素的 3D 转换的子元素</p>
+<p>一个元素设置了<code>transform-style: preserve-3d</code>，该属性<a href="https://davidwalsh.name/3d-transforms" target="_blank" rel="external">告诉浏览器</a>不应该把它（这个设置了<code>transform-style: preserve-3d</code>的元素）的子元素拍扁。</p>
 <hr>
 <h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>
 
