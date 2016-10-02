@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sun, 02 Oct 2016 04:16:56 GMT</pubDate>
+    <pubDate>Sun, 02 Oct 2016 15:35:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -79,7 +79,7 @@
 &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: absolute;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform-style&lt;/span&gt;: preserve-&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;d;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.helix&lt;/span&gt; &amp;#123; &lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;50%&lt;/span&gt;; &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;50%&lt;/span&gt;; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;这是因为我为场景（例子中的&lt;code&gt;body&lt;/code&gt;）设置了&lt;code&gt;overflow: hidden&lt;/code&gt;，同时六边形的大小也不由视窗决定，所以我不知道他们会不会向外延伸（产生我不想要的滚动条）。&lt;/p&gt;
 &lt;p&gt;我承认我被这个坑了很多次。&lt;code&gt;overflow: hidden&lt;/code&gt;在某些情况下显示的并不明显。&lt;/p&gt;
-&lt;p&gt;要是一个元素设置了&lt;code&gt;transform-style: preserve-3d&lt;/code&gt;，该属性就会&lt;a href=&quot;https://davidwalsh.name/3d-transforms&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;告诉浏览器&lt;/a&gt;不应该把它（这个设置了&lt;code&gt;transform-style: preserve-3d&lt;/code&gt;的元素）的子元素拍扁。&lt;/p&gt;
+&lt;p&gt;要是一个元素设置了&lt;code&gt;transform-style: preserve-3d&lt;/code&gt;，该属性就会&lt;a href=&quot;https://davidwalsh.name/3d-transforms&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;告诉浏览器&lt;/a&gt;不应该把它（这个设置了&lt;code&gt;transform-style: preserve-3d&lt;/code&gt;的元素）的子元素拍扁。所以在相同元素上设置&lt;code&gt;overflow: hidden&lt;/code&gt;会取消它，也会防止子元素超出父元素平面，这在直觉上看也是合理的。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;未完待续&quot;&gt;&lt;a href=&quot;#未完待续&quot; class=&quot;headerlink&quot; title=&quot;未完待续&quot;&gt;&lt;/a&gt;未完待续&lt;/h1&gt;</content:encoded>
       
