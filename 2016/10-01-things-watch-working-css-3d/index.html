@@ -129,7 +129,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.helix</span> &#123; <span class="attribute">top</span>: <span class="number">50%</span>; <span class="attribute">left</span>: <span class="number">50%</span>; &#125;</span><br></pre></td></tr></table></figure>
 <p>这是因为我为场景（例子中的<code>body</code>）设置了<code>overflow: hidden</code>，同时六边形的大小也不由视窗决定，所以我不知道他们会不会向外延伸（产生我不想要的滚动条）。</p>
 <p>我承认我被这个坑了很多次。<code>overflow: hidden</code>在某些情况下显示的并不明显。</p>
-<p>一个元素设置了<code>transform-style: preserve-3d</code>，该属性<a href="https://davidwalsh.name/3d-transforms" target="_blank" rel="external">告诉浏览器</a>不应该把它（这个设置了<code>transform-style: preserve-3d</code>的元素）的子元素拍扁。</p>
+<p>要是一个元素设置了<code>transform-style: preserve-3d</code>，该属性就会<a href="https://davidwalsh.name/3d-transforms" target="_blank" rel="external">告诉浏览器</a>不应该把它（这个设置了<code>transform-style: preserve-3d</code>的元素）的子元素拍扁。</p>
 <hr>
 <h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>
 
