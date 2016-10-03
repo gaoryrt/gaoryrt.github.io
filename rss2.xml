@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sun, 02 Oct 2016 15:35:25 GMT</pubDate>
+    <pubDate>Mon, 03 Oct 2016 13:42:07 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,11 +18,13 @@
       <pubDate>Sat, 01 Oct 2016 14:39:28 GMT</pubDate>
       <description>
       
-        &lt;p&gt;原文链接：&lt;a href=&quot;https://css-tricks.com/things-watch-working-css-3d/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Things to Watch Out for When Working wi
+        &lt;p&gt;这一篇已经有人翻译过了：&lt;a href=&quot;http://www.w3cplus.com/css3/things-watch-working-css-3d.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS 3D 应该注意的事项&lt;/a&gt;&lt;/p&gt;
+
       
       </description>
       
-      <content:encoded>&lt;p&gt;原文链接：&lt;a href=&quot;https://css-tricks.com/things-watch-working-css-3d/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Things to Watch Out for When Working with CSS 3D&lt;/a&gt; · 作者 &lt;a href=&quot;https://css-tricks.com/author/thebabydino/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ANA TUDOR&lt;/a&gt;&lt;/p&gt;
+      <content:encoded>&lt;p&gt;这一篇已经有人翻译过了：&lt;a href=&quot;http://www.w3cplus.com/css3/things-watch-working-css-3d.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS 3D 应该注意的事项&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原文链接：&lt;a href=&quot;https://css-tricks.com/things-watch-working-css-3d/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Things to Watch Out for When Working with CSS 3D&lt;/a&gt; · 作者 &lt;a href=&quot;https://css-tricks.com/author/thebabydino/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ANA TUDOR&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;我一直挺喜欢 3D 几何。在注意到 CSS 支持得越来越全面的同时，我也开始使用 CSS 3D 变换（transform）。但刚开始就有些东西难住了我：在创建多面体时，我自然地在 3D 中使用 transform 去创建 2D 图形并移动、旋转它们。我想我该记录下我遇见的奇特的部分，希望你能绕过这些障碍。&lt;/p&gt;
 &lt;h2 id=&quot;3D-渲染上下文&quot;&gt;&lt;a href=&quot;#3D-渲染上下文&quot; class=&quot;headerlink&quot; title=&quot;3D 渲染上下文&quot;&gt;&lt;/a&gt;3D 渲染上下文&lt;/h2&gt;&lt;p&gt;还记得那晚好奇心驱使我写了一个小小的演示，想看看浏览器如何处理平面的交叉。这个演示包括了两个平面元素：&lt;/p&gt;
