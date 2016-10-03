@@ -51,7 +51,7 @@
     </div>
     <div class="meta center">
       
-<time datetime="2016-10-03T16:01:22.000Z">
+<time datetime="2016-10-03T18:29:34.000Z">
   <i class="fa fa-calendar"></i>&nbsp;
   2016-10-04
 </time>
@@ -73,61 +73,92 @@
 }
 .page {
     text-align: center;
-    padding-bottom: 20px;
 }
 .links-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 12px 0;
 }
-.link {
-    border: 3px solid #323232;
-    font-size: 1.1em;
-    padding: 1em 0;
-    margin: 1em;
-    background-color: transparent;
-    text-align: center;
-    transition: transform .1s;
+.card {
+    background: #edeef2;
+    border-radius: 12px;
+    margin: 3px 0;
+    width: 45%;
 }
-.link:hover {
-    transform: scale(1.2, 1.2);
-    background-color: #323232;
-}
-.link a {
-    color: #323232;
-    letter-spacing: .4em;
-    font-weight: 900;
-    padding: 1.35em 3em 1.35em 3.4em;
-}
-.link a:hover {
+.card:hover {
     text-decoration: none;
-    font-weight: 300;
-    color: white;
+}
+.card-title, .card-content {
+    padding: 12px 16px;
+    color: #333;
+    text-align: left;
+}
+.card-title {
+    padding: 8px 16px;
+    background: rgba(255,255,255,.5);
+}
+.card-title img {
+    position: static;
+    display: inline-block;
+    margin: 0;
+    height: 20px;
+    transform: translate(-35%);
+    border-radius: 4px;
 }
 @media screen and (max-width:440px){
-        .links-container {
-            justify-content: space-around;
-        }
+    .links-container {
+        justify-content: space-around;
     }
+    .card {
+        width: 100%;
+    }
+}
 </style>
 <h4><i>至于友链，我已经想到了一种绝妙的展现方式，可惜这里空间太小，我写不下</i></h4>
 <div class="links-container">
-    <div class="link">
-        <a href="https://www.logcg.com" title="落格博客" target="_blank" rel="external">落格博客</a>
-    </div>
-    <div class="link">
-        <a href="http://blog.daraw.cn" title="前端打杂工" target="_blank" rel="external">DaraW</a>
-    </div>
-    <div class="link">
-        <a href="https://egoistian.com" title="EGOIST" target="_blank" rel="external">EGOIST</a>
-    </div>
-    <div class="link">
-        <a href="http://www.jvaeyhcd.cc/" title="Jvaeyhcd" target="_blank" rel="external">Jvaeyhcd</a>
-    </div>
-    <div class="link">
-        <a href="http://www.yatessss.com/" title="Jvaeyhcd" target="_blank" rel="external">yatessss</a>
-    </div>
+
+    <a href="https://www.logcg.com" class="card" target="_blank" rel="external">
+        <div class="card-title">
+            <img src="https://www.logcg.com/wp-content/uploads/2015/07/favicon.ico">
+            落格博客
+        </div>
+        <div class="card-content">Log everything.</div>
+    </a>
+
+    <a href="http://blog.daraw.cn" class="card" target="_blank" rel="external">
+        <div class="card-title">
+            <img src="https://avatars3.githubusercontent.com/u/12277082?v=3&s=466">
+            DaraW
+        </div>
+        <div class="card-content">前端只是一个 TITLE</div>
+    </a>
+
+    <a href="https://egoistian.com" class="card" target="_blank" rel="external">
+        <div class="card-title">
+            <img src="https://avatars1.githubusercontent.com/u/8784712?v=3&s=466">
+            庶民样本
+        </div>
+        <div class="card-content">隱約雷鳴，陰霾天空，但盼風雨來，能留你在此。</div>
+    </a>
+
+    <a href="http://www.jvaeyhcd.cc/" class="card" target="_blank" rel="external">
+        <div class="card-title">
+            <img src="https://avatars2.githubusercontent.com/u/6993775?v=3&s=460">
+            Jvaeyhcd's Note
+        </div>
+        <div class="card-content">You're uinique, nothing can replace you.</div>
+    </a>
+
+    <a href="http://www.yatessss.com/" class="card" target="_blank" rel="external">
+        <div class="card-title">
+            <img src="http://7xqch8.com1.z0.glb.clouddn.com/%E5%A4%B4%E5%83%8F4bed2e738bd4b31ca1ce4d1787d6277f9f2ff8a8.jpg">
+            yatessss
+        </div>
+        <div class="card-content">凡求的必得到, 寻的必找到, 敲的必给他开</div>
+    </a>
+
 </div>
 
 
