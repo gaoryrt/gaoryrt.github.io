@@ -8,8 +8,31 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>记录gaoryrt的学习和生活</description>
-    <pubDate>Sun, 13 Nov 2016 08:30:34 GMT</pubDate>
+    <pubDate>Thu, 24 Nov 2016 16:43:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>What&#39;s Up These Days</title>
+      <link>http://gaoryrt.com/2016/11-25-whatsup161125/</link>
+      <guid>http://gaoryrt.com/2016/11-25-whatsup161125/</guid>
+      <pubDate>Thu, 24 Nov 2016 16:04:41 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;The reason why this article is written in English is that I’m using vim which is not chinese-display friendly.&lt;/p&gt;
+&lt;p&gt;The reason why I’m 
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;The reason why this article is written in English is that I’m using vim which is not chinese-display friendly.&lt;/p&gt;
+&lt;p&gt;The reason why I’m using vim is that vim is my only choice in a ssh.&lt;/p&gt;
+&lt;p&gt;And ssh is the easiest way I can imagine to connect to my computer’s shell.&lt;/p&gt;
+&lt;h2 id=&quot;so-what’s-up&quot;&gt;&lt;a href=&quot;#so-what’s-up&quot; class=&quot;headerlink&quot; title=&quot;so, what’s up?&quot;&gt;&lt;/a&gt;so, what’s up?&lt;/h2&gt;&lt;p&gt;Well, people change, things go wrong, shit happens but life goes on.&lt;br&gt;I’m still working out every one or two days. I like this full-body-controll thingy.&lt;br&gt;No more youtube channel, no more WestWorld. The latest episode is unwatched.&lt;br&gt;Today, i got a money support because of my personal open-source project, this guy likes it.&lt;br&gt;And today, I saw my colleague forwarding an advertisment of job offer in his Wechat moments, and this job offer discribed what should I do for work.&lt;br&gt;My poor English can not discribe how I feel.&lt;/p&gt;
+&lt;h2 id=&quot;um…&quot;&gt;&lt;a href=&quot;#um…&quot; class=&quot;headerlink&quot; title=&quot;um…&quot;&gt;&lt;/a&gt;um…&lt;/h2&gt;&lt;p&gt;gather ye rosebuds while ye may&lt;br&gt;yesterday’s still a flying&lt;br&gt;and same flower that smils today&lt;br&gt;tomorrow will be dying&lt;/p&gt;
+&lt;p&gt;that’s all for these days&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/11-25-whatsup161125/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>好久没有听到抓耳朵的歌了</title>
@@ -818,38 +841,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/05-08-fasten/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>滚动Fixed</title>
-      <link>http://gaoryrt.com/2016/05-03-scrollPlaceHolder/</link>
-      <guid>http://gaoryrt.com/2016/05-03-scrollPlaceHolder/</guid>
-      <pubDate>Tue, 03 May 2016 12:21:51 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;这里指的是「由滚动触发，使元素变为fixed」的效果，我指的是&lt;a href=&quot;http://www.ifanr.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ifanr&lt;/a&gt;的导航栏（c-global-navbar）和边栏（o-wrapper_
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;这里指的是「由滚动触发，使元素变为fixed」的效果，我指的是&lt;a href=&quot;http://www.ifanr.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ifanr&lt;/a&gt;的导航栏（c-global-navbar）和边栏（o-wrapper__asides）效果。&lt;br&gt;当时阿里的笔试也有这个题，我笔试时遇见了blink问题，这个以后有时间再说，今天先做一个&lt;a href=&quot;http://gaoryrt.com/CV/ifanr/&quot;&gt;类似的demo&lt;/a&gt;。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;先看一个类似的效果&quot;&gt;&lt;a href=&quot;#先看一个类似的效果&quot; class=&quot;headerlink&quot; title=&quot;先看一个类似的效果&quot;&gt;&lt;/a&gt;先看一个类似的效果&lt;/h2&gt;&lt;p&gt;就是本博客的主页，滚动时为&lt;code&gt;index-title&lt;/code&gt;添加&lt;code&gt;animation&lt;/code&gt;标签的这个js：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;revealOnScroll&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; scrolled = $(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).scrollTop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $(&lt;span class=&quot;string&quot;&gt;&quot;.excerpt, .index-title, .index-meta, p&quot;&lt;/span&gt;).each(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; current = $(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      height = $(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).outerHeight(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      offsetTop = current.offset().top;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (scrolled + height + &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt; &amp;gt; offsetTop) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      current.addClass(&lt;span class=&quot;string&quot;&gt;&quot;animation&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).on(&lt;span class=&quot;string&quot;&gt;&quot;scroll&quot;&lt;/span&gt;, revealOnScroll);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).load(revealOnScroll);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这里用到了三个高度值：  &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;scrolled = $(window).scrollTop()&lt;/code&gt; 是网页顶部滚出可视部分的高度。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;height = $(window).outerHeight()&lt;/code&gt; 是可视部分总高度。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;offsetTop = current.offset().top&lt;/code&gt; 是该元素到网页顶部的高度&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;通过这三个值算是否进入页面，为进入的元素添加标签，用css添加动画效果。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;滚动固定导航栏fixed-nav&quot;&gt;&lt;a href=&quot;#滚动固定导航栏fixed-nav&quot; class=&quot;headerlink&quot; title=&quot;滚动固定导航栏fixed nav&quot;&gt;&lt;/a&gt;滚动固定导航栏fixed nav&lt;/h2&gt;&lt;p&gt;类似的，这里需要知道网页顶部滚出可视部分的高度，若这个高度超出了上方元素的总高度，就可以变为fixed了。&lt;br&gt;&lt;strong&gt;但是，fixed之后原位置就没东西了，下方的东西会突然往上收。&lt;/strong&gt;&lt;br&gt;要是导航栏不高还好不怎么看得出来，高一点就扯了。。。&lt;br&gt;填充的办法还是很多的，我用了比较笨的一种，把下方元素的&lt;code&gt;margin-top&lt;/code&gt;变为导航栏高度。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; scrolled = $(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).scrollTop();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;.two&quot;&lt;/span&gt;).each(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; current = $(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (scrolled &amp;gt; &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;) ? current.addClass(&lt;span class=&quot;string&quot;&gt;&quot;stack&quot;&lt;/span&gt;):current.removeClass(&lt;span class=&quot;string&quot;&gt;&quot;stack&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;).hasClass(&lt;span class=&quot;string&quot;&gt;&quot;stack&quot;&lt;/span&gt;) ? $(&lt;span class=&quot;string&quot;&gt;&quot;.three&quot;&lt;/span&gt;).addClass(&lt;span class=&quot;string&quot;&gt;&quot;margin&quot;&lt;/span&gt;):$(&lt;span class=&quot;string&quot;&gt;&quot;.three&quot;&lt;/span&gt;).removeClass(&lt;span class=&quot;string&quot;&gt;&quot;margin&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).on(&lt;span class=&quot;string&quot;&gt;&quot;scroll&quot;&lt;/span&gt;, stackOnScroll);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;这里用到了两个三元运算，我用的少，只知道这样写，要是有更简单的我会在&lt;a href=&quot;http://gaoryrt.com/CV/ifanr/&quot;&gt;demo&lt;/a&gt;中更新。  &lt;/p&gt;
-&lt;h2 id=&quot;滚动固定-fixed-sidebar&quot;&gt;&lt;a href=&quot;#滚动固定-fixed-sidebar&quot; class=&quot;headerlink&quot; title=&quot;滚动固定 fixed sidebar&quot;&gt;&lt;/a&gt;滚动固定 fixed sidebar&lt;/h2&gt;&lt;p&gt;类似，判断&lt;code&gt;网页顶部滚出可视部分的高度&lt;/code&gt;加上&lt;code&gt;可视部分总高度&lt;/code&gt;与&lt;code&gt;该元素底部里网页顶部的距离&lt;/code&gt;，就可以容易的做出相应效果。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;  $(&lt;span class=&quot;string&quot;&gt;&quot;.right&quot;&lt;/span&gt;).each(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; current = $(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (scrolled &amp;gt; &lt;span class=&quot;number&quot;&gt;2273&lt;/span&gt;-$(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).height()) ? current.addClass(&lt;span class=&quot;string&quot;&gt;&quot;stop&quot;&lt;/span&gt;):current.removeClass(&lt;span class=&quot;string&quot;&gt;&quot;stop&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;).on(&lt;span class=&quot;string&quot;&gt;&quot;scroll&quot;&lt;/span&gt;, stackOnScroll);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;接下来的问题&quot;&gt;&lt;a href=&quot;#接下来的问题&quot; class=&quot;headerlink&quot; title=&quot;接下来的问题&quot;&gt;&lt;/a&gt;接下来的问题&lt;/h2&gt;&lt;p&gt;这里先挖个坑，等我看看书再来。本来写了一个我认为可以的通用版本，但是不行。怎样做到各个元素的高度都改变之后还可以使用呢？&lt;br&gt;还有一个问题，大家可以看看&lt;a href=&quot;http://www.ifanr.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ifanr主页&lt;/a&gt;，右边&lt;code&gt;sidebar&lt;/code&gt;在滚到最后的时候，会跟footer重合在一起，这个是个问题，怎样做到落到footer上方又重新static或relative呢？&lt;br&gt;以上&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/05-03-scrollPlaceHolder/#disqus_thread</comments>
     </item>
     
   </channel>

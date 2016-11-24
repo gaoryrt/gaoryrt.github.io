@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ What's Up These Days]]></title>
+      <url>http://gaoryrt.com/2016/11-25-whatsup161125/</url>
+      <content type="html"><![CDATA[ 
+ The reason why this article is written in English is that I’m using vim which is not chinese-display friendly. The reason why I’m using vim is that vim is my only choice in a ssh. And ssh is the easiest way I can imagine to connect to my computer’s shell. so, what’s up?Well, people change, things go wrong, shit happens but life goes on.I’m still working out every one or two days. I like this full-body-controll thingy.No more youtube channel, no more WestWorld. The latest episode is unwatched.Today, i got a money support because of my personal open-source project, this guy likes it.And today, I saw my colleague forwarding an advertisment of job offer in his Wechat moments, and this job offer discribed what should I do for work.My poor English can not discribe how I feel. um…gather ye rosebuds while ye mayyesterday’s still a flyingand same flower that smils todaytomorrow will be dying that’s all for these days]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  好久没有听到抓耳朵的歌了]]></title>
       <url>http://gaoryrt.com/2016/11-13-glitch/</url>
       <content type="html"><![CDATA[ 
@@ -736,16 +744,16 @@
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/em2px/em2px.css</url>
+      <url>http://gaoryrt.com/flex/all.css</url>
       <content type="html"><![CDATA[ 
- html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
+ .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/flex/all.css</url>
+      <url>http://gaoryrt.com/em2px/em2px.css</url>
       <content type="html"><![CDATA[ 
- .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
+ html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
     </entry>
     
   
