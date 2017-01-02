@@ -15,13 +15,21 @@ a:focus {
     transition: .2s ease-in-out;
 }
 
-.index-title,
-.excerpt,
-.index-meta,
 .dropdown-content {
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
     -ms-transition: all .3s ease-out;
     -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
+}
+
+.dropdown-content {
+    @include transformY(1px);
+    opacity: 0;
+}
+
+.dropdown-content.open {
+    visibility: visible;
+    @include transformY;
+    opacity: 1;
 }
