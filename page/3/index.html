@@ -26,6 +26,7 @@
 </head>
 
 <body>
+  <a id="top"></a>
   <div id='wx_pic' style='display:none;'><img src='/wx_share.png'/></div>
   <div id="main">
     <div class="behind">
@@ -726,7 +727,7 @@ No.1这里用到了css3中的display: box和box-flex题目里面html结构已经
 </div>
 <div class="right-foot container">
     <div class="firstrow">
-        <a href="#top" >
+        <a href="#top" target="_self">
         <i class="fa fa-arrow-right"></i>
         </a>
         © Gaoryrt 2015-2017
@@ -765,13 +766,6 @@ $(".dropdown").click(function(event) {
 $(document).click(function(){
     $(".dropdown-content").removeClass("open");
 })
-
-// back to top scripts
-$("a[href='#top']").click(function() {
-  $("html, body").animate({ scrollTop: 0 }, 500);
-  return false;
-});
-
 
 var path = "/search.xml";
 searchFunc(path, 'local-search-input', 'local-search-result');
