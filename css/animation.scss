@@ -25,20 +25,3 @@ a:focus {
     -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
 }
-
-.index-title,
-.index-meta,
-.dropdown-content,
-.excerpt {
-    @include transformY(1px);
-    opacity: 0;
-}
-
-.excerpt.animation,
-.index-title.animation,
-.index-meta.animation,
-.dropdown-content.open {
-    visibility: visible;
-    @include transformY;
-    opacity: 1;
-}

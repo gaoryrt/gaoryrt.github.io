@@ -744,19 +744,6 @@ No.1这里用到了css3中的display: box和box-flex题目里面html结构已经
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 
-// comments below to disable loading animation
-function revealOnScroll() {
-  var scrolled = $(window).scrollTop();
-  $(".excerpt, .index-title, .index-meta, p").each(function() {
-    var current = $(this),
-      height = $(window).outerHeight(),
-      offsetTop = current.offset().top;
-    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
-  });
-}
-$(window).on("scroll", revealOnScroll);
-$(document).ready(revealOnScroll)
-
 // disqus scripts
 
 var disqus_shortname = 'gaoryrt';

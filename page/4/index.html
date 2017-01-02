@@ -742,19 +742,6 @@ Swift 中的类型转换使用 is 和 as 作为操作符。这两个操作符使
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 
-// comments below to disable loading animation
-function revealOnScroll() {
-  var scrolled = $(window).scrollTop();
-  $(".excerpt, .index-title, .index-meta, p").each(function() {
-    var current = $(this),
-      height = $(window).outerHeight(),
-      offsetTop = current.offset().top;
-    (scrolled + height + 50 > offsetTop) ? current.addClass("animation"):'';
-  });
-}
-$(window).on("scroll", revealOnScroll);
-$(document).ready(revealOnScroll)
-
 // disqus scripts
 
 var disqus_shortname = 'gaoryrt';
