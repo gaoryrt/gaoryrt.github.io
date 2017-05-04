@@ -8,32 +8,8 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>digital diary of gaoryrt.</description>
-    <pubDate>Thu, 04 May 2017 11:54:36 GMT</pubDate>
+    <pubDate>Tue, 21 Mar 2017 19:17:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title></title>
-      <link>http://gaoryrt.com/2017/05-04-whatiwanttoday/</link>
-      <guid>http://gaoryrt.com/2017/05-04-whatiwanttoday/</guid>
-      <pubDate>Thu, 04 May 2017 11:31:32 GMT</pubDate>
-      <description>
-      
-        &lt;h1 id=&quot;我想要什么&quot;&gt;&lt;a href=&quot;#我想要什么&quot; class=&quot;headerlink&quot; title=&quot;我想要什么&quot;&gt;&lt;/a&gt;我想要什么&lt;/h1&gt;&lt;p&gt;今天和大家说到这个话题的时候我还有点惊讶，自己居然没有一个准备好的答案。&lt;/p&gt;
-&lt;p&gt;如果突然问我，我应该会回答‘
-      
-      </description>
-      
-      <content:encoded>&lt;h1 id=&quot;我想要什么&quot;&gt;&lt;a href=&quot;#我想要什么&quot; class=&quot;headerlink&quot; title=&quot;我想要什么&quot;&gt;&lt;/a&gt;我想要什么&lt;/h1&gt;&lt;p&gt;今天和大家说到这个话题的时候我还有点惊讶，自己居然没有一个准备好的答案。&lt;/p&gt;
-&lt;p&gt;如果突然问我，我应该会回答‘钱’，因为钱是通货。和电能一样，大多数能量都可以转化成电能；电能也可以转化为其他能量。&lt;/p&gt;
-&lt;h2 id=&quot;梦想&quot;&gt;&lt;a href=&quot;#梦想&quot; class=&quot;headerlink&quot; title=&quot;梦想&quot;&gt;&lt;/a&gt;梦想&lt;/h2&gt;&lt;p&gt;思老师说他的梦想是当地铁导流员，他小时候羡慕地铁导流员每天上班能看到形形色色的人。&lt;/p&gt;
-&lt;p&gt;他现在的条件完全允许他无痛迁徙到地铁导流这份工作上，但是他并没有直接辞职，而是选择保留这个梦想，继续在我司工作。&lt;/p&gt;
-&lt;p&gt;我想可能思老师一辈子都不会去当地铁导流，这个梦在他这里就是个梦，而已。可能在拥有无痛迁徙的能力之后，这个梦想对他的吸引力就不如以前了。既然随时都可以辞职去完成自己的梦想，那还是不要改变，继续走。&lt;/p&gt;
-&lt;p&gt;私以为，实现梦想的道路并不是直达的：由于对自己的要求、对机遇的把控，很多人终其一生都不会圆梦。斯老师这种就属于超额完成了。让一个人，尤其是超额完成的这批人突然从一个轨道更换到另一个轨道是需要很大勇气的。&lt;/p&gt;
-&lt;p&gt;思老师自己说的，由于家庭的影响，他需要不会挨饿的安全感，所以才继续上班，而不是去当导流。我遇见很多人都是追求安稳的，现今的环境会引导人们去追求安稳。比如买房成家、牛长大了就变成了人。&lt;/p&gt;
-&lt;h2 id=&quot;YOLO&quot;&gt;&lt;a href=&quot;#YOLO&quot; class=&quot;headerlink&quot; title=&quot;YOLO&quot;&gt;&lt;/a&gt;YOLO&lt;/h2&gt;</content:encoded>
-      
-      <comments>http://gaoryrt.com/2017/05-04-whatiwanttoday/#disqus_thread</comments>
-    </item>
     
     <item>
       <title>缺觉</title>
@@ -796,6 +772,32 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/05-22-down-vote/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>最近在干什么05-21</title>
+      <link>http://gaoryrt.com/2016/05-21-whatsup2016-05-21/</link>
+      <guid>http://gaoryrt.com/2016/05-21-whatsup2016-05-21/</guid>
+      <pubDate>Sat, 21 May 2016 08:13:07 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;a href=&quot;http://gaoryrt.com/categories/%E9%9A%8F%E7%AC%94%E4%B8%8E%E4%B8%AA%E4%BA%BA%E6%96%87%E9%9B%86/&quot;&gt;本系列&lt;/a&gt;的目的是避免自己感觉自己白活了。  &lt;/p&gt;
+&lt;h
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;&lt;a href=&quot;http://gaoryrt.com/categories/%E9%9A%8F%E7%AC%94%E4%B8%8E%E4%B8%AA%E4%BA%BA%E6%96%87%E9%9B%86/&quot;&gt;本系列&lt;/a&gt;的目的是避免自己感觉自己白活了。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;今天是5月21日，在本月的16号，我停止了目前人生中最长的一次contribution：61天。越发感觉自己是为了commit而commit，再加之有个非个人项目需要完成，索性停止了commit。  &lt;/p&gt;
+&lt;h2 id=&quot;非个人项目&quot;&gt;&lt;a href=&quot;#非个人项目&quot; class=&quot;headerlink&quot; title=&quot;非个人项目&quot;&gt;&lt;/a&gt;非个人项目&lt;/h2&gt;&lt;p&gt;一个用vue+browserify写的15选10在线APP。第一次用vueify不太熟练，加之自己js也不是强项，遇见了很多问题。比如说两个vue之间获取数据我也只能使用&lt;code&gt;this.$parent.$children[n].xxx&lt;/code&gt;的形式来调用，不应该直接是&lt;code&gt;Vue.xxx.xx&lt;/code&gt;这样么。还有现在也没有搞明白为什么用for定义的动态属性不能在template中使用v-for里面调用。&lt;br&gt;说回来MVVM真是个好东西，一个部件一个vue文件，集成template、js、css。加上vueify还可以用jade，less，ES2015。&lt;br&gt;然而在上传的时候把之前的git文件给覆盖了。。。不然也不会有17号的空白，残念。&lt;br&gt;周四就提交了，今天也没有见一个回复。我已经龊到人家不愿意回复的境界了。   &lt;/p&gt;
+&lt;h2 id=&quot;写代码时听什么&quot;&gt;&lt;a href=&quot;#写代码时听什么&quot; class=&quot;headerlink&quot; title=&quot;写代码时听什么&quot;&gt;&lt;/a&gt;写代码时听什么&lt;/h2&gt;&lt;p&gt;还是写了不少行了，感觉自己在听歌的时候，尤其是熟悉的音乐时效率高得多。&lt;br&gt;第一个版本是个后摇的歌单，这个并不属于上面说到的「熟悉的音乐」，反而是空灵了很多。&lt;a href=&quot;http://music.163.com/#/playlist?id=6948994&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;后摇 - 代码必备&lt;/a&gt;&lt;br&gt;第二个版本是自己收集的nu-disco，这个也是最常用的歌单，开始循环就感觉bug都少多了。&lt;a href=&quot;http://music.163.com/#/playlist?id=80144899&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nu-disco&lt;/a&gt;&lt;br&gt;最近还发现一个杂杂的歌单，杂在都是EDM但是类型挺多，大部分都算是氛围音乐吧，在工作的时候听白噪声的应该会蛮喜欢这个歌单的。&lt;a href=&quot;http://music.163.com/#/playlist?id=59398367&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;「 幻 」 Vol.3&lt;/a&gt;&lt;br&gt;田皮听歌居然都已经一万二千五首了，他是没有停过么。  &lt;/p&gt;
+&lt;h2 id=&quot;个人项目&quot;&gt;&lt;a href=&quot;#个人项目&quot; class=&quot;headerlink&quot; title=&quot;个人项目&quot;&gt;&lt;/a&gt;个人项目&lt;/h2&gt;&lt;p&gt;等等我看看。&lt;br&gt;&lt;a href=&quot;https://github.com/gaoryrt/retro-404&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;retro-404&lt;/a&gt;新增了一个DOS样式的404页面。&lt;br&gt;&lt;img src=&quot;https://github.com/gaoryrt/retro-404/raw/master/screen-shots/dos-404.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;其实还可以添加osX、nintendo的ww&lt;br&gt;仿照&lt;a href=&quot;&quot;&gt;git-the simple guide&lt;/a&gt;写了一个&lt;a href=&quot;http://gaoryrt.com/flex/&quot;&gt;flex guide&lt;/a&gt;，把小本本上最常用的那一页搬到了网上，小本本不在身边的时候也可以速查了。&lt;br&gt;&lt;a href=&quot;http://gaoryrt.com/flex/&quot;&gt;flex - the simple guide&lt;/a&gt;  &lt;/p&gt;
+&lt;h2 id=&quot;接下来干什么&quot;&gt;&lt;a href=&quot;#接下来干什么&quot; class=&quot;headerlink&quot; title=&quot;接下来干什么&quot;&gt;&lt;/a&gt;接下来干什么&lt;/h2&gt;&lt;p&gt;感觉还是造轮子吧，试试用vue写日期选择的控件，轮播组件。&lt;br&gt;还是有目标的生活安逸啊。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;以上&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2016/05-21-whatsup2016-05-21/#disqus_thread</comments>
     </item>
     
   </channel>
