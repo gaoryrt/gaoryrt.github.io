@@ -8,8 +8,38 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>digital diary of gaoryrt.</description>
-    <pubDate>Thu, 04 May 2017 17:11:38 GMT</pubDate>
+    <pubDate>Sun, 09 Jul 2017 03:47:40 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>将自己的工作偷偷自动化道德么？</title>
+      <link>http://gaoryrt.com/2017/07-09-automatic/</link>
+      <guid>http://gaoryrt.com/2017/07-09-automatic/</guid>
+      <pubDate>Sun, 09 Jul 2017 02:53:57 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;具体的事件可以看看&lt;a href=&quot;http://blog.jobbole.com/111742/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这一篇文章&lt;/a&gt;。&lt;br&gt;简单来说就是一个远程工作的员工，将一个月要做的事自动化到一个小时了。为了不让人发现
+      
+      </description>
+      
+      <content:encoded>&lt;p&gt;具体的事件可以看看&lt;a href=&quot;http://blog.jobbole.com/111742/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这一篇文章&lt;/a&gt;。&lt;br&gt;简单来说就是一个远程工作的员工，将一个月要做的事自动化到一个小时了。为了不让人发现，程序还有故意出错的功能。由于工资高，自由时间多，他并没有把自动化的事情告诉他的老板。这样几乎没有劳动的拿了六个月工资后，他开始质疑自己的行为是否道德了。&lt;/p&gt;
+&lt;p&gt;人的代入感可能会很强，作为当事人肯定不愿意丢掉这个好工作，那么忍受自己良心的责备，可能会让他对自己进行辩护；作为他的同事或者是老板，可能就会质疑他拿这些钱的本事值不值得高薪和自由时间充裕了。我倒是这个事情要从两个方面看，一个是自动化，一个是不告诉老板。不要只看到人家不做事又拿高薪还闲的慌。&lt;/p&gt;
+&lt;p&gt;步入文明社会，就肯定会有机械来取代人工（解放生产力）。纺织工人、马车车夫、告诉公路收费人员、再到这个小哥。自动化是一件好事，&lt;a href=&quot;https://www.zhihu.com/question/24138410&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;大快人心的大好事&lt;/a&gt;，把相对低复杂度的重复劳动给包装起来再放入&lt;a href=&quot;https://www.zhihu.com/question/46747673&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;透明的黑盒&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;可以这样说，如果设计得当的话，&lt;strong&gt;自动化就是富含经验的仙丹。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;现代人如果要掌握一门技术从头到尾的具体实现，那么花费的时间是以年来计算的。这句话说的时候离第一次工业革命才二百来年，这样想一想未来的某一天，如果有一个人想要掌握一门技术从头到尾的具体实现，那可能穷尽一生都不可能完成。&lt;/p&gt;
+&lt;p&gt;就比如2777年的宇宙飞船驾驶员面试题“&lt;a href=&quot;http://ipn.li/kernelpanic/39/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从按下发射按钮到飞船到达M78星云都具体发生了什么？&lt;/a&gt;”，要完美回答这样的问题可能需要一个人花费一生来学习，这个时候生命的长度上限就限制了人类的进步了。必须要把经验给黑盒化，我不需要知道飞船是如何开动的，飞船设计的时候给了我足够多的按钮／接口，作为一个民用飞船驾驶员，我只需要会用就行了。&lt;/p&gt;
+&lt;p&gt;可能我永远不可能质疑自动化道不道德。毕竟人家是凭本事在搞自动化。&lt;/p&gt;
+&lt;p&gt;但是不告诉老板却是不道德的，作为老板肯定对他的行为有知情权，更别说这人写的自动化脚本居然还有自动加bug的功能（太棒了！），在我看来这可能就属于诈骗了，正如讨论中说到的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你还要让创建表格的分析师花费相当多的时间来检查你的工作&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这就不仅仅是自己的事，还连累到别人的工作（创造就业机会），这是万万不可的。&lt;/p&gt;
+&lt;p&gt;文明进步在某种程度上来说是懒惰推动的，而不是欺骗和隐瞒。&lt;/p&gt;
+&lt;p&gt;就是这样～&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2017/07-09-automatic/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>我想要什么</title>
@@ -771,37 +801,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/06-04-whatsup20160604/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>反对</title>
-      <link>http://gaoryrt.com/2016/05-22-down-vote/</link>
-      <guid>http://gaoryrt.com/2016/05-22-down-vote/</guid>
-      <pubDate>Sun, 22 May 2016 08:35:26 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;突然发现一个问题，我在使用知乎的时候，基本上只会点击表示「赞同」的那一个向上的箭头，而对于自己反对的回答，我基本上是不会去点击表示「反对」的那一个向下的箭头。&lt;/p&gt;
-&lt;p&gt;然后我问了一下小良，他会不会给不喜欢的回答点「反对」键，他说他会直接忽视自己不喜欢的那个回答。当我问
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;突然发现一个问题，我在使用知乎的时候，基本上只会点击表示「赞同」的那一个向上的箭头，而对于自己反对的回答，我基本上是不会去点击表示「反对」的那一个向下的箭头。&lt;/p&gt;
-&lt;p&gt;然后我问了一下小良，他会不会给不喜欢的回答点「反对」键，他说他会直接忽视自己不喜欢的那个回答。当我问到「赞同」和「反对」之间的比例时，小良的回答是「100：1」。&lt;/p&gt;
-&lt;p&gt;浅浅想了一下，大概原因是知乎将表示票数的这个数字和「赞同」箭头放在了同一个父元素中。毫无疑问，这样放，对使用者的选择肯定是有一定干预的，看看国产流氓软件的安装和卸载过程，就会明显的对你的操作进行视觉和操作难度上的干预。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://gaoryrt.com/2016/05-22-down-vote/uninstall.png&quot; alt=&quot;猎豹免费wifi的卸载界面&quot;&gt;&lt;/p&gt;
-&lt;p&gt;👆这两张图👇有着相同的流氓点。（截图时间为发布时间，图源猎豹免费wifi、知乎，感谢小良供图）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://gaoryrt.com/2016/05-22-down-vote/downvote.png&quot; alt=&quot;不公平的知乎&quot;&gt;&lt;/p&gt;
-&lt;p&gt;为什么不给一个「反对」的个数呢？那么我点击反对之后会有什么用呢？只有管理员看得到么？&lt;/p&gt;
-&lt;p&gt;我打开了几个同样具有投票元素的站点：&lt;a href=&quot;http://stackoverflow.com/questions/30770006/dplyr-max-value-in-a-group-excluding-the-value-in-each-row&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stackoverflow&lt;/a&gt;、 &lt;a href=&quot;https://segmentfault.com/q/1010000005176174&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;segmentefault&lt;/a&gt;、 &lt;a href=&quot;https://www.quora.com/Do-fathers-feel-uncomfortable-when-their-pubescent-daughters-go-out-to-the-beach-or-pool-wearing-a-bikini-Do-they-start-to-avoid-looking-once-their-daughters-start-growing-up&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;quora&lt;/a&gt;， 发现quora也是这样做的，但是另两个技术型问答网站则将票数放在了同意和反对中间。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://gaoryrt.com/2016/05-22-down-vote/e.png&quot; alt=&quot;公平的stackoverflow&quot;&gt;&lt;/p&gt;
-&lt;p&gt;又想起来朋友圈可以屏蔽不想看的人的相关信息，但是在微博要这样做的话你需要付费。什么时候连个人喜好这样的基本权利都需要付费才能使用了？又是什么时候连「屏蔽都要付费」这种行为都变得「不可耻」了呢？&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;想看的看，不想看的就别看&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;想到再说&lt;/p&gt;
-&lt;p&gt;以上&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/05-22-down-vote/#disqus_thread</comments>
     </item>
     
   </channel>
