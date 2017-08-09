@@ -8,8 +8,36 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>digital diary of gaoryrt.</description>
-    <pubDate>Sun, 09 Jul 2017 03:47:40 GMT</pubDate>
+    <pubDate>Wed, 09 Aug 2017 15:40:10 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>完全配合</title>
+      <link>http://gaoryrt.com/2017/08-09-fully-cooperate/</link>
+      <guid>http://gaoryrt.com/2017/08-09-fully-cooperate/</guid>
+      <pubDate>Wed, 09 Aug 2017 14:56:41 GMT</pubDate>
+      <description>
+      
+        &lt;blockquote&gt;
+&lt;p&gt;语言处理器会事无巨细地做错误检查并指出。这和人打交道不同，只要你方便，它总是有足够的时间和耐心陪你一起。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我感觉我对人更没有耐心，或许是因为机器不会对我的情绪化表现作出反应，在与人社交时我会很容易地展现出自
+      
+      </description>
+      
+      <content:encoded>&lt;blockquote&gt;
+&lt;p&gt;语言处理器会事无巨细地做错误检查并指出。这和人打交道不同，只要你方便，它总是有足够的时间和耐心陪你一起。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我感觉我对人更没有耐心，或许是因为机器不会对我的情绪化表现作出反应，在与人社交时我会很容易地展现出自己的不耐烦，对亲密的人尤甚。&lt;br&gt;与调试不同，社交并不会为你作任何保证。社交中的几乎所有结果都不是某一方决定的，对一个对待风险更加保守的人来说，交友不如赌老虎机。毕竟老虎机对于所有人都是随机的。&lt;br&gt;你只用拉下摇杆等着 777，老虎机不会让你更失望的，没有哪种老虎机会吃掉你尚未投进去的代币。  &lt;/p&gt;
+&lt;p&gt;这可能就是为什么我有时候更乐于做一个 API，在社交中完全配合。你告诉我时间和地点，我给你我所知的天气预报。&lt;br&gt;这样的话，至少不会让对方出乎意料地失望。做到完全配合又是多么简单的一件事情，我不用考虑你说了什么、有什么寓意、有什么期望、有什么不满，我只管去做；你不能责怪我做错了什么，因为并不是我给不了你完美的结果，而是你当初提出了错误的要求。&lt;/p&gt;
+&lt;p&gt;要是人人都像这样，太空时代会不会来的更早一点？&lt;/p&gt;
+&lt;p&gt;但是这样看来完全配合又是极不负责、极没有耐心的。看似在配合的过程中不对输入做任何评价，然而这种「我不服，走着瞧，等打脸」的方式却相当的低效且暴力。完全配合放弃了与人沟通的优势，又显得有些无力了。&lt;/p&gt;
+&lt;p&gt;所以到头来其实并不是机器对我有耐心所以我更喜欢与机器打交道，而是我没有足够的耐心与人打交道不愿意社交，而已。&lt;/p&gt;
+&lt;p&gt;就是这样～&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2017/08-09-fully-cooperate/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>将自己的工作偷偷自动化道德么？</title>
@@ -766,41 +794,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/06-10-css-sgweez/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>最近在干什么 06-04</title>
-      <link>http://gaoryrt.com/2016/06-04-whatsup20160604/</link>
-      <guid>http://gaoryrt.com/2016/06-04-whatsup20160604/</guid>
-      <pubDate>Sat, 04 Jun 2016 12:55:11 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;找到了实习，最近都在那边。&lt;/p&gt;
-&lt;p&gt;基本上没有用自己的计算机，也找不到时间push给github了。看不到每天干什么还是有点吓人的，一不小心就已经周六了，莫名其妙感觉少了一天。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;干货&quot;&gt;&lt;a href=&quot;#干货&quot; class=&quot;hea
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;找到了实习，最近都在那边。&lt;/p&gt;
-&lt;p&gt;基本上没有用自己的计算机，也找不到时间push给github了。看不到每天干什么还是有点吓人的，一不小心就已经周六了，莫名其妙感觉少了一天。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;干货&quot;&gt;&lt;a href=&quot;#干货&quot; class=&quot;headerlink&quot; title=&quot;干货&quot;&gt;&lt;/a&gt;干货&lt;/h2&gt;&lt;p&gt;「分析目的」、「设计流程」、「查看原型」、「逻辑分析」、「代码」。  &lt;/p&gt;
-&lt;p&gt;私以为这个是可行的方法。注意写代码尽量减低耦合性，后面加功能的时候好受得多。  &lt;/p&gt;
-&lt;p&gt;用原生js写代码感觉就像是用乐高建跨海大桥，剩下的不做评价。  &lt;/p&gt;
-&lt;p&gt;sublime text、goagent、alfred、divvy、pixelmator、spectrum。&lt;br&gt;这几个是我首先安装的几个软件。sublime text 直接将 &lt;code&gt;application support&lt;/code&gt; 拷贝到了对应的位置，chrome 则是可以登录，也解决了常用插件和书签同步的问题。  &lt;/p&gt;
-&lt;p&gt;ASCII（发音：英语发音：/ˈæski/ ASS-kee，American Standard Code for Information Interchange，美国信息交换标准代码）。&lt;/p&gt;
-&lt;p&gt;滴滴的快车比顺风车拼车便宜。&lt;/p&gt;
-&lt;h2 id=&quot;渴望湿货&quot;&gt;&lt;a href=&quot;#渴望湿货&quot; class=&quot;headerlink&quot; title=&quot;渴望湿货&quot;&gt;&lt;/a&gt;渴望湿货&lt;/h2&gt;&lt;p&gt;个人特别喜欢「理想化的」普通生活的故事，这种故事一大特点就是「湿货多」。  &lt;/p&gt;
-&lt;p&gt;不会或很少有主观阐述强加于读者，可能这就是我喜欢的原因。&lt;br&gt;我散步的时候，经常会看到陌生的窗户猜想他们的生活是怎样的。『深夜食堂』就给我这种感觉。他人生活的琐事总让我感觉到舒适。  &lt;/p&gt;
-&lt;p&gt;然而作为一个青年，看到别人的阐释时常常会表现出「我不服」，至少这种感觉常产生在我身上。我使用新浪微博看新闻时，接连取消关注了「央视新闻」、「环球时报」，这俩经常向我灌输一些我不喜欢的东西。我喜欢曾经的「成都全接触」，可能就是因为看得到他人的琐事吧。  &lt;/p&gt;
-&lt;p&gt;很久没看电视了。对了好久没有回去看奶奶了，明天还不能睡懒觉，要回金鱼街吃午饭。&lt;/p&gt;
-&lt;p&gt;找个时间还是开一个小项目每天写一写嘛，不然天天contribution都是空的，看着难受。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;以上。&lt;br&gt;喜欢的看，不喜欢就别看。&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/06-04-whatsup20160604/#disqus_thread</comments>
     </item>
     
   </channel>

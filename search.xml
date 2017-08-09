@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 完全配合]]></title>
+      <url>http://gaoryrt.com/2017/08-09-fully-cooperate/</url>
+      <content type="html"><![CDATA[ 
+ 语言处理器会事无巨细地做错误检查并指出。这和人打交道不同，只要你方便，它总是有足够的时间和耐心陪你一起。 我感觉我对人更没有耐心，或许是因为机器不会对我的情绪化表现作出反应，在与人社交时我会很容易地展现出自己的不耐烦，对亲密的人尤甚。与调试不同，社交并不会为你作任何保证。社交中的几乎所有结果都不是某一方决定的，对一个对待风险更加保守的人来说，交友不如赌老虎机。毕竟老虎机对于所有人都是随机的。你只用拉下摇杆等着 777，老虎机不会让你更失望的，没有哪种老虎机会吃掉你尚未投进去的代币。 这可能就是为什么我有时候更乐于做一个 API，在社交中完全配合。你告诉我时间和地点，我给你我所知的天气预报。这样的话，至少不会让对方出乎意料地失望。做到完全配合又是多么简单的一件事情，我不用考虑你说了什么、有什么寓意、有什么期望、有什么不满，我只管去做；你不能责怪我做错了什么，因为并不是我给不了你完美的结果，而是你当初提出了错误的要求。 要是人人都像这样，太空时代会不会来的更早一点？ 但是这样看来完全配合又是极不负责、极没有耐心的。看似在配合的过程中不对输入做任何评价，然而这种「我不服，走着瞧，等打脸」的方式却相当的低效且暴力。完全配合放弃了与人沟通的优势，又显得有些无力了。 所以到头来其实并不是机器对我有耐心所以我更喜欢与机器打交道，而是我没有足够的耐心与人打交道不愿意社交，而已。 就是这样～]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  将自己的工作偷偷自动化道德么？]]></title>
       <url>http://gaoryrt.com/2017/07-09-automatic/</url>
       <content type="html"><![CDATA[ 
@@ -784,16 +792,16 @@
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/flex/all.css</url>
+      <url>http://gaoryrt.com/em2px/em2px.css</url>
       <content type="html"><![CDATA[ 
- .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
+ html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/em2px/em2px.css</url>
+      <url>http://gaoryrt.com/flex/all.css</url>
       <content type="html"><![CDATA[ 
- html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
+ .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
     </entry>
     
   
