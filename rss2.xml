@@ -8,8 +8,60 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>digital diary of gaoryrt.</description>
-    <pubDate>Thu, 17 Aug 2017 15:14:49 GMT</pubDate>
+    <pubDate>Tue, 29 Aug 2017 15:31:18 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>关于数据埋点</title>
+      <link>http://gaoryrt.com/2017/08-29-event-tracking/</link>
+      <guid>http://gaoryrt.com/2017/08-29-event-tracking/</guid>
+      <pubDate>Tue, 29 Aug 2017 14:31:13 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;p&gt;项目中需要埋点的地方越来越多，急需一套通用的埋点解决方案。之前基于后端 + api 的 PV／UV 统计方式不够精细、操作复杂，对于前端会入
+      
+      </description>
+      
+      <content:encoded>&lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;p&gt;项目中需要埋点的地方越来越多，急需一套通用的埋点解决方案。之前基于后端 + api 的 PV／UV 统计方式不够精细、操作复杂，对于前端会入侵逻辑，后端在接收信息和事后统计时也不好处理逻辑。&lt;/p&gt;
+&lt;p&gt;结合&lt;a href=&quot;https://help.growingio.com/Features/overview.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GrowingIO的展示信息&lt;/a&gt;大概想了一下，需要采集的信息不过就是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开的链接与打开的时间&lt;/li&gt;
+&lt;li&gt;用户个人信息（这个基本上都需要后端来做）&lt;/li&gt;
+&lt;li&gt;（需要统计的）元素展示时间与时长&lt;/li&gt;
+&lt;li&gt;（需要统计的）元素点击时间&lt;/li&gt;
+&lt;li&gt;关闭或跳转时间（和目标）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;需求自然而然就出来了：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;高效埋点&lt;/li&gt;
+&lt;li&gt;数据格式化，便于处理&lt;/li&gt;
+&lt;li&gt;精细埋点&lt;/li&gt;
+&lt;li&gt;兼容各种框架&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;所以选用什么方式呢&quot;&gt;&lt;a href=&quot;#所以选用什么方式呢&quot; class=&quot;headerlink&quot; title=&quot;所以选用什么方式呢&quot;&gt;&lt;/a&gt;所以选用什么方式呢&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/27659302&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度外卖前端有篇&lt;/a&gt;写得犹抱琵琶半遮面的文章就讲了一下他们的方案。写的挺详细的，就是没有开源。&lt;/p&gt;
+&lt;p&gt;里面讲了当今常用的几种埋点方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;命令式，大概就是我们这边的原始埋点方式&lt;/li&gt;
+&lt;li&gt;声明式，就是在 DOM 上声明需要采集的元素数据以及相关操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;然后埋点行为就三个：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ready 绑定就算&lt;/li&gt;
+&lt;li&gt;click 点击就算&lt;/li&gt;
+&lt;li&gt;show 统计时长&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;声明式在现在动态操作 DOM 较多的现代框架中好像还不怎么好做，什么时候绑定呢，什么时候解绑呢，会不会重复绑定呢，展示时长怎么做呢？&lt;/p&gt;
+&lt;p&gt;首先想到的思路是监听、劫持全局的点击事件和滚动事件，然后如果检测到相关元素就绑定+采集，关闭或跳转前统一上传。然后上面的链接里面提供了一个更优雅的方式，&lt;code&gt;MutationObserver&lt;/code&gt; + pollyfill，把用在自定义指令上的绑定更新解绑都放在普通元素上来了。所以可以结合两者，只用 &lt;code&gt;new&lt;/code&gt; 一次就完成了埋点。&lt;/p&gt;
+&lt;p&gt;上面文章里写的方式直接结合了 vue 的自定义指令，绑定、更新、解绑一个不落，我想要的是在一个 json 里面声明需要采集的元素选择器名、至多到什么 &lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;、&lt;code&gt;once&lt;/code&gt;、&lt;code&gt;creatCounter&lt;/code&gt;、&lt;code&gt;creatTimer&lt;/code&gt; 就完了，大概这样：&lt;br&gt;&lt;figure class=&quot;highlight qml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; EventTrack([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;node&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;.buyButton&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;before&lt;/span&gt;: beforeClick(&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;after&lt;/span&gt;: afterClick(&lt;span class=&quot;string&quot;&gt;&#39;click&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;node&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;#banner7&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;once&lt;/span&gt;: OnceShow(&lt;span class=&quot;string&quot;&gt;&#39;show&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        creatCounter,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        creatTimer&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;], &lt;span class=&quot;string&quot;&gt;&#39;/api/eventUpload&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;支持自定义函数（&lt;code&gt;beforeClick&lt;/code&gt; 和 &lt;code&gt;afterClick&lt;/code&gt;），以及多次绑定。&lt;/p&gt;
+&lt;p&gt;后端应该就是一个通用接口加一个通用数据库用户存放所有操作日志。希望这么些东西是有用的。&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Qquanwei/trackpoint-tools&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;trackpoint-tools&lt;/a&gt;，针对组建化的 react 写的函数式埋点方案，我这个弱鸡看得很费劲，但是很有参考价值。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/lodash/lodash&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;lodash&lt;/a&gt;，什么 &lt;code&gt;before&lt;/code&gt;、&lt;code&gt;after&lt;/code&gt;、&lt;code&gt;once&lt;/code&gt; 都是 lodash 里面来的，lodash 注释写的是真的好啊。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/vissense/vissense&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VisSense&lt;/a&gt;，一个可视元素触发事件的库，展示时长就靠它了。&lt;/p&gt;
+</content:encoded>
+      
+      <comments>http://gaoryrt.com/2017/08-29-event-tracking/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>「翻译」使用 ES2017 Async 函数</title>
@@ -796,38 +848,6 @@
 </content:encoded>
       
       <comments>http://gaoryrt.com/2016/06-25-gulp/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>吃苦耐劳</title>
-      <link>http://gaoryrt.com/2016/06-14-hardwork/</link>
-      <guid>http://gaoryrt.com/2016/06-14-hardwork/</guid>
-      <pubDate>Tue, 14 Jun 2016 12:42:38 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;又看到「吃苦耐劳」这个词了。&lt;br&gt;私以为这不是什么好事，是封建残余。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;看不惯的&quot;&gt;&lt;a href=&quot;#看不惯的&quot; class=&quot;headerlink&quot; title=&quot;看不惯的&quot;&gt;&lt;/a&gt;看不惯的&lt;/h2&gt;&lt;p&gt;公司招聘的时候，时常能看
-      
-      </description>
-      
-      <content:encoded>&lt;p&gt;又看到「吃苦耐劳」这个词了。&lt;br&gt;私以为这不是什么好事，是封建残余。  &lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;看不惯的&quot;&gt;&lt;a href=&quot;#看不惯的&quot; class=&quot;headerlink&quot; title=&quot;看不惯的&quot;&gt;&lt;/a&gt;看不惯的&lt;/h2&gt;&lt;p&gt;公司招聘的时候，时常能看见这一条标准。我们经常看到，还真以为这是某一种美德了。吃苦是人做自己不愿意做的事情，耐劳是事情多却不抱怨。&lt;/p&gt;
-&lt;p&gt;一个自由人有选择自己想做的事情的自由，当然也有选择做自己不想做的事情的自由。对于这种明知道要吃苦的还继续坚持的人，我&lt;em&gt;希望&lt;/em&gt;我能带着怜悯的眼光去看他。&lt;/p&gt;
-&lt;p&gt;热爱工作，就不会有苦，除非有人强加于你。同理，什么样的工作会要求你做事多又不能抱怨呢？我能想到的只有基层的工作了，而且，环境总在引导我去认为「基层的工作是道德上至高无上的」。放屁。&lt;/p&gt;
-&lt;p&gt;想起黑哥面试的时候，问到别人单位的薪资怎么样，人家的回答是&lt;strong&gt;「如果你抱着这样的心态来问，我看你还是不要来我们公司了」&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;然后黑哥说「没有没有，我就是这么随便一问」。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;如果是我&quot;&gt;&lt;a href=&quot;#如果是我&quot; class=&quot;headerlink&quot; title=&quot;如果是我&quot;&gt;&lt;/a&gt;如果是我&lt;/h2&gt;&lt;p&gt;「我工作就是为了钱，如果你不给钱我一定不会来；如果暂时拿不到，我希望在将来拿到更多。」&lt;/p&gt;
-&lt;p&gt;凭什么一个公司有底气嘲讽询问薪资的潜在员工。互相尊重这种事情都做不到，什么公司会找去当HR。我能想到的只有国企了，而且，环境总在引导我去认为「国企的工作在道德上是无限正义的」。放屁。&lt;/p&gt;
-&lt;p&gt;如果我的工作要求我吃苦耐劳，我应该是要想一下是不是自己有点太差了，或许不知不觉就混到了自己都看不下去的程度。&lt;/p&gt;
-&lt;p&gt;然后可能就是考虑再就业的问题了把~&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;想看的看，不想看的就别看&lt;/strong&gt;&lt;br&gt;以上&lt;/p&gt;
-</content:encoded>
-      
-      <comments>http://gaoryrt.com/2016/06-14-hardwork/#disqus_thread</comments>
     </item>
     
   </channel>
