@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>digital diary of gaoryrt.</description>
-    <pubDate>Thu, 12 Oct 2017 13:49:07 GMT</pubDate>
+    <pubDate>Thu, 12 Oct 2017 13:49:40 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -18,12 +18,12 @@
       <pubDate>Thu, 12 Oct 2017 11:57:50 GMT</pubDate>
       <description>
       
-        &lt;p&gt;本文带有作者主动价值观输出，请谨慎阅读。&lt;/p&gt;
-&lt;h2 id=&quot;一是使用者完全没有隐私可言&quot;&gt;&lt;a href=&quot;#一是使用者完全没有隐私可言&quot; class=&quot;headerlink&quot; title=&quot;一是使用者完全没有隐私可言&quot;&gt;&lt;/a&gt;一是使用者完全没有隐私可言&lt;/h2&gt;&lt;
+        &lt;p&gt;本文带有作者价值观输出，请谨慎阅读。&lt;/p&gt;
+&lt;h2 id=&quot;一是使用者完全没有隐私可言&quot;&gt;&lt;a href=&quot;#一是使用者完全没有隐私可言&quot; class=&quot;headerlink&quot; title=&quot;一是使用者完全没有隐私可言&quot;&gt;&lt;/a&gt;一是使用者完全没有隐私可言&lt;/h2&gt;&lt;p&gt;
       
       </description>
       
-      <content:encoded>&lt;p&gt;本文带有作者主动价值观输出，请谨慎阅读。&lt;/p&gt;
+      <content:encoded>&lt;p&gt;本文带有作者价值观输出，请谨慎阅读。&lt;/p&gt;
 &lt;h2 id=&quot;一是使用者完全没有隐私可言&quot;&gt;&lt;a href=&quot;#一是使用者完全没有隐私可言&quot; class=&quot;headerlink&quot; title=&quot;一是使用者完全没有隐私可言&quot;&gt;&lt;/a&gt;一是使用者完全没有隐私可言&lt;/h2&gt;&lt;p&gt;可能谈到微信是否隐私，大家最先想到的是个人聊天记录是否会被身边的人看到。这里所提到的并不是由使用者主动保护获得的隐私、或者是由操作系统保护获得的隐私，这些都和微信无关。&lt;/p&gt;
 &lt;p&gt;我想谈的是，作为一款大型的即时聊天软件，从保护用户的意志出发，所作出的努力。令人悲伤的是，我完全感受不到微信为我提供了什么保护措施能让我自由的与他人进行私密的在线交流。&lt;/p&gt;
 &lt;p&gt;微信没有端到端加密的选项，如果有一个恶意的微信工程师想查看你的聊天内容，他是完全有能力这样做的，而你对此一无所知。这也为网络审查提供了方便。&lt;/p&gt;
