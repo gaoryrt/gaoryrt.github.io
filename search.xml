@@ -5,6 +5,14 @@
     
     <entry>
       <title><![CDATA[ 
+ 主动与反抗]]></title>
+      <url>http://gaoryrt.com/2017/11-30-171130/</url>
+      <content type="html"><![CDATA[ 
+ 我觉得写东西或者看东西，有趣的地方不是你的道理有多惊艳，多深刻，多标新立异。是你对于某件事情，能看到别人看不到的角度。原来这件事情还能这样看待，原来还能有这样的解法，啊，原来你会这样想。我觉得这个是写东西和阅读有意思的地方。但现在普遍都是陈词滥调，不是道理陈旧，是思维陈旧。还不停表达，跟我妈念经一样。 以上摘选自 第四期 The Jungle 听众反馈。 我发现身边的不少人都容易陷入一种「就是要和你对着干」的思维当中，他们可以在第一时间直觉地想到非主流的另类观点。很多自媒体的写手都具有这种能力：当某件事被爆出来，他们可以嗅到舆论的走向并反其道而行之，发表一篇怼所有人的文章，然后游走在风口浪尖。当他们刻意发表自己对事件的看法的时候，就可以轻易的让其他人惊讶「原来还有这种角度」。这种反抗是刻意的与主流做对，但是大众观感良好。我不太喜欢这种行为，因为他们高估了自己为少数派，高估了这种能力的稀有性，并且刻意滥用以达到哗众取宠的效果。 当一个非主流的观点在脑中产生的时候，他们很难区分主动与不服从的区别、很难说这是不是直觉。输入到输出的间隔实在是太短了，根本没有回顾的时间：是输入参杂了主流的观点导致我这样想，还是我天生就这样。我们怎样区分做作和天才？ 无论是主动还是反抗，谦逊告诉我们需要保持自己的独立，并尊重他人的观点。在现在这个价值观的后稀缺时代，我看到很多人都太想表达自己的见解了，他们宁愿相信自己是天生的小众，把自己定位在主流的对立面，却输出着主流的观点。这不是小众，真正的小众在洪流之中能够坚持独立的思考。 再也不敢说自己在输出了，我只是记录思维，在记录生活而已。]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ 
  Linxes Ⅰ]]></title>
       <url>http://gaoryrt.com/2017/11-05-linxes/</url>
       <content type="html"><![CDATA[ 
@@ -824,16 +832,16 @@
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/flex/all.css</url>
+      <url>http://gaoryrt.com/em2px/em2px.css</url>
       <content type="html"><![CDATA[ 
- .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
+ html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>http://gaoryrt.com/em2px/em2px.css</url>
+      <url>http://gaoryrt.com/flex/all.css</url>
       <content type="html"><![CDATA[ 
- html,body,#vue{min-height:100%;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif}.container{background:#5aa}a{color:#FFC04D;text-decoration:none}a:hover{text-decoration:underline}.title{font-size:40px;color:#9cd954}.title a{color:#ffa706}.title p{font-size:28px}.title .meta{font-size:1.1rem;font-weight:400;line-height:2rem}.container,#vue{display:flex;text-align:center;justify-content:center;align-items:center;flex-direction:row;padding:10px}#vue{margin-top:6%;display:flex;flex-direction:column}.base{font-size:1.1rem;color:#C5E99B}.base input{font-size:1.1rem;width:32px}.input-item{font-size:55px;padding:0 10px;font-weight:600;color:#C5E99B}input{max-width:120px;padding-right:12px;text-align:right;border:0;font:50px/1 'Courier New', 'Lucida Console', Courier, monospace;background:#5aa;color:#FFC04D}input:focus{outline:0}@media screen and (max-width: 1024px){.container{flex-direction:column}.input-item{margin:10px 0}} /*# sourceMappingURL=em2px.css.map */]]></content>
+ .section{display:flex;flex-direction:column;align-items:center;padding:70px 0;font-family:'Avenir Next', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;text-align:center}h1{font-size:4.5rem}p{margin:40px 0 30px 0;font-size:1.8rem;font-weight:500}.meta{font-size:1rem;font-weight:400;line-height:2rem;color:#aaa}a{color:#000;text-decoration:none}a:hover{text-decoration:underline}code{padding:0 7px;border-radius:5px}ul{margin:0;text-align:start;font-size:1.8rem;font-weight:500}ul li{margin:10px 0}#disqus_thread{padding-bottom:80px;position:absolute;width:55%;left:50%;transform:translate(-50%)}.counter{position:relative}.container-common{color:#C5E99B;background-color:#548687}.container-common code{background-color:#285943}.justify-content{color:#373c4d;background-color:#d9e1e8}.justify-content code{background-color:#9ba7b6}.align-items{color:#a3daff;background-color:#0080ff}.align-items code{background-color:#283f4c}.item-common{color:#c9d6de;background-color:#52616a}.item-common code{background-color:#2c3f4a}.align-self{color:#fffcf0;background-color:#6a60a9}.align-self code{background-color:#38335A}@media screen and (max-width: 782px){h1{font-size:3.5em}img{width:100%}#disqus_thread{padding-bottom:50px;width:80%}} /*# sourceMappingURL=all.css.map */]]></content>
     </entry>
     
   
