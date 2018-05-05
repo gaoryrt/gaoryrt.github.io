@@ -35,7 +35,7 @@
         &nbsp;Gather ye rosebuds while ye may
       </div>
     </div>
-    <div class="container">
+    <div class="main-ctnr">
       
 
   <article class="standard post">
@@ -52,7 +52,7 @@
     <div class="meta center">
       
 <time datetime="2015-12-13T15:22:17.000Z">
-<svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
@@ -63,7 +63,7 @@
 
     
     &nbsp;
-    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
       <circle cx="24" cy="8" r="2"></circle>
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
@@ -76,6 +76,9 @@
 
     </div>
     <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#套接字类型"><span class="toc-text">套接字类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#流式套接字-sock-stream"><span class="toc-text">流式套接字  sock_stream</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据报套接字-sock-dgram"><span class="toc-text">数据报套接字  sock-dgram</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始套接字"><span class="toc-text">原始套接字</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket套接字包含的元素"><span class="toc-text">socket套接字包含的元素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#监听套接字和连接套接字的作用"><span class="toc-text">监听套接字和连接套接字的作用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IP地址复用的作用和设置"><span class="toc-text">IP地址复用的作用和设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多进程和多线程对连接和监听套接字处理的区别"><span class="toc-text">多进程和多线程对连接和监听套接字处理的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多进程"><span class="toc-text">多进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多线程"><span class="toc-text">多线程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TSD的作用和使用方法"><span class="toc-text">TSD的作用和使用方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#I-O复用5种模型的区别"><span class="toc-text">I/O复用5种模型的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IGMP协议在原始套接字中的应用"><span class="toc-text">IGMP协议在原始套接字中的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP-UDP套接字编程流程模版"><span class="toc-text">TCP/UDP套接字编程流程模版</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建IPV4原始套接字"><span class="toc-text">创建IPV4原始套接字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#父进程ID和子进程ID的关系"><span class="toc-text">父进程ID和子进程ID的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#僵尸进程"><span class="toc-text">僵尸进程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#套接字地址结构类型"><span class="toc-text">套接字地址结构类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程安全性中once函数的使用"><span class="toc-text">线程安全性中once函数的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#域名和IP、协议和协议号、服务和端口的处理函数"><span class="toc-text">域名和IP、协议和协议号、服务和端口的处理函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建守护进程"><span class="toc-text">创建守护进程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建后台进程"><span class="toc-text">1 创建后台进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建新会话"><span class="toc-text">2 创建新会话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-禁止进程重新打开控制终端"><span class="toc-text">3 禁止进程重新打开控制终端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-关闭所有文件描述符"><span class="toc-text">4 关闭所有文件描述符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-改变当前工作目录"><span class="toc-text">5 改变当前工作目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-重设权限掩码"><span class="toc-text">6 重设权限掩码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-处理SIGCHLD信号"><span class="toc-text">7 处理SIGCHLD信号</span></a></li></ol></li></ol>
+    
     <div class="picture-container">
       
     </div>
@@ -124,23 +127,26 @@
   </div>
 
 
-<div id="disqus_thread"></div>
-<script>
+    
+        <div id="disqus_thread"></div>
+        <script>
 
-var disqus_config = function () {
-this.page.url = 'http://gaoryrt.com/2015/12-13-socket/index.html';
-this.page.identifier = undefined;
-};
+        var disqus_config = function () {
+        this.page.url = 'http://gaoryrt.com/2015/12-13-socket/index.html';
+        this.page.identifier = undefined;
+        };
 
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
 
-s.src = '//gaoryrt.disqus.com/embed.js';
+        s.src = '//gaoryrt.disqus.com/embed.js';
 
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+    
+
 
 
 
@@ -148,7 +154,7 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
   <footer class="page-footer"><div class="clearfix">
 </div>
-<div class="right-foot container">
+<div class="right-foot">
     <div class="firstrow">
         <a href="#top" target="_self">
         <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">

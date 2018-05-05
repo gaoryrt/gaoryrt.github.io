@@ -5,10 +5,14 @@
 @import "footer";
 @import "code";
 @import "animation";
-$background: #fdfdfc;
+@import "toc";
+$background: #fdfefe;
 $theme: #2570a1;
-$para: #555;
+$para: #444;
 $lighter: #9c9c9c;
+$big: 32px;
+$mid: 26px;
+$small: 18px;
 ::selection {
     background: lighten($theme, 40%);
 }
@@ -29,34 +33,48 @@ h5,
 h6 {
     font-weight: bold;
     margin: 2.36em 0 1em;
-    font-size: 1.79em;
+    font-size: $mid;
     color: #1a1a1a;
 }
 
 h1 {
-    font-size: 2.36em;
+    font-size: $big;
 }
 
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700|Pacifico);
 
 .index-title,
 .navbar-brand,
 .section-year,
 .archive-title,
+.dropdown-content,
 .pager,
-.page-title {
-    font-family: 'Open Sans Condensed', Helvetica Neue, Helvetica, PingFang SC, Lantinghei SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeitiSC-Light, simsun, WenQuanYi Zen Hei, WenQuanYi Micro Hei, Arial, sans-serif;
+.page-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.toc,
+.busuanzi {
+    font-family: 'Open Sans Condensed', Futura, AvenirNext, Avenir, sans-serif;
 }
 
 body {
-    font-size: 14px;
-    font-family: PingFang HK, Helvetica Neue, Helvetica, Lantinghei SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeitiSC-Light, simsun, WenQuanYi Zen Hei, WenQuanYi Micro Hei, Arial, sans-serif;
+    overflow-x: hidden;
+    font-size: $small;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "PingFang SC",STHeiti,"Helvetica Neue","Microsoft Yahei",Tahoma,Simsun,sans-serif;
     background-color: $background;
     margin: 0;
     padding: 0;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    word-wrap: break-word;
 }
 
 .archive-time {
@@ -82,7 +100,7 @@ p,
 .navbar-brand,
 .right-foot,
 .pager {
-    font-size: 1.5em;
+    font-size: $small;
 }
 
 .busuanzi,
@@ -96,38 +114,39 @@ a,
 a:hover,
 a:focus {
     color: $theme;
-
 }
 
 p {
-    font-size: 18px;
-    line-height: 1.78;
     margin: .7em 0;
-    letter-spacing: .6px;
     color: $para;
     padding: 0;
     border: 0;
     outline: 0;
-    // font-size: 100%;
-    vertical-align: baseline;
     background: transparent;
-    text-indent: 2em;
+    text-justify: auto;
 }
 
 .post li {
-    font-size: 18px;
     line-height: 2em;
-    letter-spacing: .5px;
-    list-style-type: disc;
     color: lighten($para, 10%);
 }
 
+.post li:before {
+    content: '·';
+    margin-right: .4em;
+}
+
 li {
+    list-style-type: none;
     list-style: none;
 }
 
+ol, ul {
+    padding-left: 1em;
+}
+
 .behind {
-    font-size: 22px;
+    font-size: $mid;
     padding: 28px 0 0;
     word-spacing: 2px;
     color: $lighter;
@@ -151,7 +170,7 @@ li {
 }
 
 .meta {
-    font-size: 15px;
+    font-size: $small;
     color: $lighter;
     padding-top: 13px;
     a {
@@ -180,7 +199,7 @@ li {
 }
 
 .archive-time {
-    font-size: 20px;
+    font-size: $small;
     width: 40%;
     margin-right: 20px;
     text-align: right;
@@ -188,7 +207,7 @@ li {
 }
 
 .archive-detail {
-    font-size: 17px;
+    font-size: $small;
     width: 90%;
     padding: 0 20px;
     word-wrap: break-word;
@@ -209,7 +228,7 @@ blockquote {
         color: #1a1a1a;
         text-indent: 0;
         line-height: 1.6;
-        font-size: 1.2em;
+        font-size: $mid;
     }
 }
 
@@ -226,6 +245,9 @@ video {
 }
 
 iframe {
+    display: inline-block;
+    box-sizing: border-box;
+    height: auto;
     max-width: 100%;
 }
 
@@ -240,18 +262,41 @@ img {
 }
 
 .busuanzi {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: $small;
+    line-height: $small;
     margin: 30px 0;
     color: #CDD2D4;
 }
 
-.index-meta * {
-    vertical-align: top;
+.index-meta {
+    vertical-align: middle;
     line-height: 1;
 }
 
-@media screen and (max-width:768px) {
+.main-ctnr {
+    max-width: 782px;
+    position: relative;
+    left: calc(50% - 391px)
+}
+
+.standard,
+.archive,
+.archive-title,
+#disqus_thread {
+    padding: 0 6% 0 7%;
+}
+
+p,
+.post li {
+    font-size: $small;
+    line-height: 1.9em;
+}
+
+
+@media screen and (max-width:782px) {
+    .main-ctnr {
+        left: 0;
+    }
     .back,
     li.archives,
     .busuanzi {
@@ -261,27 +306,10 @@ img {
         padding: 12px 0;
         opacity: 0;
     }
-    .standard,
-    .archive,
-    .archive-title,
-    #disqus_thread {
-        padding: 0 7%;
-    }
-    p,
-    .post li {
-        font-size: 16px;
-        line-height: 1.9em;
-    }
     .archive-title {
-        font-size: 2.2em;
+        font-size: $big;
     }
     .post ul {
         margin-left: -10px;
-    }
-}
-
-@media (min-width:992px) {
-    .container {
-        max-width: 58%;
     }
 }

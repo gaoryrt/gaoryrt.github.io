@@ -35,7 +35,7 @@
         &nbsp;Gather ye rosebuds while ye may
       </div>
     </div>
-    <div class="container">
+    <div class="main-ctnr">
       
 
   <article class="standard post">
@@ -52,7 +52,7 @@
     <div class="meta center">
       
 <time datetime="2015-10-30T11:43:38.000Z">
-<svg class="i-calendar" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
@@ -63,7 +63,7 @@
 
     
     &nbsp;
-    <svg class="i-tag" viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <svg class="i-tag" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
       <circle cx="24" cy="8" r="2"></circle>
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
@@ -76,6 +76,9 @@
 
     </div>
     <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装-sendmail，mailutils-和-dovecot"><span class="toc-text">安装 sendmail，mailutils 和 dovecot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sendmail"><span class="toc-text">sendmail</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dovecot"><span class="toc-text">dovecot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看状态、开启服务，关闭服务，重启服务："><span class="toc-text">查看状态、开启服务，关闭服务，重启服务：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mailutils"><span class="toc-text">mailutils</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试发送"><span class="toc-text">测试发送</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sendmail-控制邮件中转"><span class="toc-text">sendmail 控制邮件中转</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#备份配置文件，这是个好习惯："><span class="toc-text">备份配置文件，这是个好习惯：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑配置文件（-etc-mail-sendmail-mc"><span class="toc-text">编辑配置文件（/etc/mail/sendmail.mc)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译-mc文件成为-cf文件："><span class="toc-text">编译.mc文件成为.cf文件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑access文件："><span class="toc-text">编辑access文件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译access到access-db文件"><span class="toc-text">编译access到access.db文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启服务"><span class="toc-text">重启服务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单个用户多个邮件地址"><span class="toc-text">单个用户多个邮件地址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑配置文件（-etc-mail-sendmail-mc-："><span class="toc-text">编辑配置文件（/etc/mail/sendmail.mc)：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑-etc-aliases"><span class="toc-text">编辑/etc/aliases:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建文件-etc-manage-user"><span class="toc-text">新建文件/etc/manage.user:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译-mc文件成为-cf文件：-1"><span class="toc-text">编译.mc文件成为.cf文件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使别名生效："><span class="toc-text">使别名生效：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启服务-1"><span class="toc-text">重启服务</span></a></li></ol></li></ol>
+    
     <div class="picture-container">
       
     </div>
@@ -122,23 +125,26 @@
   </div>
 
 
-<div id="disqus_thread"></div>
-<script>
+    
+        <div id="disqus_thread"></div>
+        <script>
 
-var disqus_config = function () {
-this.page.url = 'http://gaoryrt.com/2015/10-30-emailserver/index.html';
-this.page.identifier = undefined;
-};
+        var disqus_config = function () {
+        this.page.url = 'http://gaoryrt.com/2015/10-30-emailserver/index.html';
+        this.page.identifier = undefined;
+        };
 
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
 
-s.src = '//gaoryrt.disqus.com/embed.js';
+        s.src = '//gaoryrt.disqus.com/embed.js';
 
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+    
+
 
 
 
@@ -146,7 +152,7 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
   <footer class="page-footer"><div class="clearfix">
 </div>
-<div class="right-foot container">
+<div class="right-foot">
     <div class="firstrow">
         <a href="#top" target="_self">
         <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
