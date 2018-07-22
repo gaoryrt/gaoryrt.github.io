@@ -84,7 +84,7 @@
     </div>
     <p>Mac下安装软件一般都是下载<code>dmg</code>、<code>pkg</code>包来安装。<br>在命令行中常使用<code>brew</code>、<code>wget</code>、<code>pip</code>来安装命令行软件包。<br>突然发现<code>MacPorts</code>终于更新了支持<code>el capitan</code>的新版本，不下不是中国人。<br><a id="more"></a></p>
 <hr>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="http://www.macports.org/install.php" target="_blank" rel="external">MacPorts 的下载页面</a></p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a href="http://www.macports.org/install.php" target="_blank" rel="noopener">MacPorts 的下载页面</a></p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>双击<code>MacPorts-2.3.4-10.11-ElCapitan.pkg</code> 一直点击继续来安装，需要输入密码。  </p>
 <p>安装之前最好是断网，不然安装过程中要联网检查更新，我这里打开了 <code>lantern</code>和<code>shadowsock</code>都卡了二十分钟。  </p>
 <p>然后在你的<code>bashrc</code>文件（我用的 <code>zsh</code>，也就是<code>~/.zshrc</code>文件）中添加:<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export PATH=<span class="variable">$PATH</span><span class="symbol">:/opt/local/bin</span></span><br><span class="line">export MANPATH=<span class="variable">$MANPATH</span><span class="symbol">:/opt/local/share/man</span></span><br><span class="line">export INFOPATH=<span class="variable">$INFOPATH</span><span class="symbol">:/opt/local/share/info</span></span><br></pre></td></tr></table></figure></p>

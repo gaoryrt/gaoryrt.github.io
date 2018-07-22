@@ -82,21 +82,21 @@
     <div class="picture-container">
       
     </div>
-    <p>自己翻译了一些发现了一个更好的版本<br>转过来<a href="http://wiki.hiaero.net/doku.php?id=python:pep8&amp;do=edit&amp;rev=0" target="_blank" rel="external">PEP8中文翻译</a><br>侵权删<br><a id="more"></a></p>
+    <p>自己翻译了一些发现了一个更好的版本<br>转过来<a href="http://wiki.hiaero.net/doku.php?id=python:pep8&amp;do=edit&amp;rev=0" target="_blank" rel="noopener">PEP8中文翻译</a><br>侵权删<br><a id="more"></a></p>
 <hr>
 <p>====== PEP8中文翻译 ======</p>
 <p>本文仅代表个人认知、观点、经验，May be Stupid!</p>
 <p>===== 什么是PEP =====</p>
 <p>PEP是 //Python Enhancement Proposal// 的缩写，翻译过来就是 //Python增强建议书// 。</p>
 <p>===== PEP8 =====</p>
-<p>译者：本文基于 2013-08-02 最后修改的 PEP8 版本翻译，若要查看英文原文，请参考[[<a href="http://www.python.org/dev/peps/pep-0008/|PEP8" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0008/|PEP8</a>]]</p>
+<p>译者：本文基于 2013-08-02 最后修改的 PEP8 版本翻译，若要查看英文原文，请参考[[<a href="http://www.python.org/dev/peps/pep-0008/|PEP8]]" target="_blank" rel="noopener">http://www.python.org/dev/peps/pep-0008/|PEP8]]</a></p>
 <p>==== 简介 ====</p>
-<p>本文档给出的编码约定，来源于 Python 主发行版标准库中的代码。Python 的 C 语言实现所使用的 C 语言风格指南，请参考[[<a href="http://www.python.org/dev/peps/pep-0007/|PEP7]]。" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0007/|PEP7]]。</a></p>
-<p>本文档与 PEP 257（文档字符串规范）都来自于 Guido((Python 之父 Guido Van Rossum)) 的 //Python Style Guido// 论文原文，另外有来自 //[[<a href="http://barry.warsaw.us/software/STYLEGUIDE.txt|Barry&#39;s" target="_blank" rel="external">http://barry.warsaw.us/software/STYLEGUIDE.txt|Barry&#39;s</a> style guide]]// 的补充。</p>
+<p>本文档给出的编码约定，来源于 Python 主发行版标准库中的代码。Python 的 C 语言实现所使用的 C 语言风格指南，请参考[[<a href="http://www.python.org/dev/peps/pep-0007/|PEP7]]。" target="_blank" rel="noopener">http://www.python.org/dev/peps/pep-0007/|PEP7]]。</a></p>
+<p>本文档与 PEP 257（文档字符串规范）都来自于 Guido((Python 之父 Guido Van Rossum)) 的 //Python Style Guido// 论文原文，另外有来自 //[[<a href="http://barry.warsaw.us/software/STYLEGUIDE.txt|Barry&#39;s" target="_blank" rel="noopener">http://barry.warsaw.us/software/STYLEGUIDE.txt|Barry&#39;s</a> style guide]]// 的补充。</p>
 <p>随着 Python 语言自身的改变，本指南也在持续演进，新的编码约定被认同，而旧的矣被废弃。</p>
 <p>许多项目都有一套专有的编码风格指南，当冲突发生时，应以项目编码规范为优先。</p>
 <p>==== 愚蠢的一致性就像没有脑子的妖怪 ====</p>
-<p>Guido 的一个核心观点认为，相比于被编写，代码更多的是被阅读。这篇指南意在提高代码的可读性并使之在广袤的 Python 编码中保持风格一致。就像 PEP 20 所表述的，”可读性当被重视((Readability counts，参见[[<a href="http://www.python.org/dev/peps/pep-0020/|PEP" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0020/|PEP</a> 20]]))”.</p>
+<p>Guido 的一个核心观点认为，相比于被编写，代码更多的是被阅读。这篇指南意在提高代码的可读性并使之在广袤的 Python 编码中保持风格一致。就像 PEP 20 所表述的，”可读性当被重视((Readability counts，参见[[<a href="http://www.python.org/dev/peps/pep-0020/|PEP" target="_blank" rel="noopener">http://www.python.org/dev/peps/pep-0020/|PEP</a> 20]]))”.</p>
 <p>风格指南即一致性指南。本文档中描述的一致性是重要的，一个项目内代码的一致性则更重要一些，而一个模块或方法中代码的一致性则是最重要的。</p>
 <p>但最终要的是：知道什么时候去打破一致性 — 风格指南并不总是适用。当存在不确定性时，做出你最好的抉择。你可以看看别人的代码是怎么写的，选择一种看起来最好的，并及时发问！</p>
 <p>特别注意：不要为了遵守本 PEP 而破坏代码的向后兼容性!</p>
@@ -165,7 +165,7 @@
 <p>在 Python 的核心发布版中，应该主要使用 UTF-8 编码（或者在 Python 2 中使用 ASCII）。</p>
 <p>在 Python 2 中使用 ASCII ，在 Python 3 中使用 UTF-8 时不应该在文件中进行编码声明。</p>
 <p>在标准库中，往往只有以测试为目的的代码或包含非 ASCII 编码字符的作者名的注释中，才会使用非默认编码。否则，则推荐使用 \x, \u, \U, \N 等转义字符来在字符串文本中表示非 ASCII 字符。</p>
-<p>在 Python 3.0 与更高级的 Python 版本中，对 Python 标准库的源文件编码作出了如下规定((参见 [[<a href="http://www.python.org/dev/peps/pep-3131/|PEP" target="_blank" rel="external">http://www.python.org/dev/peps/pep-3131/|PEP</a> 3131]]))：Python 标准库中的所有标示符必须仅使用 ACSII 编码的字符，在任何可能的时候都使用英文书写（在许多情况下，缩写名词和技术术语使用的是非英文）。另外，字符串文本与注释也必须使用 ASCII 编码。唯一的例外，是测试非 ASCII 编码特性的测试案例，与作者名的书写。对于非拉丁字符的作者名，应该将其翻译为拉丁字母书写。</p>
+<p>在 Python 3.0 与更高级的 Python 版本中，对 Python 标准库的源文件编码作出了如下规定((参见 [[<a href="http://www.python.org/dev/peps/pep-3131/|PEP" target="_blank" rel="noopener">http://www.python.org/dev/peps/pep-3131/|PEP</a> 3131]]))：Python 标准库中的所有标示符必须仅使用 ACSII 编码的字符，在任何可能的时候都使用英文书写（在许多情况下，缩写名词和技术术语使用的是非英文）。另外，字符串文本与注释也必须使用 ASCII 编码。唯一的例外，是测试非 ASCII 编码特性的测试案例，与作者名的书写。对于非拉丁字符的作者名，应该将其翻译为拉丁字母书写。</p>
 <p>推荐那些面向全球范围内开发者、用户的开源项目也遵循上述规定。</p>
 <p>=== 导入 ===</p>
 <p>  *import语句通常应该独立成行，例如：\ \ <code python=""></code></p>
@@ -226,7 +226,7 @@
 <p>行内注释不是非常必要，并且当注释语义显而易见时会分散阅读者的注意力。例如，不要撰写这样的注释：<br><code python=""><br>x = x + 1                 # Increment x<br></code></p>
 <p>但某些时候，行内注释也是很有用的<br><code python=""><br>x = x + 1                 # Compensate for border<br></code></p>
 <p>=== 文档字符串 ===</p>
-<p>关于编写好文档字符串的约定，请参考 [[<a href="http://www.python.org/dev/peps/pep-0257/|PEP" target="_blank" rel="external">http://www.python.org/dev/peps/pep-0257/|PEP</a> 257]] 。</p>
+<p>关于编写好文档字符串的约定，请参考 [[<a href="http://www.python.org/dev/peps/pep-0257/|PEP" target="_blank" rel="noopener">http://www.python.org/dev/peps/pep-0257/|PEP</a> 257]] 。</p>
 <p>请为所有的公开模块、类和方法编写文档字符串。对于非公开的方法，文档字符串不是必须的，但是仍应该为其撰写注释，表明其用途。方法注释应写在方法定义行之下。</p>
 <p>PEP 257 描述了良好文档字符串的编写规范。注意，以 “”” 结尾的文档字符串应该以该符号单独成行，最好前面还有一行空白行。 例如：<br><code python=""><br>“””Return a foobang</code></p>
 <p>Optional plotz says to frobnicate the bizbaz first.</p>

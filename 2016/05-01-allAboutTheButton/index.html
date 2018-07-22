@@ -84,8 +84,8 @@
     </div>
     <p><strong>这一篇主要讲的是跨域。</strong><br>前提：<a href="http://gaoryrt.com/2016/04-30-KernelPanicButton/">今天恐慌吗？</a><br>在那篇文章的最后提到了，由于跨域问题我并没有在线上完成<code>the kernel panic button</code>的功能。<br>然而现在可以了，下面写一写过程。<strong>想看的看，不想看就别看</strong>。  </p>
 <hr>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>跨域是浏览器为了防止XSS的结果，我的网络攻防没有过，没有权威科普<a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">什么是XSS</a>，就请看官<a href="http://stackoverflow.com/search?q=xss" target="_blank" rel="external">自己SOF</a>。<br><em>协议、域名、端口三者必须相同，否则就属于跨域。</em>  </p>
-<h2 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h2><p>来自于<a href="https://github.com/hawx1993" target="_blank" rel="external">hawx1993</a>的<a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank" rel="external">Front-end-Interview-questions</a>。  </p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>跨域是浏览器为了防止XSS的结果，我的网络攻防没有过，没有权威科普<a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener">什么是XSS</a>，就请看官<a href="http://stackoverflow.com/search?q=xss" target="_blank" rel="noopener">自己SOF</a>。<br><em>协议、域名、端口三者必须相同，否则就属于跨域。</em>  </p>
+<h2 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h2><p>来自于<a href="https://github.com/hawx1993" target="_blank" rel="noopener">hawx1993</a>的<a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank" rel="noopener">Front-end-Interview-questions</a>。  </p>
 <blockquote>
 <p>JSONP：</p>
 </blockquote>
@@ -118,7 +118,7 @@
 <li>我是浏览器用js，不是node</li>
 <li>我不识数</li>
 </ol>
-<p>所有上面提到的所有解决方法均不可用，在<a href="http://stackoverflow.com/questions/15005500/loading-cross-domain-html-page-with-ajax" target="_blank" rel="external">SOF上找到这么一篇</a>，科普了很多个proxy跨域的解决方案，我也不怕个人信息泄露，就大胆使用了<code>whateverorigin.org</code>来做proxy为我提供中间服务。<br>相当于他有个node可以获得html文件，然后转发给我，速度还行。</p>
+<p>所有上面提到的所有解决方法均不可用，在<a href="http://stackoverflow.com/questions/15005500/loading-cross-domain-html-page-with-ajax" target="_blank" rel="noopener">SOF上找到这么一篇</a>，科普了很多个proxy跨域的解决方案，我也不怕个人信息泄露，就大胆使用了<code>whateverorigin.org</code>来做proxy为我提供中间服务。<br>相当于他有个node可以获得html文件，然后转发给我，速度还行。</p>
 <hr>
 <p>以上</p>
 

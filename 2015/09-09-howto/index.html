@@ -97,17 +97,17 @@
 <h1 id="安装Hexo之前"><a href="#安装Hexo之前" class="headerlink" title="安装Hexo之前"></a>安装Hexo之前</h1><blockquote>
 <p><strong> Mac用户 </strong><br>在编译的时候可能会遇到问题，请先安装Xcode<br>然后进入Preferences-&gt;Download-&gt;Command Line Tools-&gt;Install 安装命令行工具  </p>
 </blockquote>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>在<a href="http://nodejs.org" target="_blank" rel="external">Node.js官网</a>可以下载到安装包<br><strong>或者</strong>使用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>进行安装<br>cURL:  </p>
-<pre><code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>在<a href="http://nodejs.org" target="_blank" rel="noopener">Node.js官网</a>可以下载到安装包<br><strong>或者</strong>使用<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>进行安装<br>cURL:  </p>
+<pre><code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh  
 </code></pre><p>或者 Wget:  </p>
 <pre><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 </code></pre><p>以上任一方式安装，重启终端后执行以下命令即可安装Node.js  </p>
-<pre><code>$ nvm install 0.10
+<pre><code>$ nvm install 0.10  
 </code></pre><p>安装成功后即可使用npm命令  </p>
 <pre><code class="bash">$ npm -v
 </code></pre>
 <p>如果安装成功返回的是npm的版本信息  </p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>在<a href="http://git-scm.com" target="_blank" rel="external">Git官网</a>可以下载到安装包<br><strong>或者</strong>使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>，<a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a>进行安装<br>安装成功后可使用git命令  </p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>在<a href="http://git-scm.com" target="_blank" rel="noopener">Git官网</a>可以下载到安装包<br><strong>或者</strong>使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>，<a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>进行安装<br>安装成功后可使用git命令  </p>
 <pre><code class="bash">$ git --version
 </code></pre>
 <p>如果安装成功返回的是git的版本信息  </p>
@@ -116,12 +116,12 @@
 <pre><code class="bash">$ npm install -g hexo-cli
 </code></pre>
 <p>安装成功后可使用hexo命令  </p>
-<pre><code>$ hexo -v
+<pre><code>$ hexo -v   
 </code></pre><p>如果安装成功返回的是Hexo的版本信息  </p>
 <hr>
 <h1 id="开始使用Hexo"><a href="#开始使用Hexo" class="headerlink" title="开始使用Hexo"></a>开始使用Hexo</h1><p>请<strong>在你想安装的位置</strong>使用以下命令</p>
 <pre><code>$ hexo init 
-$ npm install
+$ npm install  
 </code></pre><p>安装成功后可在指定文件夹下看到文件目录  </p>
 <pre><code>.  
 ├── _config.yml  
@@ -131,22 +131,22 @@ $ npm install
 ├── source  
 |   ├── _drafts  
 |   └── _posts  
-└── themes
-</code></pre><p>如果跟上面一样就说明建站成功了<br>各个文件的说明请参照 <a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">建站｜Hexo</a>  </p>
+└── themes  
+</code></pre><p>如果跟上面一样就说明建站成功了<br>各个文件的说明请参照 <a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">建站｜Hexo</a>  </p>
 <hr>
 <h1 id="添加一篇文章"><a href="#添加一篇文章" class="headerlink" title="添加一篇文章"></a>添加一篇文章</h1><p>使用以下命令(用你想要的名字代替<code>yourblogname</code>字段)  </p>
-<pre><code>$ hexo new &quot;yourblogname&quot;
+<pre><code>$ hexo new &quot;yourblogname&quot;  
 </code></pre><p><em>比如你想创建一篇叫做“abc”的新文章，那么使用以下命令</em>    </p>
-<pre><code>$ hexo new &quot;abc&quot;
+<pre><code>$ hexo new &quot;abc&quot;  
 </code></pre><p>然后你可以在<code>你的hexo位置</code>/source/_posts 文件夹中找到你的新文章<br><em>以刚才的<code>abc</code>文章为例，在这个文件夹中新文章为<code>abc.md</code></em><br>用支持的软件编辑该文件开始编辑（至少我是这么做的，好像有点麻烦）  </p>
 <blockquote>
 <p>以<code>.md</code>结尾的是markdown文件<br>如果你想了解更多关于markdown的信息请看这篇文章  <a href="/2015/09/10/关于markdown/">关于markdown</a>  </p>
 </blockquote>
-<p>在你更新、删除之后都不用再使用<code>hexo g</code>或者<code>hexo s</code>命令来重新启动服务<br>你要做的所用工作只是简单的<strong>在浏览器中刷新 <a href="http://0.0.0.0:4000" target="_blank" rel="external">http://0.0.0.0:4000</a></strong><br>简单的刷新就可以让你看到你对博客的更改</p>
+<p>在你更新、删除之后都不用再使用<code>hexo g</code>或者<code>hexo s</code>命令来重新启动服务<br>你要做的所用工作只是简单的<strong>在浏览器中刷新 <a href="http://0.0.0.0:4000" target="_blank" rel="noopener">http://0.0.0.0:4000</a></strong><br>简单的刷新就可以让你看到你对博客的更改</p>
 <hr>
-<h1 id="在Hexo中加载NexT主题"><a href="#在Hexo中加载NexT主题" class="headerlink" title="在Hexo中加载NexT主题"></a>在Hexo中加载NexT主题</h1><p>参见右边链接  <a href="http://theme-next.iissnan.com" target="_blank" rel="external">NexT - an elegant theme for Hexo</a>  </p>
+<h1 id="在Hexo中加载NexT主题"><a href="#在Hexo中加载NexT主题" class="headerlink" title="在Hexo中加载NexT主题"></a>在Hexo中加载NexT主题</h1><p>参见右边链接  <a href="http://theme-next.iissnan.com" target="_blank" rel="noopener">NexT - an elegant theme for Hexo</a>  </p>
 <hr>
-<h1 id="将网站部署到Github"><a href="#将网站部署到Github" class="headerlink" title="将网站部署到Github"></a>将网站部署到Github</h1><p>参见右边链接  <a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客|不如</a><br>不说了都是泪  </p>
+<h1 id="将网站部署到Github"><a href="#将网站部署到Github" class="headerlink" title="将网站部署到Github"></a>将网站部署到Github</h1><p>参见右边链接  <a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="noopener">hexo你的博客|不如</a><br>不说了都是泪  </p>
 
 
   </article>

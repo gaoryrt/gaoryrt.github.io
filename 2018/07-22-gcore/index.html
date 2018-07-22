@@ -7,12 +7,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="google-site-verification" content="xyaFwSI1VZa80BtZHe7okdwZ9tuTs-lYAAuDt1bsCxM" />
   
-  <title>为站点添加Rss和sitemap</title>
+  <title>机核，牛逼</title>
   <meta name="author" content="gaoryrt">
   <meta name="description" content="digital diary of gaoryrt.">
   
   
-  <meta property="og:title" content="为站点添加Rss和sitemap"/>
+  <meta property="og:title" content="机核，牛逼"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:site_name" content="Blog Name Goes Here"/>
   <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
@@ -43,7 +43,7 @@
       
   
     <h1 class="page-title center">
-        为站点添加Rss和sitemap
+        机核，牛逼
     </h1>
   
 
@@ -51,12 +51,12 @@
     </div>
     <div class="meta center">
       
-<time datetime="2016-03-22T09:54:35.000Z">
+<time datetime="2018-07-22T13:26:26.000Z">
 <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
   </svg>
   &nbsp;
-  2016-03-22
+  2018-07-22
 </time>
 
 
@@ -68,7 +68,7 @@
       <path d="M2 18 L18 2 30 2 30 14 14 30 Z"></path>
     </svg>
     &nbsp;
-    <a href="/categories/Geek-Talks-·-奇客怪谈/">Geek Talks · 奇客怪谈</a>
+    <a href="/categories/随笔与个人文集/">随笔与个人文集</a>
 
 
 
@@ -77,23 +77,16 @@
     </div>
     <hr>
     
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rss是什么"><span class="toc-text">rss是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为hexo添加rss"><span class="toc-text">为hexo添加rss</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为hexo添加sitemap"><span class="toc-text">为hexo添加sitemap</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对个人来说，兴趣很重要"><span class="toc-text">对个人来说，兴趣很重要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不要急于求成"><span class="toc-text">不要急于求成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户变了，用户驱动力不变"><span class="toc-text">用户变了，用户驱动力不变</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容-ip-如何盈利"><span class="toc-text">内容 ip 如何盈利</span></a></li></ol>
     
     <div class="picture-container">
       
     </div>
-    <h1 id="rss是什么"><a href="#rss是什么" class="headerlink" title="rss是什么"></a>rss是什么</h1><p>全称是really simple syndication<br>简易信息聚合<br>以下是个人YY<br>在我国，有新浪微博、微信公众号、各路新闻/聚合软件瓜分市场的大前提下<br>你要好好使用一个rss还是蛮不容易的<br>不说rss阅读器的选择，单单是订阅和迁移订阅源的过程就够繁琐的了<br>新浪微博可以推荐相似用户，公众号有钱拿<br>rss确实做下去不容易  </p>
-<hr>
-<h1 id="为hexo添加rss"><a href="#为hexo添加rss" class="headerlink" title="为hexo添加rss"></a>为hexo添加rss</h1><p>hexo的plugin页面就有相应插件<br>配置也相当简单<br><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">点这里看原文</a><br>安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
-<p>配置，在<code>hexo/_config.yml</code>里添加：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">feed</span>:</span><br><span class="line">  <span class="selector-tag">type</span>: <span class="selector-tag">rss2</span></span><br><span class="line">  <span class="selector-tag">path</span>: <span class="selector-tag">rss2</span><span class="selector-class">.xml</span></span><br><span class="line">  <span class="selector-tag">limit</span>: 20</span><br><span class="line">  <span class="selector-tag">hub</span>:</span><br></pre></td></tr></table></figure></p>
-<p>然后把rss连接放在<code>theme/_config.yml</code>中：<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">rss:</span> /rss2.xml</span><br></pre></td></tr></table></figure></p>
-<p>然后<code>generate</code>，再<code>deploy</code>就行了</p>
-<hr>
-<h1 id="为hexo添加sitemap"><a href="#为hexo添加sitemap" class="headerlink" title="为hexo添加sitemap"></a>为hexo添加sitemap</h1><p>hexo的plugin页面就有相应插件<br>配置也相当简单<br><a href="https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap" target="_blank" rel="noopener">点这里看原文</a><br>安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-seo-friendly-sitemap --save</span><br></pre></td></tr></table></figure></p>
-<p>配置，在<code>hexo/_config.yml</code>里添加：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sitemap:</span></span><br><span class="line"><span class="symbol">    path:</span> sitemap.xml</span><br></pre></td></tr></table></figure></p>
-<p>然后就可以拿给搜索引擎了</p>
-<hr>
-<p>以上</p>
+    <p>听完赵夏讲机核八年一步步走过来的历史，由衷觉他们做的这个事情，牛逼。</p>
+<h2 id="对个人来说，兴趣很重要"><a href="#对个人来说，兴趣很重要" class="headerlink" title="对个人来说，兴趣很重要"></a>对个人来说，兴趣很重要</h2><p>机核二零一零年开始四个设计师一张桌子一个话筒聊游戏开始，一步步做成现今国内一流的游戏媒体。一开始的时候都是做着玩儿，干着干着不知不觉就有了几百万用户。靠的是对游戏的兴趣，真羡慕他们能把自己的兴趣变成事业，也希望他们能不忘初心长久做下去。我也很乐意为这群热情的创业者充值。</p>
+<h2 id="不要急于求成"><a href="#不要急于求成" class="headerlink" title="不要急于求成"></a>不要急于求成</h2><p>就像是熊猫举的那个例子，国内厂商问日本某电视台台长制作 ip 有没有成熟的方法论可以指导，人家回答一个词：sense。国人太看重结果了，这导致我们丧失了对过程的享受，对过程中各个细节的观察积累。没有十年八年的积淀，哪里来的 sense 呢？我司价值观里也有 long term greedy，说的就是这个。</p>
+<h2 id="用户变了，用户驱动力不变"><a href="#用户变了，用户驱动力不变" class="headerlink" title="用户变了，用户驱动力不变"></a>用户变了，用户驱动力不变</h2><p>机核现在的 slogan 是 “不只是游戏”。两个词，小众共鸣和优越感。一开始连接玩家到聚合玩家，再到后来转变到普通玩家甚至非玩家。用户群变了，但是来的核心驱动力还是没有变的：年轻人想要这个经验差，在相同兴趣的人群里找到优越感。小众用户会来找共鸣，非小众用户会来深入了解自己的兴趣，在群体中体现优越感。可能硬核玩家会抱怨为什么讲得不够深入，但是对小白来说已经足够了。而小白的基数比硬核玩家多多了。机核比我更了解我的兴趣，与其浪费时间，我更愿意学习这些知识。从这点来看其实和我司还有点像。</p>
+<h2 id="内容-ip-如何盈利"><a href="#内容-ip-如何盈利" class="headerlink" title="内容 ip 如何盈利"></a>内容 ip 如何盈利</h2><p>广告、周边、付费内容、社群经济。现在机核周边有吉考斯工业，社群有核聚变。这应该也是机核现在的盈利手段。怕是以后会在机核看到广告或者付费内容了。</p>
 
 
   </article>
@@ -112,7 +105,7 @@
         <script>
 
         var disqus_config = function () {
-        this.page.url = 'http://gaoryrt.com/2016/03-22-addrss/index.html';
+        this.page.url = 'http://gaoryrt.com/2018/07-22-gcore/index.html';
         this.page.identifier = undefined;
         };
 

@@ -91,7 +91,7 @@
     <div class="picture-container">
       
     </div>
-    <p>在前一篇 <a href="http://gaoryrt.github.io/2015/09/27/StartingPython/" target="_blank" rel="external">开始Python</a> 当中提到了安装新版本Python的方法<br>但是在shell当中使用<code>python</code>命令的时候还是依旧使用的老版本Python。<br>今天下午解决这个问题花了好长时间。<br><a id="more"></a> </p>
+    <p>在前一篇 <a href="http://gaoryrt.github.io/2015/09/27/StartingPython/" target="_blank" rel="noopener">开始Python</a> 当中提到了安装新版本Python的方法<br>但是在shell当中使用<code>python</code>命令的时候还是依旧使用的老版本Python。<br>今天下午解决这个问题花了好长时间。<br><a id="more"></a> </p>
 <hr>
 <h1 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h1><ol>
 <li>找的Python教程都是基于3.X版本的，跟2.X并不兼容  </li>
@@ -100,11 +100,11 @@
 </ol>
 <p>看了其他人的Python建议之后还是决定先把Vim当作普通编辑器，不要深入把它变成Python IDE了  </p>
 <hr>
-<h1 id="尝试解决"><a href="#尝试解决" class="headerlink" title="尝试解决"></a>尝试解决</h1><p>直接安装的话尝试了brew安装和<a href="https://www.python.org/downloads/" target="_blank" rel="external">直接下载</a>安装 </p>
+<h1 id="尝试解决"><a href="#尝试解决" class="headerlink" title="尝试解决"></a>尝试解决</h1><p>直接安装的话尝试了brew安装和<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">直接下载</a>安装 </p>
 <pre><code>brew install python //brew安装Python
-</code></pre><p>两种都是直接安装在<code>/Library/Frameworks/Python.framework/Versions/3.5</code>中<br>并没有<a href="http://jingyan.baidu.com/article/27fa7326e4809646f8271fc7.html" target="_blank" rel="external">帮助</a>我建立link，建立可执行文件<br>好像直接覆盖的话会有很多遗留问题，Sublime和Xcode都要用到Python2.7脚本<br>在Stack Overflow上面找了很久，试过的都不管用，主要是因为Mac OSX 10.11 El Captain的rootless这个新特性<br>初衷是为了用户的安全呗  不把root权限交给用户  搞得我现在sudo出来都报错告诉我<br><code>Operation not permitted</code><br>这下我连复制Python版本目录到一起都不行了，更别说更改路径了<br>我就尝试着在shell配置中添加alias直接调用IDLE中新版Python<br>这个应该是能够成功的，但是需要调用的<code>python3.5</code>是一个隐藏文件，我在shell当中也只是<code>tab</code>自动补全的时候才添加的<br>之后的尝试也以找不到目标文件告终  </p>
+</code></pre><p>两种都是直接安装在<code>/Library/Frameworks/Python.framework/Versions/3.5</code>中<br>并没有<a href="http://jingyan.baidu.com/article/27fa7326e4809646f8271fc7.html" target="_blank" rel="noopener">帮助</a>我建立link，建立可执行文件<br>好像直接覆盖的话会有很多遗留问题，Sublime和Xcode都要用到Python2.7脚本<br>在Stack Overflow上面找了很久，试过的都不管用，主要是因为Mac OSX 10.11 El Captain的rootless这个新特性<br>初衷是为了用户的安全呗  不把root权限交给用户  搞得我现在sudo出来都报错告诉我<br><code>Operation not permitted</code><br>这下我连复制Python版本目录到一起都不行了，更别说更改路径了<br>我就尝试着在shell配置中添加alias直接调用IDLE中新版Python<br>这个应该是能够成功的，但是需要调用的<code>python3.5</code>是一个隐藏文件，我在shell当中也只是<code>tab</code>自动补全的时候才添加的<br>之后的尝试也以找不到目标文件告终  </p>
 <hr>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>然后居然是万能的知乎上找到了答案<br>是一个叫做<code>pythonbrew</code>的shell插件<br>能够下载切换全局局部的特定Python版本，简单操作易切换<br>安装配置参照👉<a href="https://github.com/utahta/pythonbrew" target="_blank" rel="external">pythonbrew</a>👈<br>安装配置成功后下载了3.4和2.7两个版本的Python并切换了过去<br>太方便了好么！！！</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>然后居然是万能的知乎上找到了答案<br>是一个叫做<code>pythonbrew</code>的shell插件<br>能够下载切换全局局部的特定Python版本，简单操作易切换<br>安装配置参照👉<a href="https://github.com/utahta/pythonbrew" target="_blank" rel="noopener">pythonbrew</a>👈<br>安装配置成功后下载了3.4和2.7两个版本的Python并切换了过去<br>太方便了好么！！！</p>
 <hr>
 <h1 id="看图"><a href="#看图" class="headerlink" title="看图"></a>看图</h1><p><img src="http://ww2.sinaimg.cn/large/a243ad6cjw1ewktr4gy20j20jd0fswfv.jpg" alt="image"><br><strong>👆没有改的时候，原版Python👆</strong><br><img src="http://ww1.sinaimg.cn/large/a243ad6cjw1ewktr2tvj3j20jd0fs41a.jpg" alt="image"><br><strong>👆使用pythonbrew转换之后👆</strong><br><img src="http://ww4.sinaimg.cn/large/a243ad6cjw1ewktr0wym7j20jd0fs411.jpg" alt="image"><br><strong>👆可用的版本，我只下载了两个👆</strong><br><img src="http://ww4.sinaimg.cn/large/a243ad6cjw1ewktqy8cjjj20jd0fs401.jpg" alt="image"><br><strong>👆换回来之后👆</strong>  </p>
 <hr>
